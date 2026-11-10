@@ -7942,8 +7942,8 @@ nav.steps{height:auto;gap:0;align-items:stretch;flex:none}nav.steps>button.step{
   color: var(--sd-text-inverse);
 }
 .page-home .rkt-list .rkt-row-actions > button:not(.primary):hover {
-  background: var(--sd-surface-hovered);
-  border-color: var(--sd-border-high);
+  background: var(--sd-gray-0);
+  border-color: var(--sd-border-default);
   color: var(--sd-text-default);
 }
 .page-home .dashboard-banner .banner-action:hover {
@@ -8252,8 +8252,8 @@ body:has(.sx-intro) .page-title-banner .page-title-inner {
   color: var(--sd-text-default);
 }
 .sx-secondary:hover {
-  background: var(--sd-surface-hovered);
-  border-color: var(--sd-border-high);
+  background: var(--sd-gray-0);
+  border-color: var(--sd-border-default);
   color: var(--sd-text-default);
 }
 .sx-primary {
@@ -8574,8 +8574,8 @@ body:has(.page-title-banner nav.steps) .page-flow {
 }
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button:not(.primary):hover,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-selection-actions > button:not(.primary):hover {
-  background: var(--sd-surface-hovered);
-  border-color: var(--sd-border-high);
+  background: var(--sd-gray-0);
+  border-color: var(--sd-border-default);
   color: var(--sd-text-default);
 }
 .page-flow:has(.menetapkan-table-layout) .table-target-edit {
@@ -8773,8 +8773,8 @@ body:has(.page-title-banner nav.steps) .page-flow {
   color: var(--sd-text-default);
 }
 .priority-target-dialog .pt-secondary:hover {
-  background: var(--sd-surface-hovered);
-  border-color: var(--sd-border-high);
+  background: var(--sd-gray-0);
+  border-color: var(--sd-border-default);
   color: var(--sd-text-default);
 }
 .priority-target-dialog .pt-primary {
@@ -9049,4 +9049,13 @@ body:has(.page-title-banner nav.steps) .page-flow {
 /* Baris tabel Menetapkan tidak bisa diklik (hanya tombol Pilih/Batalkan): tanpa sorotan hover baris dan kursor biasa */
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr {
   cursor: default;
+}
+
+/* Secondary Seragam: hover gray-0, tekan gray-10 */
+.page-home .rkt-list .rkt-row-actions > button:not(.primary):active,
+.sx-secondary:active,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button:not(.primary):not(.table-priority-selected):not(:disabled):active,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-actions > button:not(.primary):not(:disabled):active,
+.priority-target-dialog .pt-secondary:active {
+  background: var(--sd-gray-10);
 }
