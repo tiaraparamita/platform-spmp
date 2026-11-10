@@ -10142,3 +10142,80 @@ strong {
 .page-flow:has(.evaluation-indicator) .budget-lines-scroll tbody tr:last-child td {
   border-bottom: 0;
 }
+
+/* Mengendalikan: tindak lanjut per kegiatan (memakai gaya kartu Melaksanakan) */
+.page-flow:has(.control-card) p.muted {
+  margin: 0 0 16px;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.control-card) .control-columns {
+  gap: 24px;
+}
+.page-flow:has(.control-card) .evaluation-reference h3 {
+  margin: 0 0 8px;
+  font-size: var(--sd-type-desktop-headingsmall-size);
+  line-height: var(--sd-type-desktop-headingsmall-line);
+  font-weight: var(--sd-type-desktop-headingsmall-weight);
+}
+.page-flow:has(.control-card) .evaluation-reference p {
+  margin: 12px 0 0;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+}
+.page-flow:has(.control-card) .control-card .badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: var(--sd-type-desktop-helper-bold-line);
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+}
+.page-flow:has(.control-card) .control-card .badge.green {
+  background: var(--sd-badge-success);
+}
+.page-flow:has(.control-card) .control-card .badge.amber {
+  background: var(--sd-badge-warning);
+}
+.page-flow:has(.control-card) .control-card .badge.red {
+  background: var(--sd-badge-critical);
+}
+.page-flow:has(.control-card) .control-action-form select {
+  width: 100%;
+  height: 46px;
+  padding: 12px 40px 12px 16px;
+  background-color: var(--sd-white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z' fill='%235E5E5E'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 24px 24px;
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.page-flow:has(.control-card) .control-action-form select:focus {
+  border-color: var(--sd-blue-50);
+  box-shadow: 0 0 0 2px var(--sd-interactive-focused);
+}
+.page-flow:has(.execution-card) .execution-card label.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 16px 0 0;
+}
+.page-flow:has(.execution-card) .execution-card label.check span {
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  font-weight: var(--sd-type-desktop-body-weight);
+}
+.page-flow:has(.execution-card) .execution-card label.check input {
+  margin-top: 4px;
+}
