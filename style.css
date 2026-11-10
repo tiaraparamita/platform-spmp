@@ -10273,3 +10273,32 @@ strong {
   line-height: var(--sd-type-desktop-bodysmall-bold-line);
   font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
+
+/* Formulir kegiatan di dalam kartu rekomendasi: bukan kartu tersendiri, hanya garis pemisah di atas dan jarak isi */
+.page-flow:has(.guided-plan) .recommendation-item .activity-card.guided-activity {
+  margin: 16px 0 0;
+  padding: 20px 0 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--sd-modal-footer-border);
+  border-radius: 0;
+  box-shadow: none;
+}
+.page-flow:has(.guided-plan) .recommendation-item .activity-card.guided-activity > label:first-child,
+.page-flow:has(.guided-plan) .recommendation-item .activity-card.guided-activity > :first-child {
+  margin-top: 0;
+}
+.page-flow:has(.guided-plan) .activity-budget-lines {
+  margin-top: 20px;
+  padding-top: 4px;
+  border-top: 1px solid var(--sd-modal-footer-border);
+}
+.page-flow:has(.guided-plan) .budget-lines-scroll th:nth-child(4) {
+  min-width: 232px;
+}
+.page-flow:has(.guided-plan) .budget-lines-scroll table {
+  min-width: 1100px;
+}
+.page-flow:has(.guided-plan) .budget-lines-scroll table {
+  table-layout: auto;
+}
