@@ -4596,7 +4596,7 @@ article.guided-plan > header.guided-header > * {
 
 /* Navigation follows the supplied reference, without the yellow top border. */
 #app > header.platform-navbar {
-  height: 80px;
+  height: 64px;
   padding: 0 max(var(--page-gutter), calc((100vw - var(--page-content)) / 2));
   gap: 0;
   display: flex;
@@ -4638,34 +4638,44 @@ article.guided-plan > header.guided-header > * {
   white-space: nowrap;
 }
 .navbar-brand-copy > b {
-  font-size: var(--sd-type-desktop-headingmedium-size);
+  font-size: var(--sd-type-desktop-body-size);
+  font-weight: 600;
+  line-height: 20px;
   color: var(--sd-gray-90);
 }
 .navbar-brand-copy > span {
-  font-size: var(--sd-type-desktop-body-size);
+  font-size: var(--sd-type-desktop-bodysmall-size);
   font-weight: 400;
-  text-transform: uppercase;
-  color: var(--sd-gray-90);
+  line-height: 20px;
+  color: var(--sd-text-subdued);
 }
 .platform-navbar .emblem {
+  position: relative;
   width: 44px;
   height: 44px;
   flex-shrink: 0;
+  overflow: hidden;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+.platform-navbar .emblem img {
+  position: absolute;
+  top: -2.44%;
+  left: -5%;
+  width: 110%;
+  height: 107.32%;
+  max-width: none;
 }
 .navbar-chevron {
-  width: 19px;
-  height: 19px;
-  fill: none;
-  stroke: var(--sd-gray-80);
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
 }
 .platform-navbar nav {
   flex: none;
   justify-content: flex-end;
-  gap: 25px;
+  gap: 8px;
   margin-left: 35px;
   height: 100%;
   align-items: stretch;
@@ -4675,8 +4685,8 @@ article.guided-plan > header.guided-header > * {
   position: relative;
   color: var(--sd-gray-90);
   font-size: var(--sd-type-desktop-body-size);
-  font-weight: 700;
-  padding: 0 5px;
+  font-weight: 600;
+  padding: 0 12px;
   border: 0;
   white-space: nowrap;
   height: 100%;
@@ -4708,15 +4718,17 @@ article.guided-plan > header.guided-header > * {
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 9px;
 }
 .platform-navbar .avatar {
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--sd-gray-20);
-  background: var(--sd-gray-10);
-  color: var(--sd-gray-60);
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background: url(assets/nav/avatar.svg) center / 100% 100% no-repeat;
+  color: var(--sd-text-subdued);
   font-size: var(--sd-type-desktop-bodysmall-size);
+  font-weight: 700;
+  letter-spacing: 1.4px;
 }
 .navbar-dropdown {
   position: absolute;
