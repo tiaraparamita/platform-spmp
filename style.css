@@ -1,4 +1,6 @@
 :root {
+  --page-content: 1216px;
+  --page-gutter: 24px;
   --navy: var(--sd-surface-dark-blue);
   --blue: var(--sd-interactive-default);
   --ink: var(--sd-text-default);
@@ -124,9 +126,9 @@ nav button.active {
   font-weight: bold;
 }
 .wrap {
-  max-width: 1220px;
+  max-width: calc(var(--page-content) + var(--page-gutter) * 2);
   margin: 0 auto;
-  padding: 32px 30px 100px;
+  padding: 32px var(--page-gutter) 100px;
 }
 .eyebrow {
   text-transform: uppercase;
@@ -4595,7 +4597,7 @@ article.guided-plan > header.guided-header > * {
 /* Navigation follows the supplied reference, without the yellow top border. */
 #app > header.platform-navbar {
   height: 80px;
-  padding: 0 max(30px, calc((100vw - 1160px) / 2));
+  padding: 0 max(var(--page-gutter), calc((100vw - var(--page-content)) / 2));
   gap: 0;
   display: flex;
   flex-wrap: nowrap;
@@ -4851,9 +4853,9 @@ article.guided-plan > header.guided-header > * {
   width: 100%;
 }
 .page-title-inner {
-  max-width: 1220px;
+  max-width: calc(var(--page-content) + var(--page-gutter) * 2);
   margin: auto;
-  padding: 30px 30px 34px;
+  padding: 30px var(--page-gutter) 34px;
 }
 .page-title-banner .page-title-context {
   font-size: var(--sd-type-desktop-helper-size);
@@ -5980,8 +5982,8 @@ body:has(.page-rapor) {
   background: var(--sd-gray-0);
 }
 .page-rapor {
-  max-width: 1440px;
-  width: 90%;
+  max-width: var(--page-content);
+  width: calc(100% - var(--page-gutter) * 2);
   padding: 30px 0 90px;
 }
 .page-rapor .diagnosis-school-summary {
@@ -6476,8 +6478,8 @@ body:has(.page-rapor) {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 60px);
-  max-width: 1160px;
+  width: calc(100% - var(--page-gutter) * 2);
+  max-width: var(--page-content);
   margin: 0;
   z-index: 20;
   background: var(--sd-white);
