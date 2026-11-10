@@ -9038,3 +9038,16 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
   background: var(--sd-badge-neutral);
 }
+
+/* Nilai capaian awal selaras ukuran sel (15/22); tombol nonaktif tidak berubah saat di-hover */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-baseline {
+  font-size: var(--sd-type-mobile-action-size);
+  line-height: var(--sd-type-mobile-action-line);
+  font-weight: var(--sd-type-mobile-action-weight);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button:disabled:hover,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-actions > button:disabled:hover {
+  background: var(--sd-action-disabled);
+  border-color: transparent;
+  color: var(--sd-text-disabled);
+}
