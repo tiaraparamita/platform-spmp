@@ -8934,12 +8934,6 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td {
   vertical-align: middle;
 }
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr:hover td {
-  background: var(--sd-surface-hovered);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr.selected-indicator-row:hover td {
-  background: var(--sd-blue-5);
-}
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:first-child {
   border-top-left-radius: var(--sd-radius-md);
 }
@@ -9050,4 +9044,9 @@ body:has(.page-title-banner nav.steps) .page-flow {
   background: var(--sd-action-disabled);
   border-color: transparent;
   color: var(--sd-text-disabled);
+}
+
+/* Baris tabel Menetapkan tidak bisa diklik (hanya tombol Pilih/Batalkan): tanpa sorotan hover baris dan kursor biasa */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr {
+  cursor: default;
 }
