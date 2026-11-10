@@ -6051,7 +6051,7 @@ body:has(.page-rapor) {
   background: var(--sd-blue-90);
   border-radius: var(--sd-radius-lg);
   padding: 34px;
-  margin: 0 0 34px;
+  margin: 0 0 44px;
 }
 .page-rapor .diagnosis-overview-banner > h2 {
   font-size: var(--sd-type-desktop-headingmedium-size);
@@ -6184,9 +6184,9 @@ body:has(.page-rapor) {
 
 .diagnosis-indicators-title {
   font-size: var(--sd-type-desktop-displaysmall-size);
-  line-height: 1.4;
-  font-weight: 700;
-  margin: 0 0 22px;
+  line-height: var(--sd-type-desktop-displaysmall-line);
+  font-weight: var(--sd-type-desktop-displaysmall-weight);
+  margin: 0 0 32px;
   color: var(--sd-text-default);
 }
 @media (max-width: 720px) {
