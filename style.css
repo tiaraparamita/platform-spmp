@@ -8919,3 +8919,30 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change b {
   font-weight: 600;
 }
+
+/* Panduan Table Seragam (seragam.belajar.id/table): header abu #EFEFEF title case semibold, isi rata tengah vertikal, hover baris, en dash untuk nilai kosong */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
+  background: var(--sd-badge-neutral);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+  box-shadow: none;
+  vertical-align: middle;
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td {
+  vertical-align: middle;
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr:hover td {
+  background: var(--sd-surface-hovered);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr.selected-indicator-row:hover td {
+  background: var(--sd-blue-5);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:first-child {
+  border-top-left-radius: var(--sd-radius-md);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:last-child {
+  border-top-right-radius: var(--sd-radius-md);
+}
