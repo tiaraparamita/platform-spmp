@@ -3399,7 +3399,8 @@ article.guided-plan > header.guided-header > * {
   top: 19px;
 }
 
-.sixm-circle > svg {
+.sixm-circle > svg,
+.sixm-circle > .sixm-illustration {
   width: 60px;
   height: 60px;
   display: block;
