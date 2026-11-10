@@ -9185,3 +9185,148 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .root-mapping-card .menetapkan-indicator-table{width:100%;min-width:720px;table-layout:fixed}.root-mapping-card .menetapkan-indicator-table th:first-child{width:44%}.root-mapping-card .menetapkan-indicator-table th:nth-child(2){width:17%}.root-mapping-card .menetapkan-indicator-table th:nth-child(3){width:25%}.root-mapping-card .menetapkan-indicator-table th:nth-child(4){width:14%}.root-mapping-card .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px}.root-mapping-question{font-size:15px;margin:24px 0 16px}.root-subindicator-table input[type=checkbox]{width:18px;height:18px;accent-color:var(--blue);cursor:pointer}.root-mapping-card .table-achievement{gap:7px}.root-mapping-card .root-main-indicator td{padding-top:16px;padding-bottom:16px}
 
 .root-summary-header{display:flex;align-items:center;justify-content:space-between;gap:28px}.root-summary-identity{min-width:0;flex:1}.root-summary-identity>.source-text{margin:0 0 5px}.root-summary-title{display:flex;align-items:center;gap:8px;margin-bottom:10px}.root-summary-title h2{font-size:23px;line-height:1.35;margin:0}.root-summary-change{font-size:12px;color:var(--muted);margin:12px 0 0}.root-summary-metrics{display:flex;gap:24px;background:#f0f5ff;border-radius:9px;padding:18px 22px;flex-shrink:0}.root-summary-metrics>div{display:flex;flex-direction:column;gap:8px}.root-summary-metrics>div+div{border-left:1px solid var(--line);padding-left:24px}.root-summary-metrics span{font-size:12px;color:var(--muted)}.root-summary-metrics strong{font-size:26px;line-height:1.3;font-variant-numeric:tabular-nums}@media(max-width:760px){.root-summary-header{flex-direction:column;align-items:stretch;gap:20px}.root-summary-metrics>div{flex:1}.root-summary-metrics{padding:16px 18px;gap:18px}.root-summary-metrics>div+div{padding-left:18px}.root-summary-title h2{font-size:21px}}
+
+/* Memetakan: ringkasan indikator dan tabel subindikator mengikuti Seragam (skala mobile, Table rows) */
+.page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-title h2 {
+  font-size: var(--sd-type-mobile-headinglarge-size);
+  line-height: var(--sd-type-mobile-headinglarge-line);
+  font-weight: var(--sd-type-mobile-headinglarge-weight);
+  margin: 0;
+}
+.page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-identity > .source-text {
+  margin: 0 0 4px;
+}
+.page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-change {
+  margin: 8px 0 0;
+  font-size: var(--sd-type-mobile-bodysmall-size);
+  line-height: var(--sd-type-mobile-bodysmall-line);
+  color: var(--sd-text-default);
+}
+.page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-identity .badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 2px 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-mobile-helper-bold-size);
+  line-height: 20px;
+  font-weight: var(--sd-type-mobile-helper-bold-weight);
+}
+.page-flow:has([id^="root-card-"]) .root-mapping-card .badge.red {
+  background: var(--sd-badge-critical);
+}
+.page-flow:has([id^="root-card-"]) .root-mapping-card .badge.amber {
+  background: var(--sd-badge-warning);
+}
+.page-flow:has([id^="root-card-"]) .root-mapping-card .badge.green {
+  background: var(--sd-badge-success);
+}
+.page-flow:has([id^="root-card-"]) .root-mapping-card .badge.blue {
+  background: var(--sd-badge-info);
+}
+.page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-metrics {
+  background: var(--sd-blue-0);
+  border-radius: var(--sd-radius-md);
+}
+.page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-metrics span {
+  font-size: var(--sd-type-mobile-helper-size);
+  line-height: var(--sd-type-mobile-helper-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-metrics strong {
+  font-size: var(--sd-type-mobile-displaysmall-size);
+  line-height: var(--sd-type-mobile-displaysmall-line);
+  font-weight: var(--sd-type-mobile-displaysmall-weight);
+}
+.page-flow:has([id^="root-card-"]) .root-mapping-card .root-mapping-question {
+  margin: 24px 0 12px;
+  font-size: var(--sd-type-mobile-action-size);
+  line-height: var(--sd-type-mobile-action-line);
+  font-weight: var(--sd-type-mobile-action-weight);
+}
+/* Tabel subindikator: header #EFEFEF subheading 13/16 kapital, sel 15/22, garis antar baris #D9DBDD */
+.page-flow:has([id^="root-card-"]) .root-mapping-card .table-scroll {
+  border: 1px solid var(--sd-modal-footer-border);
+  border-radius: var(--sd-radius-md);
+  overflow-x: auto;
+  background: var(--sd-white);
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table th {
+  padding: 15px 16px;
+  background: var(--sd-badge-neutral);
+  border: 0;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-mobile-subheading-size);
+  line-height: var(--sd-type-mobile-subheading-line);
+  font-weight: var(--sd-type-mobile-subheading-weight);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table td {
+  padding: 16px 16px 15px;
+  border: 0;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  background: var(--sd-white);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-mobile-body-size);
+  line-height: var(--sd-type-mobile-body-line);
+  vertical-align: middle;
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table tbody tr.selected-indicator-row td {
+  background: var(--sd-surface-selected-default);
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table tbody tr {
+  cursor: default;
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table h3 {
+  display: inline;
+  margin: 0;
+  font-size: var(--sd-type-mobile-action-size);
+  line-height: var(--sd-type-mobile-action-line);
+  font-weight: var(--sd-type-mobile-action-weight);
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .source-text {
+  display: block;
+  font-size: var(--sd-type-mobile-helper-size);
+  line-height: var(--sd-type-mobile-helper-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .table-indicator-title {
+  display: block;
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .name-end {
+  white-space: nowrap;
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .indicator-description-tooltip {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  padding: 0;
+  vertical-align: text-bottom;
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .table-baseline {
+  font-size: var(--sd-type-mobile-action-size);
+  line-height: var(--sd-type-mobile-action-line);
+  font-weight: var(--sd-type-mobile-action-weight);
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .table-indicator-change,
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .table-indicator-change > span {
+  font-size: var(--sd-type-mobile-body-size);
+  line-height: var(--sd-type-mobile-body-line);
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .table-indicator-change b {
+  font-weight: var(--sd-type-mobile-action-weight);
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .table-no-comparison {
+  color: var(--sd-text-subdued);
+}
