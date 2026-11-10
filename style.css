@@ -7179,3 +7179,95 @@ article.guided-plan > header.guided-header.planning-priority-header {
   background: var(--sd-warning-border);
   color: var(--sd-white);
 }
+
+/* Tab dimensi = Seragam Tabs (label Action 16/24 semibold, garis bawah 4px) dan filter sumber = Seragam Chip */
+.page-rapor .diagnosis-dimension-tabs {
+  flex-wrap: nowrap;
+  gap: 12px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--sd-border-disabled);
+}
+.page-rapor .diagnosis-dimension-tabs button {
+  position: relative;
+  flex: none;
+  height: 56px;
+  margin: 0;
+  padding: 14px 6px 18px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--sd-text-subdued);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+  white-space: nowrap;
+}
+.page-rapor .diagnosis-dimension-tabs button[aria-pressed="true"] {
+  border: 0;
+  background: transparent;
+  color: var(--sd-interactive-default);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.page-rapor .diagnosis-dimension-tabs button[aria-pressed="true"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--sd-interactive-default);
+}
+.page-rapor .diagnosis-dimension-tabs button:hover {
+  color: var(--sd-interactive-hovered);
+}
+.page-rapor .diagnosis-dimension-tabs button:focus-visible {
+  outline: 2px solid var(--sd-interactive-focused);
+  outline-offset: -2px;
+}
+.diagnosis-source-toolbar {
+  gap: 16px;
+  border-bottom: 0;
+  padding: 16px 0 0;
+}
+.diagnosis-source-toolbar-label {
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  color: var(--sd-text-subdued);
+}
+.diagnosis-source-toolbar .diagnosis-source-filters {
+  gap: 8px;
+  border-left: 0;
+  padding-left: 0;
+}
+.diagnosis-source-toolbar .diagnosis-source-filters button {
+  padding: 8px 16px;
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-white);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.diagnosis-source-toolbar .diagnosis-source-filters button:hover {
+  background: #eef5ff;
+  color: var(--sd-text-default);
+}
+.diagnosis-source-toolbar
+  .diagnosis-source-filters
+  button[aria-pressed="true"] {
+  background: var(--sd-surface-selected-default);
+  border-color: var(--sd-interactive-default);
+  color: var(--sd-interactive-default);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.diagnosis-source-toolbar
+  .diagnosis-source-filters
+  button[aria-pressed="true"]:hover {
+  background: #cee3fc;
+  border-color: var(--sd-interactive-hovered);
+}
+.diagnosis-source-toolbar .diagnosis-source-filters button:focus-visible {
+  outline: 2px solid var(--sd-interactive-focused);
+  outline-offset: 2px;
+}
