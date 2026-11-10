@@ -8946,3 +8946,49 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:last-child {
   border-top-right-radius: var(--sd-radius-md);
 }
+
+/* Figma Seragam Web (Table, node 505:24585): header Surface/Pressed, teks 14/20, baris terpilih Surface Selected, tombol kecil di kolom aksi */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
+  background: var(--sd-surface-pressed);
+  padding: 16px;
+  border-top: 0;
+  border-bottom: 0;
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change > span,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change b,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td .sub,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td > span.sub {
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change b,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table h3 {
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-baseline {
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  font-weight: 600;
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button {
+  width: auto;
+  min-width: 88px;
+  min-height: 28px;
+  padding: 3px 12px;
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr.selected-indicator-row td {
+  background: var(--sd-surface-selected-default);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr.selected-indicator-row:hover td {
+  background: var(--sd-surface-selected-default);
+}
