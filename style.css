@@ -10221,3 +10221,55 @@ strong {
 .page-flow:has(.execution-card) .execution-card label.check input {
   margin-top: 4px;
 }
+
+/* Tabel Siklus Sekolah: Table Seragam (header #EFEFEF subheading kapital, garis antar baris, sel 16/24, tombol kecil) */
+.page-home .rkt-table-card {
+  border: 0;
+  box-shadow: var(--sd-elevation-01);
+  overflow: hidden;
+}
+.page-home .rkt-list {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.page-home .rkt-list th {
+  padding: 15px 16px;
+  background: var(--sd-badge-neutral);
+  border: 0;
+  box-shadow: none;
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-subheading-size);
+  line-height: var(--sd-type-desktop-subheading-line);
+  font-weight: var(--sd-type-desktop-subheading-weight);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.page-home .rkt-list td {
+  padding: 16px 16px 15px;
+  border: 0;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  background: var(--sd-white);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  vertical-align: middle;
+}
+.page-home .rkt-list tbody tr:last-child td {
+  border-bottom: 0;
+}
+.page-home .rkt-list td small {
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+}
+.page-home .rkt-list tbody tr {
+  cursor: default;
+}
+.page-home .rkt-list .rkt-row-actions > button {
+  min-height: 28px;
+  padding: 3px 12px;
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
+}
