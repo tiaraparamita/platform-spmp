@@ -8787,3 +8787,18 @@ body:has(.page-title-banner nav.steps) .page-flow {
   border-color: var(--sd-action-hovered);
   color: var(--sd-text-inverse);
 }
+
+/* Batalkan: Destructive secondary (outline merah; hover red-5, tekan red-10) */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button.table-priority-selected:not(.primary) {
+  background: transparent;
+  border-color: var(--sd-red-60);
+  color: var(--sd-red-60);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button.table-priority-selected:not(.primary):hover {
+  background: var(--sd-red-5);
+  border-color: var(--sd-red-60);
+  color: var(--sd-red-60);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button.table-priority-selected:not(.primary):active {
+  background: var(--sd-red-10);
+}
