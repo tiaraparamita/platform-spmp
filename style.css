@@ -8630,3 +8630,19 @@ body:has(.page-title-banner nav.steps) .page-flow {
   max-width: calc(var(--page-content) + var(--page-gutter) * 2);
   width: auto;
 }
+
+/* Satu aksi utama (Ultimate) per layar: "Pilih" memakai Secondary, hitungan tab netral seperti Tabs Seragam */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-tab-count {
+  min-width: 0;
+  height: auto;
+  padding: 0 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  font-weight: var(--sd-type-desktop-helper-weight);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-priority-selected {
+  background: var(--sd-white);
+}
