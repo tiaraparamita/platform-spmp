@@ -8276,32 +8276,63 @@ body:has(.sx-intro) .page-title-banner .page-title-inner {
   font-weight: var(--sd-type-desktop-helper-bold-weight);
 }
 
-/* Alur Siklus 6M: rel langkah mengikuti Process Steps Seragam (selesai hijau, berjalan biru, belum abu) */
-.page-flow > button.quiet {
-  padding: 8px 0;
-  color: var(--sd-action-default);
-  font-size: var(--sd-type-desktop-action-size);
-  line-height: var(--sd-type-desktop-action-line);
-  font-weight: var(--sd-type-desktop-action-weight);
-  border-radius: var(--sd-radius-sm);
+/* Hero alur Siklus 6M: breadcrumb (inverse) di kiri atas dan rel langkah Process Steps varian inverse di bawah judul */
+.page-title-banner.has-breadcrumb .page-title-inner {
+  padding-top: 24px;
+  padding-bottom: 32px;
 }
-.page-flow > button.quiet:hover {
+.page-breadcrumb {
+  margin-bottom: 20px;
+}
+.page-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+}
+.page-breadcrumb li {
+  display: flex;
+  align-items: center;
+  color: var(--sd-text-inverse);
+}
+.page-breadcrumb li.crumb-sep {
+  color: var(--sd-gray-30);
+}
+.page-breadcrumb [aria-current="page"] {
+  color: var(--sd-text-inverse);
+}
+.page-breadcrumb button {
+  padding: 0;
   background: none;
-  color: var(--sd-action-hovered);
-  text-decoration: underline;
+  border: 0;
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-inverse-subdued);
+  font: inherit;
+  font-weight: 400;
 }
-.page-flow nav.steps {
+.page-breadcrumb button:hover {
+  background: none;
+  color: var(--sd-text-inverse);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.page-title-banner nav.steps {
   display: flex;
   align-items: flex-start;
   gap: 0;
-  padding: 16px 24px;
+  margin: 28px 0 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
   overflow: visible;
-  background: var(--sd-white);
-  border: 1px solid var(--sd-gray-10);
-  border-radius: var(--sd-radius-md);
-  box-shadow: var(--sd-elevation-01);
 }
-.page-flow nav.steps > .step {
+.page-title-banner nav.steps > .step {
   position: relative;
   flex: 1;
   min-width: 0;
@@ -8313,53 +8344,52 @@ body:has(.sx-intro) .page-title-banner .page-title-inner {
   border: 0;
   border-radius: var(--sd-radius-md);
   text-align: center;
-  color: var(--sd-text-default);
+  color: var(--sd-text-inverse);
   font-size: var(--sd-type-desktop-bodysmall-bold-size);
   line-height: var(--sd-type-desktop-bodysmall-bold-line);
   font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
-.page-flow nav.steps > button.step:hover {
-  background: var(--sd-surface-hovered);
-  color: var(--sd-text-default);
+.page-title-banner nav.steps > button.step:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--sd-text-inverse);
 }
-.page-flow nav.steps > .step + .step::before {
+.page-title-banner nav.steps > .step + .step::before {
   content: "";
   position: absolute;
   left: -50%;
   right: 50%;
   top: 21px;
   height: 3px;
-  background: var(--sd-gray-10);
+  background: var(--sd-gray-70);
 }
-.page-flow nav.steps > .step.done + .step::before {
-  background: var(--sd-green-60);
+.page-title-banner nav.steps > .step.done + .step::before {
+  background: var(--sd-green-40);
 }
-.page-flow nav.steps .num {
+.page-title-banner nav.steps .num {
   position: relative;
   z-index: 1;
   width: 32px;
   height: 32px;
-  border: 2px solid var(--sd-gray-30);
-  background: var(--sd-white);
-  color: var(--sd-text-subdued);
+  border: 2px solid var(--sd-gray-60);
+  background: var(--sd-blue-90);
+  color: var(--sd-gray-30);
   font-size: var(--sd-type-desktop-body-size);
   line-height: var(--sd-type-desktop-body-line);
   font-weight: 600;
 }
-.page-flow nav.steps > .step.done .num {
-  background: var(--sd-green-60);
-  border-color: var(--sd-green-60);
+.page-title-banner nav.steps > .step.done .num {
+  background: var(--sd-green-40);
+  border-color: var(--sd-green-40);
+  color: var(--sd-white);
+}
+.page-title-banner nav.steps > .step.on {
+  background: none;
   color: var(--sd-text-inverse);
 }
-.page-flow nav.steps > .step.on {
-  background: none;
-  color: var(--sd-text-default);
-}
-.page-flow nav.steps > .step.on .num {
-  background: var(--sd-white);
-  border: 2px solid var(--sd-action-default);
-  color: var(--sd-action-default);
-  box-shadow: 0 0 0 2px var(--sd-white), 0 0 0 4px var(--sd-interactive-focused);
+.page-title-banner nav.steps > .step.on .num {
+  border-color: var(--sd-blue-30);
+  color: var(--sd-blue-30);
+  box-shadow: 0 0 0 3px var(--sd-blue-30);
 }
 
 /* Menetapkan: tabel indikator, tab, banner peringatan, dan panel pilihan memakai token Seragam */
