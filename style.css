@@ -8091,7 +8091,7 @@ body:has(.sx-intro) .page-title-banner .page-title-inner {
   background: var(--sd-white);
   border: 1px solid var(--sd-gray-10);
   border-radius: var(--sd-radius-md);
-  box-shadow: var(--sd-elevation-03);
+  box-shadow: var(--sd-elevation-01);
   padding: 40px 40px 56px;
 }
 .sx-panel h2 {
@@ -8337,7 +8337,7 @@ body:has(.sx-intro) .page-title-banner .page-title-inner {
   background: var(--sd-white);
   border: 1px solid var(--sd-gray-10);
   border-radius: var(--sd-radius-md);
-  box-shadow: var(--sd-elevation-03);
+  box-shadow: var(--sd-elevation-01);
   overflow: visible;
 }
 body:has(.page-title-banner nav.steps) .page-flow {
