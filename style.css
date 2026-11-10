@@ -262,7 +262,7 @@ small {
   border: 1px solid var(--sd-blue-5);
   border-radius: var(--sd-radius-md);
   padding: 15px 18px;
-  color: var(--sd-cyan-90);
+  color: var(--sd-text-default);
   margin-bottom: 20px;
 }
 .notice.warn {
@@ -433,7 +433,7 @@ td small {
   position: fixed;
   bottom: 24px;
   right: 25px;
-  background: var(--sd-cyan-90);
+  background: var(--sd-surface-foreground);
   color: white;
   border: 1px solid var(--sd-cyan-80);
   border-radius: var(--sd-radius-xl);
@@ -471,7 +471,7 @@ td small {
   bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--sd-cyan-90);
+  background: var(--sd-surface-foreground);
   color: white;
   border-radius: var(--sd-radius-md);
   padding: 12px 24px;
@@ -2816,7 +2816,7 @@ button:focus-visible {
 .recommendation-root h4 {
   font-size: var(--sd-type-desktop-bodysmall-size);
   margin: 22px 0 10px;
-  color: var(--sd-cyan-90);
+  color: var(--sd-text-default);
 }
 .recommendation-item {
   background: white;
@@ -3418,7 +3418,7 @@ article.guided-plan > header.guided-header > * {
 
 .hero.sixm-intro-banner {
   background: var(--sd-blue-0);
-  color: var(--sd-cyan-90);
+  color: var(--sd-text-default);
   border: 1px solid var(--sd-blue-5);
 }
 .sixm-intro-banner .eyebrow {
@@ -3426,7 +3426,7 @@ article.guided-plan > header.guided-header > * {
 }
 .sixm-intro-banner h2,
 .sixm-intro-banner .sixm-journey h3 {
-  color: var(--sd-cyan-90);
+  color: var(--sd-text-default);
 }
 .sixm-intro-banner .sixm-intro-copy,
 .sixm-intro-banner .sixm-journey li p,
@@ -3491,7 +3491,7 @@ article.guided-plan > header.guided-header > * {
 }
 .hero.sixm-intro-banner .sixm-banner-footer > p {
   font-weight: 700;
-  color: var(--sd-cyan-90);
+  color: var(--sd-text-default);
   margin: 0;
   max-width: none;
   line-height: 1.6;
@@ -5099,7 +5099,7 @@ article.guided-plan > header.guided-header > * {
   padding: 12px 10px 0;
   border: 1px solid var(--sd-blue-5);
   box-shadow: 0 2px 10px #25476e18;
-  color: var(--sd-cyan-90);
+  color: var(--sd-text-default);
   transform: rotate(-1deg);
   font-size: 9px;
 }
