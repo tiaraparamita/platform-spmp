@@ -9164,3 +9164,21 @@ body:has(.page-title-banner nav.steps) .page-flow {
   background: var(--sd-action-default);
   color: var(--sd-text-inverse);
 }
+
+/* Ikon info menempel di akhir nama indikator (ikut baris terakhir, tidak terlempar ke tepi sel) */
+.page-flow:has(.menetapkan-table-layout) .table-indicator-title {
+  display: block;
+}
+.page-flow:has(.menetapkan-table-layout) .table-indicator-title h3 {
+  display: inline;
+}
+.page-flow:has(.menetapkan-table-layout) .table-indicator-title .name-end {
+  white-space: nowrap;
+}
+.page-flow:has(.menetapkan-table-layout) .table-indicator-title .indicator-description-tooltip {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  padding: 0;
+  vertical-align: text-bottom;
+}
