@@ -211,19 +211,21 @@ small {
 }
 .tag {
   display: inline-block;
-  background: var(--sd-blue-0);
-  color: var(--sd-gray-70);
-  font-size: var(--sd-type-desktop-helper-size);
-  padding: 4px 9px;
-  border-radius: var(--sd-radius-sm);
-  font-weight: 600;
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  padding: 2px 8px;
+  border-radius: var(--sd-radius-pill);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .badge {
   display: inline-block;
-  padding: 4px 10px;
-  border-radius: var(--sd-radius-xl);
-  font-size: var(--sd-type-desktop-helper-size);
-  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--sd-radius-pill);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
   background: var(--sd-blue-0);
   color: var(--sd-gray-70);
 }
@@ -7944,11 +7946,11 @@ nav.steps{height:auto;gap:0;align-items:stretch;flex:none}nav.steps>button.step{
 
 /* Badge status: pill, 12/16 semibold, isi token badge */
 .page-home .badge {
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
   color: var(--sd-text-default);
   background: var(--sd-badge-neutral);
 }
@@ -8169,13 +8171,13 @@ body:has(.sx-next) .page-title-banner .page-title-inner {
   color: var(--sd-text-inverse);
 }
 .sx-intro .badge {
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 
 /* Hero alur Siklus 6M: breadcrumb (inverse) di kiri atas dan rel langkah Process Steps varian inverse di bawah judul */
@@ -8422,13 +8424,13 @@ body:has(.page-title-banner nav.steps) .page-flow {
   color: var(--sd-text-subdued);
 }
 .page-flow:has(.menetapkan-table-layout) .badge {
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .page-flow:has(.menetapkan-table-layout) .badge.green {
   background: var(--sd-badge-success);
@@ -8739,9 +8741,9 @@ body:has(.page-title-banner nav.steps) .page-flow {
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: 20px;
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .page-flow:has(.menetapkan-table-layout) .menetapkan-selection-hint {
   margin: 0;
@@ -8967,13 +8969,13 @@ body:has(.page-title-banner nav.steps) .page-flow {
   box-shadow: var(--sd-elevation-01);
 }
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .tag {
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] h2 {
   font-size: var(--sd-type-desktop-headingmedium-size);
@@ -9133,13 +9135,13 @@ body:has(.page-title-banner nav.steps) .page-flow {
 }
 .sx-next .badge {
   display: inline-block;
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .sx-next .badge.amber {
   background: var(--sd-badge-warning);
@@ -9205,13 +9207,13 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-identity .badge {
   display: inline-block;
   margin-top: 8px;
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .page-flow:has([id^="root-card-"]) .root-mapping-card .badge.red {
   background: var(--sd-badge-critical);
@@ -9340,13 +9342,13 @@ strong {
 /* Sisa penyesuaian ke skala desktop Seragam: badge 12/16 + padding 4/8 (tinggi 24), baris teks dari token */
 .page-flow:has([id^="root-card-"]) .root-subindicator-table .badge {
   display: inline-block;
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .page-flow:has([id^="root-card-"]) .root-subindicator-table .badge.red {
   background: var(--sd-badge-critical);
@@ -9358,8 +9360,8 @@ strong {
   background: var(--sd-badge-success);
 }
 .page-flow:has(.menetapkan-table-layout) .menetapkan-selection-count {
-  padding: 4px 8px;
-  line-height: var(--sd-type-desktop-helper-bold-line);
+  padding: 2px 8px;
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
 }
 .page-flow:has(.menetapkan-table-layout) .menetapkan-selected-link {
   font-size: var(--sd-type-desktop-bodysmall-size);
@@ -9381,13 +9383,13 @@ strong {
   border-radius: var(--sd-radius-md);
 }
 .page-flow:has(.guided-plan) .planning-priority-name .tag {
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .page-flow:has(.guided-plan) .planning-priority-name h2 {
   margin: 8px 0 0;
@@ -9570,13 +9572,13 @@ strong {
 .page-flow:has(.guided-plan) .budget-optional-label {
   display: inline-block;
   margin-left: 8px;
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .page-flow:has(.guided-plan) .budget-lines-scroll {
   border: 1px solid var(--sd-modal-footer-border);
@@ -9686,13 +9688,13 @@ strong {
   border-radius: var(--sd-radius-md);
 }
 .page-flow:has(.execution-card) .execution-card > .tag {
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .page-flow:has(.execution-card) .execution-card > h2 {
   margin: 8px 0 4px;
@@ -9761,13 +9763,13 @@ strong {
 .page-flow:has(.execution-card) .execution-card h3 .optional-label {
   display: inline-block;
   margin-left: 8px;
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 /* Label, TextField, TextArea, dan unggah berkas */
 .page-flow:has(.execution-card) .execution-card label {
@@ -9980,13 +9982,13 @@ strong {
 }
 .page-flow:has(.evaluation-indicator) .outcome-status .badge {
   display: inline-block;
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .page-flow:has(.evaluation-indicator) .outcome-status .badge.green {
   background: var(--sd-badge-success);
@@ -10166,13 +10168,13 @@ strong {
 }
 .page-flow:has(.control-card) .control-card .badge {
   display: inline-block;
-  padding: 4px 8px;
+  padding: 2px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: var(--sd-type-desktop-helper-bold-line);
-  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 .page-flow:has(.control-card) .control-card .badge.green {
   background: var(--sd-badge-success);
