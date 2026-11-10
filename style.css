@@ -5990,7 +5990,8 @@ body:has(.page-rapor) {
   position: absolute;
   z-index: -1;
   top: -30px;
-  bottom: -44px;
+  /* 40px jarak ke kartu + setengah baris judul kartu (34px padding + 12px) */
+  bottom: -86px;
   left: calc((100% - 100vw) / 2);
   right: calc((100% - 100vw) / 2);
   background: white;
