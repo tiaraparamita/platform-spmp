@@ -2189,7 +2189,7 @@ button:focus-visible {
 .report-summary {
   display: flex;
   gap: 26px;
-  background: var(--sd-blue-90);
+  background: var(--sd-surface-dark-blue);
   color: white;
   border-radius: var(--sd-radius-md);
   padding: 30px;
@@ -2387,7 +2387,7 @@ button:focus-visible {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
   gap: 36px;
-  background: var(--sd-blue-90);
+  background: var(--sd-surface-dark-blue);
   color: white;
   margin: -32px -30px 0;
   padding: 26px 30px 0;
@@ -2550,7 +2550,7 @@ button:focus-visible {
   line-height: 1.6;
 }
 .report-inspiration {
-  background: var(--sd-blue-90);
+  background: var(--sd-surface-dark-blue);
   color: white;
   padding: 24px;
   border-radius: var(--sd-radius-md);
@@ -3858,7 +3858,7 @@ article.guided-plan > header.guided-header > * {
   color: var(--sd-gray-60);
 }
 .reflection-inline-values strong {
-  color: var(--sd-cyan-100);
+  color: var(--sd-text-default);
   font-weight: 700;
 }
 .reflection-inline-context + .reflection-evidence-details {
@@ -3948,7 +3948,7 @@ article.guided-plan > header.guided-header > * {
   color: var(--sd-gray-60);
 }
 .indicator-target-context b {
-  color: var(--sd-cyan-100);
+  color: var(--sd-text-default);
 }
 .guided-header > .indicator-target-context {
   margin-bottom: 0;
@@ -4860,7 +4860,7 @@ article.guided-plan > header.guided-header > * {
 
 /* Shared navy title area below navigation on every page. */
 .page-title-banner {
-  background: var(--sd-blue-100);
+  background: var(--sd-surface-dark-blue);
   color: white;
   width: 100%;
 }
@@ -5140,7 +5140,7 @@ article.guided-plan > header.guided-header > * {
   font-size: 5px;
 }
 .mini-poster-footer {
-  background: var(--sd-blue-100);
+  background: var(--sd-surface-dark-blue);
   color: white;
   padding: 7px;
   font-size: 7px;
@@ -5285,7 +5285,7 @@ article.guided-plan > header.guided-header > * {
 }
 .outcome-grid strong {
   font-size: var(--sd-type-desktop-displaymedium-size);
-  color: var(--sd-cyan-100);
+  color: var(--sd-text-default);
   display: block;
 }
 .outcome-input {
@@ -5810,7 +5810,7 @@ article.guided-plan > header.guided-header > * {
   font-size: var(--sd-type-desktop-helper-size);
 }
 .diagnosis-overview-banner {
-  background: var(--sd-blue-100);
+  background: var(--sd-surface-dark-blue);
   border-radius: var(--sd-radius-lg);
   color: white;
   padding: 28px 30px;
@@ -6051,7 +6051,7 @@ body:has(.page-rapor) {
 }
 .page-rapor .diagnosis-overview-banner {
   position: relative;
-  background: var(--sd-blue-100);
+  background: var(--sd-surface-dark-blue);
   border-radius: var(--sd-radius-lg);
   padding: 34px;
   margin: 0 0 34px;
@@ -6199,7 +6199,7 @@ body:has(.page-rapor) {
   line-height: 1.4;
   font-weight: 700;
   margin: 0 0 22px;
-  color: var(--sd-cyan-100);
+  color: var(--sd-text-default);
 }
 @media (max-width: 720px) {
   .diagnosis-indicators-title {
@@ -6266,7 +6266,7 @@ body:has(.page-rapor) {
   border-color: var(--sd-blue-5);
   border-bottom-color: var(--sd-white);
   background: var(--sd-white);
-  color: var(--sd-cyan-100);
+  color: var(--sd-text-default);
   font-weight: 600;
 }
 .page-rapor .diagnosis-dimension-tabs button:hover {
@@ -6432,7 +6432,7 @@ body:has(.page-rapor) {
   border-color: var(--sd-blue-5);
   border-bottom-color: var(--sd-white);
   background: var(--sd-white);
-  color: var(--sd-cyan-100);
+  color: var(--sd-text-default);
   font-weight: 600;
 }
 .menetapkan-dimension-tabs button:hover {
@@ -6658,7 +6658,7 @@ body:has(.priority-selection-bar) .demo-panel {
   border: 1px solid var(--sd-blue-5);
   border-radius: var(--sd-radius-md);
   background: var(--sd-white);
-  color: var(--sd-cyan-100);
+  color: var(--sd-text-default);
   padding: 14px 16px;
   box-shadow: 0 6px 24px #20365d24;
   font-size: var(--sd-type-desktop-bodysmall-size);
@@ -6785,7 +6785,7 @@ body:has(.priority-selection-bar) .demo-panel {
   padding: 10px 28px 10px 12px;
   position: relative;
   background: var(--sd-white);
-  color: var(--sd-cyan-100);
+  color: var(--sd-text-default);
   font-size: var(--sd-type-desktop-bodysmall-size);
 }
 .budget-month-picker > summary:after {
@@ -6962,12 +6962,12 @@ body:has(.priority-selection-bar) .demo-panel {
 .activity-budget-lines .budget-month-trigger,
 .activity-budget-lines .budget-month-trigger:hover,
 .activity-budget-lines .budget-month-trigger[aria-expanded="true"] {
-  color: var(--sd-cyan-100);
+  color: var(--sd-text-default);
   border-color: var(--sd-gray-10);
   background: var(--sd-white);
 }
 .activity-budget-lines .budget-month-trigger:after {
-  color: var(--sd-cyan-100);
+  color: var(--sd-text-default);
 }
 .activity-budget-lines .budget-month-trigger:focus-visible {
   outline: 2px solid var(--sd-blue-20);
