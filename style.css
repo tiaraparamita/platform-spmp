@@ -9158,3 +9158,9 @@ body:has(.page-title-banner nav.steps) .page-flow {
   border-color: var(--sd-border-default);
   color: var(--sd-text-default);
 }
+
+/* Hitungan di tab yang dipilih memakai warna aksi agar terlihat */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-dimension-tabs > button[aria-pressed="true"] .menetapkan-tab-count {
+  background: var(--sd-action-default);
+  color: var(--sd-text-inverse);
+}
