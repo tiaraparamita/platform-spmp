@@ -1,10 +1,10 @@
 :root {
-  --navy: #16377e;
-  --blue: #155eef;
-  --ink: #25334a;
-  --muted: #697586;
-  --line: #e2e7ee;
-  --bg: #f6f8fb;
+  --navy: var(--sd-surface-dark-blue);
+  --blue: var(--sd-interactive-default);
+  --ink: var(--sd-text-default);
+  --muted: var(--sd-text-subdued);
+  --line: var(--sd-gray-10);
+  --bg: var(--sd-background-default);
 }
 * {
   box-sizing: border-box;
