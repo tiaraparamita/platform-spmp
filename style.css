@@ -7944,10 +7944,10 @@ nav.steps{height:auto;gap:0;align-items:stretch;flex:none}nav.steps>button.step{
 
 /* Badge status: pill, 12/16 semibold, isi token badge */
 .page-home .badge {
-  padding: 2px 8px;
+  padding: 4px 8px;
   border-radius: var(--sd-radius-pill);
   font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: 20px;
+  line-height: var(--sd-type-desktop-helper-bold-line);
   font-weight: var(--sd-type-desktop-helper-bold-weight);
   color: var(--sd-text-default);
   background: var(--sd-badge-neutral);
@@ -8169,12 +8169,12 @@ body:has(.sx-next) .page-title-banner .page-title-inner {
   color: var(--sd-text-inverse);
 }
 .sx-intro .badge {
-  padding: 2px 8px;
+  padding: 4px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
   font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: 20px;
+  line-height: var(--sd-type-desktop-helper-bold-line);
   font-weight: var(--sd-type-desktop-helper-bold-weight);
 }
 
@@ -8422,12 +8422,12 @@ body:has(.page-title-banner nav.steps) .page-flow {
   color: var(--sd-text-subdued);
 }
 .page-flow:has(.menetapkan-table-layout) .badge {
-  padding: 2px 8px;
+  padding: 4px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
   font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: 20px;
+  line-height: var(--sd-type-desktop-helper-bold-line);
   font-weight: var(--sd-type-desktop-helper-bold-weight);
 }
 .page-flow:has(.menetapkan-table-layout) .badge.green {
@@ -8893,9 +8893,9 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
   background: var(--sd-modal-header);
   padding: 15px 16px;
-  font-size: var(--sd-type-mobile-subheading-size);
-  line-height: var(--sd-type-mobile-subheading-line);
-  font-weight: var(--sd-type-mobile-subheading-weight);
+  font-size: var(--sd-type-desktop-subheading-size);
+  line-height: var(--sd-type-desktop-subheading-line);
+  font-weight: var(--sd-type-desktop-subheading-weight);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.05);
@@ -8905,29 +8905,29 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change > span,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td .sub,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td > span.sub {
-  font-size: var(--sd-type-mobile-body-size);
-  line-height: var(--sd-type-mobile-body-line);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
 }
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change b,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table h3 {
-  font-size: var(--sd-type-mobile-action-size);
-  line-height: var(--sd-type-mobile-action-line);
-  font-weight: var(--sd-type-mobile-action-weight);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
 }
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-baseline {
-  font-size: var(--sd-type-mobile-headingmedium-size);
-  line-height: var(--sd-type-mobile-headingmedium-line);
-  font-weight: var(--sd-type-mobile-headingmedium-weight);
+  font-size: var(--sd-type-desktop-headingmedium-size);
+  line-height: var(--sd-type-desktop-headingmedium-line);
+  font-weight: var(--sd-type-desktop-headingmedium-weight);
 }
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .source-text,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-source {
-  font-size: var(--sd-type-mobile-helper-size);
-  line-height: var(--sd-type-mobile-helper-line);
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
 }
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button {
-  font-size: var(--sd-type-mobile-bodysmall-bold-size);
-  line-height: var(--sd-type-mobile-bodysmall-bold-line);
-  font-weight: var(--sd-type-mobile-bodysmall-bold-weight);
+  font-size: var(--sd-type-desktop-bodysmall-bold-size);
+  line-height: var(--sd-type-desktop-bodysmall-bold-line);
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
 }
 
 /* Header tabel harus terbaca beda dari latar halaman (#F9F9F9): pakai badge-neutral #EFEFEF */
@@ -8937,9 +8937,9 @@ body:has(.page-title-banner nav.steps) .page-flow {
 
 /* Nilai capaian awal selaras ukuran sel (15/22); tombol nonaktif tidak berubah saat di-hover */
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-baseline {
-  font-size: var(--sd-type-mobile-action-size);
-  line-height: var(--sd-type-mobile-action-line);
-  font-weight: var(--sd-type-mobile-action-weight);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
 }
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button:disabled:hover,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-selection-actions > button:disabled:hover {
@@ -8967,27 +8967,27 @@ body:has(.page-title-banner nav.steps) .page-flow {
   box-shadow: var(--sd-elevation-01);
 }
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .tag {
-  padding: 2px 8px;
+  padding: 4px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-mobile-helper-bold-size);
-  line-height: 20px;
-  font-weight: var(--sd-type-mobile-helper-bold-weight);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: var(--sd-type-desktop-helper-bold-line);
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
 }
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] h2 {
-  font-size: var(--sd-type-mobile-headingmedium-size);
-  line-height: var(--sd-type-mobile-headingmedium-line);
-  font-weight: var(--sd-type-mobile-headingmedium-weight);
+  font-size: var(--sd-type-desktop-headingmedium-size);
+  line-height: var(--sd-type-desktop-headingmedium-line);
+  font-weight: var(--sd-type-desktop-headingmedium-weight);
   margin-bottom: 4px;
 }
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .sub,
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .check,
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .check span,
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .notice {
-  font-size: var(--sd-type-mobile-body-size);
-  line-height: var(--sd-type-mobile-body-line);
-  font-weight: var(--sd-type-mobile-body-weight);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  font-weight: var(--sd-type-desktop-body-weight);
 }
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .sub {
   color: var(--sd-text-subdued);
@@ -9001,9 +9001,9 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] > label:not(.check) {
   display: block;
   margin: 20px 0 4px;
-  font-size: var(--sd-type-mobile-body-size);
-  line-height: var(--sd-type-mobile-body-line);
-  font-weight: var(--sd-type-mobile-body-weight);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  font-weight: var(--sd-type-desktop-body-weight);
   color: var(--sd-text-default);
 }
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline {
@@ -9020,8 +9020,8 @@ body:has(.page-title-banner nav.steps) .page-flow {
   border: 1px solid var(--sd-border-default);
   border-radius: var(--sd-radius-sm);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-mobile-body-size);
-  line-height: var(--sd-type-mobile-body-line);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
   outline: none;
 }
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline input::placeholder {
@@ -9032,8 +9032,8 @@ body:has(.page-title-banner nav.steps) .page-flow {
   box-shadow: 0 0 0 2px var(--sd-interactive-focused);
 }
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .source-text {
-  font-size: var(--sd-type-mobile-helper-size);
-  line-height: var(--sd-type-mobile-helper-line);
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
   color: var(--sd-text-subdued);
 }
 /* Tombol: radius 4, tinggi 46 (lg), label 15/22 semibold; satu Ultimate (Lanjutkan), sisanya Secondary */
@@ -9045,9 +9045,9 @@ body:has(.page-title-banner nav.steps) .page-flow {
   border: 1px solid var(--sd-border-default);
   border-radius: var(--sd-radius-sm);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-mobile-action-size);
-  line-height: var(--sd-type-mobile-action-line);
-  font-weight: var(--sd-type-mobile-action-weight);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
 }
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline button:hover,
 .page-flow:has([id^="root-card-"]) .actions button:not(.primary):hover {
@@ -9133,12 +9133,12 @@ body:has(.page-title-banner nav.steps) .page-flow {
 }
 .sx-next .badge {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 4px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
   font-size: var(--sd-type-desktop-helper-bold-size);
-  line-height: 20px;
+  line-height: var(--sd-type-desktop-helper-bold-line);
   font-weight: var(--sd-type-desktop-helper-bold-weight);
 }
 .sx-next .badge.amber {
@@ -9188,9 +9188,9 @@ body:has(.page-title-banner nav.steps) .page-flow {
 
 /* Memetakan: ringkasan indikator dan tabel subindikator mengikuti Seragam (skala mobile, Table rows) */
 .page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-title h2 {
-  font-size: var(--sd-type-mobile-headinglarge-size);
-  line-height: var(--sd-type-mobile-headinglarge-line);
-  font-weight: var(--sd-type-mobile-headinglarge-weight);
+  font-size: var(--sd-type-desktop-headinglarge-size);
+  line-height: var(--sd-type-desktop-headinglarge-line);
+  font-weight: var(--sd-type-desktop-headinglarge-weight);
   margin: 0;
 }
 .page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-identity > .source-text {
@@ -9198,20 +9198,20 @@ body:has(.page-title-banner nav.steps) .page-flow {
 }
 .page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-change {
   margin: 8px 0 0;
-  font-size: var(--sd-type-mobile-bodysmall-size);
-  line-height: var(--sd-type-mobile-bodysmall-line);
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
   color: var(--sd-text-default);
 }
 .page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-identity .badge {
   display: inline-block;
   margin-top: 8px;
-  padding: 2px 8px;
+  padding: 4px 8px;
   border-radius: var(--sd-radius-pill);
   background: var(--sd-badge-neutral);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-mobile-helper-bold-size);
-  line-height: 20px;
-  font-weight: var(--sd-type-mobile-helper-bold-weight);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: var(--sd-type-desktop-helper-bold-line);
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
 }
 .page-flow:has([id^="root-card-"]) .root-mapping-card .badge.red {
   background: var(--sd-badge-critical);
@@ -9230,20 +9230,20 @@ body:has(.page-title-banner nav.steps) .page-flow {
   border-radius: var(--sd-radius-md);
 }
 .page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-metrics span {
-  font-size: var(--sd-type-mobile-helper-size);
-  line-height: var(--sd-type-mobile-helper-line);
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
   color: var(--sd-text-subdued);
 }
 .page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-metrics strong {
-  font-size: var(--sd-type-mobile-displaysmall-size);
-  line-height: var(--sd-type-mobile-displaysmall-line);
-  font-weight: var(--sd-type-mobile-displaysmall-weight);
+  font-size: var(--sd-type-desktop-displaysmall-size);
+  line-height: var(--sd-type-desktop-displaysmall-line);
+  font-weight: var(--sd-type-desktop-displaysmall-weight);
 }
 .page-flow:has([id^="root-card-"]) .root-mapping-card .root-mapping-question {
   margin: 24px 0 12px;
-  font-size: var(--sd-type-mobile-action-size);
-  line-height: var(--sd-type-mobile-action-line);
-  font-weight: var(--sd-type-mobile-action-weight);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
 }
 /* Tabel subindikator: header #EFEFEF subheading 13/16 kapital, sel 15/22, garis antar baris #D9DBDD */
 .page-flow:has([id^="root-card-"]) .root-mapping-card .table-scroll {
@@ -9262,9 +9262,9 @@ body:has(.page-title-banner nav.steps) .page-flow {
   border: 0;
   border-bottom: 1px solid var(--sd-modal-footer-border);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-mobile-subheading-size);
-  line-height: var(--sd-type-mobile-subheading-line);
-  font-weight: var(--sd-type-mobile-subheading-weight);
+  font-size: var(--sd-type-desktop-subheading-size);
+  line-height: var(--sd-type-desktop-subheading-line);
+  font-weight: var(--sd-type-desktop-subheading-weight);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   vertical-align: middle;
@@ -9275,8 +9275,8 @@ body:has(.page-title-banner nav.steps) .page-flow {
   border-bottom: 1px solid var(--sd-modal-footer-border);
   background: var(--sd-white);
   color: var(--sd-text-default);
-  font-size: var(--sd-type-mobile-body-size);
-  line-height: var(--sd-type-mobile-body-line);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
   vertical-align: middle;
 }
 .page-flow:has([id^="root-card-"]) .root-subindicator-table tbody tr:last-child td {
@@ -9291,14 +9291,14 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has([id^="root-card-"]) .root-subindicator-table h3 {
   display: inline;
   margin: 0;
-  font-size: var(--sd-type-mobile-action-size);
-  line-height: var(--sd-type-mobile-action-line);
-  font-weight: var(--sd-type-mobile-action-weight);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
 }
 .page-flow:has([id^="root-card-"]) .root-subindicator-table .source-text {
   display: block;
-  font-size: var(--sd-type-mobile-helper-size);
-  line-height: var(--sd-type-mobile-helper-line);
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
   color: var(--sd-text-subdued);
 }
 .page-flow:has([id^="root-card-"]) .root-subindicator-table .table-indicator-title {
@@ -9315,18 +9315,56 @@ body:has(.page-title-banner nav.steps) .page-flow {
   vertical-align: text-bottom;
 }
 .page-flow:has([id^="root-card-"]) .root-subindicator-table .table-baseline {
-  font-size: var(--sd-type-mobile-action-size);
-  line-height: var(--sd-type-mobile-action-line);
-  font-weight: var(--sd-type-mobile-action-weight);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
 }
 .page-flow:has([id^="root-card-"]) .root-subindicator-table .table-indicator-change,
 .page-flow:has([id^="root-card-"]) .root-subindicator-table .table-indicator-change > span {
-  font-size: var(--sd-type-mobile-body-size);
-  line-height: var(--sd-type-mobile-body-line);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
 }
 .page-flow:has([id^="root-card-"]) .root-subindicator-table .table-indicator-change b {
-  font-weight: var(--sd-type-mobile-action-weight);
+  font-weight: var(--sd-type-desktop-action-weight);
 }
 .page-flow:has([id^="root-card-"]) .root-subindicator-table .table-no-comparison {
   color: var(--sd-text-subdued);
+}
+
+/* Seragam hanya memakai berat 400 dan 600: teks tebal 700 menjadi semibold */
+b,
+strong {
+  font-weight: 600;
+}
+
+/* Sisa penyesuaian ke skala desktop Seragam: badge 12/16 + padding 4/8 (tinggi 24), baris teks dari token */
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: var(--sd-type-desktop-helper-bold-line);
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .badge.red {
+  background: var(--sd-badge-critical);
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .badge.amber {
+  background: var(--sd-badge-warning);
+}
+.page-flow:has([id^="root-card-"]) .root-subindicator-table .badge.green {
+  background: var(--sd-badge-success);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-count {
+  padding: 4px 8px;
+  line-height: var(--sd-type-desktop-helper-bold-line);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-selected-link {
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+}
+.sx-node b {
+  line-height: var(--sd-type-desktop-helper-bold-line);
 }
