@@ -9932,3 +9932,213 @@ strong {
   border-color: var(--sd-border-default);
   color: var(--sd-text-default);
 }
+
+/* Mengevaluasi: ringkasan hasil, kegiatan, dan penilaian mengikuti Seragam (skala desktop) */
+.page-flow:has(.evaluation-indicator) .compact-evaluation-card {
+  box-shadow: var(--sd-elevation-01);
+  border-radius: var(--sd-radius-md);
+}
+.page-flow:has(.evaluation-indicator) .evaluation-eyebrow {
+  margin: 0 0 4px;
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.page-flow:has(.evaluation-indicator) .evaluation-indicator-header h2 {
+  margin: 0 0 16px;
+  font-size: var(--sd-type-desktop-headinglarge-size);
+  line-height: var(--sd-type-desktop-headinglarge-line);
+  font-weight: var(--sd-type-desktop-headinglarge-weight);
+}
+.page-flow:has(.evaluation-indicator) .evaluation-result-panel {
+  background: var(--sd-blue-0);
+  border-radius: var(--sd-radius-md);
+}
+.page-flow:has(.evaluation-indicator) .outcome-grid span {
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.evaluation-indicator) .outcome-grid strong {
+  font-size: var(--sd-type-desktop-displaysmall-size);
+  line-height: var(--sd-type-desktop-displaysmall-line);
+  font-weight: var(--sd-type-desktop-displaysmall-weight);
+}
+.page-flow:has(.evaluation-indicator) .outcome-dummy-note {
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.evaluation-indicator) .outcome-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+}
+.page-flow:has(.evaluation-indicator) .outcome-status .badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: var(--sd-type-desktop-helper-bold-line);
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+}
+.page-flow:has(.evaluation-indicator) .outcome-status .badge.green {
+  background: var(--sd-badge-success);
+}
+.page-flow:has(.evaluation-indicator) .outcome-status .badge.amber {
+  background: var(--sd-badge-warning);
+}
+.page-flow:has(.evaluation-indicator) .outcome-status .badge.red {
+  background: var(--sd-badge-critical);
+}
+.page-flow:has(.evaluation-indicator) .evaluation-activity-title {
+  margin: 0 0 4px;
+  font-size: var(--sd-type-desktop-headingsmall-size);
+  line-height: var(--sd-type-desktop-headingsmall-line);
+  font-weight: var(--sd-type-desktop-headingsmall-weight);
+}
+.page-flow:has(.evaluation-indicator) .evaluation-root {
+  margin: 0 0 12px;
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.evaluation-indicator) .evaluation-context summary {
+  color: var(--sd-action-default);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+  cursor: pointer;
+}
+.page-flow:has(.evaluation-indicator) .evaluation-context-label {
+  display: block;
+  margin: 12px 0 4px;
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.evaluation-indicator) .evaluation-context-body p,
+.page-flow:has(.evaluation-indicator) .evaluation-context-body details > p {
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+}
+.page-flow:has(.evaluation-indicator) .evaluation-context-body p.sub,
+.page-flow:has(.evaluation-indicator) .evaluation-context-body .sub {
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.evaluation-indicator) .execution-reference h3 {
+  margin: 16px 0 4px;
+  font-size: var(--sd-type-desktop-headingsmall-size);
+  line-height: var(--sd-type-desktop-headingsmall-line);
+  font-weight: var(--sd-type-desktop-headingsmall-weight);
+}
+.page-flow:has(.evaluation-indicator) .evaluation-assessment label {
+  display: block;
+  margin: 16px 0 4px;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  font-weight: var(--sd-type-desktop-body-weight);
+  color: var(--sd-text-default);
+}
+.page-flow:has(.evaluation-indicator) .evaluation-assessment select,
+.page-flow:has(.evaluation-indicator) .evaluation-assessment textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  outline: none;
+}
+.page-flow:has(.evaluation-indicator) .evaluation-assessment select {
+  height: 46px;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z' fill='%235E5E5E'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 24px 24px;
+}
+.page-flow:has(.evaluation-indicator) .evaluation-assessment textarea {
+  min-height: 96px;
+}
+.page-flow:has(.evaluation-indicator) .evaluation-assessment select:focus,
+.page-flow:has(.evaluation-indicator) .evaluation-assessment textarea:focus {
+  border-color: var(--sd-blue-50);
+  box-shadow: 0 0 0 2px var(--sd-interactive-focused);
+}
+.page-flow:has(.evaluation-indicator) .evaluation-assessment ::placeholder {
+  color: var(--sd-text-disabled);
+}
+.page-flow:has(.evaluation-indicator) .actions button {
+  min-height: 46px;
+  padding: 10px 20px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.page-flow:has(.evaluation-indicator) .actions button:not(.primary):hover {
+  background: var(--sd-gray-0);
+  border-color: var(--sd-border-default);
+  color: var(--sd-text-default);
+}
+.page-flow:has(.evaluation-indicator) .actions button.primary {
+  background: var(--sd-action-default);
+  border-color: var(--sd-action-default);
+  color: var(--sd-text-inverse);
+}
+.page-flow:has(.evaluation-indicator) .actions button.primary:hover {
+  background: var(--sd-action-hovered);
+  border-color: var(--sd-action-hovered);
+  color: var(--sd-text-inverse);
+}
+.page-flow:has(.evaluation-indicator) .budget-lines-scroll {
+  margin-top: 12px;
+  border: 1px solid var(--sd-modal-footer-border);
+  border-radius: var(--sd-radius-md);
+  overflow-x: auto;
+}
+.page-flow:has(.evaluation-indicator) .budget-lines-scroll table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.page-flow:has(.evaluation-indicator) .budget-lines-scroll th {
+  padding: 15px 12px;
+  background: var(--sd-badge-neutral);
+  border: 0;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-subheading-size);
+  line-height: var(--sd-type-desktop-subheading-line);
+  font-weight: var(--sd-type-desktop-subheading-weight);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.page-flow:has(.evaluation-indicator) .budget-lines-scroll td {
+  padding: 12px;
+  border: 0;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  background: var(--sd-white);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  vertical-align: middle;
+}
+.page-flow:has(.evaluation-indicator) .budget-lines-scroll tbody tr:last-child td {
+  border-bottom: 0;
+}
