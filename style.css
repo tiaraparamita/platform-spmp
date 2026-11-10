@@ -8161,3 +8161,24 @@ html {
   font-size: var(--sd-type-desktop-bodysmall-size);
   font-weight: 700;
 }
+
+.menetapkan-dimension-tabs button{display:inline-flex;align-items:center;gap:8px}.menetapkan-tab-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:#155eef;color:#fff;font-size:11px;font-weight:600;line-height:1;flex-shrink:0;font-variant-numeric:tabular-nums}
+
+/* Selected priorities stay alongside the table rather than covering its rows. */
+.wrap:has(.menetapkan-table-layout){max-width:1440px;width:calc(100% - 60px)}.menetapkan-table-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px;align-items:start}.menetapkan-table-content{min-width:0}.menetapkan-selection-panel{position:sticky;top:24px;margin:0;padding:20px;border:1px solid #dce3ed;border-radius:12px;box-shadow:0 8px 28px #20365d0d}.menetapkan-selected-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid #dce3ed;font-size:14px;line-height:1.5}.menetapkan-selected-item:first-child{padding-top:0}.menetapkan-selected-item>span{min-width:0}.menetapkan-selected-item>button{flex-shrink:0;font-size:24px;line-height:1;padding:4px;color:#8291a6}.menetapkan-selection-actions{display:flex;flex-direction:column;gap:10px;margin-top:20px}.menetapkan-selection-actions button{width:100%;font-size:13px;padding:12px 8px}.menetapkan-table-content .menetapkan-indicator-table{min-width:850px}
+@media(max-width:900px){.menetapkan-table-layout{grid-template-columns:210px minmax(0,1fr);gap:16px}.menetapkan-selection-panel{padding:16px}}
+@media(max-width:640px){.wrap:has(.menetapkan-table-layout){width:calc(100% - 28px)}.menetapkan-table-layout{grid-template-columns:minmax(0,1fr)}.menetapkan-selection-panel{position:static}.menetapkan-selection-actions{display:grid;grid-template-columns:1fr 1fr}.menetapkan-selected-item{padding:10px 0}}
+
+.menetapkan-table-layout{grid-template-columns:minmax(0,1fr) 250px}@media(max-width:900px){.menetapkan-table-layout{grid-template-columns:minmax(0,1fr) 210px}}@media(max-width:640px){.menetapkan-table-layout{grid-template-columns:minmax(0,1fr)}}
+
+.menetapkan-selection-title{font-size:16px;line-height:1.4;margin:0 0 18px;padding-bottom:16px;border-bottom:1px solid #dce3ed}
+
+.menetapkan-selected-item>.menetapkan-selected-link{flex:1;flex-shrink:1;min-width:0;border:0;background:transparent;padding:0;text-align:left;color:var(--ink);font-size:14px;font-weight:400;line-height:1.5;border-radius:3px}.menetapkan-selected-item>.menetapkan-selected-link:hover{color:#155eef;text-decoration:underline}.menetapkan-indicator-table tr[id]{scroll-margin-block:24px}.menetapkan-indicator-table tr[id]:focus{outline:2px solid #155eef;outline-offset:-2px}
+
+.menetapkan-recommendation-reminder{display:flex;align-items:flex-start;gap:20px;justify-content:space-between;padding:14px 16px;margin:0 0 20px;border:1px solid #dce5f2;border-radius:8px;background:#edf3fb;color:#50627c}.menetapkan-recommendation-reminder p{margin:0;font-size:13px;line-height:1.6}.menetapkan-recommendation-reminder button{border:0;background:transparent;color:#65758b;font-size:22px;line-height:1;padding:0 2px;flex-shrink:0}.menetapkan-recommendation-reminder button:hover{background:#dce7f6;color:#25334b}
+
+.menetapkan-recommendation-reminder{background:#fff8e6;border-color:#eee2bd;color:#75633b}.menetapkan-recommendation-reminder button{color:#88764c}.menetapkan-recommendation-reminder button:hover{background:#f5eacb;color:#5e4d29}
+
+nav.steps{height:auto;gap:0;align-items:stretch;flex:none}nav.steps>button.step{height:auto;border:0;border-radius:0;padding:17px 10px;text-align:left;background:#fff;color:#28835c;justify-content:flex-start}nav.steps>button.step:hover{background:#f0f5ff;color:#155eef}nav.steps>.step{min-width:0}@media(max-width:1000px){nav.steps>.step{min-width:125px}}@media(max-width:650px){nav.steps{width:auto;order:initial}}
+
+.menetapkan-indicator-table .table-achievement{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.menetapkan-indicator-table .table-achievement .table-baseline{margin:0}
