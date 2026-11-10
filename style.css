@@ -9368,3 +9368,314 @@ strong {
 .sx-node b {
   line-height: var(--sd-type-desktop-helper-bold-line);
 }
+
+/* Merencanakan: kartu prioritas, rekomendasi kegiatan, formulir, dan rincian anggaran mengikuti Seragam (skala desktop) */
+.page-flow:has(.guided-plan) .planning-intro {
+  margin: 0 0 16px;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.guided-plan) .guided-plan {
+  box-shadow: var(--sd-elevation-01);
+  border-radius: var(--sd-radius-md);
+}
+.page-flow:has(.guided-plan) .planning-priority-name .tag {
+  padding: 4px 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: var(--sd-type-desktop-helper-bold-line);
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+}
+.page-flow:has(.guided-plan) .planning-priority-name h2 {
+  margin: 8px 0 0;
+  font-size: var(--sd-type-desktop-headinglarge-size);
+  line-height: var(--sd-type-desktop-headinglarge-line);
+  font-weight: var(--sd-type-desktop-headinglarge-weight);
+}
+.page-flow:has(.guided-plan) .planning-target-panel {
+  background: var(--sd-blue-0);
+  border-radius: var(--sd-radius-md);
+}
+.page-flow:has(.guided-plan) .planning-target-panel span {
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.guided-plan) .planning-target-panel strong {
+  font-size: var(--sd-type-desktop-displaysmall-size);
+  line-height: var(--sd-type-desktop-displaysmall-line);
+  font-weight: var(--sd-type-desktop-displaysmall-weight);
+}
+.page-flow:has(.guided-plan) .activity-recommendations > h3 {
+  margin: 0 0 4px;
+  font-size: var(--sd-type-desktop-headingmedium-size);
+  line-height: var(--sd-type-desktop-headingmedium-line);
+  font-weight: var(--sd-type-desktop-headingmedium-weight);
+}
+.page-flow:has(.guided-plan) .guided-body .sub,
+.page-flow:has(.guided-plan) .guided-body .notice {
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+  font-weight: var(--sd-type-desktop-bodysmall-weight);
+}
+.page-flow:has(.guided-plan) .guided-body .sub {
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.guided-plan) .guided-body .notice {
+  background: var(--sd-cyan-5);
+  border: 1px solid var(--sd-cyan-10);
+  border-radius: var(--sd-radius-sm);
+  padding: 16px;
+  color: var(--sd-text-default);
+}
+.page-flow:has(.guided-plan) .recommendation-root > h4 {
+  margin: 20px 0 8px;
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.page-flow:has(.guided-plan) .recommendation-item {
+  border: 1px solid var(--sd-gray-10);
+  border-radius: var(--sd-radius-md);
+  background: var(--sd-white);
+}
+.page-flow:has(.guided-plan) .recommendation-item.is-chosen {
+  border-color: var(--sd-action-default);
+}
+.page-flow:has(.guided-plan) .recommendation-title {
+  margin: 0 0 4px;
+  font-size: var(--sd-type-desktop-headingsmall-size);
+  line-height: var(--sd-type-desktop-headingsmall-line);
+  font-weight: var(--sd-type-desktop-headingsmall-weight);
+}
+.page-flow:has(.guided-plan) .recommendation-description {
+  margin: 0 0 16px;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  color: var(--sd-text-default);
+}
+/* Label, kolom isian, area teks, dan pilihan: TextField, TextArea, Select Seragam (46px, radius 4, border gray-50, fokus biru) */
+.page-flow:has(.guided-plan) .guided-body label:not(.check) {
+  display: block;
+  margin: 16px 0 4px;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  font-weight: var(--sd-type-desktop-body-weight);
+  color: var(--sd-text-default);
+}
+.page-flow:has(.guided-plan) .guided-body .check,
+.page-flow:has(.guided-plan) .guided-body .check span {
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  font-weight: var(--sd-type-desktop-body-weight);
+}
+.page-flow:has(.guided-plan) .guided-body input:not([type="checkbox"]),
+.page-flow:has(.guided-plan) .guided-body select,
+.page-flow:has(.guided-plan) .guided-body textarea,
+.page-flow:has(.guided-plan) .budget-month-trigger {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  outline: none;
+}
+.page-flow:has(.guided-plan) .guided-body input:not([type="checkbox"]),
+.page-flow:has(.guided-plan) .guided-body select,
+.page-flow:has(.guided-plan) .budget-month-trigger {
+  height: 46px;
+}
+.page-flow:has(.guided-plan) .guided-body textarea {
+  min-height: 96px;
+}
+.page-flow:has(.guided-plan) .guided-body input:not([type="checkbox"]):focus,
+.page-flow:has(.guided-plan) .guided-body select:focus,
+.page-flow:has(.guided-plan) .guided-body textarea:focus,
+.page-flow:has(.guided-plan) .budget-month-trigger:focus-visible {
+  border-color: var(--sd-blue-50);
+  box-shadow: 0 0 0 2px var(--sd-interactive-focused);
+}
+.page-flow:has(.guided-plan) .guided-body ::placeholder {
+  color: var(--sd-text-disabled);
+}
+/* Tombol: Secondary md 38px untuk aksi berulang; Batalkan pilihan = destructive-secondary */
+.page-flow:has(.guided-plan) .guided-body button:not(.quiet):not(.budget-month-trigger):not(.budget-month-option),
+.page-flow:has(.guided-plan) .actions button {
+  min-height: 38px;
+  padding: 7px 16px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.page-flow:has(.guided-plan) .guided-body button:not(.quiet):not(.budget-month-trigger):not(.budget-month-option):hover,
+.page-flow:has(.guided-plan) .actions button:not(.primary):hover {
+  background: var(--sd-gray-0);
+  border-color: var(--sd-border-default);
+  color: var(--sd-text-default);
+}
+.page-flow:has(.guided-plan) .recommendation-item.is-chosen > button {
+  border-color: var(--sd-red-60);
+  color: var(--sd-red-60);
+  background: transparent;
+}
+.page-flow:has(.guided-plan) .recommendation-item.is-chosen > button:hover {
+  background: var(--sd-red-5);
+  border-color: var(--sd-red-60);
+  color: var(--sd-red-60);
+}
+.page-flow:has(.guided-plan) .actions {
+  gap: 12px;
+}
+.page-flow:has(.guided-plan) .actions button {
+  min-height: 46px;
+  padding: 10px 20px;
+}
+.page-flow:has(.guided-plan) .actions button.primary {
+  background: var(--sd-action-default);
+  border-color: var(--sd-action-default);
+  color: var(--sd-text-inverse);
+}
+.page-flow:has(.guided-plan) .actions button.primary:hover {
+  background: var(--sd-action-hovered);
+  border-color: var(--sd-action-hovered);
+  color: var(--sd-text-inverse);
+}
+.page-flow:has(.guided-plan) .guided-body button.quiet {
+  color: var(--sd-action-default);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+  border-radius: var(--sd-radius-sm);
+}
+.page-flow:has(.guided-plan) .guided-body button.quiet.danger {
+  color: var(--sd-text-critical);
+}
+/* Rincian anggaran: Table Seragam (header #EFEFEF subheading kapital, garis antar baris, sel body) */
+.page-flow:has(.guided-plan) .activity-budget-lines h4 {
+  margin: 24px 0 4px;
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.page-flow:has(.guided-plan) .budget-optional-label {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: var(--sd-type-desktop-helper-bold-line);
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+}
+.page-flow:has(.guided-plan) .budget-lines-scroll {
+  border: 1px solid var(--sd-modal-footer-border);
+  border-radius: var(--sd-radius-md);
+  overflow-x: auto;
+  margin-bottom: 12px;
+}
+.page-flow:has(.guided-plan) .budget-lines-scroll table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.page-flow:has(.guided-plan) .budget-lines-scroll th {
+  padding: 15px 12px;
+  background: var(--sd-badge-neutral);
+  border: 0;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-subheading-size);
+  line-height: var(--sd-type-desktop-subheading-line);
+  font-weight: var(--sd-type-desktop-subheading-weight);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.page-flow:has(.guided-plan) .budget-lines-scroll td {
+  padding: 12px;
+  border: 0;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  background: var(--sd-white);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  vertical-align: middle;
+}
+.page-flow:has(.guided-plan) .budget-lines-scroll tbody tr:last-child td {
+  border-bottom: 0;
+}
+.page-flow:has(.guided-plan) .activity-budget-lines > p {
+  margin: 12px 0 0;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+}
+.page-flow:has(.guided-plan) .recommendation-title {
+  margin-bottom: 8px;
+}
+.page-flow:has(.guided-plan) .recommendation-item.is-chosen > button:not(.quiet):not(.budget-month-trigger):not(.budget-month-option) {
+  background: transparent;
+  border-color: var(--sd-red-60);
+  color: var(--sd-red-60);
+}
+.page-flow:has(.guided-plan) .recommendation-item.is-chosen > button:not(.quiet):not(.budget-month-trigger):not(.budget-month-option):hover {
+  background: var(--sd-red-5);
+  border-color: var(--sd-red-60);
+  color: var(--sd-red-60);
+}
+/* Select Seragam: panah segitiga isi (arrow_drop_down) gray-70, tanpa tampilan bawaan peramban */
+.page-flow:has(.guided-plan) .guided-body select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z' fill='%235E5E5E'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 24px 24px;
+}
+.page-flow:has(.guided-plan) .budget-lines-scroll table {
+  min-width: 1040px;
+  width: 100%;
+}
+.page-flow:has(.guided-plan) .budget-lines-scroll th:nth-child(4),
+.page-flow:has(.guided-plan) .budget-lines-scroll th:nth-child(5) {
+  min-width: 168px;
+}
+.page-flow:has(.guided-plan) .budget-lines-scroll td input {
+  min-width: 0;
+}
+.page-flow:has(.guided-plan) .budget-month-options,
+.page-flow:has(.guided-plan) .budget-month-options * {
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+}
+.page-flow:has(.guided-plan) .budget-month-hint {
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.guided-plan) .activity-card {
+  border: 1px solid var(--sd-gray-10);
+  border-radius: var(--sd-radius-md);
+  box-shadow: none;
+}
+.page-flow:has(.guided-plan) .activity-card > .row h3,
+.page-flow:has(.guided-plan) .activity-card h3 {
+  margin: 0;
+  font-size: var(--sd-type-desktop-headingsmall-size);
+  line-height: var(--sd-type-desktop-headingsmall-line);
+  font-weight: var(--sd-type-desktop-headingsmall-weight);
+}
+.page-flow:has(.guided-plan) .activity-chosen-name {
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
