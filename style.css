@@ -8442,8 +8442,8 @@ body:has(.page-title-banner nav.steps) .page-flow {
   color: var(--sd-text-subdued);
 }
 .page-flow:has(.menetapkan-table-layout) .menetapkan-recommendation-reminder {
-  background: var(--sd-warning-surface);
-  border: 1px solid var(--sd-warning-border);
+  background: var(--sd-cyan-5);
+  border: 1px solid var(--sd-cyan-10);
   border-radius: var(--sd-radius-sm);
   padding: 16px;
   color: var(--sd-text-default);
@@ -8801,4 +8801,73 @@ body:has(.page-title-banner nav.steps) .page-flow {
 }
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button.table-priority-selected:not(.primary):active {
   background: var(--sd-red-10);
+}
+
+/* Menetapkan: kolom target ringkas, panel pilihan lengkap, header tabel menempel, badge contoh netral */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-recommendation-reminder {
+  align-items: center;
+  gap: 12px;
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-recommendation-reminder .reminder-icon {
+  display: grid;
+  color: var(--sd-icon-informational, var(--sd-blue-70));
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-recommendation-reminder p {
+  flex: 1;
+}
+.page-flow:has(.menetapkan-table-layout) .table-target-empty {
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.menetapkan-table-layout) .badge.sample {
+  background: var(--sd-badge-neutral);
+  border: 1px dashed var(--sd-gray-30);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-panel {
+  top: 88px;
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-count {
+  padding: 0 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: 20px;
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-hint {
+  margin: 0;
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+}
+/* Nonaktif Seragam: latar gray-20, teks gray-50, tanpa border */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button:disabled,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-actions > button:disabled {
+  opacity: 1;
+  background: var(--sd-action-disabled);
+  border-color: transparent;
+  color: var(--sd-text-disabled);
+  cursor: not-allowed;
+}
+/* Header tabel menempel di bawah navbar (64px) */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-table-scroll {
+  overflow: visible;
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
+  position: sticky;
+  top: 64px;
+  z-index: 3;
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:first-child {
+  border-top-left-radius: var(--sd-radius-md);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:last-child {
+  border-top-right-radius: var(--sd-radius-md);
 }
