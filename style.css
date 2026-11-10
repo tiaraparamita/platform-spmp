@@ -5846,12 +5846,14 @@ article.guided-plan > header.guided-header > * {
 .diagnosis-highlight-grid p {
   color: var(--sd-gray-60);
   font-size: var(--sd-type-desktop-bodysmall-size);
-  font-weight: 600;
-  margin: 0 0 6px;
+  line-height: var(--sd-type-desktop-bodysmall-line);
+  font-weight: var(--sd-type-desktop-bodysmall-weight);
+  margin: 0 0 4px;
 }
 .diagnosis-highlight-grid h3 {
-  font-size: var(--sd-type-desktop-headingsmall-size);
-  line-height: 1.4;
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
   margin: 0;
 }
 .diagnosis-highlight-icon {
@@ -6000,27 +6002,33 @@ body:has(.page-rapor) {
   border-bottom: 1px solid var(--sd-gray-10);
 }
 .page-rapor .diagnosis-summary-label {
-  font-size: var(--sd-type-desktop-headingsmall-size);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  font-weight: var(--sd-type-desktop-body-weight);
   color: var(--sd-gray-60);
-  margin: 0 0 5px;
+  margin: 0;
 }
 .page-rapor .diagnosis-school-summary h2 {
   font-size: var(--sd-type-desktop-headinglarge-size);
-  text-transform: uppercase;
-  margin: 0 0 22px;
+  line-height: var(--sd-type-desktop-headinglarge-line);
+  font-weight: var(--sd-type-desktop-headinglarge-weight);
+  text-transform: none;
+  margin: 0 0 24px;
   color: var(--sd-gray-90);
 }
 .page-rapor .diagnosis-school-summary dl {
   grid-template-columns: 125px minmax(0, 1fr);
   font-size: var(--sd-type-desktop-body-size);
-  gap: 8px 18px;
-  line-height: 1.5;
+  gap: 4px 16px;
+  line-height: var(--sd-type-desktop-body-line);
 }
 .page-rapor .diagnosis-school-summary dt {
   color: var(--sd-gray-60);
+  font-weight: var(--sd-type-desktop-body-weight);
 }
 .page-rapor .diagnosis-school-summary dd {
   color: var(--sd-gray-90);
+  font-weight: var(--sd-type-desktop-action-weight);
 }
 .page-rapor .diagnosis-school-side {
   min-width: 350px;
@@ -6078,13 +6086,15 @@ body:has(.page-rapor) {
 }
 .page-rapor .diagnosis-highlight-grid p {
   font-size: var(--sd-type-desktop-headingsmall-size);
-  line-height: 1.35;
-  margin-bottom: 6px;
+  line-height: var(--sd-type-desktop-headingsmall-line);
+  font-weight: var(--sd-type-desktop-headingsmall-weight);
+  margin-bottom: 4px;
   color: var(--sd-gray-60);
 }
 .page-rapor .diagnosis-highlight-grid h3 {
   font-size: var(--sd-type-desktop-headingmedium-size);
-  line-height: 1.35;
+  line-height: var(--sd-type-desktop-headingmedium-line);
+  font-weight: var(--sd-type-desktop-headingmedium-weight);
   color: var(--sd-gray-90);
 }
 .page-rapor .diagnosis-improvement-tip {
