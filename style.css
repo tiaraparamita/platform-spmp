@@ -291,7 +291,7 @@ small {
   color: var(--sd-blue-60);
 }
 .step.done {
-  color: #28835c;
+  color: var(--sd-text-success);
 }
 .num {
   width: 23px;
@@ -1589,7 +1589,7 @@ button:focus-visible {
 }
 .hierarchy-footer > span {
   font-size: var(--sd-type-desktop-helper-size);
-  color: #2e7758;
+  color: var(--sd-text-success);
 }
 .hierarchy-footer button {
   font-size: var(--sd-type-desktop-helper-size);
@@ -2835,7 +2835,7 @@ button:focus-visible {
   border-color: var(--sd-blue-10);
 }
 .recommendation-item button:disabled {
-  color: #287756;
+  color: var(--sd-text-success);
   background: var(--sd-green-0);
   opacity: 1;
   cursor: default;
@@ -2970,7 +2970,7 @@ article.guided-plan > header.guided-header > * {
 }
 
 .recommendation-item > button[aria-pressed="true"] {
-  color: #287756;
+  color: var(--sd-text-success);
   background: var(--sd-green-0);
   border-color: var(--sd-green-10);
   cursor: pointer;
@@ -3077,7 +3077,7 @@ article.guided-plan > header.guided-header > * {
 }
 .recommendation-item > .guided-activity > .row > h3 {
   font-size: var(--sd-type-desktop-helper-size);
-  color: #287756;
+  color: var(--sd-text-success);
 }
 
 .execution-card .hierarchy-result {
@@ -3762,7 +3762,7 @@ article.guided-plan > header.guided-header > * {
   font-size: var(--sd-type-desktop-helper-size);
 }
 .reflection-consistent {
-  color: #287756;
+  color: var(--sd-text-success);
   font-size: var(--sd-type-desktop-helper-size);
 }
 .reflection-different {
@@ -5847,7 +5847,7 @@ article.guided-plan > header.guided-header > * {
 }
 .diagnosis-highlight-icon.improvement {
   background: var(--sd-green-5);
-  color: #087f68;
+  color: var(--sd-text-success);
 }
 .diagnosis-highlight-icon.best {
   background: var(--sd-red-5);
