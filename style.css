@@ -9033,3 +9033,8 @@ body:has(.page-title-banner nav.steps) .page-flow {
   line-height: var(--sd-type-mobile-bodysmall-bold-line);
   font-weight: var(--sd-type-mobile-bodysmall-bold-weight);
 }
+
+/* Header tabel harus terbaca beda dari latar halaman (#F9F9F9): pakai badge-neutral #EFEFEF */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
+  background: var(--sd-badge-neutral);
+}
