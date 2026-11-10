@@ -3261,261 +3261,6 @@ article.guided-plan > header.guided-header > * {
   }
 }
 
-.sixm-intro-banner {
-  display: block;
-  padding: 30px;
-}
-.sixm-intro-banner .sixm-intro-copy {
-  max-width: 740px;
-  font-size: var(--sd-type-desktop-bodysmall-size);
-}
-.sixm-journey {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  margin: 28px 0 18px;
-}
-.sixm-journey li {
-  text-align: center;
-  position: relative;
-}
-.sixm-circle {
-  height: 48px;
-  width: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 1px solid var(--sd-blue-30);
-  background: var(--sd-cyan-80);
-  margin: 0 auto 12px;
-  position: relative;
-}
-.sixm-circle > span {
-  font-size: var(--sd-type-desktop-displaymedium-size);
-  line-height: 1;
-  color: white;
-}
-.sixm-circle > b {
-  position: absolute;
-  right: -4px;
-  bottom: -3px;
-  width: 19px;
-  height: 19px;
-  background: white;
-  color: var(--sd-cyan-80);
-  border-radius: 50%;
-  font-size: var(--sd-type-desktop-helper-size);
-  display: grid;
-  place-items: center;
-}
-.sixm-journey h3 {
-  color: white;
-  font-size: var(--sd-type-desktop-bodysmall-size);
-  margin: 0 0 7px;
-}
-.sixm-journey li p {
-  color: var(--sd-blue-10);
-  font-size: var(--sd-type-desktop-helper-size);
-  line-height: 1.5;
-  margin: 0;
-}
-.sixm-journey li:not(:last-child):after {
-  content: "→";
-  position: absolute;
-  top: 12px;
-  right: -18px;
-  color: var(--sd-blue-20);
-  font-size: var(--sd-type-desktop-bodylarge-size);
-}
-.sixm-intro-banner .sixm-loop {
-  text-align: center;
-  font-size: var(--sd-type-desktop-helper-size);
-  color: var(--sd-blue-10);
-  margin: 0 0 20px;
-}
-.sixm-banner-footer {
-  border-top: 1px solid var(--sd-cyan-70);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 18px;
-}
-.sixm-banner-footer p {
-  font-size: var(--sd-type-desktop-helper-size);
-  margin: 0;
-  color: var(--sd-blue-10);
-}
-.sixm-banner-footer .banner-action {
-  margin: 0;
-}
-@media (max-width: 650px) {
-  .sixm-intro-banner {
-    padding: 22px;
-  }
-  .sixm-journey {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px 14px;
-  }
-  .sixm-journey li:nth-child(3):after {
-    display: none;
-  }
-  .sixm-journey li:not(:last-child):after {
-    right: -13px;
-  }
-  .sixm-banner-footer {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-}
-
-.sixm-circle {
-  width: auto;
-  height: 60px;
-  border: 0;
-  background: none;
-  border-radius: 0;
-  margin-bottom: 12px;
-}
-.sixm-circle > span {
-  font-size: var(--sd-type-desktop-headlinesmall-size);
-}
-.sixm-circle > b {
-  position: static;
-  width: auto;
-  height: auto;
-  background: none;
-  color: var(--sd-blue-10);
-  border-radius: 0;
-  margin-left: 8px;
-  font-size: var(--sd-type-desktop-helper-size);
-  align-self: flex-end;
-  padding-bottom: 5px;
-}
-.sixm-journey li:not(:last-child):after {
-  top: 19px;
-}
-
-.sixm-circle > svg,
-.sixm-circle > .sixm-illustration {
-  width: 60px;
-  height: 60px;
-  display: block;
-  flex-shrink: 0;
-}
-.sixm-circle {
-  height: 66px;
-}
-.sixm-circle > b {
-  margin-left: 6px;
-  padding-bottom: 3px;
-}
-.sixm-journey li:not(:last-child):after {
-  top: 24px;
-}
-
-.hero.sixm-intro-banner {
-  background: var(--sd-blue-0);
-  color: var(--sd-text-default);
-  border: 1px solid var(--sd-blue-5);
-}
-.sixm-intro-banner .eyebrow {
-  color: var(--sd-cyan-80);
-}
-.sixm-intro-banner h2,
-.sixm-intro-banner .sixm-journey h3 {
-  color: var(--sd-text-default);
-}
-.sixm-intro-banner .sixm-intro-copy,
-.sixm-intro-banner .sixm-journey li p,
-.sixm-intro-banner .sixm-loop,
-.sixm-intro-banner .sixm-banner-footer p {
-  color: var(--sd-gray-70);
-}
-.sixm-intro-banner .sixm-circle > b {
-  color: var(--sd-gray-60);
-}
-.sixm-intro-banner .sixm-journey li:not(:last-child):after {
-  color: var(--sd-blue-20);
-}
-.sixm-intro-banner .sixm-banner-footer {
-  border-color: var(--sd-blue-5);
-}
-.sixm-intro-banner .sixm-banner-footer .banner-action {
-  background: var(--sd-blue-60);
-  color: white;
-  border-color: var(--sd-blue-60);
-}
-.sixm-intro-banner .sixm-banner-footer .banner-action:hover {
-  background: var(--sd-blue-80);
-  border-color: var(--sd-blue-80);
-}
-
-.hero.sixm-intro-banner {
-  margin-top: 24px;
-}
-.sixm-intro-banner h2 {
-  margin: 0 0 10px;
-}
-.sixm-intro-banner .sixm-intro-copy {
-  margin: 0;
-  max-width: 850px;
-}
-.sixm-intro-banner .sixm-journey {
-  margin-top: 24px;
-}
-.sixm-intro-banner .sixm-banner-footer {
-  border-top: 0;
-  padding-top: 8px;
-}
-.sixm-intro-banner .sixm-loop {
-  margin-bottom: 14px;
-}
-
-.hero.sixm-intro-banner .sixm-loop {
-  display: block;
-  width: 100%;
-  max-width: none;
-  text-align: center;
-  margin: 0 0 22px;
-}
-.hero.sixm-intro-banner .sixm-banner-footer {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 24px;
-  width: 100%;
-  padding-top: 0;
-}
-.hero.sixm-intro-banner .sixm-banner-footer > p {
-  font-weight: 700;
-  color: var(--sd-text-default);
-  margin: 0;
-  max-width: none;
-  line-height: 1.6;
-}
-.hero.sixm-intro-banner .sixm-banner-footer > .banner-action {
-  margin: 0;
-  justify-self: end;
-  align-self: center;
-}
-@media (max-width: 650px) {
-  .hero.sixm-intro-banner .sixm-banner-footer {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .hero.sixm-intro-banner .sixm-banner-footer > .banner-action {
-    justify-self: start;
-  }
-}
-
-.hero.sixm-intro-banner .sixm-loop {
-  text-align: left;
-}
-
 .reflection-cycle {
   max-width: 360px;
   margin: 24px 0;
@@ -6371,43 +6116,6 @@ body:has(.page-rapor) {
   overflow-anchor: none;
 }
 
-.sixm-intro-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.sixm-intro-banner .sixm-learn-more {
-  background: transparent;
-  border: 1px solid var(--sd-blue-10);
-  color: var(--sd-blue-90);
-  padding: 12px 18px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-.sixm-intro-banner .sixm-learn-more:hover {
-  background: var(--sd-blue-5);
-  border-color: var(--sd-blue-60);
-  color: var(--sd-blue-60);
-}
-.sixm-intro-banner .sixm-intro-actions .banner-action {
-  white-space: normal;
-  text-align: center;
-}
-.sixm-banner-footer {
-  flex-wrap: wrap;
-}
-@media (max-width: 650px) {
-  .sixm-intro-actions {
-    width: 100%;
-    justify-content: flex-start;
-  }
-  .sixm-intro-actions button {
-    flex: 1 1 100%;
-  }
-}
-
 .menetapkan-dimension-tabs {
   display: flex;
   align-items: stretch;
@@ -8182,3 +7890,388 @@ html {
 nav.steps{height:auto;gap:0;align-items:stretch;flex:none}nav.steps>button.step{height:auto;border:0;border-radius:0;padding:17px 10px;text-align:left;background:#fff;color:#28835c;justify-content:flex-start}nav.steps>button.step:hover{background:#f0f5ff;color:#155eef}nav.steps>.step{min-width:0}@media(max-width:1000px){nav.steps>.step{min-width:125px}}@media(max-width:650px){nav.steps{width:auto;order:initial}}
 
 .menetapkan-indicator-table .table-achievement{display:flex;flex-direction:column;align-items:flex-start;gap:7px}.menetapkan-indicator-table .table-achievement .table-baseline{margin:0}
+
+/* Halaman Siklus 6M: selaras dengan Seragam (token tipografi, radius, tombol, tabel, badge) */
+.page-home h2 {
+  font-size: var(--sd-type-desktop-headinglarge-size);
+  line-height: var(--sd-type-desktop-headinglarge-line);
+  font-weight: var(--sd-type-desktop-headinglarge-weight);
+}
+.page-home .card,
+.page-home .rkt-table-card {
+  border-radius: var(--sd-radius-md);
+  box-shadow: var(--sd-elevation-01);
+}
+.page-home p,
+.page-home .muted {
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+}
+.page-home .muted,
+.page-home .section .muted {
+  color: var(--sd-text-subdued);
+}
+
+/* Tombol: radius 4, ukuran large 46px, label 16/24 semibold */
+.page-home .banner-action,
+.page-home .rkt-list .rkt-row-actions > button {
+  border-radius: var(--sd-radius-sm);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.page-home .banner-action {
+  min-height: 46px;
+  padding: 10px 20px;
+}
+.page-home .rkt-list .rkt-row-actions > button {
+  min-height: 38px;
+  padding: 7px 16px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  color: var(--sd-text-default);
+}
+.page-home .rkt-list .rkt-row-actions > button.primary {
+  background: var(--sd-action-default);
+  border-color: var(--sd-action-default);
+  color: var(--sd-text-inverse);
+}
+.page-home .rkt-list .rkt-row-actions > button.primary:hover {
+  background: var(--sd-action-hovered);
+  border-color: var(--sd-action-hovered);
+  color: var(--sd-text-inverse);
+}
+.page-home .rkt-list .rkt-row-actions > button:not(.primary):hover {
+  background: var(--sd-surface-hovered);
+  border-color: var(--sd-border-high);
+  color: var(--sd-text-default);
+}
+.page-home .dashboard-banner .banner-action:hover {
+  background: var(--sd-blue-5);
+  border-color: var(--sd-blue-5);
+  color: var(--sd-blue-90);
+}
+.page-home .dashboard-banner h2 {
+  margin-bottom: 8px;
+}
+.page-home .dashboard-banner.evaluation .banner-action:hover {
+  background: var(--sd-yellow-70);
+  border-color: var(--sd-yellow-70);
+  color: var(--sd-white);
+}
+
+/* Banner utama */
+.page-home .dashboard-banner {
+  border-radius: var(--sd-radius-md);
+}
+.page-home .dashboard-banner .eyebrow {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: var(--sd-type-desktop-helper-bold-line);
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  margin-bottom: 4px;
+}
+.page-home .dashboard-banner .hero-art {
+  width: 112px;
+  height: 112px;
+  background: var(--sd-white);
+  border: 0;
+  border-radius: var(--sd-radius-md);
+}
+.page-home .dashboard-banner .hero-art img {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+/* Metrik ringkas */
+.page-home .dashboard-metrics .card .muted {
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+}
+.page-home .dashboard-metrics .metric {
+  font-size: var(--sd-type-desktop-displaymedium-size);
+  line-height: var(--sd-type-desktop-displaymedium-line);
+  font-weight: var(--sd-type-desktop-displaymedium-weight);
+  margin: 8px 0 4px;
+}
+.page-home .dashboard-metrics .metric .sub {
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+  font-weight: var(--sd-type-desktop-bodysmall-weight);
+}
+.page-home .dashboard-metrics small {
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+}
+
+/* Tabel Siklus Sekolah (spesifikasi Table Seragam: header kapital, sel 16px) */
+.page-home .rkt-table-card {
+  overflow: hidden;
+}
+.page-home .rkt-list th {
+  background: var(--sd-white);
+  color: var(--sd-text-default);
+  padding: 16px;
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: var(--sd-type-desktop-helper-bold-line);
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.05);
+}
+.page-home .rkt-list td {
+  padding: 16px;
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+  color: var(--sd-text-default);
+}
+.page-home .rkt-list td b {
+  font-weight: var(--sd-type-desktop-bodysmall-bold-weight);
+}
+.page-home .rkt-list td small {
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+}
+.page-home .rkt-list tbody tr:last-child td {
+  border-bottom: 0;
+}
+.page-home .row-overflow > summary {
+  border-radius: var(--sd-radius-sm);
+}
+
+/* Badge status: pill, 12/16 semibold, isi token badge */
+.page-home .badge {
+  padding: 2px 8px;
+  border-radius: var(--sd-radius-pill);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: 20px;
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+  color: var(--sd-text-default);
+  background: var(--sd-badge-neutral);
+}
+.page-home .badge.green {
+  background: var(--sd-badge-success);
+}
+.page-home .badge.amber {
+  background: var(--sd-badge-warning);
+}
+.page-home .badge.red {
+  background: var(--sd-badge-critical);
+}
+.page-home .badge.blue {
+  background: var(--sd-badge-info);
+}
+
+/* Catatan informasional (Banner informational: radius 4, cyan-5) */
+.page-home .notice {
+  background: var(--sd-cyan-5);
+  border: 1px solid var(--sd-cyan-10);
+  border-radius: var(--sd-radius-sm);
+  padding: 16px;
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+  color: var(--sd-text-default);
+}
+
+/* Halaman awal Siklus 6M: panel langkah menimpa banner judul, langkah dibaca sebagai jalur satu putaran */
+/* Komposisi hero sama dengan Unduh: padding 36/105 dan konten naik 72px */
+body:has(.sx-intro) .page-title-banner .page-title-inner {
+  padding-top: 36px;
+  padding-bottom: 105px;
+}
+.page-home:has(> .sx-intro) {
+  position: relative;
+  margin-top: -72px;
+  padding-top: 0;
+}
+.sx-panel {
+  background: var(--sd-white);
+  border: 1px solid var(--sd-gray-10);
+  border-radius: var(--sd-radius-md);
+  box-shadow: var(--sd-elevation-03);
+  padding: 40px 40px 56px;
+}
+.sx-panel h2 {
+  margin: 0 0 4px;
+  font-size: var(--sd-type-desktop-displaysmall-size);
+  line-height: var(--sd-type-desktop-displaysmall-line);
+  font-weight: var(--sd-type-desktop-displaysmall-weight);
+}
+.sx-lede {
+  margin: 0;
+  max-width: 640px;
+  color: var(--sd-text-subdued);
+}
+.sx-track {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+.sx-track::before {
+  content: "";
+  position: absolute;
+  left: calc((100% - 80px) / 12);
+  right: calc((100% - 80px) / 12);
+  top: 47px;
+  height: 2px;
+  background: var(--sd-blue-10);
+}
+.sx-track li {
+  position: relative;
+  text-align: center;
+  padding: 0 8px;
+}
+.sx-node {
+  position: relative;
+  z-index: 1;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  background: var(--sd-white);
+  border: 2px solid var(--sd-blue-10);
+  border-radius: 50%;
+}
+.sx-art {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+.sx-node b {
+  position: absolute;
+  right: -2px;
+  bottom: 0;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--sd-action-default);
+  color: var(--sd-text-inverse);
+  border: 2px solid var(--sd-white);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: 1;
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+}
+.sx-track h3 {
+  margin: 0 0 4px;
+  font-size: var(--sd-type-desktop-headingsmall-size);
+  line-height: var(--sd-type-desktop-headingsmall-line);
+  font-weight: var(--sd-type-desktop-headingsmall-weight);
+}
+.sx-track li p {
+  margin: 0;
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+  color: var(--sd-text-subdued);
+}
+/* Garis kembali dari langkah 6 ke langkah 1: hasil evaluasi menjadi bekal siklus berikutnya */
+.sx-loop {
+  position: relative;
+  margin: 24px calc((100% - 80px) / 12) 0;
+  height: 32px;
+  border: 2px solid var(--sd-blue-10);
+  border-top: 0;
+  border-radius: 0 0 var(--sd-radius-md) var(--sd-radius-md);
+}
+.sx-loop::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: -2px;
+  border: 6px solid transparent;
+  border-bottom: 8px solid var(--sd-blue-10);
+  border-top: 0;
+  transform: translateY(-4px);
+}
+.sx-loop span {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  padding: 0 16px;
+  white-space: nowrap;
+  background: var(--sd-white);
+  color: var(--sd-text-subdued);
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+}
+/* Strip mulai: status siklus dan aksi */
+.sx-start {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 32px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-gray-10);
+  border-radius: var(--sd-radius-md);
+  box-shadow: var(--sd-elevation-01);
+}
+.sx-start-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.sx-start h2 {
+  margin: 0;
+  font-size: var(--sd-type-desktop-headingmedium-size);
+  line-height: var(--sd-type-desktop-headingmedium-line);
+  font-weight: var(--sd-type-desktop-headingmedium-weight);
+}
+.sx-start p {
+  margin: 0;
+  color: var(--sd-text-subdued);
+}
+.sx-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.sx-actions button {
+  min-height: 46px;
+  padding: 10px 20px;
+  border-radius: var(--sd-radius-sm);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.sx-secondary {
+  background: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  color: var(--sd-text-default);
+}
+.sx-secondary:hover {
+  background: var(--sd-surface-hovered);
+  border-color: var(--sd-border-high);
+  color: var(--sd-text-default);
+}
+.sx-primary {
+  background: var(--sd-action-default);
+  border: 1px solid var(--sd-action-default);
+  color: var(--sd-text-inverse);
+}
+.sx-primary:hover {
+  background: var(--sd-action-hovered);
+  border-color: var(--sd-action-hovered);
+  color: var(--sd-text-inverse);
+}
+.sx-intro .badge {
+  padding: 2px 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: 20px;
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+}
