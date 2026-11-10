@@ -277,3 +277,18 @@ function budgetMonthPicker(id,index,value){const selected=budgetMonths(value);re
 function updateBudgetMonths(id,index,input){const picker=input.closest('.budget-month-picker');const selected=[...picker.querySelectorAll('input:checked')].map(el=>el.value);updateBudgetLine(id,index,'month',selected.join(', '));picker.querySelector('.budget-month-trigger').textContent=selected.length?selected.join(', '):'Pilih bulan'}
 
 function toggleBudgetMonthPopover(button,id,index){const panel=document.getElementById('budget-month-'+id+'-'+index);if(panel.matches(':popover-open')){panel.hidePopover();return}panel.showPopover();const rect=button.getBoundingClientRect();panel.style.width=Math.min(260,window.innerWidth-24)+'px';const box=panel.getBoundingClientRect();panel.style.left=Math.max(12,Math.min(rect.left,window.innerWidth-box.width-12))+'px';panel.style.top=(rect.bottom+6+box.height<=window.innerHeight-12?rect.bottom+6:Math.max(12,rect.top-box.height-6))+'px'}
+
+/* Ikon Material (set yang sama dengan Figma Rapor Pendidikan) menggantikan karakter teks ←→↑↓↗⌄✓ⓘ */
+(function(){
+  var P={'←':'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z','→':'M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z','↑':'M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z','↓':'M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z','↗':'M6 6v2h8.59L5 17.59 6.41 19 16 9.41V18h2V6z','⌄':'M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z','✓':'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z','ⓘ':'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'};
+  var re=/[←→↑↓↗⌄✓ⓘ]/, split=/([←→↑↓↗⌄✓ⓘ])/, skip={SCRIPT:1,STYLE:1,TEXTAREA:1,OPTION:1,TITLE:1};
+  function icon(g){var s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('viewBox','0 0 24 24');s.setAttribute('class','ic');s.setAttribute('aria-hidden','true');var p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',P[g]);s.appendChild(p);return s}
+  function convert(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),list=[];
+    while(w.nextNode()){var n=w.currentNode;if(re.test(n.nodeValue)&&!skip[n.parentNode.nodeName])list.push(n)}
+    list.forEach(function(n){var f=document.createDocumentFragment();n.nodeValue.split(split).forEach(function(t){if(P[t])f.appendChild(icon(t));else if(t)f.appendChild(document.createTextNode(t))});n.replaceWith(f)})
+  }
+  var obs=new MutationObserver(function(){obs.disconnect();convert(document.body);obs.observe(document.body,{childList:true,subtree:true,characterData:true})});
+  function start(){convert(document.body);obs.observe(document.body,{childList:true,subtree:true,characterData:true})}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
+})();
