@@ -8992,3 +8992,44 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr.selected-indicator-row:hover td {
   background: var(--sd-surface-selected-default);
 }
+
+/* Standar Seragam (skala mobile di semua perangkat): header subtle #F5F5F5 dengan subheading 13/16 kapital, sel body 15/22, tombol kecil 13/20 */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
+  background: var(--sd-modal-header);
+  padding: 15px 16px;
+  font-size: var(--sd-type-mobile-subheading-size);
+  line-height: var(--sd-type-mobile-subheading-line);
+  font-weight: var(--sd-type-mobile-subheading-weight);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.05);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change > span,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td .sub,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td > span.sub {
+  font-size: var(--sd-type-mobile-body-size);
+  line-height: var(--sd-type-mobile-body-line);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change b,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table h3 {
+  font-size: var(--sd-type-mobile-action-size);
+  line-height: var(--sd-type-mobile-action-line);
+  font-weight: var(--sd-type-mobile-action-weight);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-baseline {
+  font-size: var(--sd-type-mobile-headingmedium-size);
+  line-height: var(--sd-type-mobile-headingmedium-line);
+  font-weight: var(--sd-type-mobile-headingmedium-weight);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .source-text,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-source {
+  font-size: var(--sd-type-mobile-helper-size);
+  line-height: var(--sd-type-mobile-helper-line);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button {
+  font-size: var(--sd-type-mobile-bodysmall-bold-size);
+  line-height: var(--sd-type-mobile-bodysmall-bold-line);
+  font-weight: var(--sd-type-mobile-bodysmall-bold-weight);
+}
