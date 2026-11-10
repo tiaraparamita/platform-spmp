@@ -9679,3 +9679,256 @@ strong {
   line-height: var(--sd-type-desktop-body-line);
   font-weight: var(--sd-type-desktop-action-weight);
 }
+
+/* Melaksanakan: kartu kegiatan, bukti, dan catatan mengikuti Seragam (skala desktop) */
+.page-flow:has(.execution-card) .execution-card {
+  box-shadow: var(--sd-elevation-01);
+  border-radius: var(--sd-radius-md);
+}
+.page-flow:has(.execution-card) .execution-card > .tag {
+  padding: 4px 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: var(--sd-type-desktop-helper-bold-line);
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+}
+.page-flow:has(.execution-card) .execution-card > h2 {
+  margin: 8px 0 4px;
+  font-size: var(--sd-type-desktop-headinglarge-size);
+  line-height: var(--sd-type-desktop-headinglarge-line);
+  font-weight: var(--sd-type-desktop-headinglarge-weight);
+}
+.page-flow:has(.execution-card) .execution-card .sub {
+  margin: 0 0 12px;
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.execution-card) .hierarchy-result {
+  margin: 16px 0;
+  padding: 16px;
+  background: var(--sd-gray-0);
+  border: 1px solid var(--sd-gray-10);
+  border-left: 1px solid var(--sd-gray-10);
+  border-radius: var(--sd-radius-md);
+}
+.page-flow:has(.execution-card) .hierarchy-result > span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.execution-card) .hierarchy-result > p {
+  margin: 0;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+}
+.page-flow:has(.execution-card) .saved-budget-status,
+.page-flow:has(.execution-card) .saved-budget-status span {
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+}
+.page-flow:has(.execution-card) .saved-budget-status .sub {
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+}
+.page-flow:has(.execution-card) .execution-card summary {
+  color: var(--sd-action-default);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+  cursor: pointer;
+}
+.page-flow:has(.execution-card) .execution-card details > p {
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+}
+.page-flow:has(.execution-card) .execution-card .line {
+  height: 0;
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid var(--sd-modal-footer-border);
+}
+.page-flow:has(.execution-card) .execution-card > h3 {
+  margin: 0 0 4px;
+  font-size: var(--sd-type-desktop-headingsmall-size);
+  line-height: var(--sd-type-desktop-headingsmall-line);
+  font-weight: var(--sd-type-desktop-headingsmall-weight);
+}
+.page-flow:has(.execution-card) .execution-card h3 .optional-label {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-helper-bold-size);
+  line-height: var(--sd-type-desktop-helper-bold-line);
+  font-weight: var(--sd-type-desktop-helper-bold-weight);
+}
+/* Label, TextField, TextArea, dan unggah berkas */
+.page-flow:has(.execution-card) .execution-card label {
+  display: block;
+  margin: 16px 0 4px;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  font-weight: var(--sd-type-desktop-body-weight);
+  color: var(--sd-text-default);
+}
+.page-flow:has(.execution-card) .execution-card label .optional-label {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: var(--sd-type-desktop-body-weight);
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.execution-card) .execution-card input[type="url"],
+.page-flow:has(.execution-card) .execution-card input[type="file"],
+.page-flow:has(.execution-card) .execution-card textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  outline: none;
+}
+.page-flow:has(.execution-card) .execution-card input[type="url"] {
+  height: 46px;
+}
+.page-flow:has(.execution-card) .execution-card input[type="file"] {
+  padding: 4px 8px;
+  color: var(--sd-text-subdued);
+}
+.page-flow:has(.execution-card) .execution-card input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 7px 16px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-default);
+  font: inherit;
+  font-weight: var(--sd-type-desktop-action-weight);
+  cursor: pointer;
+}
+.page-flow:has(.execution-card) .execution-card textarea {
+  min-height: 96px;
+}
+.page-flow:has(.execution-card) .execution-card input:focus,
+.page-flow:has(.execution-card) .execution-card textarea:focus {
+  border-color: var(--sd-blue-50);
+  box-shadow: 0 0 0 2px var(--sd-interactive-focused);
+}
+.page-flow:has(.execution-card) .execution-card ::placeholder {
+  color: var(--sd-text-disabled);
+}
+.page-flow:has(.execution-card) .execution-card small {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--sd-type-desktop-helper-size);
+  line-height: var(--sd-type-desktop-helper-line);
+  color: var(--sd-text-subdued);
+}
+/* Tombol aksi halaman: Secondary lg 46px dan satu Ultimate */
+.page-flow:has(.execution-card) .actions button {
+  min-height: 46px;
+  padding: 10px 20px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.page-flow:has(.execution-card) .actions button:not(.primary):hover {
+  background: var(--sd-gray-0);
+  border-color: var(--sd-border-default);
+  color: var(--sd-text-default);
+}
+.page-flow:has(.execution-card) .actions button.primary {
+  background: var(--sd-action-default);
+  border-color: var(--sd-action-default);
+  color: var(--sd-text-inverse);
+}
+.page-flow:has(.execution-card) .actions button.primary:hover {
+  background: var(--sd-action-hovered);
+  border-color: var(--sd-action-hovered);
+  color: var(--sd-text-inverse);
+}
+/* Rincian anggaran tersimpan: Table Seragam */
+.page-flow:has(.execution-card) .budget-lines-scroll {
+  margin-top: 12px;
+  border: 1px solid var(--sd-modal-footer-border);
+  border-radius: var(--sd-radius-md);
+  overflow-x: auto;
+}
+.page-flow:has(.execution-card) .budget-lines-scroll table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.page-flow:has(.execution-card) .budget-lines-scroll th {
+  padding: 15px 12px;
+  background: var(--sd-badge-neutral);
+  border: 0;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-subheading-size);
+  line-height: var(--sd-type-desktop-subheading-line);
+  font-weight: var(--sd-type-desktop-subheading-weight);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.page-flow:has(.execution-card) .budget-lines-scroll td {
+  padding: 12px;
+  border: 0;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  background: var(--sd-white);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  vertical-align: middle;
+}
+.page-flow:has(.execution-card) .budget-lines-scroll tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Empty State Seragam di alur Siklus 6M: judul Title Case 19/24 semibold, deskripsi 16/24 gray-60, aksi Secondary */
+.page-flow .card.empty {
+  padding: 40px 24px;
+  text-align: center;
+  box-shadow: var(--sd-elevation-01);
+}
+.page-flow .card.empty h2 {
+  margin: 0 0 8px;
+  font-size: var(--sd-type-desktop-headingmedium-size);
+  line-height: var(--sd-type-desktop-headingmedium-line);
+  font-weight: var(--sd-type-desktop-headingmedium-weight);
+}
+.page-flow .card.empty p {
+  max-width: 520px;
+  margin: 0 auto 16px;
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+  color: var(--sd-text-subdued);
+}
+.page-flow .card.empty button {
+  min-height: 46px;
+  padding: 10px 20px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: var(--sd-type-desktop-action-line);
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.page-flow .card.empty button:hover {
+  background: var(--sd-gray-0);
+  border-color: var(--sd-border-default);
+  color: var(--sd-text-default);
+}
