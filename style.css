@@ -5838,26 +5838,9 @@ article.guided-plan > header.guided-header > * {
   margin: 0;
 }
 .diagnosis-highlight-icon {
-  display: grid;
-  place-items: center;
-  flex: 0 0 44px;
-  width: 44px;
-  height: 48px;
-  font-size: var(--sd-type-desktop-displaylarge-size);
-  font-weight: 700;
-  border-radius: var(--sd-radius-lg);
-}
-.diagnosis-highlight-icon.improvement {
-  background: var(--sd-green-5);
-  color: var(--sd-text-success);
-}
-.diagnosis-highlight-icon.best {
-  background: var(--sd-red-5);
-  color: #8a3bc2;
-}
-.diagnosis-highlight-icon.lowest {
-  background: var(--sd-blue-5);
-  color: var(--sd-blue-50);
+  flex: 0 0 60px;
+  width: 60px;
+  height: 60px;
 }
 .diagnosis-improvement-tip {
   display: flex;
@@ -5914,11 +5897,6 @@ article.guided-plan > header.guided-header > * {
   }
   .diagnosis-highlight-grid h3 {
     font-size: var(--sd-type-desktop-body-size);
-  }
-  .diagnosis-highlight-icon {
-    flex-basis: 36px;
-    width: 36px;
-    font-size: var(--sd-type-desktop-displaymedium-size);
   }
   .diagnosis-school-side {
     min-width: 260px;
@@ -6092,12 +6070,6 @@ body:has(.page-rapor) {
   line-height: 1.35;
   color: var(--sd-gray-90);
 }
-.page-rapor .diagnosis-highlight-icon {
-  height: 50px;
-  width: 46px;
-  flex-basis: 46px;
-  font-size: var(--sd-type-desktop-displaylarge-size);
-}
 .page-rapor .diagnosis-improvement-tip {
   background: var(--sd-cyan-5);
   margin-top: 16px;
@@ -6134,11 +6106,6 @@ body:has(.page-rapor) {
   }
   .page-rapor .diagnosis-highlight-grid h3 {
     font-size: var(--sd-type-desktop-body-size);
-  }
-  .page-rapor .diagnosis-highlight-icon {
-    width: 36px;
-    flex-basis: 36px;
-    font-size: var(--sd-type-desktop-displaymedium-size);
   }
   .page-rapor .diagnosis-school-side {
     min-width: 300px;
