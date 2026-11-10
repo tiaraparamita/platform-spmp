@@ -8583,3 +8583,9 @@ body:has(.sx-intro) .page-title-banner .page-title-inner {
   font-size: var(--sd-type-desktop-bodysmall-size);
   line-height: var(--sd-type-desktop-bodysmall-line);
 }
+
+/* Menetapkan: lebar badan sama dengan hero dan halaman lain (1216px + gutter) */
+.page-flow:has(.menetapkan-table-layout) {
+  max-width: calc(var(--page-content) + var(--page-gutter) * 2);
+  width: auto;
+}
