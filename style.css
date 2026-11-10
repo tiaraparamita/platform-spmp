@@ -8871,3 +8871,49 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:last-child {
   border-top-right-radius: var(--sd-radius-md);
 }
+
+/* Tabel Menetapkan mengikuti Table Seragam: garis kotak penuh 1px #D9DBDD, header putih, sel 16/24, padding 16 (garis di dalam padding) */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-table-scroll {
+  border: 0;
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
+  padding: 15px 15px 15px 16px;
+  border-top: 1px solid var(--sd-modal-footer-border);
+  border-right: 1px solid var(--sd-modal-footer-border);
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:first-child,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:first-child {
+  border-left: 1px solid var(--sd-modal-footer-border);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td {
+  padding: 16px 15px 15px 16px;
+  border-right: 1px solid var(--sd-modal-footer-border);
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tr:last-child td {
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: var(--sd-radius-md);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: var(--sd-radius-md);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change > span,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td .sub,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td > span.sub,
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change b {
+  font-size: var(--sd-type-desktop-body-size);
+  line-height: var(--sd-type-desktop-body-line);
+}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change b {
+  font-weight: 600;
+}
