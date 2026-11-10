@@ -7152,3 +7152,30 @@ article.guided-plan > header.guided-header.planning-priority-header {
   line-height: var(--sd-type-desktop-displaysmall-line);
   font-weight: var(--sd-type-desktop-displaysmall-weight);
 }
+
+/* Kartu indikator: ukuran dan warna mengikuti Figma Rapor (Indicator Card) */
+.diagnosis-reference-card {
+  border-color: var(--sd-gray-20);
+  border-radius: var(--sd-radius-md);
+}
+.diagnosis-reference-card h3 {
+  min-height: 22px;
+  margin: 0 0 16px;
+  font-size: var(--sd-type-desktop-action-size);
+  line-height: 22px;
+  font-weight: var(--sd-type-desktop-action-weight);
+}
+.diagnosis-reference-card .diagnosis-achievement {
+  min-height: 60px;
+  padding: 8px 16px;
+  font-size: var(--sd-type-desktop-headingsmall-size);
+  line-height: var(--sd-type-desktop-headingsmall-line);
+  font-weight: var(--sd-type-desktop-headingsmall-weight);
+}
+.diagnosis-achievement.red {
+  background: var(--sd-red-50);
+}
+.diagnosis-achievement.amber {
+  background: var(--sd-warning-border);
+  color: var(--sd-white);
+}
