@@ -9059,3 +9059,111 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .priority-target-dialog .pt-secondary:active {
   background: var(--sd-gray-10);
 }
+
+/* Memetakan: kartu akar masalah, kolom isian, badge, dan tombol mengikuti Seragam (skala mobile) */
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] {
+  box-shadow: var(--sd-elevation-01);
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .tag {
+  padding: 2px 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-badge-neutral);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-mobile-helper-bold-size);
+  line-height: 20px;
+  font-weight: var(--sd-type-mobile-helper-bold-weight);
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] h2 {
+  font-size: var(--sd-type-mobile-headingmedium-size);
+  line-height: var(--sd-type-mobile-headingmedium-line);
+  font-weight: var(--sd-type-mobile-headingmedium-weight);
+  margin-bottom: 4px;
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .sub,
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .check,
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .check span,
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .notice {
+  font-size: var(--sd-type-mobile-body-size);
+  line-height: var(--sd-type-mobile-body-line);
+  font-weight: var(--sd-type-mobile-body-weight);
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .sub {
+  color: var(--sd-text-subdued);
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .notice {
+  background: var(--sd-cyan-5);
+  border: 1px solid var(--sd-cyan-10);
+  border-radius: var(--sd-radius-sm);
+  padding: 16px;
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] > label:not(.check) {
+  display: block;
+  margin: 20px 0 4px;
+  font-size: var(--sd-type-mobile-body-size);
+  line-height: var(--sd-type-mobile-body-line);
+  font-weight: var(--sd-type-mobile-body-weight);
+  color: var(--sd-text-default);
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  padding: 12px 16px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-mobile-body-size);
+  line-height: var(--sd-type-mobile-body-line);
+  outline: none;
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline input::placeholder {
+  color: var(--sd-text-disabled);
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline input:focus {
+  border-color: var(--sd-blue-50);
+  box-shadow: 0 0 0 2px var(--sd-interactive-focused);
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .source-text {
+  font-size: var(--sd-type-mobile-helper-size);
+  line-height: var(--sd-type-mobile-helper-line);
+  color: var(--sd-text-subdued);
+}
+/* Tombol: radius 4, tinggi 46 (lg), label 15/22 semibold; satu Ultimate (Lanjutkan), sisanya Secondary */
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline button,
+.page-flow:has([id^="root-card-"]) .actions button {
+  min-height: 46px;
+  padding: 10px 20px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-border-default);
+  border-radius: var(--sd-radius-sm);
+  color: var(--sd-text-default);
+  font-size: var(--sd-type-mobile-action-size);
+  line-height: var(--sd-type-mobile-action-line);
+  font-weight: var(--sd-type-mobile-action-weight);
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline button:hover,
+.page-flow:has([id^="root-card-"]) .actions button:not(.primary):hover {
+  background: var(--sd-gray-0);
+  border-color: var(--sd-border-default);
+  color: var(--sd-text-default);
+}
+.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline button:active,
+.page-flow:has([id^="root-card-"]) .actions button:not(.primary):active {
+  background: var(--sd-gray-10);
+}
+.page-flow:has([id^="root-card-"]) .actions button.primary {
+  background: var(--sd-action-default);
+  border-color: var(--sd-action-default);
+  color: var(--sd-text-inverse);
+}
+.page-flow:has([id^="root-card-"]) .actions button.primary:hover {
+  background: var(--sd-action-hovered);
+  border-color: var(--sd-action-hovered);
+  color: var(--sd-text-inverse);
+}
