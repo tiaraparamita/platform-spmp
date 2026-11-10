@@ -4495,9 +4495,21 @@ article.guided-plan > header.guided-header > * {
   margin: 18px 0 16px;
 }
 .diagnosis-reference-card .report-delta > span {
-  font-size: var(--sd-type-desktop-displaysmall-size);
   vertical-align: middle;
-  margin-right: 5px;
+}
+.diagnosis-reference-card .report-delta > .report-up,
+.diagnosis-reference-card .report-delta > .report-down {
+  margin-right: 4px;
+}
+.diagnosis-reference-card .report-delta > .report-up .ic,
+.diagnosis-reference-card .report-delta > .report-down .ic {
+  width: 20px;
+  height: 20px;
+}
+.diagnosis-reference-card .report-delta > .muted {
+  font-size: var(--sd-type-desktop-bodysmall-size);
+  line-height: var(--sd-type-desktop-bodysmall-line);
+  color: var(--sd-text-subdued);
 }
 .diagnosis-meaning {
   font-size: var(--sd-type-desktop-bodysmall-size);
