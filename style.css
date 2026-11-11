@@ -10302,3 +10302,7 @@ strong {
 .page-flow:has(.guided-plan) .budget-lines-scroll table {
   table-layout: auto;
 }
+
+.root-summary-status{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px}.root-summary-status .root-summary-change{margin:0}
+
+.required-label{font-size:12px;color:#b33946;margin-left:5px}.evidence-link-error{font-size:12px;color:#b33946;margin:6px 0 0}.execution-card input[aria-invalid="true"]{border-color:#b33946}
