@@ -25,7 +25,7 @@ Proyek ini memakai **token** Design System Seragam (versi **0.19.0**, `tokens/se
 
 ## Belum selaras dengan Seragam (perlu keputusan desain)
 
-- **Warna kustom** (bukan token): 26 pemakaian, 20 warna unik di `style.css`: biru aksen `#155EEF`, abu kebiruan untuk teks dan garis (`#25334B`, `#50627C`, `#65758B`, `#8291A6`, `#DCE3ED`, `#DCE5F2`), latar biru muda (`#F0F5FF`, `#EEF5FF`, `#EDF3FB`, `#DCE7F6`, `#CEE3FC`), set kuning keemasan (`#FFF8E6`, `#F5EACB`, `#EEE2BD`, `#75633B`, `#88764C`, `#5E4D29`), hijau `#28835C`, dan `#45B9C2`. Padanan token terdekat: aksi `--sd-blue-70`, teks `--sd-gray-90/70/60`, garis `--sd-modal-footer-border`, latar biru muda `--sd-blue-5`, peringatan `--sd-warning-surface/border` dan `--sd-text-warning`, sukses `--sd-text-success`. Mengganti akan menggeser tampilan sedikit.
+- **Warna kustom**: sudah diganti ke token Seragam (19 warna dari 20; 25 pemakaian). Sisanya hanya `#45B9C2` pada poster mini dekoratif dan 8 `rgba()` untuk bayangan dan latar belakang modal. Pemetaan: aksi `#155EEF` ke `--sd-blue-70`; teks abu kebiruan ke `--sd-gray-60/70/90`; garis ke `--sd-modal-footer-border`; latar biru muda ke `--sd-blue-5/10`; banner pengingat ke `--sd-yellow-0` (latar), `--sd-warning-surface` (tepi dan hover), `--sd-text-warning` (teks); hijau ke `--sd-text-success`. Pergeseran warna terbesar: teks kuning keemasan menjadi cokelat `#8B5104` dan abu kebiruan menjadi abu netral. Kontras semua pengganti sama atau lebih baik dari warna lama.
 - **Ukuran huruf di luar skala** (selain poster mini dekoratif): 11, 13, 15, 21, 23, dan 26px di bagian Menetapkan dan ringkasan akar masalah. Skala Desktop Seragam: 12, 14, 16, 17, 19, 22, 24, 28, 32.
 - **Komponen buatan sendiri, hasil ukur di 1440px (delapan keadaan halaman):**
 
