@@ -774,3 +774,10 @@
   font-weight: 400;
   color: var(--sd-gray-60);
 }
+
+.sd-table .sd-group-row.is-reco th {
+  background: var(--sd-blue-5);
+  border-top-color: var(--sd-blue-10);
+  border-bottom-color: var(--sd-blue-10);
+  color: var(--sd-blue-90);
+}
