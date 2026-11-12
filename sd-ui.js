@@ -67,5 +67,13 @@
       .join('')}</tbody></table></div>`;
   }
 
-  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable });
+  /**
+   * Badge pill: satu badge satu status, teks 1–2 kata. tone: green (selesai, berhasil) | amber (perlu perhatian) | red (galat, gagal) | blue (informasi) | gray (netral: draf, belum dimulai).
+   * Warna tidak boleh jadi satu-satunya penanda; teksnya harus menyatakan status.
+   */
+  function sdBadge(label, tone = 'gray', className = '') {
+    return `<span class="sd-badge sd-badge-${tone}${className ? ' ' + className : ''}">${e(label)}</span>`;
+  }
+
+  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable, sdBadge });
 })();
