@@ -9428,3 +9428,68 @@ strong {
 .flow-acc-card.guided-plan > .sd-accordion > .sd-accordion-body > .guided-body {
   padding: 0;
 }
+
+/* Hero di dalam badan halaman (pola spmi): kartu biru berisi langkah, judul, pengantar, dan kemajuan; breadcrumb terang di atasnya */
+.flow-crumbs {
+  margin: 0 0 16px;
+}
+.flow-crumbs li {
+  color: var(--sd-gray-60);
+}
+.flow-crumbs [aria-current="page"] {
+  color: var(--sd-gray-90);
+}
+.flow-crumbs li.crumb-sep .sd-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--sd-gray-50);
+}
+.flow-crumbs .sd-btn {
+  color: var(--sd-gray-60);
+  font-weight: 400;
+  padding: 0 4px;
+  min-height: 28px;
+}
+.flow-crumbs .sd-btn:hover {
+  color: var(--sd-blue-70);
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.flow-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+  padding: 24px;
+  border-radius: var(--sd-radius-md);
+  background: var(--sd-surface-dark-blue);
+  color: var(--sd-text-inverse);
+}
+.flow-hero-step {
+  margin: 0;
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  font-weight: 600;
+  color: var(--sd-text-inverse-subdued);
+}
+.flow-hero h1 {
+  margin: 0;
+  font-size: var(--sd-text-displaysmall-size);
+  line-height: var(--sd-text-displaysmall-line);
+  font-weight: var(--sd-text-displaysmall-weight);
+  color: var(--sd-text-inverse);
+}
+.flow-hero-lede {
+  margin: 4px 0 0;
+  max-width: 68ch;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  color: var(--sd-text-inverse-subdued);
+}
+.flow-hero .flow-progress {
+  margin-top: 16px;
+}
+.page-flow {
+  padding-top: 24px;
+}
