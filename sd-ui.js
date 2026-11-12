@@ -13,6 +13,7 @@
     info: 'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
     warning: 'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',
     'check-circle': 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
+    add: 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
     close: 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
     error: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z',
   };
@@ -117,5 +118,22 @@
     document.querySelector('.sd-tabs [role=tab][aria-selected=true]')?.focus();
   }
 
-  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable, sdBadge, sdBanner, sdTabs, sdTabsKey });
+  /**
+   * Checkbox. Wajib punya label terlihat atau ariaLabel. onchange: string JavaScript, boleh memakai this.checked.
+   */
+  function sdCheckbox({ label = '', ariaLabel = '', checked = false, onchange = '', id = '', disabled = false }) {
+    const aria = !label && ariaLabel ? ` aria-label="${e(ariaLabel)}"` : '';
+    return `<label class="sd-check"><input type="checkbox"${id ? ` id="${e(id)}"` : ''}${aria}${checked ? ' checked' : ''}${disabled ? ' disabled' : ''}${onchange ? ` onchange="${onchange}"` : ''}><span class="sd-check-box" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M4.5 9.5l3 3 6-6.5"/></svg></span>${label ? `<span class="sd-check-label">${e(label)}</span>` : ''}</label>`;
+  }
+
+  /**
+   * Kolom isian teks. Label selalu terlihat di atas kolom (atau hideLabel untuk pembaca layar saja), teks bantu helper 12/16, galat error menggantikan helper.
+   * trailing: HTML tombol di sisi kanan kolom (mis. sdBtn). oninput/onchange: string JavaScript.
+   */
+  function sdTextField({ label, id, value = '', placeholder = '', helper = '', error = '', type = 'text', oninput = '', onchange = '', hideLabel = false, trailing = '', attrs = '' }) {
+    const desc = helper || error ? ` aria-describedby="${e(id)}-hint"` : '';
+    return `<div class="sd-field"><label class="sd-field-label${hideLabel ? ' sd-sr-only' : ''}" for="${e(id)}">${e(label)}</label><div class="sd-field-row"><input class="sd-input" id="${e(id)}" type="${type}" value="${e(value)}"${placeholder ? ` placeholder="${e(placeholder)}"` : ''}${error ? ' aria-invalid="true"' : ''}${desc}${oninput ? ` oninput="${oninput}"` : ''}${onchange ? ` onchange="${onchange}"` : ''}${attrs ? ' ' + attrs : ''}>${trailing}</div>${helper || error ? `<span class="sd-field-hint${error ? ' sd-field-error' : ''}" id="${e(id)}-hint">${e(error || helper)}</span>` : ''}</div>`;
+  }
+
+  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable, sdBadge, sdBanner, sdTabs, sdTabsKey, sdCheckbox, sdTextField });
 })();
