@@ -46,13 +46,14 @@ Tombol, pilihan radio, select, dan tabel dibuat lewat fungsi bantu agar selalu s
 
 | Fungsi | Untuk | Catatan |
 |---|---|---|
-| `sdBtn(label, {variant, size, onclick, leadingIcon, trailingIcon, disabled, className})` | Button | `variant`: `ultimate` (aksi utama), `primary`, `secondary`, `quiet`, `destructive`. `size`: `lg`, `md` (bawaan), `sm`. Ikon panah lewat `leadingIcon`/`trailingIcon`, bukan karakter di teks. |
+| `sdBtn(label, {variant, size, onclick, leadingIcon, trailingIcon, icon, fullWidth, disabled, className})` | Button | `variant`: `ultimate` (aksi utama), `primary`, `secondary`, `quiet`, `destructive`. `size`: `lg`, `md` (bawaan), `sm`. Ikon panah lewat `leadingIcon`/`trailingIcon`, bukan karakter di teks. |
 | `sdRadioGroup({legend, name, options, value, onchange})` | Pilihan tunggal, kurang dari 5 opsi | `options`: `[{value, label, help}]`. Berbentuk fieldset dan legend. |
 | `sdSelect({label, options, value, onchange, hideLabel})` | Select | Label selalu ada; `hideLabel` bila kolom tabel sudah menjelaskan. |
 | `sdTable({caption, columns, rows})` | Tabel | `caption` wajib. Baris berupa larik sel, atau `{full: html}` untuk satu sel selebar tabel. |
 | `sdBadge(label, tone)` | Badge status | `tone`: `green` (selesai), `amber` (perlu perhatian), `red` (gagal), `blue` (informasi), `gray` (draf, belum dimulai). Teks 1–2 kata. |
-| `sdBanner({tone, title, children})` | Banner statis | `tone`: `info` (bawaan), `warning`, `success`, `critical`, `neutral`. Bukan untuk banner ajakan (entry). |
-| `sdIcon(nama)` | Ikon | `arrow-left`, `arrow-right`, `check`, `arrow-drop-down`. Tambah jalurnya di `sd-ui.js` bila perlu. |
+| `sdBanner({tone, title, children, onClose})` | Banner statis | `tone`: `info` (bawaan), `warning`, `success`, `critical`, `neutral`. Bukan untuk banner ajakan (entry). |
+| `sdTabs({label, items, value, onselect})` | Tabs (satu aktif, tetap di halaman) | `items`: `[{value, label, count}]`; `onselect(value)` mengembalikan string JavaScript. Keyboard: panah kiri/kanan, Home, End. |
+| `sdIcon(nama)` | Ikon | `arrow-left`, `arrow-right`, `check`, `arrow-drop-down`, `info`, `warning`, `check-circle`, `error`, `close`. Tambah jalurnya di `sd-ui.js` bila perlu. |
 
 Kelas bantu di `sd-ui.css`: `sd-cell-title` dan `sd-cell-sub` (isi sel tabel), `sd-status` (status kecil dengan ikon), `sd-sr-only`.
 
@@ -60,4 +61,4 @@ Kelas bantu di `sd-ui.css`: `sd-cell-title` dan `sd-cell-sub` (isi sel tabel), `
 
 `node scripts/seragam-lint.mjs` menghitung pelanggaran umum (ukuran huruf angka, berat 700, hex dan rgb langsung, panah di teks, select/tabel/tombol mentah) dan **gagal bila jumlahnya naik** dibanding `scripts/seragam-lint-baseline.json`. Tambah `--detail` untuk melihat lokasi. Setelah memigrasi satu halaman, jalankan `--update` agar batasnya ikut turun.
 
-Status migrasi: Evaluasi Diri dan beranda Siklus 6M (daftar siklus, banner ajakan, menu ⋮) sudah memakai semua fungsi bantu. Judul halaman (`page-title-banner`) mengikuti PageHeader `tone="blue"`: judul 24/28 semibold, penjelasan maksimal 68 karakter per baris. Semua badge di seluruh halaman sudah memakai `sdBadge` (fungsi `badge(teks)` di `app.js` hanya pembungkus yang memetakan status ke tone). Tombol, tabel, dan select di halaman lain masih memakai versi lama. Kelas `.badge`, `.green`, `.amber`, `.red` di `style.css` sudah tidak dipakai badge dan boleh dihapus bertahap. Halaman lain masih memakai tombol, tabel, dan select lama.
+Status migrasi: Evaluasi Diri dan beranda Siklus 6M (daftar siklus, banner ajakan, menu ⋮), dan Menetapkan (tabel indikator, tab dimensi, panel pilihan, banner pengingat; dialog target belum) sudah memakai semua fungsi bantu. Judul halaman (`page-title-banner`) mengikuti PageHeader `tone="blue"`: judul 24/28 semibold, penjelasan maksimal 68 karakter per baris. Semua badge di seluruh halaman sudah memakai `sdBadge` (fungsi `badge(teks)` di `app.js` hanya pembungkus yang memetakan status ke tone). Tombol, tabel, dan select di halaman lain masih memakai versi lama. Kelas `.badge`, `.green`, `.amber`, `.red` di `style.css` sudah tidak dipakai badge dan boleh dihapus bertahap. Halaman lain masih memakai tombol, tabel, dan select lama.

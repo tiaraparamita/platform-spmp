@@ -219,16 +219,7 @@ small {
   border-radius: var(--sd-radius-pill);
   font-weight: var(--sd-text-bodysmall-bold-weight);
 }
-.badge {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: var(--sd-radius-pill);
-  font-size: var(--sd-text-bodysmall-bold-size);
-  line-height: var(--sd-text-bodysmall-bold-line);
-  font-weight: var(--sd-text-bodysmall-bold-weight);
-  background: var(--sd-blue-0);
-  color: var(--sd-gray-70);
-}
+
 .green {
   background: var(--sd-green-0);
   color: var(--sd-green-80);
@@ -5058,10 +5049,7 @@ article.guided-plan > header.guided-header > * {
     grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
-  .priority-bar-actions button {
-    padding: 10px 8px;
-    font-size: var(--sd-text-helper-size);
-  }
+
 }
 
 /* Keep source tag beside long indicator names instead of wrapping above them. */
@@ -5883,49 +5871,6 @@ body:has(.page-rapor) {
   overflow-anchor: none;
 }
 
-.menetapkan-dimension-tabs {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 4px;
-  border-bottom: 1px solid var(--sd-blue-5);
-  margin: 0;
-  padding: 0;
-}
-.menetapkan-dimension-tabs button {
-  position: relative;
-  margin-bottom: -1px;
-  border: 1px solid transparent;
-  border-radius: var(--sd-radius-md) var(--sd-radius-md) 0 0;
-  background: transparent;
-  color: var(--sd-gray-60);
-  font-size: var(--sd-text-bodysmall-size);
-  font-weight: 400;
-  padding: 13px 16px;
-  line-height: 1.45;
-}
-.menetapkan-dimension-tabs button[aria-pressed="true"] {
-  border-color: var(--sd-blue-5);
-  border-bottom-color: var(--sd-white);
-  background: var(--sd-white);
-  color: var(--sd-text-default);
-  font-weight: 600;
-}
-.menetapkan-dimension-tabs button:hover {
-  color: var(--sd-blue-60);
-}
-@media (max-width: 600px) {
-  .menetapkan-dimension-tabs button {
-    font-size: var(--sd-text-helper-size);
-    padding: 10px 12px;
-  }
-}
-
-.menetapkan-dimension-tabs + .report-list-toolbar {
-  margin-top: 20px;
-  margin-bottom: 16px;
-}
-
 /* Keep selected-priority count and actions in a floating bottom bar. */
 .priority-selection-bar {
   position: fixed;
@@ -5978,36 +5923,7 @@ body:has(.priority-selection-bar) .demo-panel {
   min-width: 940px;
   table-layout: fixed;
 }
-.menetapkan-indicator-table th {
-  font-size: var(--sd-text-helper-size);
-  padding: 16px;
-  background: var(--sd-blue-0);
-  color: var(--sd-gray-70);
-}
-.menetapkan-indicator-table th:first-child {
-  width: 35%;
-}
-.menetapkan-indicator-table th:nth-child(2) {
-  width: 14%;
-}
-.menetapkan-indicator-table th:nth-child(3) {
-  width: 18%;
-}
-.menetapkan-indicator-table th:nth-child(4) {
-  width: 15%;
-}
-.menetapkan-indicator-table th:last-child {
-  width: 18%;
-}
-.menetapkan-indicator-table td {
-  vertical-align: top;
-  padding: 20px 16px;
-  font-size: var(--sd-text-bodysmall-size);
-  overflow-wrap: break-word;
-}
-.menetapkan-indicator-table tr:last-child td {
-  border-bottom: 0;
-}
+
 .menetapkan-indicator-table h3 {
   font-size: var(--sd-text-body-size);
   line-height: 1.4;
@@ -6018,10 +5934,7 @@ body:has(.priority-selection-bar) .demo-panel {
   display: block;
   margin-bottom: 10px;
 }
-.menetapkan-indicator-table .badge {
-  font-size: var(--sd-text-helper-size);
-  display: inline-block;
-}
+
 .table-indicator-source {
   margin: 0 0 10px;
 }
@@ -6049,25 +5962,7 @@ body:has(.priority-selection-bar) .demo-panel {
   font-size: var(--sd-text-bodylarge-size);
   margin-right: 5px;
 }
-.table-target-edit {
-  display: block;
-  font-size: var(--sd-text-helper-size);
-  padding: 8px 0;
-  color: var(--sd-blue-60);
-}
-.menetapkan-indicator-table td:last-child > button {
-  width: 100%;
-  font-size: var(--sd-text-helper-size);
-  padding: 10px 8px;
-}
-.selected-indicator-row {
-  background: var(--sd-blue-0);
-}
-.table-priority-selected {
-  background: var(--sd-blue-5);
-  color: var(--sd-blue-60);
-  border-color: var(--sd-blue-10);
-}
+
 .wrap:has(.menetapkan-indicator-table) {
   padding-bottom: 160px;
 }
@@ -6152,15 +6047,7 @@ body:has(.priority-selection-bar) .demo-panel {
 }
 
 /* Compact selection table for Design alternatives 2. */
-.menetapkan-indicator-table th {
-  padding: 11px 14px;
-  font-size: var(--sd-text-helper-size);
-}
-.menetapkan-indicator-table td {
-  padding: 12px 14px;
-  font-size: var(--sd-text-helper-size);
-  line-height: 1.4;
-}
+
 .menetapkan-indicator-table h3 {
   font-size: var(--sd-text-bodysmall-size);
   line-height: 1.35;
@@ -6185,11 +6072,7 @@ body:has(.priority-selection-bar) .demo-panel {
   font-size: var(--sd-text-headingsmall-size);
   margin: 0 7px 5px 0;
 }
-.menetapkan-indicator-table .badge {
-  font-size: var(--sd-text-helper-size);
-  padding: 4px 7px;
-  line-height: 1.35;
-}
+
 .menetapkan-indicator-table .table-indicator-change {
   line-height: 1.45;
   font-size: var(--sd-text-helper-size);
@@ -6198,27 +6081,13 @@ body:has(.priority-selection-bar) .demo-panel {
   font-size: var(--sd-text-headingsmall-size);
   margin-right: 3px;
 }
-.menetapkan-indicator-table .table-target-edit {
-  font-size: var(--sd-text-helper-size);
-  line-height: 1.4;
-  padding: 4px 0;
-}
-.menetapkan-indicator-table td:last-child > button {
-  font-size: var(--sd-text-helper-size);
-  padding: 7px 8px;
-  line-height: 1.4;
-}
+
 .menetapkan-indicator-table td:nth-child(4) > .sub {
   font-size: var(--sd-text-helper-size);
   line-height: 1.4;
 }
 .wrap:has(.menetapkan-indicator-table) .report-list-toolbar {
   margin-bottom: 12px;
-}
-.wrap:has(.menetapkan-indicator-table)
-  .menetapkan-dimension-tabs
-  + .report-list-toolbar {
-  margin-top: 14px;
 }
 
 .menetapkan-indicator-table .table-indicator-change > span.muted {
@@ -7637,7 +7506,7 @@ html {
   font-weight: 700;
 }
 
-.menetapkan-dimension-tabs button{display:inline-flex;align-items:center;gap:8px}.menetapkan-tab-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--sd-blue-70);color:#fff;font-size:11px;font-weight:600;line-height:1;flex-shrink:0;font-variant-numeric:tabular-nums}
+.menetapkan-tab-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--sd-blue-70);color:#fff;font-size:11px;font-weight:600;line-height:1;flex-shrink:0;font-variant-numeric:tabular-nums}
 
 /* Selected priorities stay alongside the table rather than covering its rows. */
 .wrap:has(.menetapkan-table-layout){max-width:1440px;width:calc(100% - 60px)}.menetapkan-table-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px;align-items:start}.menetapkan-table-content{min-width:0}.menetapkan-selection-panel{position:sticky;top:24px;margin:0;padding:20px;border:1px solid var(--sd-modal-footer-border);border-radius:12px;box-shadow:0 8px 28px #20365d0d}.menetapkan-selected-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--sd-modal-footer-border);font-size:14px;line-height:1.5}.menetapkan-selected-item:first-child{padding-top:0}.menetapkan-selected-item>span{min-width:0}.menetapkan-selected-item>button{flex-shrink:0;font-size:24px;line-height:1;padding:4px;color:var(--sd-gray-60)}.menetapkan-selection-actions{display:flex;flex-direction:column;gap:10px;margin-top:20px}.menetapkan-selection-actions button{width:100%;font-size:13px;padding:12px 8px}.menetapkan-table-content .menetapkan-indicator-table{min-width:850px}
@@ -7650,9 +7519,9 @@ html {
 
 .menetapkan-selected-item>.menetapkan-selected-link{flex:1;flex-shrink:1;min-width:0;border:0;background:transparent;padding:0;text-align:left;color:var(--ink);font-size:14px;font-weight:400;line-height:1.5;border-radius:3px}.menetapkan-selected-item>.menetapkan-selected-link:hover{color:var(--sd-blue-70);text-decoration:underline}.menetapkan-indicator-table tr[id]{scroll-margin-block:24px}.menetapkan-indicator-table tr[id]:focus{outline:2px solid var(--sd-blue-70);outline-offset:-2px}
 
-.menetapkan-recommendation-reminder{display:flex;align-items:flex-start;gap:20px;justify-content:space-between;padding:14px 16px;margin:0 0 20px;border:1px solid var(--sd-modal-footer-border);border-radius:8px;background:var(--sd-blue-5);color:var(--sd-gray-70)}.menetapkan-recommendation-reminder p{margin:0;font-size:13px;line-height:1.6}.menetapkan-recommendation-reminder button{border:0;background:transparent;color:var(--sd-gray-60);font-size:22px;line-height:1;padding:0 2px;flex-shrink:0}.menetapkan-recommendation-reminder button:hover{background:var(--sd-blue-10);color:var(--sd-gray-90)}
+.menetapkan-recommendation-reminder p{margin:0;font-size:13px;line-height:1.6}.menetapkan-recommendation-reminder button{border:0;background:transparent;color:var(--sd-gray-60);font-size:22px;line-height:1;padding:0 2px;flex-shrink:0}.menetapkan-recommendation-reminder button:hover{background:var(--sd-blue-10);color:var(--sd-gray-90)}
 
-.menetapkan-recommendation-reminder{background:var(--sd-yellow-0);border-color:var(--sd-warning-surface);color:var(--sd-text-warning)}.menetapkan-recommendation-reminder button{color:var(--sd-text-warning)}.menetapkan-recommendation-reminder button:hover{background:var(--sd-warning-surface);color:var(--sd-text-warning)}
+.menetapkan-recommendation-reminder button{color:var(--sd-text-warning)}.menetapkan-recommendation-reminder button:hover{background:var(--sd-warning-surface);color:var(--sd-text-warning)}
 
 nav.steps{height:auto;gap:0;align-items:stretch;flex:none}nav.steps>button.step{height:auto;border:0;border-radius:0;padding:17px 10px;text-align:left;background:#fff;color:var(--sd-text-success);justify-content:flex-start}nav.steps>button.step:hover{background:var(--sd-blue-5);color:var(--sd-blue-70)}nav.steps>.step{min-width:0}@media(max-width:1000px){nav.steps>.step{min-width:125px}}@media(max-width:650px){nav.steps{width:auto;order:initial}}
 
@@ -8009,59 +7878,12 @@ body:has(.page-title-banner nav.steps) .page-flow {
 }
 
 /* Menetapkan: tabel indikator, tab, banner peringatan, dan panel pilihan memakai token Seragam */
-.page-flow:has(.menetapkan-table-layout) .menetapkan-dimension-tabs {
-  display: flex;
-  gap: 18px;
-  padding: 0 6px;
-  background: none;
-  border: 0;
-  border-bottom: 1px solid var(--sd-gray-10);
-  border-radius: 0;
-  box-shadow: none;
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-dimension-tabs > button {
-  height: 56px;
-  padding: 0 6px;
-  background: none;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  color: var(--sd-text-subdued);
-  font-size: var(--sd-text-action-size);
-  line-height: var(--sd-text-action-line);
-  font-weight: var(--sd-text-action-weight);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-dimension-tabs > button:hover {
-  background: none;
-  color: var(--sd-action-hovered);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-dimension-tabs > button[aria-pressed="true"] {
-  background: none;
-  color: var(--sd-action-default);
-  box-shadow: inset 0 -4px 0 var(--sd-action-default);
-}
+
 .page-flow:has(.menetapkan-table-layout) .report-list-toolbar p,
 .page-flow:has(.menetapkan-table-layout) .report-list-toolbar .sub {
   font-size: var(--sd-text-bodysmall-size);
   line-height: var(--sd-text-bodysmall-line);
   color: var(--sd-text-subdued);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-recommendation-reminder {
-  background: var(--sd-cyan-5);
-  border: 1px solid var(--sd-cyan-10);
-  border-radius: var(--sd-radius-sm);
-  padding: 16px;
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-bodysmall-size);
-  line-height: var(--sd-text-bodysmall-line);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-recommendation-reminder button {
-  color: var(--sd-text-default);
-  border-radius: var(--sd-radius-sm);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-recommendation-reminder button:hover {
-  background: none;
-  color: var(--sd-text-default);
 }
 
 /* Tabel: header kapital 12/16, sel 14/20 dengan padding 16 */
@@ -8070,23 +7892,7 @@ body:has(.page-title-banner nav.steps) .page-flow {
   box-shadow: var(--sd-elevation-01);
   background: var(--sd-white);
 }
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
-  padding: 16px;
-  background: var(--sd-white);
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-helper-bold-size);
-  line-height: var(--sd-text-helper-bold-line);
-  font-weight: var(--sd-text-helper-bold-weight);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.05);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td {
-  padding: 16px;
-  font-size: var(--sd-text-bodysmall-size);
-  line-height: var(--sd-text-bodysmall-line);
-  color: var(--sd-text-default);
-}
+
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table h3 {
   margin: 0;
   font-size: var(--sd-text-body-size);
@@ -8124,73 +7930,8 @@ body:has(.page-title-banner nav.steps) .page-flow {
   line-height: var(--sd-text-bodysmall-line);
   color: var(--sd-text-subdued);
 }
-.page-flow:has(.menetapkan-table-layout) .badge {
-  padding: 2px 8px;
-  border-radius: var(--sd-radius-pill);
-  background: var(--sd-badge-neutral);
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-bodysmall-bold-size);
-  line-height: var(--sd-text-bodysmall-bold-line);
-  font-weight: var(--sd-text-bodysmall-bold-weight);
-}
-.page-flow:has(.menetapkan-table-layout) .badge.green {
-  background: var(--sd-badge-success);
-}
-.page-flow:has(.menetapkan-table-layout) .badge.amber {
-  background: var(--sd-badge-warning);
-}
-.page-flow:has(.menetapkan-table-layout) .badge.red {
-  background: var(--sd-badge-critical);
-}
-.page-flow:has(.menetapkan-table-layout) .badge.blue {
-  background: var(--sd-badge-info);
-}
 
 /* Tombol: Ultimate (biru), Secondary (outline), Quiet; radius 4, label 16/24 semibold */
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button,
-.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-actions > button {
-  border-radius: var(--sd-radius-sm);
-  font-size: var(--sd-text-action-size);
-  line-height: var(--sd-text-action-line);
-  font-weight: var(--sd-text-action-weight);
-  background: var(--sd-white);
-  border: 1px solid var(--sd-border-default);
-  color: var(--sd-text-default);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button {
-  min-height: 38px;
-  padding: 7px 16px;
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-actions > button {
-  min-height: 46px;
-  padding: 10px 20px;
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button.primary,
-.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-actions > button.primary {
-  background: var(--sd-action-default);
-  border-color: var(--sd-action-default);
-  color: var(--sd-text-inverse);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button.primary:hover,
-.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-actions > button.primary:hover {
-  background: var(--sd-action-hovered);
-  border-color: var(--sd-action-hovered);
-  color: var(--sd-text-inverse);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button:not(.primary):hover,
-.page-flow:has(.menetapkan-table-layout) .menetapkan-selection-actions > button:not(.primary):hover {
-  background: var(--sd-gray-0);
-  border-color: var(--sd-border-default);
-  color: var(--sd-text-default);
-}
-.page-flow:has(.menetapkan-table-layout) .table-target-edit {
-  padding: 4px 0;
-  color: var(--sd-action-default);
-  font-size: var(--sd-text-bodysmall-bold-size);
-  line-height: var(--sd-text-bodysmall-bold-line);
-  font-weight: var(--sd-text-bodysmall-bold-weight);
-  border-radius: var(--sd-radius-sm);
-}
 
 /* Panel Indikator dipilih: header berjudul dengan garis pemisah (Panel Seragam) */
 .page-flow:has(.menetapkan-table-layout) .menetapkan-selection-panel {
@@ -8223,11 +7964,6 @@ body:has(.page-title-banner nav.steps) .page-flow {
   flex-direction: column;
   gap: 12px;
   padding: 0 16px 16px;
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-recommendation-reminder p {
-  margin: 0;
-  font-size: var(--sd-text-bodysmall-size);
-  line-height: var(--sd-text-bodysmall-line);
 }
 
 /* Menetapkan: lebar badan sama dengan hero dan halaman lain (1216px + gutter) */
@@ -8409,25 +8145,11 @@ body:has(.page-title-banner nav.steps) .page-flow {
 }
 
 /* Menetapkan: kolom target ringkas, panel pilihan lengkap, header tabel menempel, badge contoh netral */
-.page-flow:has(.menetapkan-table-layout) .menetapkan-recommendation-reminder {
-  align-items: center;
-  gap: 12px;
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-recommendation-reminder .reminder-icon {
-  display: grid;
-  color: var(--sd-icon-informational, var(--sd-blue-70));
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-recommendation-reminder p {
-  flex: 1;
-}
+
 .page-flow:has(.menetapkan-table-layout) .table-target-empty {
   color: var(--sd-text-subdued);
 }
-.page-flow:has(.menetapkan-table-layout) .badge.sample {
-  background: var(--sd-badge-neutral);
-  border: 1px dashed var(--sd-gray-30);
-  color: var(--sd-text-subdued);
-}
+
 .page-flow:has(.menetapkan-table-layout) .menetapkan-selection-panel {
   top: 88px;
 }
@@ -8465,17 +8187,6 @@ body:has(.page-title-banner nav.steps) .page-flow {
 .page-flow:has(.menetapkan-table-layout) .menetapkan-table-scroll {
   overflow: visible;
 }
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
-  position: sticky;
-  top: 64px;
-  z-index: 3;
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:first-child {
-  border-top-left-radius: var(--sd-radius-md);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:last-child {
-  border-top-right-radius: var(--sd-radius-md);
-}
 
 /* Tabel Menetapkan: Table Seragam bordered="rows" (ekstensi v0.11.0): hanya garis horizontal 1px #D9DBDD, garis di dalam padding 16, sel 16/24 */
 .page-flow:has(.menetapkan-table-layout) .menetapkan-table-scroll {
@@ -8485,28 +8196,7 @@ body:has(.page-title-banner nav.steps) .page-flow {
   border-collapse: separate;
   border-spacing: 0;
 }
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
-  padding: 15px 16px;
-  border-top: 1px solid var(--sd-modal-footer-border);
-  border-bottom: 1px solid var(--sd-modal-footer-border);
-  border-left: 0;
-  border-right: 0;
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td {
-  padding: 16px 16px 15px;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 1px solid var(--sd-modal-footer-border);
-  font-size: var(--sd-text-body-size);
-  line-height: var(--sd-text-body-line);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tr:last-child td {
-  border-bottom: 1px solid var(--sd-modal-footer-border);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:first-child,
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:first-child {
-  border-left: 0;
-}
+
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr:last-child td:first-child {
   border-bottom-left-radius: var(--sd-radius-md);
 }
@@ -8526,36 +8216,9 @@ body:has(.page-title-banner nav.steps) .page-flow {
 }
 
 /* Panduan Table Seragam (seragam.belajar.id/table): header abu #EFEFEF title case semibold, isi rata tengah vertikal, hover baris, en dash untuk nilai kosong */
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
-  background: var(--sd-badge-neutral);
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: var(--sd-text-body-size);
-  line-height: var(--sd-text-body-line);
-  font-weight: var(--sd-text-action-weight);
-  box-shadow: none;
-  vertical-align: middle;
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td {
-  vertical-align: middle;
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:first-child {
-  border-top-left-radius: var(--sd-radius-md);
-}
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th:last-child {
-  border-top-right-radius: var(--sd-radius-md);
-}
 
 /* Figma Seragam Web (Table, node 505:24585): header Surface/Pressed, teks 14/20, baris terpilih Surface Selected, tombol kecil di kolom aksi */
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
-  background: var(--sd-surface-pressed);
-  padding: 16px;
-  border-top: 0;
-  border-bottom: 0;
-  font-size: var(--sd-text-bodysmall-bold-size);
-  line-height: var(--sd-text-bodysmall-bold-line);
-  font-weight: var(--sd-text-bodysmall-bold-weight);
-}
+
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change > span,
@@ -8576,15 +8239,7 @@ body:has(.page-title-banner nav.steps) .page-flow {
   line-height: var(--sd-text-body-line);
   font-weight: 600;
 }
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button {
-  width: auto;
-  min-width: 88px;
-  min-height: 28px;
-  padding: 3px 12px;
-  font-size: var(--sd-text-bodysmall-bold-size);
-  line-height: var(--sd-text-bodysmall-bold-line);
-  font-weight: var(--sd-text-bodysmall-bold-weight);
-}
+
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr.selected-indicator-row td {
   background: var(--sd-surface-selected-default);
 }
@@ -8593,16 +8248,7 @@ body:has(.page-title-banner nav.steps) .page-flow {
 }
 
 /* Standar Seragam (skala mobile di semua perangkat): header subtle #F5F5F5 dengan subheading 13/16 kapital, sel body 15/22, tombol kecil 13/20 */
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
-  background: var(--sd-modal-header);
-  padding: 15px 16px;
-  font-size: var(--sd-text-subheading-size);
-  line-height: var(--sd-text-subheading-line);
-  font-weight: var(--sd-text-subheading-weight);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.05);
-}
+
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-indicator-change > span,
@@ -8627,16 +8273,8 @@ body:has(.page-title-banner nav.steps) .page-flow {
   font-size: var(--sd-text-helper-size);
   line-height: var(--sd-text-helper-line);
 }
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button {
-  font-size: var(--sd-text-bodysmall-bold-size);
-  line-height: var(--sd-text-bodysmall-bold-line);
-  font-weight: var(--sd-text-bodysmall-bold-weight);
-}
 
 /* Header tabel harus terbaca beda dari latar halaman (#F9F9F9): pakai badge-neutral #EFEFEF */
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table th {
-  background: var(--sd-badge-neutral);
-}
 
 /* Nilai capaian awal selaras ukuran sel (15/22); tombol nonaktif tidak berubah saat di-hover */
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .table-baseline {
@@ -8652,9 +8290,6 @@ body:has(.page-title-banner nav.steps) .page-flow {
 }
 
 /* Baris tabel Menetapkan tidak bisa diklik (hanya tombol Pilih/Batalkan): tanpa sorotan hover baris dan kursor biasa */
-.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table tbody tr {
-  cursor: default;
-}
 
 /* Secondary Seragam: hover gray-0, tekan gray-10 */
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button:not(.primary):not(.table-priority-selected):not(:disabled):active,
@@ -8822,10 +8457,6 @@ body:has(.page-title-banner nav.steps) .page-flow {
 /* Satu Ultimate per layar: aksi di baris tabel daftar siklus memakai Secondary */
 
 /* Hitungan di tab yang dipilih memakai warna aksi agar terlihat */
-.page-flow:has(.menetapkan-table-layout) .menetapkan-dimension-tabs > button[aria-pressed="true"] .menetapkan-tab-count {
-  background: var(--sd-action-default);
-  color: var(--sd-text-inverse);
-}
 
 /* Ikon info menempel di akhir nama indikator (ikut baris terakhir, tidak terlempar ke tepi sel) */
 .page-flow:has(.menetapkan-table-layout) .table-indicator-title {
@@ -9921,3 +9552,23 @@ strong {
 .root-summary-status{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px}.root-summary-status .root-summary-change{margin:0}
 
 .required-label{font-size:12px;color:#b33946;margin-left:5px}.evidence-link-error{font-size:12px;color:#b33946;margin:6px 0 0}.execution-card input[aria-invalid="true"]{border-color:#b33946}
+
+/* Menetapkan: jarak komponen Seragam (Tabs, Banner, Table) */
+.menetapkan-dimension-tabs {
+  margin: 8px 0 0;
+}
+.report-list-toolbar {
+  margin: 16px 0;
+}
+.menetapkan-recommendation-reminder {
+  margin: 0 0 16px;
+}
+.menetapkan-selected-item > .menetapkan-selected-link {
+  justify-content: flex-start;
+  text-align: left;
+  white-space: normal;
+  height: auto;
+  min-height: 28px;
+  font-weight: 400;
+  color: var(--sd-gray-90);
+}

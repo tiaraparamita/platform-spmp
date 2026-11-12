@@ -416,3 +416,84 @@
 .sd-menu-item.sd-menu-danger:hover {
   color: var(--sd-red-60);
 }
+
+/* Button hanya ikon (persegi) dan lebar penuh */
+.sd-btn-icon {
+  padding: 0;
+  aspect-ratio: 1;
+}
+.sd-btn-icon.sd-btn-md {
+  width: calc(var(--sd-text-action-line) + 16px);
+}
+.sd-btn-icon.sd-btn-sm {
+  width: 28px;
+}
+.sd-btn-block {
+  width: 100%;
+}
+.sd-banner-body {
+  flex: 1;
+  min-width: 0;
+}
+.sd-banner > .sd-btn {
+  margin: -4px -4px -4px 0;
+  flex: none;
+}
+
+/* Baris tabel terpilih */
+.sd-table tr.sd-row-selected td {
+  background: var(--sd-surface-selected-default);
+}
+
+/* Tabs: garis bawah, tab aktif biru, hitungan pada tab aktif berlatar action-default */
+.sd-tabs {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+}
+.sd-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  padding: 12px 4px;
+  margin: 0 0 -1px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--sd-gray-60);
+  font-family: inherit;
+  font-size: var(--sd-text-action-size);
+  line-height: var(--sd-text-action-line);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.sd-tab:hover {
+  color: var(--sd-gray-90);
+  background: transparent;
+}
+.sd-tab[aria-selected="true"] {
+  color: var(--sd-blue-70);
+  border-bottom-color: var(--sd-blue-70);
+}
+.sd-tab:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--sd-interactive-focused);
+}
+.sd-tab-count {
+  min-width: 20px;
+  padding: 0 6px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-gray-10);
+  color: var(--sd-gray-90);
+  font-size: var(--sd-text-helper-size);
+  line-height: 20px;
+  text-align: center;
+}
+.sd-tab[aria-selected="true"] .sd-tab-count {
+  background: var(--sd-interactive-default);
+  color: white;
+}
