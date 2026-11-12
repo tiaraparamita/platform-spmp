@@ -10048,61 +10048,18 @@ strong {
 }
 
 
-/* Stepper di dalam banner biru, di atas judul dan pengantar (varian inverse) */
+/* Stepper putih menimpa bagian bawah banner (di bawah judul dan pengantar) */
+.page-title-banner.has-breadcrumb .page-title-inner {
+  display: flow-root;
+  padding-bottom: 0;
+}
 .page-title-banner .flow-stepper {
-  margin: 20px 0 28px;
-  padding: 0;
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-  overflow-x: auto;
+  position: relative;
+  z-index: 2;
+  margin: 28px 0 -52px;
 }
-.page-title-banner .flow-stepper ol {
-  min-width: 640px;
-}
-.page-title-banner .flow-stepper .flow-step + .flow-step::before {
-  background: var(--sd-blue-60);
-}
-.page-title-banner .flow-stepper .flow-step.after-done::before {
-  background: var(--sd-green-30);
-}
-.page-title-banner .flow-stepper .flow-step-btn {
-  color: var(--sd-white);
-}
-.page-title-banner .flow-stepper .flow-step.is-todo .flow-step-btn {
-  color: var(--sd-blue-10);
-}
-.page-title-banner .flow-stepper .flow-step-btn:hover {
-  background: transparent;
-  color: var(--sd-white);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.page-title-banner .flow-stepper .flow-step-btn::before {
-  border-color: var(--sd-blue-40);
-  background: var(--sd-blue-90);
-  color: var(--sd-blue-10);
-}
-.page-title-banner .flow-stepper .flow-step.is-done .flow-step-btn::before {
-  border-color: var(--sd-green-60);
-  background: var(--sd-green-60);
-  color: var(--sd-white);
-}
-.page-title-banner .flow-stepper .flow-step.is-active .flow-step-btn::before {
-  border-color: var(--sd-white);
-  background: var(--sd-white);
-  color: var(--sd-blue-90);
-  box-shadow: 0 0 0 3px color-mix(in srgb, white 30%, transparent);
-}
-.page-title-banner .flow-stepper .flow-step-caption {
-  color: var(--sd-blue-10);
-}
-.page-title-banner .flow-stepper .flow-step.is-active .flow-step-caption {
-  color: var(--sd-white);
-  font-weight: 600;
-}
-.page-title-banner .page-title-inner {
-  padding-bottom: 34px;
+body:has(.page-title-banner .flow-stepper) .page-flow {
+  padding-top: 76px;
 }
 .flow-filters {
   align-items: center;
