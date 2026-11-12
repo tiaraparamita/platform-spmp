@@ -66,7 +66,7 @@ Kelas bantu di `sd-ui.css`: `sd-cell-title` dan `sd-cell-sub` (isi sel tabel), `
 
 Status migrasi: Evaluasi Diri dan beranda Siklus 6M (daftar siklus, banner ajakan, menu ⋮), Menetapkan (tabel indikator, tab dimensi, panel pilihan, banner pengingat; dialog target belum), Memetakan (kartu akar masalah dengan checkbox dan text field), Merencanakan (kegiatan rekomendasi, formulir kegiatan, rincian anggaran, pemilih bulan), serta tombol navigasi, status simpan, dan banner bersama di semua tahap alur sudah memakai semua fungsi bantu. Judul halaman (`page-title-banner`) mengikuti PageHeader `tone="blue"`: judul 24/28 semibold, penjelasan maksimal 68 karakter per baris. Semua badge di seluruh halaman sudah memakai `sdBadge` (fungsi `badge(teks)` di `app.js` hanya pembungkus yang memetakan status ke tone). Tombol, tabel, dan select di halaman lain masih memakai versi lama. Kelas `.badge`, `.green`, `.amber`, `.red` di `style.css` sudah tidak dipakai badge dan boleh dihapus bertahap. Halaman lain masih memakai tombol, tabel, dan select lama.
 
-## Alur 6M: stepper vertikal dan accordion per indikator
+## Alur 6M: stepper, pratinjau rencana, dan accordion per indikator
 
 Langkah 1 sampai 3 (indikator dan target, akar masalah, kegiatan) saling bergantung. Konteks dibawa oleh stepper (di langkah mana) dan pratinjau rencana (apa yang sedang dibangun).
 
@@ -78,4 +78,3 @@ Langkah 1 sampai 3 (indikator dan target, akar masalah, kegiatan) saling bergant
 - **Baca dulu, baru pilih.** Di semua daftar pilihan langkah 1 sampai 3, isi yang perlu dibaca ada di kiri dan kontrol pilih di ujung kanan baris (kolom "Pilihan" di tabel, sisi kanan kartu kegiatan). Kontrolnya satu: checkbox Seragam berlabel "Pilih" yang menjadi "Dipilih" saat dicentang (langsung, tanpa dialog). Deskripsi kegiatan terlihat dua baris sebelum dipilih, dengan "Selengkapnya" untuk membuka semuanya. Langkah 1: setelah dipilih, kolom target muncul di sisi kanan baris (galat tampil di bawah kolom). Melepas pilihan kegiatan bisa diurungkan lewat toast "Urungkan" (`removeActivity()`, `undoRemoveActivity()`), bukan konfirmasi. Menambah pilihan sendiri satu pola: kolom teks dengan tombol Tambah ("Akar masalah lain dari sekolah", "Kegiatan dari sekolah"); hasilnya muncul sebagai baris "Dipilih" dengan badge "Dari sekolah".
 - **Sedikit teks.** Di badan halaman tiap area kerja hanya satu kalimat petunjuk ("Pilih akar masalah di sekolah Anda"); keterangan panjang dilipat ("Tentang indikator").
 - **Kaki halaman** (`flowFooter()`) di akhir area kerja: tombol bernama tujuan ("Kembali: Memetakan", "Lanjut: Merencanakan"), "Tersimpan otomatis", dan petunjuk bila belum lengkap.
-- Kalimat judul halaman memakai pola yang sama: "Untuk setiap X pilihan Anda, pilih Y. Berikutnya, ...".
