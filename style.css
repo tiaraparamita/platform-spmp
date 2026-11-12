@@ -1062,9 +1062,6 @@ button:focus-visible {
 }
 .lowest-tag {
   margin: 0 0 9px 5px;
-  background: var(--sd-yellow-0);
-  color: var(--sd-yellow-70);
-  border: 1px solid var(--sd-yellow-0);
 }
 .section-intro {
   margin: 0 0 18px;
