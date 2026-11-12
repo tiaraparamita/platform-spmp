@@ -23,6 +23,8 @@ Persetujuan, periode evaluasi, dan pengiriman ke Dinas atau ARKAS merupakan simu
 - `index.html`: halaman utama
 - `app.js`: tampilan, alur, dan penyimpanan lokal
 - `style.css`: gaya dan tata letak responsif
+- `sd-ui.js` dan `sd-ui.css`: fungsi bantu komponen Seragam (tombol, radio, select, tabel); lihat `SERAGAM.md`
+- `scripts/seragam-lint.mjs`: pemeriksa kepatuhan Seragam
 - `referensi-indikator.json`: referensi indikator
 - `tokens/seragam.css`: token Design System Seragam; catatan versi dan cara memperbarui di `SERAGAM.md`
 
