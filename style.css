@@ -9626,7 +9626,6 @@ strong {
   width: 100%;
 }
 
-
 /* Banner awal: stepper putih menimpa bagian bawah banner biru */
 .page-title-banner.has-breadcrumb .page-title-inner {
   display: flow-root;
@@ -9705,73 +9704,11 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
   }
 }
 
-
 /* Langkah 1: kartu rekomendasi, kepala daftar dengan filter, syarat selesai */
 .chain-wrap {
   gap: 24px;
 }
-.flow-reco {
-  margin: 0;
-  padding: 20px;
-  background: var(--sd-blue-5);
-  border: 1px solid var(--sd-blue-10);
-  border-radius: var(--sd-radius-md);
-  box-shadow: none;
-}
-.flow-reco-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-}
-.flow-reco-head h2 {
-  margin: 0 0 4px;
-  font-size: var(--sd-text-headingmedium-size);
-  line-height: var(--sd-text-headingmedium-line);
-  font-weight: 600;
-  color: var(--sd-gray-90);
-}
-.flow-reco-head p {
-  margin: 0;
-  max-width: 62ch;
-  font-size: var(--sd-text-bodysmall-size);
-  line-height: var(--sd-text-bodysmall-line);
-  color: var(--sd-gray-80);
-}
-.flow-reco-head .sd-btn {
-  flex: none;
-}
-.flow-reco-list {
-  margin: 16px 0 0;
-  padding: 0 16px;
-  list-style: none;
-  background: var(--sd-white);
-  border-radius: var(--sd-radius-md);
-}
-.flow-reco-list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 0;
-  border-top: 1px solid var(--sd-blue-10);
-}
-.flow-reco-list li:first-child {
-  border-top: 0;
-}
-.flow-reco-name {
-  display: block;
-  font-size: var(--sd-text-action-size);
-  line-height: var(--sd-text-action-line);
-  font-weight: 600;
-  color: var(--sd-gray-90);
-}
-.flow-reco-why {
-  display: block;
-  font-size: var(--sd-text-bodysmall-size);
-  line-height: var(--sd-text-bodysmall-line);
-  color: var(--sd-gray-60);
-}
+
 .flow-list-head {
   display: flex;
   align-items: flex-end;
@@ -9847,26 +9784,57 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
 }
 
 /* Kartu rekomendasi lebih ringkas: nama dan alasan dalam satu baris */
-.flow-reco {
-  padding: 16px 20px;
-}
-.flow-reco-list {
-  margin-top: 12px;
-}
-.flow-reco-list li {
-  padding: 10px 0;
-}
-.flow-reco-list li > div {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0 12px;
-  min-width: 0;
-}
-.flow-reco-name,
-.flow-reco-why {
-  display: inline;
-}
+
 .flow-list-head .sd-select {
   width: 320px;
+}
+
+
+/* Langkah 1: satu tabel semua indikator dengan filter Mutu dan Kategori */
+.flow-filters {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  flex: none;
+}
+.flow-filters .sd-select {
+  width: auto;
+}
+.flow-filters .sd-select > .sd-field-label {
+  display: block;
+  margin-bottom: 4px;
+}
+#menetapkan-dim {
+  width: 300px;
+}
+#menetapkan-cat {
+  width: 190px;
+  min-width: 0;
+}
+.flow-list-head .sd-select {
+  width: auto;
+}
+.menetapkan-indicator-table th:nth-child(1) {
+  width: 26%;
+}
+.menetapkan-indicator-table th:nth-child(2) {
+  width: 15%;
+}
+.table-mutu {
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  color: var(--sd-gray-80);
+}
+
+.menetapkan-indicator-table th:nth-child(1) {
+  width: 25%;
+}
+.menetapkan-indicator-table th:nth-child(2) {
+  width: 13%;
+}
+.menetapkan-indicator-table th:nth-child(5) {
+  width: 15%;
+}
+.menetapkan-indicator-table .table-indicator-change {
+  white-space: nowrap;
 }
