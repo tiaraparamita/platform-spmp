@@ -9999,3 +9999,24 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
 .menetapkan-indicator-table th:nth-child(7) {
   width: auto;
 }
+
+/* Lima kolom: Indikator, Capaian, Kategori, Jadikan prioritas, Target (Mutu hanya sebagai filter) */
+.menetapkan-indicator-table th:nth-child(1) {
+  width: 38%;
+}
+.menetapkan-indicator-table th:nth-child(2) {
+  width: 22%;
+}
+.menetapkan-indicator-table th:nth-child(3) {
+  width: 11%;
+}
+.menetapkan-indicator-table th:nth-child(4) {
+  width: 11%;
+}
+.menetapkan-indicator-table th:nth-child(5) {
+  width: auto;
+}
+.menetapkan-indicator-table th:nth-child(6),
+.menetapkan-indicator-table th:nth-child(7) {
+  width: auto;
+}
