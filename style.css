@@ -7563,10 +7563,7 @@ body:has(.sx-next) .page-title-banner .page-title-inner {
 }
 
 /* Hero alur Siklus 6M: breadcrumb (inverse) di kiri atas dan rel langkah Process Steps varian inverse di bawah judul */
-.page-title-banner.has-breadcrumb .page-title-inner {
-  padding-top: 24px;
-  padding-bottom: 32px;
-}
+
 .page-breadcrumb {
   margin-bottom: 20px;
 }
@@ -7608,10 +7605,6 @@ body:has(.sx-next) .page-title-banner .page-title-inner {
   text-underline-offset: 3px;
 }
 /* Rel langkah: panel putih yang separuhnya menimpa hero (seperti panel di daftar siklus) */
-.page-title-banner.has-breadcrumb .page-title-inner {
-  display: flow-root;
-  padding-bottom: 0;
-}
 
 /* Menetapkan: tabel indikator, tab, banner peringatan, dan panel pilihan memakai token Seragam */
 
@@ -9119,13 +9112,7 @@ strong {
 }
 
 /* Alur 6M: stepper vertikal di kiri, kemajuan di kepala halaman, accordion per indikator, kaki halaman */
-.wrap:has(.flow-layout) {
-  max-width: 1440px;
-  width: calc(100% - 60px);
-}
-.page-title-banner.has-breadcrumb .page-title-inner {
-  padding-bottom: 28px;
-}
+
 .flow-layout {
   display: grid;
   grid-template-columns: 288px minmax(0, 1fr);
@@ -9265,9 +9252,7 @@ strong {
   color: var(--sd-gray-60);
 }
 @media (max-width: 960px) {
-  .wrap:has(.flow-layout) {
-    width: calc(100% - 28px);
-  }
+
   .flow-layout {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -9287,69 +9272,6 @@ strong {
 }
 
 /* Hero di dalam badan halaman (pola spmi): kartu biru berisi langkah, judul, pengantar, dan kemajuan; breadcrumb terang di atasnya */
-.flow-crumbs {
-  margin: 0 0 16px;
-}
-.flow-crumbs li {
-  color: var(--sd-gray-60);
-}
-.flow-crumbs [aria-current="page"] {
-  color: var(--sd-gray-90);
-}
-.flow-crumbs li.crumb-sep .sd-icon {
-  width: 18px;
-  height: 18px;
-  color: var(--sd-gray-50);
-}
-.flow-crumbs .sd-btn {
-  color: var(--sd-gray-60);
-  font-weight: 400;
-  padding: 0 4px;
-  min-height: 28px;
-}
-.flow-crumbs .sd-btn:hover {
-  color: var(--sd-blue-70);
-  background: transparent;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.flow-hero {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 16px;
-  padding: 24px;
-  border-radius: var(--sd-radius-md);
-  background: var(--sd-surface-dark-blue);
-  color: var(--sd-text-inverse);
-}
-.flow-hero-step {
-  margin: 0;
-  font-size: var(--sd-text-bodysmall-size);
-  line-height: var(--sd-text-bodysmall-line);
-  font-weight: 600;
-  color: var(--sd-text-inverse-subdued);
-}
-.flow-hero h1 {
-  margin: 0;
-  font-size: var(--sd-text-displaysmall-size);
-  line-height: var(--sd-text-displaysmall-line);
-  font-weight: var(--sd-text-displaysmall-weight);
-  color: var(--sd-text-inverse);
-}
-.flow-hero-lede {
-  margin: 4px 0 0;
-  max-width: 68ch;
-  font-size: var(--sd-text-body-size);
-  line-height: var(--sd-text-body-line);
-  color: var(--sd-text-inverse-subdued);
-}
-.flow-hero .flow-progress {
-  margin-top: 16px;
-}
-.page-flow {
-  padding-top: 24px;
-}
 
 /* Lebih sedikit teks: instruksi satu kalimat, detail dilipat */
 .recommendation-description.is-clamped {
@@ -9477,7 +9399,6 @@ strong {
   line-height: var(--sd-text-bodysmall-line);
   white-space: nowrap;
 }
-
 
 /* Stepper horizontal di atas, pratinjau "Rencana Anda" di kanan */
 .flow-stepper {
@@ -9703,4 +9624,33 @@ strong {
 }
 .flow-stepper ol {
   width: 100%;
+}
+
+
+/* Banner awal: stepper putih menimpa bagian bawah banner biru */
+.page-title-banner.has-breadcrumb .page-title-inner {
+  display: flow-root;
+  padding-bottom: 0;
+}
+.page-title-banner .flow-stepper {
+  position: relative;
+  z-index: 2;
+  margin: 28px 0 -52px;
+}
+body:has(.page-title-banner .flow-stepper) .page-flow {
+  padding-top: 76px;
+}
+.flow-progress {
+  margin: 0 0 16px;
+}
+.flow-progress-text {
+  color: var(--sd-gray-90);
+}
+.flow-progress-text .sd-icon {
+  color: var(--sd-green-60);
+}
+
+.flow-pv-chain li {
+  padding: 0 2px 8px;
+  white-space: nowrap;
 }
