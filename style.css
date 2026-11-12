@@ -9866,3 +9866,67 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
 .menetapkan-indicator-table th:nth-child(5) {
   width: 11%;
 }
+
+/* Tujuh kolom: Indikator, Mutu, Sumber data, Capaian, Kategori, Jadikan prioritas, Target */
+.menetapkan-indicator-table th:nth-child(1) {
+  width: 26%;
+}
+.menetapkan-indicator-table th:nth-child(2) {
+  width: 13%;
+}
+.menetapkan-indicator-table th:nth-child(3) {
+  width: 15%;
+}
+.menetapkan-indicator-table th:nth-child(4) {
+  width: 16%;
+}
+.menetapkan-indicator-table th:nth-child(5) {
+  width: 9%;
+}
+.menetapkan-indicator-table th:nth-child(6) {
+  width: 9%;
+}
+.menetapkan-indicator-table th:nth-child(7) {
+  width: 12%;
+}
+.table-code {
+  margin-right: 4px;
+  font-size: var(--sd-text-helper-size);
+  line-height: var(--sd-text-helper-line);
+  font-weight: 400;
+  color: var(--sd-gray-60);
+}
+
+/* Lebar kolom dengan kolom target terisi, dan sumber data dipangkas dua baris */
+.menetapkan-indicator-table th:nth-child(1) {
+  width: 24%;
+}
+.menetapkan-indicator-table th:nth-child(2) {
+  width: 12%;
+}
+.menetapkan-indicator-table th:nth-child(3) {
+  width: 13%;
+}
+.menetapkan-indicator-table th:nth-child(4) {
+  width: 16%;
+}
+.menetapkan-indicator-table th:nth-child(5) {
+  width: 9%;
+}
+.menetapkan-indicator-table th:nth-child(6) {
+  width: 9%;
+}
+.menetapkan-indicator-table th:nth-child(7) {
+  width: 17%;
+}
+.menetapkan-indicator-table .sd-field {
+  min-width: 130px;
+}
+.table-source-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: var(--sd-text-helper-size);
+  line-height: var(--sd-text-helper-line);
+}
