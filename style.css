@@ -7323,7 +7323,7 @@ html {
 .menetapkan-tab-count{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--sd-blue-70);color:#fff;font-size:11px;font-weight:600;line-height:1;flex-shrink:0;font-variant-numeric:tabular-nums}
 
 /* Selected priorities stay alongside the table rather than covering its rows. */
-.wrap:has(.menetapkan-table-layout){max-width:1440px;width:calc(100% - 60px)}.menetapkan-table-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px;align-items:start}.menetapkan-table-content{min-width:0}.menetapkan-selection-panel{position:sticky;top:24px;margin:0;padding:20px;border:1px solid var(--sd-modal-footer-border);border-radius:12px;box-shadow:0 8px 28px #20365d0d}.menetapkan-selected-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--sd-modal-footer-border);font-size:14px;line-height:1.5}.menetapkan-selected-item:first-child{padding-top:0}.menetapkan-selected-item>span{min-width:0}.menetapkan-selected-item>button{flex-shrink:0;font-size:24px;line-height:1;padding:4px;color:var(--sd-gray-60)}.menetapkan-selection-actions{display:flex;flex-direction:column;gap:10px;margin-top:20px}.menetapkan-selection-actions button{width:100%;font-size:13px;padding:12px 8px}.menetapkan-table-content .menetapkan-indicator-table{min-width:850px}
+.wrap:has(.menetapkan-table-layout){max-width:1440px;width:calc(100% - 60px)}.menetapkan-table-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px;align-items:start}.menetapkan-table-content{min-width:0}.menetapkan-selection-panel{position:sticky;top:24px;margin:0;padding:20px;border:1px solid var(--sd-modal-footer-border);border-radius:12px;box-shadow:0 8px 28px #20365d0d}.menetapkan-selected-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--sd-modal-footer-border);font-size:14px;line-height:1.5}.menetapkan-selected-item:first-child{padding-top:0}.menetapkan-selected-item>span{min-width:0}.menetapkan-selected-item>button{flex-shrink:0;font-size:24px;line-height:1;padding:4px;color:var(--sd-gray-60)}.menetapkan-selection-actions{display:flex;flex-direction:column;gap:10px;margin-top:20px}.menetapkan-selection-actions button{width:100%;font-size:13px;padding:12px 8px}
 @media(max-width:900px){.menetapkan-table-layout{grid-template-columns:210px minmax(0,1fr);gap:16px}.menetapkan-selection-panel{padding:16px}}
 @media(max-width:640px){.wrap:has(.menetapkan-table-layout){width:calc(100% - 28px)}.menetapkan-table-layout{grid-template-columns:minmax(0,1fr)}.menetapkan-selection-panel{position:static}.menetapkan-selection-actions{display:grid;grid-template-columns:1fr 1fr}.menetapkan-selected-item{padding:10px 0}}
 
@@ -9703,4 +9703,170 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
     position: fixed;
     max-height: min(70vh, 560px);
   }
+}
+
+
+/* Langkah 1: kartu rekomendasi, kepala daftar dengan filter, syarat selesai */
+.chain-wrap {
+  gap: 24px;
+}
+.flow-reco {
+  margin: 0;
+  padding: 20px;
+  background: var(--sd-blue-5);
+  border: 1px solid var(--sd-blue-10);
+  border-radius: var(--sd-radius-md);
+  box-shadow: none;
+}
+.flow-reco-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.flow-reco-head h2 {
+  margin: 0 0 4px;
+  font-size: var(--sd-text-headingmedium-size);
+  line-height: var(--sd-text-headingmedium-line);
+  font-weight: 600;
+  color: var(--sd-gray-90);
+}
+.flow-reco-head p {
+  margin: 0;
+  max-width: 62ch;
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  color: var(--sd-gray-80);
+}
+.flow-reco-head .sd-btn {
+  flex: none;
+}
+.flow-reco-list {
+  margin: 16px 0 0;
+  padding: 0 16px;
+  list-style: none;
+  background: var(--sd-white);
+  border-radius: var(--sd-radius-md);
+}
+.flow-reco-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--sd-blue-10);
+}
+.flow-reco-list li:first-child {
+  border-top: 0;
+}
+.flow-reco-name {
+  display: block;
+  font-size: var(--sd-text-action-size);
+  line-height: var(--sd-text-action-line);
+  font-weight: 600;
+  color: var(--sd-gray-90);
+}
+.flow-reco-why {
+  display: block;
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  color: var(--sd-gray-60);
+}
+.flow-list-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 12px;
+}
+.flow-list-head h2 {
+  margin: 0 0 2px;
+  font-size: var(--sd-text-headingmedium-size);
+  line-height: var(--sd-text-headingmedium-line);
+  font-weight: 600;
+  color: var(--sd-gray-90);
+}
+.flow-list-sub {
+  margin: 0;
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  color: var(--sd-gray-60);
+}
+.flow-list-head .sd-select {
+  flex: none;
+  width: 360px;
+}
+.flow-list-head .sd-select > .sd-field-label {
+  display: block;
+  margin-bottom: 4px;
+}
+.flow-criteria {
+  display: flex;
+  flex: 0 0 100%;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  order: -1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.flow-criteria li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  color: var(--sd-gray-60);
+}
+.flow-criteria li::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  border: 2px solid var(--sd-gray-40);
+  border-radius: 50%;
+}
+.flow-criteria li.is-ok {
+  color: var(--sd-gray-90);
+}
+.flow-criteria li.is-ok::before {
+  display: none;
+}
+.flow-criteria li .sd-icon {
+  width: 16px;
+  height: 16px;
+  margin: 0 2px;
+  color: var(--sd-green-60);
+}
+.menetapkan-indicator-table th:nth-child(1) {
+  width: 34%;
+}
+.menetapkan-indicator-table .table-indicator-source {
+  margin: 2px 0 0;
+}
+
+/* Kartu rekomendasi lebih ringkas: nama dan alasan dalam satu baris */
+.flow-reco {
+  padding: 16px 20px;
+}
+.flow-reco-list {
+  margin-top: 12px;
+}
+.flow-reco-list li {
+  padding: 10px 0;
+}
+.flow-reco-list li > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 12px;
+  min-width: 0;
+}
+.flow-reco-name,
+.flow-reco-why {
+  display: inline;
+}
+.flow-list-head .sd-select {
+  width: 320px;
 }
