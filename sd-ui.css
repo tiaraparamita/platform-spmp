@@ -781,3 +781,19 @@
   border-bottom-color: var(--sd-blue-10);
   color: var(--sd-blue-90);
 }
+
+/* Select: ikon panah diposisikan terhadap kotak pilihan (bukan label di atasnya) */
+.sd-select-box {
+  position: relative;
+  display: block;
+}
+.sd-select .sd-select-box > .sd-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sd-select > .sd-field-label {
+  display: block;
+  margin: 0 0 4px;
+}

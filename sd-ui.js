@@ -58,9 +58,9 @@
    * options: [{ value, label }]. onchange: string.
    */
   function sdSelect({ label, options, value, onchange = '', id = '', hideLabel = false, optional = false }) {
-    return `<label class="sd-select"><span class="${hideLabel ? 'sd-sr-only' : 'sd-field-label'}">${e(label)}${optional ? ' (opsional)' : ''}</span><select${id ? ` id="${e(id)}"` : ''}${onchange ? ` onchange="${onchange}"` : ''}>${options
+    return `<label class="sd-select"><span class="${hideLabel ? 'sd-sr-only' : 'sd-field-label'}">${e(label)}${optional ? ' (opsional)' : ''}</span><span class="sd-select-box"><select${id ? ` id="${e(id)}"` : ''}${onchange ? ` onchange="${onchange}"` : ''}>${options
       .map((o) => `<option value="${e(o.value)}"${String(o.value) === String(value) ? ' selected' : ''}>${e(o.label)}</option>`)
-      .join('')}</select>${sdIcon('arrow-drop-down')}</label>`;
+      .join('')}</select>${sdIcon('arrow-drop-down')}</span></label>`;
   }
 
   /**
