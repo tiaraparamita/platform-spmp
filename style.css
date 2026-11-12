@@ -9558,3 +9558,18 @@ strong {
 .chain-group > .sd-field {
   margin-top: 16px;
 }
+
+/* Toast dengan tindakan Urungkan */
+.toast.toast-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.toast .sd-btn.toast-undo,
+.toast .sd-btn.toast-undo:hover {
+  color: var(--sd-blue-30);
+  background: transparent;
+}
+.menetapkan-indicator-table .sd-field {
+  min-width: 150px;
+}
