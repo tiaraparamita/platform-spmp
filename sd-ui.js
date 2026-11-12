@@ -13,6 +13,7 @@
     info: 'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
     warning: 'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',
     'check-circle': 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
+    close: 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
     error: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z',
   };
 
@@ -27,8 +28,11 @@
    * onclick: string JavaScript (pola app.js). attrs: atribut tambahan sudah dalam bentuk string, mis. 'id="x"'.
    */
   function sdBtn(label, o = {}) {
-    const { variant = 'ultimate', size = 'md', onclick = '', disabled = false, leadingIcon = '', trailingIcon = '', type = 'button', attrs = '', id = '', className = '' } = o;
-    return `<button type="${type}" class="sd-btn sd-btn-${size} sd-btn-${variant}${className ? ' ' + className : ''}"${id ? ` id="${e(id)}"` : ''}${onclick ? ` onclick="${onclick}"` : ''}${disabled ? ' disabled' : ''}${attrs ? ' ' + attrs : ''}>${leadingIcon ? sdIcon(leadingIcon) : ''}${e(label)}${trailingIcon ? sdIcon(trailingIcon) : ''}</button>`;
+    const { variant = 'ultimate', size = 'md', onclick = '', disabled = false, leadingIcon = '', trailingIcon = '', type = 'button', attrs = '', id = '', className = '', icon = '', fullWidth = false } = o;
+    // icon: tombol hanya ikon (label dipakai sebagai aria-label, wajib).
+    const cls = `sd-btn sd-btn-${size} sd-btn-${variant}${icon ? ' sd-btn-icon' : ''}${fullWidth ? ' sd-btn-block' : ''}${className ? ' ' + className : ''}`;
+    const aria = icon ? ` aria-label="${e(label)}"` : '';
+    return `<button type="${type}" class="${cls}"${aria}${id ? ` id="${e(id)}"` : ''}${onclick ? ` onclick="${onclick}"` : ''}${disabled ? ' disabled' : ''}${attrs ? ' ' + attrs : ''}>${icon ? sdIcon(icon) : `${leadingIcon ? sdIcon(leadingIcon) : ''}${e(label)}${trailingIcon ? sdIcon(trailingIcon) : ''}`}</button>`;
   }
 
   /**
@@ -63,11 +67,12 @@
     return `<div class="sd-table-wrap" role="region" aria-label="${e(caption)}" tabindex="0"><table class="sd-table ${className}"><caption class="sd-sr-only">${e(caption)}</caption><thead><tr>${columns
       .map((c) => `<th scope="col"${c.align === 'right' ? ' class="sd-right"' : ''}>${c.srOnly ? `<span class="sd-sr-only">${e(c.label)}</span>` : e(c.label)}</th>`)
       .join('')}</tr></thead><tbody>${rows
-      .map((r) =>
-        Array.isArray(r)
-          ? `<tr>${r.map((cell, i) => `<td${columns[i]?.align === 'right' ? ' class="sd-right"' : ''}>${cell}</td>`).join('')}</tr>`
-          : `<tr><td class="sd-full" colspan="${cols}">${r.full}</td></tr>`,
-      )
+      .map((r) => {
+        if (!Array.isArray(r) && r.full !== undefined) return `<tr><td class="sd-full" colspan="${cols}">${r.full}</td></tr>`;
+        const cells = Array.isArray(r) ? r : r.cells;
+        const attrs = Array.isArray(r) ? '' : `${r.selected ? ' class="sd-row-selected"' : ''}${r.attrs ? ' ' + r.attrs : ''}`;
+        return `<tr${attrs}>${cells.map((cell, i) => `<td${columns[i]?.align === 'right' ? ' class="sd-right"' : ''}>${cell}</td>`).join('')}</tr>`;
+      })
       .join('')}</tbody></table></div>`;
   }
 
@@ -83,10 +88,34 @@
    * Banner statis (bukan entry). tone: info (bawaan) | warning | success | critical | neutral. Pesan penting saja, maksimal 3 baris.
    * critical memakai role="alert"; lainnya role="status". Isi children berupa teks sudah aman (HTML hasil esc()).
    */
-  function sdBanner({ tone = 'info', title = '', children = '' }) {
+  function sdBanner({ tone = 'info', title = '', children = '', onClose = '', className = '' }) {
     const icon = { info: 'info', neutral: 'info', warning: 'warning', success: 'check-circle', critical: 'error' }[tone];
-    return `<div class="sd-banner sd-banner-${tone}" role="${tone === 'critical' ? 'alert' : 'status'}">${sdIcon(icon)}<div>${title ? `<p class="sd-banner-title">${e(title)}</p>` : ''}${children}</div></div>`;
+    return `<div class="sd-banner sd-banner-${tone}${className ? ' ' + className : ''}" role="${tone === 'critical' ? 'alert' : 'status'}">${sdIcon(icon)}<div class="sd-banner-body">${title ? `<p class="sd-banner-title">${e(title)}</p>` : ''}${children}</div>${onClose ? sdBtn('Tutup', { variant: 'quiet', size: 'sm', icon: 'close', onclick: onClose }) : ''}</div>`;
   }
 
-  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable, sdBadge, sdBanner });
+  /**
+   * Tabs (satu tab aktif, tetap di halaman yang sama). items: [{ value, label, count }]. onselect(value) mengembalikan string JavaScript.
+   * Keyboard: panah kiri/kanan berpindah dan mengaktifkan, Home/End; hanya tab aktif yang masuk urutan Tab. Label maksimal 3 kata bila bisa.
+   */
+  function sdTabs({ label, items, value, onselect, className = '' }) {
+    return `<div class="sd-tabs ${className}" role="tablist" aria-label="${e(label)}" onkeydown="sdTabsKey(event)">${items
+      .map((it) => {
+        const on = String(it.value) === String(value);
+        return `<button type="button" role="tab" class="sd-tab" aria-selected="${on}" tabindex="${on ? 0 : -1}" onclick="${onselect(it.value)}">${e(it.label)}${it.count ? `<span class="sd-tab-count" aria-label="${it.count} dipilih">${it.count}</span>` : ''}</button>`;
+      })
+      .join('')}</div>`;
+  }
+  function sdTabsKey(ev) {
+    const keys = { ArrowRight: 1, ArrowLeft: -1, Home: 'first', End: 'last' };
+    if (!(ev.key in keys)) return;
+    const tabs = [...ev.currentTarget.querySelectorAll('[role=tab]')];
+    const at = tabs.indexOf(document.activeElement);
+    const k = keys[ev.key];
+    const to = k === 'first' ? 0 : k === 'last' ? tabs.length - 1 : (at + k + tabs.length) % tabs.length;
+    ev.preventDefault();
+    tabs[to].click();
+    document.querySelector('.sd-tabs [role=tab][aria-selected=true]')?.focus();
+  }
+
+  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable, sdBadge, sdBanner, sdTabs, sdTabsKey });
 })();
