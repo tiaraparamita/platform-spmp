@@ -9663,11 +9663,23 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
 .page-title-inner {
   position: relative;
 }
+.page-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 8px;
+}
+.page-title-row h1 {
+  margin: 0;
+}
 .flow-plan-trigger {
-  position: absolute;
-  top: 24px;
-  right: var(--page-gutter);
-  z-index: 3;
+  flex: none;
+}
+@media (max-width: 640px) {
+  .page-title-row {
+    flex-wrap: wrap;
+  }
 }
 .flow-preview {
   position: fixed;
