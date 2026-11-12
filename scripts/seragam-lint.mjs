@@ -26,6 +26,7 @@ const rules = [
   { id: 'js-arrow-in-ui-text', kind: 'js', re: />[^<>`]*[→←][^<>`]*</g, why: 'Tanda panah di teks UI. Pakai ikon (sdBtn leadingIcon/trailingIcon).' },
   { id: 'js-raw-select', kind: 'js', re: /<select\b/g, why: 'Select mentah. Pakai sdSelect().' },
   { id: 'js-raw-table', kind: 'js', re: /<table\b/g, why: 'Tabel mentah. Pakai sdTable().' },
+  { id: 'js-legacy-badge', kind: 'js', re: /(?<![\w.])badge\(|class="tag"/g, why: 'Badge lama. Pakai sdBadge(label, tone).' },
   { id: 'js-raw-button', kind: 'js', re: /<button\b/g, why: 'Tombol mentah. Pakai sdBtn().' },
 ];
 

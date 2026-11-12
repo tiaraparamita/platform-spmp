@@ -317,3 +317,30 @@
   height: 16px;
   color: var(--sd-text-success);
 }
+
+/* Badge: pill, padding 2x8, label 13/20 semibold gray-90 di atas latar badge-* */
+.sd-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--sd-radius-pill);
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--sd-gray-90);
+}
+.sd-badge-green {
+  background: var(--sd-badge-success);
+}
+.sd-badge-amber {
+  background: var(--sd-badge-warning);
+}
+.sd-badge-red {
+  background: var(--sd-badge-critical);
+}
+.sd-badge-blue {
+  background: var(--sd-badge-info);
+}
+.sd-badge-gray {
+  background: var(--sd-badge-neutral);
+}
