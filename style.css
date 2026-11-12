@@ -10020,3 +10020,32 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
 .menetapkan-indicator-table th:nth-child(7) {
   width: auto;
 }
+
+/* Enam kolom: Indikator, Capaian, Kategori, Perubahan, Jadikan prioritas, Target */
+.menetapkan-indicator-table th:nth-child(1) {
+  width: 33%;
+}
+.menetapkan-indicator-table th:nth-child(2) {
+  width: 13%;
+}
+.menetapkan-indicator-table th:nth-child(3) {
+  width: 11%;
+}
+.menetapkan-indicator-table th:nth-child(4) {
+  width: 17%;
+}
+.menetapkan-indicator-table th:nth-child(5) {
+  width: 10%;
+}
+.menetapkan-indicator-table th:nth-child(6) {
+  width: auto;
+}
+.menetapkan-indicator-table .table-indicator-change {
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  color: var(--sd-gray-90);
+  white-space: nowrap;
+}
+.menetapkan-indicator-table .table-indicator-change b {
+  font-weight: 600;
+}
