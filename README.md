@@ -24,5 +24,6 @@ Persetujuan, periode evaluasi, dan pengiriman ke Dinas atau ARKAS merupakan simu
 - `app.js`: tampilan, alur, dan penyimpanan lokal
 - `style.css`: gaya dan tata letak responsif
 - `referensi-indikator.json`: referensi indikator
+- `tokens/seragam.css`: token Design System Seragam; catatan versi dan cara memperbarui di `SERAGAM.md`
 
 Tidak memerlukan instalasi dependensi atau proses build.
