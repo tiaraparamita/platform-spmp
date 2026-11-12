@@ -10064,3 +10064,47 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
 .flow-filters {
   align-items: center;
 }
+
+/* Langkah 2: satu tabel akar masalah dikelompokkan per indikator, pola sama dengan langkah 1 */
+.roots-table.menetapkan-indicator-table th:nth-child(1) {
+  width: 42%;
+}
+.roots-table.menetapkan-indicator-table th:nth-child(2) {
+  width: 15%;
+}
+.roots-table.menetapkan-indicator-table th:nth-child(3) {
+  width: 19%;
+}
+.roots-table.menetapkan-indicator-table th:nth-child(4) {
+  width: 12%;
+}
+.roots-table.menetapkan-indicator-table th:nth-child(5) {
+  width: 12%;
+}
+.roots-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.roots-group-head > span {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 8px;
+}
+.roots-group-head .sd-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--sd-green-60);
+}
+.roots-own {
+  padding: 16px;
+}
+.roots-own .sd-field {
+  max-width: 760px;
+}
+.sd-table .sd-group-row[tabindex="-1"]:focus {
+  outline: 2px solid var(--sd-blue-70);
+  outline-offset: -2px;
+}

@@ -73,7 +73,7 @@
       .map((c) => `<th scope="col"${c.align === 'right' ? ' class="sd-right"' : ''}>${c.srOnly ? `<span class="sd-sr-only">${e(c.label)}</span>` : e(c.label)}</th>`)
       .join('')}</tr></thead><tbody>${rows
       .map((r) => {
-        if (!Array.isArray(r) && r.group !== undefined) return `<tr class="sd-group-row${r.groupClass ? ' ' + r.groupClass : ''}"><th scope="colgroup" colspan="${cols}">${r.group}</th></tr>`;
+        if (!Array.isArray(r) && r.group !== undefined) return `<tr class="sd-group-row${r.groupClass ? ' ' + r.groupClass : ''}"${r.groupAttrs ? ' ' + r.groupAttrs : ''}><th scope="colgroup" colspan="${cols}">${r.group}</th></tr>`;
         if (!Array.isArray(r) && r.full !== undefined) return `<tr><td class="sd-full" colspan="${cols}">${r.full}</td></tr>`;
         const cells = Array.isArray(r) ? r : r.cells;
         const attrs = Array.isArray(r) ? '' : `${r.selected ? ' class="sd-row-selected"' : ''}${r.attrs ? ' ' + r.attrs : ''}`;
