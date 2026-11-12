@@ -9087,153 +9087,7 @@ strong {
   min-width: 120px;
 }
 
-/* Langkah 1-3 satu rangkaian: rel "Pilihan Anda", konteks kartu, dan kelompok per akar masalah */
-.menetapkan-table-layout.chain-layout {
-  grid-template-columns: minmax(0, 1fr) 300px;
-}
-@media (max-width: 900px) {
-  .menetapkan-table-layout.chain-layout {
-    grid-template-columns: minmax(0, 1fr) 260px;
-  }
-}
-@media (max-width: 640px) {
-  .menetapkan-table-layout.chain-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .chain-rail {
-    position: static;
-  }
-}
-.chain-content {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-.chain-content > .card {
-  margin: 0;
-}
-.chain-rail {
-  position: sticky;
-  top: 24px;
-  margin: 0;
-  padding: 20px;
-  max-height: calc(100vh - 48px);
-  overflow-y: auto;
-}
-.chain-rail-title {
-  margin: 0 0 12px;
-  font-size: var(--sd-text-headingsmall-size);
-  line-height: var(--sd-text-headingsmall-line);
-  font-weight: 600;
-  color: var(--sd-gray-90);
-}
-.chain-legend {
-  display: flex;
-  margin: 0 0 16px;
-  padding: 0;
-  list-style: none;
-  border-bottom: 1px solid var(--sd-modal-footer-border);
-}
-.chain-legend li {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  padding: 0 4px 10px;
-  margin-bottom: -1px;
-  border-bottom: 3px solid transparent;
-  color: var(--sd-gray-60);
-}
-.chain-legend li.is-done {
-  border-bottom-color: var(--sd-green-30);
-}
-.chain-legend li.is-current {
-  border-bottom-color: var(--sd-blue-70);
-  color: var(--sd-blue-70);
-}
-.chain-legend-count {
-  font-size: var(--sd-text-headingmedium-size);
-  line-height: var(--sd-text-headingmedium-line);
-  font-weight: 600;
-}
-.chain-legend-label {
-  font-size: var(--sd-text-helper-size);
-  line-height: var(--sd-text-helper-line);
-  text-align: center;
-}
-.chain-tree,
-.chain-roots,
-.chain-acts {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.chain-tree > li + li {
-  margin-top: 16px;
-}
-.chain-ind-head {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.chain-meta {
-  padding: 0 4px;
-  font-size: var(--sd-text-helper-size);
-  line-height: var(--sd-text-helper-line);
-  color: var(--sd-gray-60);
-}
-.chain-roots {
-  margin: 6px 0 0 8px;
-  padding-left: 10px;
-  border-left: 2px solid var(--sd-blue-10);
-}
-.chain-roots > li + li {
-  margin-top: 8px;
-}
-.chain-acts {
-  margin: 2px 0 0 8px;
-  padding-left: 10px;
-  border-left: 2px solid var(--sd-gray-10);
-}
-.chain-empty {
-  padding: 2px 4px;
-  font-size: var(--sd-text-helper-size);
-  line-height: var(--sd-text-helper-line);
-  color: var(--sd-gray-60);
-  list-style: none;
-}
-.chain-rail .sd-btn.chain-node {
-  height: auto;
-  min-height: 28px;
-  padding: 2px 4px;
-  justify-content: flex-start;
-  text-align: left;
-  white-space: normal;
-  color: var(--sd-gray-90);
-  font-weight: 400;
-}
-.chain-rail .sd-btn.chain-node:hover {
-  color: var(--sd-blue-70);
-}
-.chain-rail .sd-btn.chain-node-ind {
-  font-weight: 600;
-}
-.chain-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid var(--sd-modal-footer-border);
-}
-.chain-hint {
-  margin: 0;
-  font-size: var(--sd-text-helper-size);
-  line-height: var(--sd-text-helper-line);
-  color: var(--sd-gray-60);
-}
+/* Langkah 1-3 satu rangkaian: bilah status dan aksi, penanda langkah, kelompok per akar masalah */
 .chain-card-top {
   display: flex;
   align-items: center;
@@ -9312,4 +9166,116 @@ strong {
 }
 .chain-content > .guided-plan > .guided-body {
   padding: 0;
+}
+
+.chain-wrap,
+.chain-wrap.menetapkan-table-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+}
+.chain-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.chain-content > .card {
+  margin: 0;
+}
+
+/* Bilah status dan aksi: satu baris, tetap terlihat di bawah layar */
+.chain-bar {
+  position: sticky;
+  bottom: 16px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 12px 16px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-modal-footer-border);
+  border-radius: var(--sd-radius-md);
+  box-shadow: var(--sd-elevation-03);
+}
+.chain-bar-status {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.chain-bar-status strong {
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  font-weight: 600;
+  color: var(--sd-gray-90);
+}
+.chain-bar-status span {
+  font-size: var(--sd-text-helper-size);
+  line-height: var(--sd-text-helper-line);
+  color: var(--sd-gray-60);
+}
+.chain-bar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+@media (max-width: 720px) {
+  .chain-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .chain-bar-actions {
+    justify-content: stretch;
+  }
+  .chain-bar-actions .sd-btn {
+    flex: 1;
+  }
+}
+body:has(.chain-bar) .demo-fab {
+  bottom: 104px;
+}
+body:has(.chain-bar) .demo-panel {
+  bottom: 160px;
+}
+
+/* Rekomendasi kegiatan lebih ringkas: deskripsi dua baris, pilihan di sisi kanan */
+.chain-group .recommendation-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 16px;
+  align-items: start;
+}
+.chain-group .recommendation-item > .recommendation-title,
+.chain-group .recommendation-item > .recommendation-body {
+  grid-column: 1;
+}
+.chain-group .recommendation-item > .sd-btn[aria-pressed] {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+.chain-group .recommendation-item > .guided-activity {
+  grid-column: 1 / -1;
+}
+.recommendation-body .sd-btn {
+  margin-left: -4px;
+}
+.recommendation-description.is-clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@media (max-width: 720px) {
+  .chain-group .recommendation-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .chain-group .recommendation-item > .sd-btn[aria-pressed] {
+    grid-column: 1;
+    grid-row: auto;
+  }
 }

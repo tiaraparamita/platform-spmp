@@ -68,10 +68,10 @@ Status migrasi: Evaluasi Diri dan beranda Siklus 6M (daftar siklus, banner ajaka
 
 ## Langkah 1 sampai 3: satu rangkaian
 
-Menetapkan (indikator dan target), Memetakan (akar masalah), dan Merencanakan (kegiatan) saling bergantung, jadi tampilannya dibuat satu pola:
+Menetapkan (indikator dan target), Memetakan (akar masalah), dan Merencanakan (kegiatan) saling bergantung. Konteks dibawa **di dalam area kerja**, bukan di panel tambahan, supaya tidak ada yang baru untuk dipelajari:
 
-- **Rel "Pilihan Anda"** (`chainRail()` di `app.js`) tampil di ketiga langkah dengan posisi, isi, dan tombol aksi yang sama. Legenda tiga langkah menunjukkan jumlah indikator, akar masalah, dan kegiatan; pohon di bawahnya menyusun pilihan sebagai indikator, akar masalah, lalu kegiatan. Tiap simpul bisa diklik untuk menggulir ke bagian itu. Rel ikut diperbarui langsung saat pilihan berubah (`refreshChain()`).
+- **Penanda langkah pada tiap bagian**: kartu indikator di langkah 2 dan 3 diberi "Dari langkah 1: indikator n dari m", dan kelompok akar masalah di langkah 3 diberi "Dari langkah 2: akar masalah n dari m" (`chainCardTop()`, `chainRootGroup()`). Hubungannya terbaca dari susunan: kartu indikator memuat kelompok akar masalah, yang memuat kegiatannya.
 - **Kartu indikator yang sama** (`indicatorHeader()`) di langkah 2 dan 3, dengan tautan kembali ke langkah sebelumnya (`chainBack()`).
-- **Langkah 3 dikelompokkan per akar masalah** (`chainRootGroup()`): kegiatan rekomendasi dan kegiatan sendiri selalu menjawab akar masalah kelompoknya, jadi pilihan akar masalah di formulir kegiatan tidak diperlukan lagi.
+- **Bilah status dan aksi satu baris** (`chainBar()`) di dasar layar pada ketiga langkah: ringkasan pilihan ("2 akar masalah dipilih untuk 2 indikator"), petunjuk langkah berikutnya, dan tombol Kembali, Simpan draf dan keluar, serta Lanjut. Diperbarui langsung lewat `refreshChain()`.
+- **Langkah 3 dikelompokkan per akar masalah**: kegiatan rekomendasi dan kegiatan sendiri selalu menjawab akar masalah kelompoknya. Deskripsi rekomendasi dipangkas dua baris dan bisa dibuka ("Baca selengkapnya").
 - Kalimat judul halaman memakai pola yang sama: "Untuk setiap X pilihan Anda, pilih Y. Berikutnya, ...".
-
