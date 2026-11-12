@@ -65,3 +65,13 @@ Kelas bantu di `sd-ui.css`: `sd-cell-title` dan `sd-cell-sub` (isi sel tabel), `
 `node scripts/seragam-lint.mjs` menghitung pelanggaran umum (ukuran huruf angka, berat 700, hex dan rgb langsung, panah di teks, select/tabel/tombol mentah) dan **gagal bila jumlahnya naik** dibanding `scripts/seragam-lint-baseline.json`. Tambah `--detail` untuk melihat lokasi. Setelah memigrasi satu halaman, jalankan `--update` agar batasnya ikut turun.
 
 Status migrasi: Evaluasi Diri dan beranda Siklus 6M (daftar siklus, banner ajakan, menu ⋮), Menetapkan (tabel indikator, tab dimensi, panel pilihan, banner pengingat; dialog target belum), Memetakan (kartu akar masalah dengan checkbox dan text field), Merencanakan (kegiatan rekomendasi, formulir kegiatan, rincian anggaran, pemilih bulan), serta tombol navigasi, status simpan, dan banner bersama di semua tahap alur sudah memakai semua fungsi bantu. Judul halaman (`page-title-banner`) mengikuti PageHeader `tone="blue"`: judul 24/28 semibold, penjelasan maksimal 68 karakter per baris. Semua badge di seluruh halaman sudah memakai `sdBadge` (fungsi `badge(teks)` di `app.js` hanya pembungkus yang memetakan status ke tone). Tombol, tabel, dan select di halaman lain masih memakai versi lama. Kelas `.badge`, `.green`, `.amber`, `.red` di `style.css` sudah tidak dipakai badge dan boleh dihapus bertahap. Halaman lain masih memakai tombol, tabel, dan select lama.
+
+## Langkah 1 sampai 3: satu rangkaian
+
+Menetapkan (indikator dan target), Memetakan (akar masalah), dan Merencanakan (kegiatan) saling bergantung, jadi tampilannya dibuat satu pola:
+
+- **Rel "Pilihan Anda"** (`chainRail()` di `app.js`) tampil di ketiga langkah dengan posisi, isi, dan tombol aksi yang sama. Legenda tiga langkah menunjukkan jumlah indikator, akar masalah, dan kegiatan; pohon di bawahnya menyusun pilihan sebagai indikator, akar masalah, lalu kegiatan. Tiap simpul bisa diklik untuk menggulir ke bagian itu. Rel ikut diperbarui langsung saat pilihan berubah (`refreshChain()`).
+- **Kartu indikator yang sama** (`indicatorHeader()`) di langkah 2 dan 3, dengan tautan kembali ke langkah sebelumnya (`chainBack()`).
+- **Langkah 3 dikelompokkan per akar masalah** (`chainRootGroup()`): kegiatan rekomendasi dan kegiatan sendiri selalu menjawab akar masalah kelompoknya, jadi pilihan akar masalah di formulir kegiatan tidak diperlukan lagi.
+- Kalimat judul halaman memakai pola yang sama: "Untuk setiap X pilihan Anda, pilih Y. Berikutnya, ...".
+
