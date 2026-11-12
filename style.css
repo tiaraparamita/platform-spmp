@@ -9524,3 +9524,37 @@ strong {
 .flow-meta {
   margin-bottom: 20px;
 }
+
+/* Satu pola pilih: baris dengan checkbox (langkah 1 tabel, langkah 2 tabel, langkah 3 daftar kegiatan) */
+.chain-group .recommendation-item {
+  display: block;
+  margin-top: 8px;
+  padding: 12px 16px;
+}
+.recommendation-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.recommendation-row .sd-check-label {
+  font-weight: 600;
+}
+.chain-group .recommendation-item .recommendation-body {
+  padding-left: 28px;
+}
+.chain-group .recommendation-item .recommendation-body .sd-btn {
+  margin-left: -4px;
+}
+.chain-group .recommendation-item > .guided-activity {
+  margin-top: 12px;
+}
+.chain-instruction {
+  margin: 16px 0 4px;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  font-weight: 600;
+  color: var(--sd-gray-90);
+}
+.chain-group > .sd-field {
+  margin-top: 16px;
+}
