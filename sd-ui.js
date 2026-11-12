@@ -53,8 +53,8 @@
    * Select bawaan peramban dengan gaya Seragam. Label selalu ada; bila kolom tabel sudah menjelaskan, pakai hideLabel (label tetap terbaca pembaca layar).
    * options: [{ value, label }]. onchange: string.
    */
-  function sdSelect({ label, options, value, onchange = '', id = '', hideLabel = false }) {
-    return `<label class="sd-select"><span class="${hideLabel ? 'sd-sr-only' : ''}">${e(label)}</span><select${id ? ` id="${e(id)}"` : ''}${onchange ? ` onchange="${onchange}"` : ''}>${options
+  function sdSelect({ label, options, value, onchange = '', id = '', hideLabel = false, optional = false }) {
+    return `<label class="sd-select"><span class="${hideLabel ? 'sd-sr-only' : 'sd-field-label'}">${e(label)}${optional ? ' (opsional)' : ''}</span><select${id ? ` id="${e(id)}"` : ''}${onchange ? ` onchange="${onchange}"` : ''}>${options
       .map((o) => `<option value="${e(o.value)}"${String(o.value) === String(value) ? ' selected' : ''}>${e(o.label)}</option>`)
       .join('')}</select>${sdIcon('arrow-drop-down')}</label>`;
   }
@@ -121,19 +121,25 @@
   /**
    * Checkbox. Wajib punya label terlihat atau ariaLabel. onchange: string JavaScript, boleh memakai this.checked.
    */
-  function sdCheckbox({ label = '', ariaLabel = '', checked = false, onchange = '', id = '', disabled = false }) {
+  function sdCheckbox({ label = '', ariaLabel = '', checked = false, onchange = '', id = '', disabled = false, value = '' }) {
     const aria = !label && ariaLabel ? ` aria-label="${e(ariaLabel)}"` : '';
-    return `<label class="sd-check"><input type="checkbox"${id ? ` id="${e(id)}"` : ''}${aria}${checked ? ' checked' : ''}${disabled ? ' disabled' : ''}${onchange ? ` onchange="${onchange}"` : ''}><span class="sd-check-box" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M4.5 9.5l3 3 6-6.5"/></svg></span>${label ? `<span class="sd-check-label">${e(label)}</span>` : ''}</label>`;
+    return `<label class="sd-check"><input type="checkbox"${id ? ` id="${e(id)}"` : ''}${value !== '' ? ` value="${e(value)}"` : ''}${aria}${checked ? ' checked' : ''}${disabled ? ' disabled' : ''}${onchange ? ` onchange="${onchange}"` : ''}><span class="sd-check-box" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M4.5 9.5l3 3 6-6.5"/></svg></span>${label ? `<span class="sd-check-label">${e(label)}</span>` : ''}</label>`;
   }
 
   /**
    * Kolom isian teks. Label selalu terlihat di atas kolom (atau hideLabel untuk pembaca layar saja), teks bantu helper 12/16, galat error menggantikan helper.
    * trailing: HTML tombol di sisi kanan kolom (mis. sdBtn). oninput/onchange: string JavaScript.
    */
-  function sdTextField({ label, id, value = '', placeholder = '', helper = '', error = '', type = 'text', oninput = '', onchange = '', hideLabel = false, trailing = '', attrs = '' }) {
+  function sdTextField({ label, id, value = '', placeholder = '', helper = '', error = '', type = 'text', oninput = '', onchange = '', hideLabel = false, trailing = '', attrs = '', optional = false }) {
     const desc = helper || error ? ` aria-describedby="${e(id)}-hint"` : '';
-    return `<div class="sd-field"><label class="sd-field-label${hideLabel ? ' sd-sr-only' : ''}" for="${e(id)}">${e(label)}</label><div class="sd-field-row"><input class="sd-input" id="${e(id)}" type="${type}" value="${e(value)}"${placeholder ? ` placeholder="${e(placeholder)}"` : ''}${error ? ' aria-invalid="true"' : ''}${desc}${oninput ? ` oninput="${oninput}"` : ''}${onchange ? ` onchange="${onchange}"` : ''}${attrs ? ' ' + attrs : ''}>${trailing}</div>${helper || error ? `<span class="sd-field-hint${error ? ' sd-field-error' : ''}" id="${e(id)}-hint">${e(error || helper)}</span>` : ''}</div>`;
+    return `<div class="sd-field"><label class="sd-field-label${hideLabel ? ' sd-sr-only' : ''}" for="${e(id)}">${e(label)}${optional ? ' (opsional)' : ''}</label><div class="sd-field-row"><input class="sd-input" id="${e(id)}" type="${type}" value="${e(value)}"${placeholder ? ` placeholder="${e(placeholder)}"` : ''}${error ? ' aria-invalid="true"' : ''}${desc}${oninput ? ` oninput="${oninput}"` : ''}${onchange ? ` onchange="${onchange}"` : ''}${attrs ? ' ' + attrs : ''}>${trailing}</div>${helper || error ? `<span class="sd-field-hint${error ? ' sd-field-error' : ''}" id="${e(id)}-hint">${e(error || helper)}</span>` : ''}</div>`;
   }
 
-  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable, sdBadge, sdBanner, sdTabs, sdTabsKey, sdCheckbox, sdTextField });
+  /** Area teks. Label di atas, helper 12/16 di bawah label bila ada, tinggi awal sekitar 3 baris, bisa diubah tinggi (vertikal). */
+  function sdTextArea({ label, id, value = '', placeholder = '', helper = '', error = '', oninput = '', optional = false, rows = 3 }) {
+    const desc = helper || error ? ` aria-describedby="${e(id)}-hint"` : '';
+    return `<div class="sd-field"><label class="sd-field-label" for="${e(id)}">${e(label)}${optional ? ' (opsional)' : ''}</label>${helper && !error ? `<span class="sd-field-hint" id="${e(id)}-hint">${e(helper)}</span>` : ''}<textarea class="sd-textarea" id="${e(id)}" rows="${rows}"${placeholder ? ` placeholder="${e(placeholder)}"` : ''}${error ? ' aria-invalid="true"' : ''}${desc}${oninput ? ` oninput="${oninput}"` : ''}>${e(value)}</textarea>${error ? `<span class="sd-field-hint sd-field-error" id="${e(id)}-hint">${e(error)}</span>` : ''}</div>`;
+  }
+
+  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable, sdBadge, sdBanner, sdTabs, sdTabsKey, sdCheckbox, sdTextField, sdTextArea });
 })();
