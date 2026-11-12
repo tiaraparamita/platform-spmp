@@ -125,7 +125,7 @@
    * Checkbox. Wajib punya label terlihat atau ariaLabel. onchange: string JavaScript, boleh memakai this.checked.
    */
   function sdCheckbox({ label = '', ariaLabel = '', checked = false, onchange = '', id = '', disabled = false, value = '' }) {
-    const aria = !label && ariaLabel ? ` aria-label="${e(ariaLabel)}"` : '';
+    const aria = ariaLabel ? ` aria-label="${e(ariaLabel)}"` : '';
     return `<label class="sd-check"><input type="checkbox"${id ? ` id="${e(id)}"` : ''}${value !== '' ? ` value="${e(value)}"` : ''}${aria}${checked ? ' checked' : ''}${disabled ? ' disabled' : ''}${onchange ? ` onchange="${onchange}"` : ''}><span class="sd-check-box" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M4.5 9.5l3 3 6-6.5"/></svg></span>${label ? `<span class="sd-check-label">${e(label)}</span>` : ''}</label>`;
   }
 

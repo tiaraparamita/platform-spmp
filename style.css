@@ -9573,3 +9573,50 @@ strong {
 .menetapkan-indicator-table .sd-field {
   min-width: 150px;
 }
+
+/* Baca dulu, baru pilih: isi di kiri (judul dan deskripsi dua baris), pilihan di ujung kanan */
+.chain-group .recommendation-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 24px;
+  align-items: center;
+  padding: 16px;
+}
+.recommendation-main {
+  min-width: 0;
+}
+.recommendation-main .recommendation-title {
+  margin: 0 0 4px;
+}
+.recommendation-main .recommendation-description {
+  margin: 0;
+}
+.recommendation-main .sd-btn {
+  margin-left: -4px;
+}
+.recommendation-description.is-clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.recommendation-choose {
+  justify-self: end;
+}
+.chain-group .recommendation-item > .guided-activity {
+  grid-column: 1 / -1;
+  margin-top: 4px;
+}
+@media (max-width: 720px) {
+  .chain-group .recommendation-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .recommendation-choose {
+    justify-self: start;
+  }
+}
+.sd-table .sd-check-label {
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  white-space: nowrap;
+}
