@@ -39,3 +39,23 @@ Proyek ini memakai **token** Design System Seragam (versi **0.19.0**, `tokens/se
   | Isian, tab, dialog, rel langkah | tidak terukur dalam audit ini | lihat panduan komponen | belum dicek |
 
   Tombol adalah yang paling beragam dan paling terlihat; menyeragamkannya (tinggi, ukuran teks, radius) adalah langkah berikutnya yang paling berdampak, tetapi mengubah tampilan sehingga perlu keputusan desain.
+
+## Komponen bersama (`sd-ui.js` dan `sd-ui.css`)
+
+Tombol, pilihan radio, select, dan tabel dibuat lewat fungsi bantu agar selalu sesuai spesifikasi Seragam. Jangan menulis `<button>`, `<select>`, atau `<table>` dengan kelas sendiri untuk kontrol baru.
+
+| Fungsi | Untuk | Catatan |
+|---|---|---|
+| `sdBtn(label, {variant, size, onclick, leadingIcon, trailingIcon, disabled})` | Button | `variant`: `ultimate` (aksi utama), `primary`, `secondary`, `quiet`, `destructive`. `size`: `lg`, `md` (bawaan), `sm`. Ikon panah lewat `leadingIcon`/`trailingIcon`, bukan karakter di teks. |
+| `sdRadioGroup({legend, name, options, value, onchange})` | Pilihan tunggal, kurang dari 5 opsi | `options`: `[{value, label, help}]`. Berbentuk fieldset dan legend. |
+| `sdSelect({label, options, value, onchange, hideLabel})` | Select | Label selalu ada; `hideLabel` bila kolom tabel sudah menjelaskan. |
+| `sdTable({caption, columns, rows})` | Tabel | `caption` wajib. Baris berupa larik sel, atau `{full: html}` untuk satu sel selebar tabel. |
+| `sdIcon(nama)` | Ikon | `arrow-left`, `arrow-right`, `check`, `arrow-drop-down`. Tambah jalurnya di `sd-ui.js` bila perlu. |
+
+Kelas bantu di `sd-ui.css`: `sd-cell-title` dan `sd-cell-sub` (isi sel tabel), `sd-status` (status kecil dengan ikon), `sd-sr-only`.
+
+### Pemeriksa
+
+`node scripts/seragam-lint.mjs` menghitung pelanggaran umum (ukuran huruf angka, berat 700, hex dan rgb langsung, panah di teks, select/tabel/tombol mentah) dan **gagal bila jumlahnya naik** dibanding `scripts/seragam-lint-baseline.json`. Tambah `--detail` untuk melihat lokasi. Setelah memigrasi satu halaman, jalankan `--update` agar batasnya ikut turun.
+
+Status migrasi: Evaluasi Diri sudah memakai fungsi bantu. Halaman lain masih memakai tombol, tabel, dan select lama.

@@ -3215,10 +3215,7 @@ article.guided-plan > header.guided-header > * {
   max-width: 850px;
   margin: 24px auto;
 }
-.reflection-question h2 {
-  font-size: var(--sd-text-headinglarge-size);
-  margin: 20px 0;
-}
+
 .reflection-dots {
   display: flex;
   gap: 7px;
@@ -3236,38 +3233,10 @@ article.guided-plan > header.guided-header > * {
 .reflection-dots > .current {
   background: var(--sd-blue-60);
 }
-.reflection-options {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 22px 0;
-}
-.reflection-options button {
-  text-align: left;
-  white-space: normal;
-  padding: 18px;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  color: var(--ink);
-}
-.reflection-options button span {
-  font-size: var(--sd-text-bodysmall-size);
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--sd-gray-60);
-}
-.reflection-options button[aria-pressed="true"] {
-  border-color: var(--sd-blue-60);
-  background: var(--sd-blue-0);
-  box-shadow: 0 0 0 1px var(--sd-blue-60);
-}
-.reflection-options button b {
-  font-size: var(--sd-text-bodysmall-size);
-}
-.reflection-question textarea {
-  min-height: 90px;
+
+.reflection-question .reflection-dots {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
 }
 .reflection-summary-row {
   display: flex;
@@ -3288,42 +3257,10 @@ article.guided-plan > header.guided-header > * {
 .reflection-summary > h2 {
   margin-top: 18px;
 }
-@media (max-width: 550px) {
-  .reflection-options {
-    grid-template-columns: 1fr;
-  }
-  .reflection-question h2 {
-    font-size: var(--sd-text-headingmedium-size);
-  }
-}
 
 .reflection-list-card {
   padding: 0;
   margin-top: 28px;
-}
-.reflection-list {
-  width: 100%;
-}
-.reflection-list th {
-  text-transform: uppercase;
-  font-size: var(--sd-text-helper-size);
-}
-.reflection-list td {
-  vertical-align: middle;
-}
-.reflection-list td small {
-  display: block;
-  margin-top: 7px;
-  color: var(--sd-gray-60);
-}
-.reflection-list-action {
-  text-align: right;
-}
-.reflection-list-action button {
-  white-space: nowrap;
-}
-.reflection-list td.reflection-list-action {
-  width: 220px;
 }
 
 .reflection-compact-page {
@@ -3341,11 +3278,7 @@ article.guided-plan > header.guided-header > * {
   margin: 0 0 12px;
   font-size: var(--sd-text-bodysmall-size);
 }
-.reflection-compact-page > button.quiet {
-  padding: 4px 0;
-  margin-bottom: 5px;
-  font-size: var(--sd-text-helper-size);
-}
+
 .reflection-compact-page .reflection-question {
   max-width: 1020px;
   margin: 14px auto 0;
@@ -3354,55 +3287,21 @@ article.guided-plan > header.guided-header > * {
 .reflection-compact-page .reflection-dots {
   margin: 12px 0;
 }
-.reflection-compact-page .reflection-question h2 {
-  font-size: var(--sd-text-headingmedium-size);
-  line-height: 1.45;
-  margin: 12px 0;
-}
-.reflection-compact-page .reflection-options {
-  gap: 10px;
-  margin: 14px 0;
-}
-.reflection-compact-page .reflection-options button {
-  padding: 12px 14px;
-  gap: 6px;
-}
-.reflection-compact-page .reflection-options button span {
-  font-size: var(--sd-text-helper-size);
-  line-height: 1.5;
-}
-.reflection-compact-page .reflection-options button b {
-  font-size: var(--sd-text-bodysmall-size);
-}
-.reflection-compact-page .reflection-question > label {
-  margin: 12px 0 6px;
-  font-size: var(--sd-text-helper-size);
-}
-.reflection-compact-page .reflection-question textarea {
-  min-height: 56px;
-  height: 56px;
-  padding: 9px 12px;
-  font-size: var(--sd-text-bodysmall-size);
-}
+
 .reflection-compact-page .reflection-question .actions {
-  margin-top: 12px;
+  margin-top: 24px;
 }
-.reflection-compact-page .reflection-question .actions button {
-  padding: 9px 14px;
-  font-size: var(--sd-text-helper-size);
-}
+
 @media (max-width: 600px) {
   .reflection-compact-page .reflection-question {
     padding: 18px;
   }
-  .reflection-compact-page .reflection-question h2 {
-    font-size: var(--sd-text-headingmedium-size);
-  }
+
 }
 
 .reflection-stage-title {
   font-size: var(--sd-text-body-size);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
 }
 .reflection-stage-title > span {
@@ -3421,11 +3320,7 @@ article.guided-plan > header.guided-header > * {
 .reflection-compact-page .reflection-dots > span {
   height: 4px;
 }
-.reflection-compact-page .reflection-question h2 {
-  border-top: 1px solid var(--line);
-  padding-top: 16px;
-  margin-top: 0;
-}
+
 @media (max-width: 550px) {
   .reflection-progress-heading {
     gap: 8px;
@@ -3439,21 +3334,7 @@ article.guided-plan > header.guided-header > * {
 .reflection-focus-review {
   max-width: 1050px;
 }
-.reflection-comparison-table {
-  width: 100%;
-  font-size: var(--sd-text-bodysmall-size);
-}
-.reflection-comparison-table th {
-  font-size: var(--sd-text-helper-size);
-}
-.reflection-comparison-table td {
-  vertical-align: middle;
-}
-.reflection-comparison-table select {
-  min-width: 130px;
-  padding: 8px 10px;
-  font-size: var(--sd-text-helper-size);
-}
+
 .reflection-consistent {
   color: var(--sd-text-success);
   font-size: var(--sd-text-helper-size);
@@ -3512,9 +3393,6 @@ article.guided-plan > header.guided-header > * {
   display: none !important;
 }
 
-.reflection-comparison-table .reflection-justification-row > td {
-  padding: 0 14px 18px;
-}
 .reflection-justification-row .reflection-difference-entry {
   margin: 0;
   border: 0;
@@ -3550,20 +3428,12 @@ article.guided-plan > header.guided-header > * {
 }
 .reflection-inline-values strong {
   color: var(--sd-text-default);
-  font-weight: 700;
+  font-weight: 600;
 }
 .reflection-inline-context + .reflection-evidence-details {
   margin-top: 12px;
 }
 
-.reflection-comparison-table th,
-.reflection-comparison-table td {
-  width: 33.333%;
-}
-.reflection-comparison-table .reflection-justification-row > td {
-  width: auto;
-  padding: 0;
-}
 .reflection-justification-row .reflection-difference-entry {
   border-left: 0;
   padding: 18px 20px;
@@ -3581,10 +3451,6 @@ article.guided-plan > header.guided-header > * {
 }
 .reflection-justification-row textarea {
   min-height: 90px;
-}
-.reflection-comparison-table td select {
-  width: 100%;
-  max-width: 260px;
 }
 
 .reflection-saved-reason {
