@@ -10108,3 +10108,17 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
   outline: 2px solid var(--sd-blue-70);
   outline-offset: -2px;
 }
+
+/* Checkbox pilihan di kolom pertama (langkah 1 dan 2) */
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(1){width:6%}
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(2){width:33%}
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(3){width:13%}
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(4){width:17%}
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(5){width:13%}
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(6){width:auto}
+.roots-table.menetapkan-indicator-table th:nth-child(1){width:6%}
+.roots-table.menetapkan-indicator-table th:nth-child(2){width:43%}
+.roots-table.menetapkan-indicator-table th:nth-child(3){width:15%}
+.roots-table.menetapkan-indicator-table th:nth-child(4){width:22%}
+.roots-table.menetapkan-indicator-table th:nth-child(5){width:14%}
+.menetapkan-indicator-table td:first-child .sd-checkbox,.menetapkan-indicator-table td:first-child label{margin:0}
