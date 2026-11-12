@@ -9493,3 +9493,34 @@ strong {
 .page-flow {
   padding-top: 24px;
 }
+
+/* Lebih sedikit teks: instruksi satu kalimat, detail dilipat */
+.recommendation-description.is-clamped {
+  display: none;
+}
+.chain-aside {
+  margin-left: 6px;
+  font-size: var(--sd-text-bodysmall-size);
+  font-weight: 400;
+  color: var(--sd-gray-60);
+}
+.flow-about {
+  margin-top: 8px;
+}
+.flow-about summary {
+  cursor: pointer;
+  width: fit-content;
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  color: var(--sd-blue-70);
+}
+.flow-about p {
+  max-width: 68ch;
+  margin: 6px 0 0;
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  color: var(--sd-gray-60);
+}
+.flow-meta {
+  margin-bottom: 20px;
+}
