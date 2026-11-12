@@ -1874,10 +1874,7 @@ button:focus-visible {
   justify-content: flex-end;
   flex-wrap: wrap;
 }
-.rkt-row-actions button {
-  white-space: nowrap;
-  font-size: var(--sd-text-helper-size);
-}
+
 .approved-notice {
   margin: 24px 0 0;
 }
@@ -1913,32 +1910,14 @@ button:focus-visible {
 .rkt-table-card {
   padding: 0;
 }
-.rkt-list th {
-  text-transform: uppercase;
-}
-.rkt-list .rkt-action-heading {
-  text-align: right;
-}
-.rkt-list .rkt-action-cell {
-  width: 400px;
-  vertical-align: middle;
-}
+
 .rkt-list .rkt-row-actions {
   justify-content: flex-end;
   align-items: center;
   flex-wrap: nowrap;
   gap: 8px;
 }
-.rkt-list .rkt-row-actions > button {
-  font-size: var(--sd-text-helper-size);
-  white-space: nowrap;
-  padding: 10px 13px;
-}
-.rkt-menu-cell {
-  width: 55px;
-  vertical-align: middle;
-  padding-left: 4px !important;
-}
+
 .row-overflow > summary {
   list-style: none;
   cursor: pointer;
@@ -1973,32 +1952,12 @@ button:focus-visible {
 .row-overflow:not([open]) > .row-overflow-menu {
   display: none;
 }
-.row-overflow-menu > button {
-  display: block;
-  text-align: left;
-  width: 100%;
-  border: 0;
-  border-radius: var(--sd-radius-sm);
-  font-size: var(--sd-text-helper-size);
-  padding: 11px 12px;
-  background: white;
-}
-.row-overflow-menu > button:hover {
-  background: var(--sd-blue-0);
-}
-.rkt-list td {
-  vertical-align: middle;
-}
+
 @media (max-width: 760px) {
   .rkt-list {
     min-width: 850px;
   }
-  .rkt-list .rkt-action-cell {
-    width: 340px;
-  }
-  .rkt-list .rkt-row-actions > button {
-    padding: 9px 10px;
-  }
+
 }
 .execution-goal {
   display: grid;
@@ -4426,7 +4385,7 @@ article.guided-plan > header.guided-header > * {
 
 /* Shared navy title area below navigation on every page. */
 .page-title-banner {
-  background: var(--sd-blue-90);
+  background: var(--sd-surface-dark-blue);
   color: white;
   width: 100%;
 }
@@ -4444,19 +4403,19 @@ article.guided-plan > header.guided-header > * {
 }
 .page-title-banner h1 {
   color: white;
-  font-size: var(--sd-text-displaymedium-size);
-  line-height: var(--sd-text-displaymedium-line);
-  font-weight: var(--sd-text-displaymedium-weight);
-  margin: 0 0 8px;
+  font-size: var(--sd-text-displaysmall-size);
+  line-height: var(--sd-text-displaysmall-line);
+  font-weight: var(--sd-text-displaysmall-weight);
+  margin: 0 0 4px;
   letter-spacing: 0;
 }
 .page-title-banner .page-title-description {
-  color: var(--sd-blue-5);
+  color: var(--sd-text-inverse-subdued);
   font-size: var(--sd-text-body-size);
   line-height: var(--sd-text-body-line);
   font-weight: var(--sd-text-body-weight);
   margin: 0;
-  max-width: 1000px;
+  max-width: 68ch;
 }
 .page-rapor .diagnosis-alternative-header {
   display: none;
@@ -7721,34 +7680,6 @@ nav.steps{height:auto;gap:0;align-items:stretch;flex:none}nav.steps>button.step{
 }
 
 /* Tombol: radius 4, ukuran large 46px, label 16/24 semibold */
-.page-home .rkt-list .rkt-row-actions > button {
-  border-radius: var(--sd-radius-sm);
-  font-size: var(--sd-text-action-size);
-  line-height: var(--sd-text-action-line);
-  font-weight: var(--sd-text-action-weight);
-}
-.page-home .rkt-list .rkt-row-actions > button {
-  min-height: 38px;
-  padding: 7px 16px;
-  background: var(--sd-white);
-  border: 1px solid var(--sd-border-default);
-  color: var(--sd-text-default);
-}
-.page-home .rkt-list .rkt-row-actions > button.primary {
-  background: var(--sd-action-default);
-  border-color: var(--sd-action-default);
-  color: var(--sd-text-inverse);
-}
-.page-home .rkt-list .rkt-row-actions > button.primary:hover {
-  background: var(--sd-action-hovered);
-  border-color: var(--sd-action-hovered);
-  color: var(--sd-text-inverse);
-}
-.page-home .rkt-list .rkt-row-actions > button:not(.primary):hover {
-  background: var(--sd-gray-0);
-  border-color: var(--sd-border-default);
-  color: var(--sd-text-default);
-}
 
 /* Metrik ringkas */
 .page-home .dashboard-metrics .card .muted {
@@ -7776,70 +7707,14 @@ nav.steps{height:auto;gap:0;align-items:stretch;flex:none}nav.steps>button.step{
 .page-home .rkt-table-card {
   overflow: hidden;
 }
-.page-home .rkt-list th {
-  background: var(--sd-white);
-  color: var(--sd-text-default);
-  padding: 16px;
-  font-size: var(--sd-text-helper-bold-size);
-  line-height: var(--sd-text-helper-bold-line);
-  font-weight: var(--sd-text-helper-bold-weight);
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.05);
-}
-.page-home .rkt-list td {
-  padding: 16px;
-  font-size: var(--sd-text-bodysmall-size);
-  line-height: var(--sd-text-bodysmall-line);
-  color: var(--sd-text-default);
-}
-.page-home .rkt-list td b {
-  font-weight: var(--sd-text-bodysmall-bold-weight);
-}
-.page-home .rkt-list td small {
-  font-size: var(--sd-text-helper-size);
-  line-height: var(--sd-text-helper-line);
-  color: var(--sd-text-subdued);
-}
-.page-home .rkt-list tbody tr:last-child td {
-  border-bottom: 0;
-}
+
 .page-home .row-overflow > summary {
   border-radius: var(--sd-radius-sm);
 }
 
 /* Badge status: pill, 12/16 semibold, isi token badge */
-.page-home .badge {
-  padding: 2px 8px;
-  border-radius: var(--sd-radius-pill);
-  font-size: var(--sd-text-bodysmall-bold-size);
-  line-height: var(--sd-text-bodysmall-bold-line);
-  font-weight: var(--sd-text-bodysmall-bold-weight);
-  color: var(--sd-text-default);
-  background: var(--sd-badge-neutral);
-}
-.page-home .badge.green {
-  background: var(--sd-badge-success);
-}
-.page-home .badge.amber {
-  background: var(--sd-badge-warning);
-}
-.page-home .badge.red {
-  background: var(--sd-badge-critical);
-}
-.page-home .badge.blue {
-  background: var(--sd-badge-info);
-}
 
 /* Catatan informasional (Banner informational: radius 4, cyan-5) */
-.page-home .notice {
-  background: var(--sd-cyan-5);
-  border: 1px solid var(--sd-cyan-10);
-  border-radius: var(--sd-radius-sm);
-  padding: 16px;
-  font-size: var(--sd-text-bodysmall-size);
-  line-height: var(--sd-text-bodysmall-line);
-  color: var(--sd-text-default);
-}
 
 /* Halaman awal Siklus 6M: panel langkah menimpa banner judul, langkah dibaca sebagai jalur satu putaran */
 /* Komposisi hero sama dengan Unduh: padding 36/105 dan konten naik 72px */
@@ -8004,43 +7879,6 @@ body:has(.sx-next) .page-title-banner .page-title-inner {
   display: flex;
   gap: 12px;
   flex-shrink: 0;
-}
-.sx-actions button {
-  min-height: 46px;
-  padding: 10px 20px;
-  border-radius: var(--sd-radius-sm);
-  font-size: var(--sd-text-action-size);
-  line-height: var(--sd-text-action-line);
-  font-weight: var(--sd-text-action-weight);
-}
-.sx-secondary {
-  background: var(--sd-white);
-  border: 1px solid var(--sd-border-default);
-  color: var(--sd-text-default);
-}
-.sx-secondary:hover {
-  background: var(--sd-gray-0);
-  border-color: var(--sd-border-default);
-  color: var(--sd-text-default);
-}
-.sx-primary {
-  background: var(--sd-action-default);
-  border: 1px solid var(--sd-action-default);
-  color: var(--sd-text-inverse);
-}
-.sx-primary:hover {
-  background: var(--sd-action-hovered);
-  border-color: var(--sd-action-hovered);
-  color: var(--sd-text-inverse);
-}
-.sx-intro .badge {
-  padding: 2px 8px;
-  border-radius: var(--sd-radius-pill);
-  background: var(--sd-badge-neutral);
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-bodysmall-bold-size);
-  line-height: var(--sd-text-bodysmall-bold-line);
-  font-weight: var(--sd-text-bodysmall-bold-weight);
 }
 
 /* Hero alur Siklus 6M: breadcrumb (inverse) di kiri atas dan rel langkah Process Steps varian inverse di bawah judul */
@@ -8819,8 +8657,6 @@ body:has(.page-title-banner nav.steps) .page-flow {
 }
 
 /* Secondary Seragam: hover gray-0, tekan gray-10 */
-.page-home .rkt-list .rkt-row-actions > button:not(.primary):active,
-.sx-secondary:active,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table td:last-child > button:not(.primary):not(.table-priority-selected):not(:disabled):active,
 .page-flow:has(.menetapkan-table-layout) .menetapkan-selection-actions > button:not(.primary):not(:disabled):active,
 .priority-target-dialog .pt-secondary:active {
@@ -8965,8 +8801,11 @@ body:has(.page-title-banner nav.steps) .page-flow {
   flex: 1;
   min-width: 0;
 }
-.sx-next-copy .badge {
+.sx-next-copy .sd-badge {
   margin-bottom: 8px;
+}
+.sx-next > .sd-btn {
+  flex-shrink: 0;
 }
 .sx-next-copy h2 {
   margin: 0 0 4px;
@@ -8979,50 +8818,8 @@ body:has(.page-title-banner nav.steps) .page-flow {
   max-width: 720px;
   color: var(--sd-text-subdued);
 }
-.sx-next > .sx-primary {
-  flex-shrink: 0;
-  min-height: 46px;
-  padding: 10px 20px;
-  background: var(--sd-action-default);
-  border: 1px solid var(--sd-action-default);
-  border-radius: var(--sd-radius-sm);
-  color: var(--sd-text-inverse);
-  font-size: var(--sd-text-action-size);
-  line-height: var(--sd-text-action-line);
-  font-weight: var(--sd-text-action-weight);
-}
-.sx-next > .sx-primary:hover {
-  background: var(--sd-action-hovered);
-  border-color: var(--sd-action-hovered);
-  color: var(--sd-text-inverse);
-}
-.sx-next .badge {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: var(--sd-radius-pill);
-  background: var(--sd-badge-neutral);
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-bodysmall-bold-size);
-  line-height: var(--sd-text-bodysmall-bold-line);
-  font-weight: var(--sd-text-bodysmall-bold-weight);
-}
-.sx-next .badge.amber {
-  background: var(--sd-badge-warning);
-}
-.sx-next .badge.blue {
-  background: var(--sd-badge-info);
-}
+
 /* Satu Ultimate per layar: aksi di baris tabel daftar siklus memakai Secondary */
-.page-home .rkt-list .rkt-row-actions > button.primary {
-  background: var(--sd-white);
-  border-color: var(--sd-border-default);
-  color: var(--sd-text-default);
-}
-.page-home .rkt-list .rkt-row-actions > button.primary:hover {
-  background: var(--sd-gray-0);
-  border-color: var(--sd-border-default);
-  color: var(--sd-text-default);
-}
 
 /* Hitungan di tab yang dipilih memakai warna aksi agar terlihat */
 .page-flow:has(.menetapkan-table-layout) .menetapkan-dimension-tabs > button[aria-pressed="true"] .menetapkan-tab-count {
@@ -10090,51 +9887,6 @@ strong {
   border: 0;
   box-shadow: var(--sd-elevation-01);
   overflow: hidden;
-}
-.page-home .rkt-list {
-  border-collapse: separate;
-  border-spacing: 0;
-}
-.page-home .rkt-list th {
-  padding: 15px 16px;
-  background: var(--sd-badge-neutral);
-  border: 0;
-  box-shadow: none;
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-subheading-size);
-  line-height: var(--sd-text-subheading-line);
-  font-weight: var(--sd-text-subheading-weight);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  vertical-align: middle;
-}
-.page-home .rkt-list td {
-  padding: 16px 16px 15px;
-  border: 0;
-  border-bottom: 1px solid var(--sd-modal-footer-border);
-  background: var(--sd-white);
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-body-size);
-  line-height: var(--sd-text-body-line);
-  vertical-align: middle;
-}
-.page-home .rkt-list tbody tr:last-child td {
-  border-bottom: 0;
-}
-.page-home .rkt-list td small {
-  font-size: var(--sd-text-helper-size);
-  line-height: var(--sd-text-helper-line);
-  color: var(--sd-text-subdued);
-}
-.page-home .rkt-list tbody tr {
-  cursor: default;
-}
-.page-home .rkt-list .rkt-row-actions > button {
-  min-height: 28px;
-  padding: 3px 12px;
-  font-size: var(--sd-text-bodysmall-bold-size);
-  line-height: var(--sd-text-bodysmall-bold-line);
-  font-weight: var(--sd-text-bodysmall-bold-weight);
 }
 
 /* Formulir kegiatan di dalam kartu rekomendasi: bukan kartu tersendiri, hanya garis pemisah di atas dan jarak isi */

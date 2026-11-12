@@ -344,3 +344,75 @@
 .sd-badge-gray {
   background: var(--sd-badge-neutral);
 }
+
+/* Banner: radius 4, border 1px, padding 16, jarak 12, ikon 20, teks body */
+.sd-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid;
+  border-radius: var(--sd-radius-sm);
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  color: var(--sd-gray-90);
+}
+.sd-banner > .sd-icon {
+  margin-top: calc((var(--sd-text-body-line) - 20px) / 2);
+}
+.sd-banner p {
+  margin: 0;
+}
+.sd-banner-title {
+  font-weight: 600;
+}
+.sd-banner-info {
+  background: var(--sd-cyan-5);
+  border-color: var(--sd-cyan-10);
+}
+.sd-banner-info > .sd-icon {
+  color: var(--sd-blue-70);
+}
+.sd-banner-neutral {
+  background: var(--sd-gray-5);
+  border-color: var(--sd-gray-50);
+}
+.sd-banner-neutral > .sd-icon {
+  color: var(--sd-gray-70);
+}
+.sd-banner-warning {
+  background: var(--sd-warning-surface);
+  border-color: var(--sd-warning-border);
+}
+.sd-banner-warning > .sd-icon {
+  color: var(--sd-text-warning);
+}
+.sd-banner-success {
+  background: var(--sd-green-5);
+  border-color: var(--sd-success-border);
+}
+.sd-banner-success > .sd-icon {
+  color: var(--sd-text-success);
+}
+.sd-banner-critical {
+  background: var(--sd-red-5);
+  border-color: var(--sd-red-60);
+}
+.sd-banner-critical > .sd-icon {
+  color: var(--sd-red-60);
+}
+
+/* Item menu dalam popover (menu ⋮): Button quiet rata kiri selebar menu */
+.sd-menu-item {
+  width: 100%;
+  justify-content: flex-start;
+  color: var(--sd-gray-90);
+  font-weight: 400;
+}
+.sd-menu-item:hover {
+  color: var(--sd-gray-90);
+}
+.sd-menu-item.sd-menu-danger,
+.sd-menu-item.sd-menu-danger:hover {
+  color: var(--sd-red-60);
+}

@@ -10,6 +10,10 @@
     'arrow-right': 'M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z',
     check: 'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
     'arrow-drop-down': 'M7 10l5 5 5-5z',
+    info: 'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
+    warning: 'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',
+    'check-circle': 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
+    error: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z',
   };
 
   /** Ikon Seragam (Material, 24px) sebagai SVG dekoratif. */
@@ -23,8 +27,8 @@
    * onclick: string JavaScript (pola app.js). attrs: atribut tambahan sudah dalam bentuk string, mis. 'id="x"'.
    */
   function sdBtn(label, o = {}) {
-    const { variant = 'ultimate', size = 'md', onclick = '', disabled = false, leadingIcon = '', trailingIcon = '', type = 'button', attrs = '', id = '' } = o;
-    return `<button type="${type}" class="sd-btn sd-btn-${size} sd-btn-${variant}"${id ? ` id="${e(id)}"` : ''}${onclick ? ` onclick="${onclick}"` : ''}${disabled ? ' disabled' : ''}${attrs ? ' ' + attrs : ''}>${leadingIcon ? sdIcon(leadingIcon) : ''}${e(label)}${trailingIcon ? sdIcon(trailingIcon) : ''}</button>`;
+    const { variant = 'ultimate', size = 'md', onclick = '', disabled = false, leadingIcon = '', trailingIcon = '', type = 'button', attrs = '', id = '', className = '' } = o;
+    return `<button type="${type}" class="sd-btn sd-btn-${size} sd-btn-${variant}${className ? ' ' + className : ''}"${id ? ` id="${e(id)}"` : ''}${onclick ? ` onclick="${onclick}"` : ''}${disabled ? ' disabled' : ''}${attrs ? ' ' + attrs : ''}>${leadingIcon ? sdIcon(leadingIcon) : ''}${e(label)}${trailingIcon ? sdIcon(trailingIcon) : ''}</button>`;
   }
 
   /**
@@ -57,7 +61,7 @@
   function sdTable({ caption, columns, rows, className = '' }) {
     const cols = columns.length;
     return `<div class="sd-table-wrap" role="region" aria-label="${e(caption)}" tabindex="0"><table class="sd-table ${className}"><caption class="sd-sr-only">${e(caption)}</caption><thead><tr>${columns
-      .map((c) => `<th scope="col"${c.align === 'right' ? ' class="sd-right"' : ''}>${e(c.label)}</th>`)
+      .map((c) => `<th scope="col"${c.align === 'right' ? ' class="sd-right"' : ''}>${c.srOnly ? `<span class="sd-sr-only">${e(c.label)}</span>` : e(c.label)}</th>`)
       .join('')}</tr></thead><tbody>${rows
       .map((r) =>
         Array.isArray(r)
@@ -75,5 +79,14 @@
     return `<span class="sd-badge sd-badge-${tone}${className ? ' ' + className : ''}">${e(label)}</span>`;
   }
 
-  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable, sdBadge });
+  /**
+   * Banner statis (bukan entry). tone: info (bawaan) | warning | success | critical | neutral. Pesan penting saja, maksimal 3 baris.
+   * critical memakai role="alert"; lainnya role="status". Isi children berupa teks sudah aman (HTML hasil esc()).
+   */
+  function sdBanner({ tone = 'info', title = '', children = '' }) {
+    const icon = { info: 'info', neutral: 'info', warning: 'warning', success: 'check-circle', critical: 'error' }[tone];
+    return `<div class="sd-banner sd-banner-${tone}" role="${tone === 'critical' ? 'alert' : 'status'}">${sdIcon(icon)}<div>${title ? `<p class="sd-banner-title">${e(title)}</p>` : ''}${children}</div></div>`;
+  }
+
+  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable, sdBadge, sdBanner });
 })();
