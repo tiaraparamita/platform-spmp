@@ -4,8 +4,8 @@
   "css-hex": 20,
   "css-rgb": 5,
   "js-arrow-in-ui-text": 6,
-  "js-raw-select": 6,
-  "js-raw-table": 2,
+  "js-raw-select": 4,
+  "js-raw-table": 1,
   "js-legacy-badge": 0,
-  "js-raw-button": 77
+  "js-raw-button": 71
 }
