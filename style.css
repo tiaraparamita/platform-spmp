@@ -9838,3 +9838,31 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
 .menetapkan-indicator-table .table-indicator-change {
   white-space: nowrap;
 }
+
+/* Capaian dengan perubahan sebagai label kecil di bawah nilai */
+.table-change-note {
+  display: block;
+  margin-top: 2px;
+  font-size: var(--sd-text-helper-size);
+  line-height: var(--sd-text-helper-line);
+  font-weight: 400;
+  color: var(--sd-gray-60);
+  white-space: nowrap;
+}
+.table-change-note .table-indicator-change,
+.table-change-note b {
+  font-weight: 600;
+  color: var(--sd-gray-80);
+}
+.menetapkan-indicator-table th:nth-child(1) {
+  width: 27%;
+}
+.menetapkan-indicator-table th:nth-child(2) {
+  width: 15%;
+}
+.menetapkan-indicator-table th:nth-child(3) {
+  width: 19%;
+}
+.menetapkan-indicator-table th:nth-child(5) {
+  width: 11%;
+}
