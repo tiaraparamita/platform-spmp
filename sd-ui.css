@@ -668,3 +668,76 @@
 .sd-field > .sd-select {
   display: block;
 }
+
+/* Accordion: judul 15/22 semibold, panah memutar saat terbuka */
+.sd-accordion {
+  border: 0;
+}
+.sd-accordion-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  list-style: none;
+  cursor: pointer;
+  color: var(--sd-gray-90);
+  border-radius: var(--sd-radius-sm);
+}
+.sd-accordion-head::-webkit-details-marker {
+  display: none;
+}
+.sd-accordion-head:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--sd-interactive-focused);
+}
+.sd-accordion-title {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  min-width: 0;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  font-weight: 600;
+}
+.sd-accordion-head > .sd-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--sd-gray-70);
+  transition: transform 0.15s;
+}
+.sd-accordion[open] > .sd-accordion-head > .sd-icon {
+  transform: rotate(180deg);
+}
+.sd-accordion-body {
+  padding: 4px 0 8px;
+}
+
+/* Progress bar */
+.sd-progress {
+  height: 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-gray-10);
+  overflow: hidden;
+}
+.sd-progress > span {
+  display: block;
+  height: 100%;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-blue-70);
+  transition: width 0.2s;
+}
+.sd-progress.is-full > span {
+  background: var(--sd-green-60);
+}
+.sd-progress-inverse {
+  background: rgba(255, 255, 255, 0.25);
+}
+.sd-progress-inverse > span {
+  background: var(--sd-blue-30);
+}
+.sd-progress-inverse.is-full > span {
+  background: var(--sd-green-30);
+}

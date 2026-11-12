@@ -14,6 +14,8 @@
     warning: 'M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z',
     'check-circle': 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z',
     add: 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
+    'arrow-down': 'M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z',
+    'expand-more': 'M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z',
     close: 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
     error: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z',
   };
@@ -141,5 +143,19 @@
     return `<div class="sd-field"><label class="sd-field-label" for="${e(id)}">${e(label)}${optional ? ' (opsional)' : ''}</label>${helper && !error ? `<span class="sd-field-hint" id="${e(id)}-hint">${e(helper)}</span>` : ''}<textarea class="sd-textarea" id="${e(id)}" rows="${rows}"${placeholder ? ` placeholder="${e(placeholder)}"` : ''}${error ? ' aria-invalid="true"' : ''}${desc}${oninput ? ` oninput="${oninput}"` : ''}>${e(value)}</textarea>${error ? `<span class="sd-field-hint sd-field-error" id="${e(id)}-hint">${e(error)}</span>` : ''}</div>`;
   }
 
-  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable, sdBadge, sdBanner, sdTabs, sdTabsKey, sdCheckbox, sdTextField, sdTextArea });
+  /**
+   * Accordion (satu <details>). title: HTML judul (boleh berisi badge dan ringkasan, tanpa tombol). body: HTML isi.
+   * onuser: string JavaScript yang dijalankan saat pengguna mengklik judul (untuk menyimpan pilihan buka/tutup); this = elemen <details>.
+   */
+  function sdAccordion({ id = '', title, body, open = false, onuser = '', className = '' }) {
+    return `<details class="sd-accordion ${className}" data-id="${e(id)}"${open ? ' open' : ''}><summary class="sd-accordion-head"${onuser ? ` onclick="${onuser.replace(/this/g, 'this.parentElement')}"` : ''}><span class="sd-accordion-title">${title}</span>${sdIcon('expand-more')}</summary><div class="sd-accordion-body">${body}</div></details>`;
+  }
+
+  /** Bilah kemajuan. value 0 sampai 100; label dibaca pembaca layar (teks yang terlihat sebaiknya ada di dekatnya). inverse untuk latar gelap. */
+  function sdProgress({ value, label, inverse = false }) {
+    const v = Math.max(0, Math.min(100, Math.round(value)));
+    return `<div class="sd-progress${inverse ? ' sd-progress-inverse' : ''}${v >= 100 ? ' is-full' : ''}" role="progressbar" aria-label="${e(label)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${v}"><span style="width:${v}%"></span></div>`;
+  }
+
+  Object.assign(window, { sdIcon, sdBtn, sdRadioGroup, sdSelect, sdTable, sdBadge, sdBanner, sdTabs, sdTabsKey, sdCheckbox, sdTextField, sdTextArea, sdAccordion, sdProgress });
 })();
