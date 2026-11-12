@@ -8342,69 +8342,13 @@ body:has(.page-title-banner nav.steps) .page-flow {
   font-weight: var(--sd-text-body-weight);
   color: var(--sd-text-default);
 }
-.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline {
-  display: flex;
-  align-items: stretch;
-  gap: 12px;
-}
-.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline input {
-  flex: 1;
-  min-width: 0;
-  height: 46px;
-  padding: 12px 16px;
-  background: var(--sd-white);
-  border: 1px solid var(--sd-border-default);
-  border-radius: var(--sd-radius-sm);
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-body-size);
-  line-height: var(--sd-text-body-line);
-  outline: none;
-}
-.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline input::placeholder {
-  color: var(--sd-text-disabled);
-}
-.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline input:focus {
-  border-color: var(--sd-blue-50);
-  box-shadow: 0 0 0 2px var(--sd-interactive-focused);
-}
+
 .page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .source-text {
   font-size: var(--sd-text-helper-size);
   line-height: var(--sd-text-helper-line);
   color: var(--sd-text-subdued);
 }
 /* Tombol: radius 4, tinggi 46 (lg), label 15/22 semibold; satu Ultimate (Lanjutkan), sisanya Secondary */
-.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline button,
-.page-flow:has([id^="root-card-"]) .actions button {
-  min-height: 46px;
-  padding: 10px 20px;
-  background: var(--sd-white);
-  border: 1px solid var(--sd-border-default);
-  border-radius: var(--sd-radius-sm);
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-action-size);
-  line-height: var(--sd-text-action-line);
-  font-weight: var(--sd-text-action-weight);
-}
-.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline button:hover,
-.page-flow:has([id^="root-card-"]) .actions button:not(.primary):hover {
-  background: var(--sd-gray-0);
-  border-color: var(--sd-border-default);
-  color: var(--sd-text-default);
-}
-.page-flow:has([id^="root-card-"]) .card[id^="root-card-"] .inline button:active,
-.page-flow:has([id^="root-card-"]) .actions button:not(.primary):active {
-  background: var(--sd-gray-10);
-}
-.page-flow:has([id^="root-card-"]) .actions button.primary {
-  background: var(--sd-action-default);
-  border-color: var(--sd-action-default);
-  color: var(--sd-text-inverse);
-}
-.page-flow:has([id^="root-card-"]) .actions button.primary:hover {
-  background: var(--sd-action-hovered);
-  border-color: var(--sd-action-hovered);
-  color: var(--sd-text-inverse);
-}
 
 /* Panel "Langkah berikutnya" di daftar siklus: putih, menimpa hero, satu aksi utama (Ultimate) */
 .sx-next {
@@ -8495,29 +8439,7 @@ body:has(.page-title-banner nav.steps) .page-flow {
   line-height: var(--sd-text-bodysmall-line);
   color: var(--sd-text-default);
 }
-.page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-identity .badge {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 2px 8px;
-  border-radius: var(--sd-radius-pill);
-  background: var(--sd-badge-neutral);
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-bodysmall-bold-size);
-  line-height: var(--sd-text-bodysmall-bold-line);
-  font-weight: var(--sd-text-bodysmall-bold-weight);
-}
-.page-flow:has([id^="root-card-"]) .root-mapping-card .badge.red {
-  background: var(--sd-badge-critical);
-}
-.page-flow:has([id^="root-card-"]) .root-mapping-card .badge.amber {
-  background: var(--sd-badge-warning);
-}
-.page-flow:has([id^="root-card-"]) .root-mapping-card .badge.green {
-  background: var(--sd-badge-success);
-}
-.page-flow:has([id^="root-card-"]) .root-mapping-card .badge.blue {
-  background: var(--sd-badge-info);
-}
+
 .page-flow:has([id^="root-card-"]) .root-mapping-card .root-summary-metrics {
   background: var(--sd-blue-0);
   border-radius: var(--sd-radius-md);
@@ -8549,38 +8471,7 @@ body:has(.page-title-banner nav.steps) .page-flow {
   border-collapse: separate;
   border-spacing: 0;
 }
-.page-flow:has([id^="root-card-"]) .root-subindicator-table th {
-  padding: 15px 16px;
-  background: var(--sd-badge-neutral);
-  border: 0;
-  border-bottom: 1px solid var(--sd-modal-footer-border);
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-subheading-size);
-  line-height: var(--sd-text-subheading-line);
-  font-weight: var(--sd-text-subheading-weight);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  vertical-align: middle;
-}
-.page-flow:has([id^="root-card-"]) .root-subindicator-table td {
-  padding: 16px 16px 15px;
-  border: 0;
-  border-bottom: 1px solid var(--sd-modal-footer-border);
-  background: var(--sd-white);
-  color: var(--sd-text-default);
-  font-size: var(--sd-text-body-size);
-  line-height: var(--sd-text-body-line);
-  vertical-align: middle;
-}
-.page-flow:has([id^="root-card-"]) .root-subindicator-table tbody tr:last-child td {
-  border-bottom: 0;
-}
-.page-flow:has([id^="root-card-"]) .root-subindicator-table tbody tr.selected-indicator-row td {
-  background: var(--sd-surface-selected-default);
-}
-.page-flow:has([id^="root-card-"]) .root-subindicator-table tbody tr {
-  cursor: default;
-}
+
 .page-flow:has([id^="root-card-"]) .root-subindicator-table h3 {
   display: inline;
   margin: 0;
@@ -9570,5 +9461,16 @@ strong {
   height: auto;
   min-height: 28px;
   font-weight: 400;
+  color: var(--sd-gray-90);
+}
+
+/* Memetakan: jarak isian akar masalah lain; ikon deskripsi abu (bukan aksi utama) */
+.root-mapping-card .sd-field {
+  margin-top: 24px;
+}
+.sd-btn.indicator-description-tooltip {
+  color: var(--sd-gray-60);
+}
+.sd-btn.indicator-description-tooltip:hover {
   color: var(--sd-gray-90);
 }
