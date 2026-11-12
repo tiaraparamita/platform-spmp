@@ -753,3 +753,24 @@
   border-color: var(--sd-white);
   color: var(--sd-white);
 }
+
+/* Baris kelompok dalam tabel (mis. per mutu) */
+.sd-table .sd-group-row th {
+  padding: 12px 16px;
+  background: var(--sd-gray-5);
+  border-top: 1px solid var(--sd-modal-footer-border);
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  text-align: left;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  font-weight: 600;
+  color: var(--sd-gray-90);
+}
+.sd-group-count {
+  margin-left: 8px;
+  font-size: var(--sd-text-bodysmall-size);
+  font-weight: 400;
+  color: var(--sd-gray-60);
+}
