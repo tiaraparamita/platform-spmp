@@ -9930,3 +9930,72 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
   font-size: var(--sd-text-helper-size);
   line-height: var(--sd-text-helper-line);
 }
+
+/* Tipografi tabel langkah 1 disatukan: isi utama 16/24, keterangan 14/20, tanpa ukuran 12 */
+.menetapkan-indicator-table td {
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  font-weight: 400;
+  color: var(--sd-gray-90);
+}
+.menetapkan-indicator-table h3 {
+  margin: 0;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  font-weight: 600;
+}
+.menetapkan-indicator-table .table-baseline {
+  display: block;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  font-weight: 600;
+}
+.menetapkan-indicator-table .table-secondary,
+.menetapkan-indicator-table .table-change-note,
+.menetapkan-indicator-table .sd-field-hint {
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  font-weight: 400;
+  color: var(--sd-gray-60);
+}
+.menetapkan-indicator-table .sd-field-hint.sd-field-error {
+  color: var(--sd-red-60);
+}
+.menetapkan-indicator-table .table-change-note b {
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--sd-gray-80);
+}
+.table-secondary-clamp {
+  display: block;
+  margin: 2px 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menetapkan-indicator-table .table-mutu {
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--sd-gray-90);
+}
+.menetapkan-indicator-table th:nth-child(1) {
+  width: 30%;
+}
+.menetapkan-indicator-table th:nth-child(2) {
+  width: 17%;
+}
+.menetapkan-indicator-table th:nth-child(3) {
+  width: 19%;
+}
+.menetapkan-indicator-table th:nth-child(4) {
+  width: 10%;
+}
+.menetapkan-indicator-table th:nth-child(5) {
+  width: 9%;
+}
+.menetapkan-indicator-table th:nth-child(6) {
+  width: 15%;
+}
+.menetapkan-indicator-table th:nth-child(7) {
+  width: auto;
+}
