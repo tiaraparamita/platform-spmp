@@ -2,10 +2,10 @@
   "css-font-size-px": 23,
   "css-font-weight-700": 11,
   "css-hex": 20,
-  "css-rgb": 8,
-  "js-arrow-in-ui-text": 17,
+  "css-rgb": 7,
+  "js-arrow-in-ui-text": 15,
   "js-raw-select": 6,
-  "js-raw-table": 5,
+  "js-raw-table": 4,
   "js-legacy-badge": 0,
-  "js-raw-button": 115
+  "js-raw-button": 105
 }
