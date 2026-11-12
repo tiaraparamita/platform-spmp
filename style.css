@@ -4309,7 +4309,7 @@ article.guided-plan > header.guided-header > * {
 
 /* Shared navy title area below navigation on every page. */
 .page-title-banner {
-  background: var(--sd-surface-dark-blue);
+  background: var(--sd-blue-90);
   color: white;
   width: 100%;
 }
@@ -4327,19 +4327,19 @@ article.guided-plan > header.guided-header > * {
 }
 .page-title-banner h1 {
   color: white;
-  font-size: var(--sd-text-displaysmall-size);
-  line-height: var(--sd-text-displaysmall-line);
-  font-weight: var(--sd-text-displaysmall-weight);
-  margin: 0 0 4px;
+  font-size: var(--sd-text-displaymedium-size);
+  line-height: var(--sd-text-displaymedium-line);
+  font-weight: var(--sd-text-displaymedium-weight);
+  margin: 0 0 8px;
   letter-spacing: 0;
 }
 .page-title-banner .page-title-description {
-  color: var(--sd-text-inverse-subdued);
+  color: var(--sd-blue-5);
   font-size: var(--sd-text-body-size);
   line-height: var(--sd-text-body-line);
   font-weight: var(--sd-text-body-weight);
   margin: 0;
-  max-width: 68ch;
+  max-width: 1000px;
 }
 .page-rapor .diagnosis-alternative-header {
   display: none;
