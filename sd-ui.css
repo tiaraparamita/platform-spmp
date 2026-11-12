@@ -741,3 +741,15 @@
 .sd-progress-inverse.is-full > span {
   background: var(--sd-green-30);
 }
+
+/* Tombol di latar gelap (ekstensi): garis dan teks putih */
+.sd-btn.sd-btn-inverse {
+  background: transparent;
+  border-color: var(--sd-white);
+  color: var(--sd-white);
+}
+.sd-btn.sd-btn-inverse:hover {
+  background: color-mix(in srgb, white 14%, transparent);
+  border-color: var(--sd-white);
+  color: var(--sd-white);
+}
