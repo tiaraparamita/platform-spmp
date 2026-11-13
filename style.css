@@ -9230,8 +9230,8 @@ strong {
   justify-content: space-between;
   gap: 12px;
   margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px solid var(--sd-modal-footer-border);
+  padding-top: 0;
+  border-top: 0;
 }
 .flow-footer-right {
   display: flex;
@@ -10122,3 +10122,627 @@ body:has(.page-title-banner .flow-stepper) .page-flow {
 .roots-table.menetapkan-indicator-table th:nth-child(4){width:22%}
 .roots-table.menetapkan-indicator-table th:nth-child(5){width:14%}
 .menetapkan-indicator-table td:first-child .sd-checkbox,.menetapkan-indicator-table td:first-child label{margin:0}
+
+/* Langkah 3: satu tabel kegiatan dikelompokkan per indikator dan akar masalah */
+.menetapkan-indicator-table.plan-table th:nth-child(1){width:6%}
+.menetapkan-indicator-table.plan-table th:nth-child(2){width:auto}
+.menetapkan-indicator-table.plan-table{min-width:0}
+.sd-table .sd-group-row.is-sub th{background:var(--sd-white);font-weight:600;border-top:1px solid var(--sd-blue-5)}
+.plan-activity-form{padding:0 16px 16px 16px}
+.plan-activity-form .activity-card{margin:0}
+.plan-activity-form .activity-card{border:0;box-shadow:none;background:transparent;padding:0}
+.plan-activity-form{padding:0 16px 16px calc(6% + 0px)}
+
+/* Langkah 3: tipografi dan perataan sama dengan langkah 1 dan 2 */
+.plan-table .recommendation-description{margin:4px 0 0;font-size:var(--sd-text-bodysmall-size,14px);line-height:var(--sd-text-bodysmall-line,20px);color:var(--sd-text-subdued)}
+.plan-table td .sd-btn{margin:4px 0 0 -8px}
+.plan-table .sd-group-row.is-sub th{display:table-cell;padding-top:12px;padding-bottom:12px;font-size:14px;line-height:20px}
+.plan-root-label{display:inline-flex;flex-direction:column;margin-right:12px;vertical-align:middle}
+.plan-root-eyebrow{font-size:12px;line-height:16px;font-weight:500;color:var(--sd-text-subdued);text-transform:uppercase;letter-spacing:.02em}
+.plan-activity-form{padding:0 16px 16px calc(6% + 16px)}
+.plan-activity-form .sd-field-label,.plan-activity-form label{font-size:14px}
+
+
+/* Langkah 2 dan 3: satu kartu tabel per indikator, judul di atas tabel, jarak antar kartu */
+.plan-card{margin-top:24px}
+.plan-card:first-of-type{margin-top:16px}
+.plan-card-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}
+.plan-card-head:focus{outline:2px solid var(--sd-blue-70);outline-offset:4px;border-radius:4px}
+.plan-card-title{display:flex;align-items:flex-start;gap:8px;min-width:0}
+.plan-card-title .sd-icon{width:24px;height:24px;margin-top:14px;color:var(--sd-green-60);flex-shrink:0}
+.plan-card-title h3{margin:0;font-size:var(--sd-text-heading-size,20px);line-height:var(--sd-text-heading-line,28px);font-weight:600;color:var(--sd-gray-90)}
+.plan-card-sub{margin:2px 0 0;font-size:var(--sd-text-bodysmall-size,14px);line-height:var(--sd-text-bodysmall-line,20px);color:var(--sd-text-subdued)}
+.plan-card-head .plan-root-eyebrow{margin:0}
+
+/* Informasi indikator masuk ke dalam kontainer tabel */
+.plan-card-head{margin-bottom:0;padding:16px;background:var(--sd-white);border-bottom:1px solid var(--sd-modal-footer-border)}
+.plan-card-title .sd-icon{margin-top:16px}
+
+/* Kepala kartu ringkas: label dan nama sebaris, tombol dekat teks target */
+.plan-card-head{display:block;padding:12px 16px}
+.plan-card-title{display:block}
+.plan-card-line{display:flex;align-items:baseline;gap:8px}
+.plan-card-title h3{font-size:var(--sd-text-body-size,16px);line-height:var(--sd-text-body-line,24px)}
+.plan-card-sub{display:flex;align-items:center;flex-wrap:wrap;gap:0 4px;margin:0}
+.plan-card-sub .sd-btn{margin:0 0 0 4px;min-height:0;padding:0 8px}
+.plan-card-head{padding:10px 16px}
+.plan-card-sub .sd-btn{height:24px;line-height:20px;padding:0 6px}
+.plan-card-sub .sd-btn .sd-icon{width:16px;height:16px}
+
+/* Kepala kartu: target di ujung kanan, tombol ubah di sebelahnya */
+.plan-card-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px}
+.plan-card-target{display:flex;align-items:center;gap:8px;flex-shrink:0;font-size:var(--sd-text-bodysmall-size,14px);line-height:20px;color:var(--sd-text-subdued)}
+.plan-card-target b{color:var(--sd-gray-90);font-weight:600;font-size:var(--sd-text-body-size,16px)}
+.plan-card-target .sd-btn{height:24px;padding:0 6px}
+
+/* Kepala kartu: Indikator di kiri, Target di kanan, keduanya label kecil di atas nilai */
+.plan-card-head{align-items:center;padding:12px 16px}
+.plan-card-title{display:flex;flex-direction:column;gap:2px;min-width:0}
+.plan-card-title h3{margin:0;font-size:var(--sd-text-body-size,16px);line-height:24px;font-weight:600}
+.plan-card-target{display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0}
+.plan-card-target b{font-size:var(--sd-text-body-size,16px);line-height:24px;font-weight:600;color:var(--sd-gray-90)}
+.plan-card-head .plan-root-eyebrow{display:block;margin:0;font-size:12px;line-height:16px}
+
+
+/* Langkah 1: kelompok mutu sebagai accordion Seragam, satu terbuka dalam satu waktu */
+.mutu-accordion{margin-bottom:12px;background:var(--sd-white)}
+.mutu-accordion > .sd-accordion-body{padding:0}
+.mutu-accordion .menetapkan-table-scroll{border:0;border-radius:0;box-shadow:none}
+.mutu-accordion .flow-acc-sum{margin-left:12px}
+.mutu-accordion{border:1px solid var(--sd-blue-5);border-radius:var(--sd-radius-md);box-shadow:var(--sd-elevation-01);overflow:hidden}
+.mutu-accordion > .sd-accordion-head{padding:16px 20px;border-radius:0}
+.mutu-accordion[open] > .sd-accordion-head{border-bottom:1px solid var(--sd-modal-footer-border)}
+.mutu-accordion > .sd-accordion-head:focus-visible{box-shadow:inset 0 0 0 2px var(--sd-interactive-focused)}
+.mutu-accordion .sd-accordion-title{gap:0 12px}
+.mutu-accordion .flow-acc-sum{margin-left:0;font-weight:400;color:var(--sd-text-subdued)}
+
+/* Kolom kotak centang: lebar tetap 56px, kotak centang di tengah kolom (Table Seragam) */
+table.sd-table.menetapkan-indicator-table th:nth-child(1){width:56px}
+table.sd-table.menetapkan-indicator-table td:first-child:not(.sd-full){padding-left:0;padding-right:0;text-align:center}
+table.sd-table.menetapkan-indicator-table td:first-child:not(.sd-full) .sd-check{display:flex;justify-content:center;margin:0}
+.plan-activity-form{padding-left:72px}
+
+/* Isian target persentase: tanda % di dalam kolom */
+.sd-field-row:has(.target-unit){position:relative}
+.sd-field-row:has(.target-unit) .sd-input{padding-right:32px}
+.target-unit{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--sd-gray-60);pointer-events:none}
+
+/* Kartu Indikator dipilih di atas daftar langkah 1 */
+.selected-card{margin-bottom:16px;background:var(--sd-white);border:1px solid var(--sd-blue-5);border-radius:var(--sd-radius-md);box-shadow:var(--sd-elevation-01)}
+.selected-card-head{display:flex;align-items:baseline;gap:8px;padding:12px 16px;border-bottom:1px solid var(--sd-modal-footer-border)}
+.selected-card-head h3{margin:0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600}
+.selected-card-head .sd-group-count{margin-left:0}
+.selected-card ul{list-style:none;margin:0;padding:0}
+.selected-card li{display:flex;align-items:center;gap:24px;padding:8px 16px;min-height:48px}
+.selected-card li + li{border-top:1px solid var(--sd-modal-footer-border)}
+.selected-card-name{flex:1;min-width:0;padding:0;border:0;background:none;font:inherit;font-weight:600;color:var(--sd-blue-70);text-align:left;cursor:pointer}
+.selected-card-name:hover{text-decoration:underline}
+.selected-card-meta{flex:none;width:160px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-subdued)}
+.selected-card-meta b{color:var(--sd-gray-90);font-weight:600}
+@media(max-width:640px){.selected-card li{flex-wrap:wrap;gap:4px 16px}.selected-card-name{flex-basis:100%}.selected-card-meta{width:auto}}
+
+.selected-card-name{color:var(--sd-gray-90)}
+.selected-card-num{flex:none;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;margin-right:-8px;border-radius:50%;background:var(--sd-badge-neutral);font-size:12px;line-height:16px;font-weight:600;color:var(--sd-gray-90)}
+
+.selected-card-meta{width:auto;min-width:120px}
+.plan-card:first-of-type{margin-top:16px}
+.selected-card + .plan-card{margin-top:0}
+
+/* Pratinjau: akar masalah dan kegiatan di bawah indikatornya */
+.selected-card li{display:block;padding:10px 16px}
+.selected-card-row{display:flex;align-items:center;gap:24px;min-height:32px}
+.selected-card-sub,.selected-card-sub ul{list-style:disc;margin:4px 0 0;padding:0 0 0 20px}
+.selected-card-sub{margin-left:36px;margin-top:6px}
+.selected-card-sub li{display:list-item;padding:2px 0;min-height:0;border:0;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-90)}
+.selected-card-sub li + li{border:0}
+.selected-card-sub ul{list-style:circle;margin-top:2px}
+.selected-card-sub ul li{color:var(--sd-text-subdued)}
+@media(max-width:640px){.selected-card-row{flex-wrap:wrap;gap:4px 16px}.selected-card-sub{margin-left:0}}
+.selected-card ul.selected-card-sub{list-style:disc;margin:6px 0 0 36px;padding:0 0 0 20px}
+.selected-card ul.selected-card-sub ul{list-style:circle;margin:2px 0 0;padding:0 0 0 20px}
+.selected-card ul.selected-card-sub li{padding:2px 0;min-height:0;display:list-item}
+
+/* Pratinjau sebagai tabel Seragam */
+.preview-table{table-layout:fixed;min-width:0}
+.preview-table th:nth-child(1){width:56px;padding-left:0;padding-right:0;text-align:center}
+.preview-table td:first-child{padding-left:0;padding-right:0;text-align:center;color:var(--sd-text-subdued)}
+.preview-s0 th:nth-child(3),.preview-s0 th:nth-child(4){width:160px}
+.preview-s0 th:nth-child(5){width:64px}
+.preview-s0 td:last-child{padding-left:0;padding-right:8px;text-align:right}
+.preview-s1 th:nth-child(2),.preview-s2 th:nth-child(2){width:30%}
+.preview-s1 th:nth-child(3),.preview-s2 th:nth-child(3){width:150px}
+.preview-table td{vertical-align:top}
+.preview-table .selected-card-name{flex:none;text-align:left}
+.selected-card ul.selected-card-sub{margin:0;padding-left:20px}
+.selected-card .sd-table-wrap{border-top:0}
+.selected-card .sd-table th{border-top:0}
+
+.preview-s2 th:nth-child(2){width:24%}
+.preview-s2 th:nth-child(3){width:110px}
+.preview-s2 th:nth-child(4){width:28%}
+
+/* Pratinjau: garis antar sel, sel indikator digabung, kegiatan tanpa bullet dan satu ukuran huruf */
+.preview-table th,.preview-table td{border-right:1px solid var(--sd-modal-footer-border)}
+.preview-table th:last-child,.preview-table td:last-child{border-right:0}
+.preview-table td{vertical-align:middle}
+.preview-table ul.preview-acts{list-style:none;margin:0;padding:0}
+.preview-table ul.preview-acts li{padding:0;font-size:inherit;line-height:inherit;color:inherit}
+.preview-table ul.preview-acts li + li{margin-top:6px}
+
+.preview-table td:first-child{text-align:left;padding-left:16px;padding-right:16px;color:inherit}
+.preview-table td.preview-no{padding-left:0;padding-right:0;text-align:center;color:var(--sd-text-subdued)}
+.preview-table ul.preview-acts li + li{border:0}
+
+/* Pratinjau tanpa kolom target: label target di kolom indikator, label langkah di header */
+.sd-th-eyebrow{display:block;margin-bottom:2px;font-size:12px;line-height:16px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--sd-text-subdued)}
+.preview-label{margin-top:6px}
+.preview-table.preview-s0 th:nth-child(2){width:auto}
+.preview-table.preview-s0 th:nth-child(3){width:160px}
+.preview-table.preview-s0 th:nth-child(4){width:64px}
+.preview-table.preview-s1 th:nth-child(2){width:40%}
+.preview-table.preview-s1 th:nth-child(3){width:auto}
+.preview-table.preview-s2 th:nth-child(2){width:32%}
+.preview-table.preview-s2 th:nth-child(3){width:30%}
+.preview-table.preview-s2 th:nth-child(4){width:auto}
+
+/* Pratinjau: accordion Seragam, bisa disembunyikan, jarak 24px ke segmen di bawahnya */
+.preview-accordion.selected-card{margin-bottom:24px;overflow:hidden}
+.preview-accordion > .sd-accordion-head{padding:16px 20px;border-radius:0}
+.preview-accordion[open] > .sd-accordion-head{border-bottom:1px solid var(--sd-modal-footer-border)}
+.preview-accordion > .sd-accordion-head:focus-visible{box-shadow:inset 0 0 0 2px var(--sd-interactive-focused)}
+.preview-accordion > .sd-accordion-body{padding:0}
+.preview-accordion .sd-accordion-title{gap:0 12px}
+.preview-accordion .flow-acc-sum{margin-left:0;font-weight:400;color:var(--sd-text-subdued)}
+.preview-accordion.selected-card{margin-bottom:32px}
+
+.preview-table.preview-s0 th:nth-child(4){width:72px}
+.preview-s0 td:last-child{padding-left:0;padding-right:16px;text-align:center}
+
+/* Pratinjau langkah 4 sampai 6: tabel per kegiatan */
+.preview-table.preview-s3 th:nth-child(2),.preview-table.preview-s4 th:nth-child(2),.preview-table.preview-s5 th:nth-child(2){width:20%}
+.preview-table.preview-s3 th:nth-child(3),.preview-table.preview-s4 th:nth-child(3),.preview-table.preview-s5 th:nth-child(3){width:17%}
+.preview-table.preview-s3 th:nth-child(4),.preview-table.preview-s4 th:nth-child(4),.preview-table.preview-s5 th:nth-child(4){width:24%}
+.preview-follow{margin:6px 0 0}
+.preview-table.preview-s3 th:nth-child(5),.preview-table.preview-s4 th:nth-child(5),.preview-table.preview-s5 th:nth-child(5){width:150px}
+.preview-table.preview-s4 th:nth-child(6),.preview-table.preview-s5 th:nth-child(6){width:165px}
+.preview-table.preview-s5 th:nth-child(2){width:17%}
+.preview-table.preview-s5 th:nth-child(3){width:15%}
+.preview-table.preview-s5 th:nth-child(4){width:20%}
+.preview-table td .sd-badge{white-space:nowrap}
+
+/* Pratinjau: wadah berwarna di belakang kartu agar terbaca sebagai ringkasan di atas area kerja */
+.preview-band{margin-bottom:32px;padding:16px;background:var(--sd-blue-5);border-radius:var(--sd-radius-lg,12px)}
+.preview-band .preview-accordion.selected-card{margin-bottom:0}
+/* Pratinjau: latar selebar layar seperti hero, kartu tetap selebar konten */
+.preview-band{padding:24px 0;border-radius:0;box-shadow:0 0 0 100vmax var(--sd-blue-5);clip-path:inset(0 -100vmax);margin-bottom:32px}
+/* Latar biru pratinjau mulai tepat di bawah banner, jadi area abu di belakang stepper ikut biru */
+body:has(.page-title-banner .flow-stepper) .preview-band{margin-top:-76px;padding-top:100px}
+body:has(.page-title-banner .flow-stepper) .preview-band{padding-top:68px}
+.preview-band{background:var(--sd-yellow-5);box-shadow:0 0 0 100vmax var(--sd-yellow-5)}
+
+.preview-band{background:var(--sd-blue-5);box-shadow:0 0 0 100vmax var(--sd-blue-5)}
+
+/* Kepala kartu: nomor indikator dan judul lebih besar */
+.plan-card-head{padding:14px 16px}
+.plan-card-title{display:flex;flex-direction:row;align-items:center;gap:12px}
+.plan-card-num{flex:none;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:var(--sd-badge-neutral);font-size:14px;line-height:20px;font-weight:600;color:var(--sd-gray-90)}
+.plan-card-title h3{font-size:var(--sd-text-headingsmall-size,17px);line-height:var(--sd-text-headingsmall-line,24px);font-weight:600}
+.plan-card-title h3{font-size:18px;line-height:24px}
+
+.preview-band{background:var(--sd-white);box-shadow:0 0 0 100vmax var(--sd-white)}
+/* Pratinjau: lanjutan warna hero (biru tua) agar tidak sama dengan baris tabel terpilih */
+.preview-band{background:var(--sd-blue-90);box-shadow:0 0 0 100vmax var(--sd-blue-90)}
+/* Pratinjau: biru tua hanya separuh, kartu menimpa batasnya seperti stepper di atas */
+.preview-band{background:none;box-shadow:none;clip-path:none;position:relative;isolation:isolate}
+.preview-band::before{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:linear-gradient(var(--sd-blue-90),var(--sd-blue-90)) top/100% calc(50% + 22px) no-repeat}
+.preview-hint{color:var(--sd-text-subdued)}
+
+/* Isian akar masalah dari sekolah: rata kiri dengan judul baris, tombol setinggi kolom */
+.roots-table .plan-activity-form{padding:8px 16px 16px 88.5px}
+.roots-table .plan-activity-form .sd-field-row{align-items:stretch}
+.roots-table .plan-activity-form .sd-field-row .sd-btn{height:auto;align-self:stretch}
+/* Jarak: pratinjau ke judul bagian dikurangi, judul ke tabel ditambah */
+.preview-band{margin-bottom:16px}
+.flow-list-head{margin-bottom:20px}
+.flow-list-head + .plan-card{margin-top:0}
+
+/* Langkah 3: tautan hitam untuk membuka deskripsi kegiatan */
+.plan-table .sd-btn.btn-link-dark{color:var(--sd-gray-90);text-decoration:underline;text-underline-offset:3px;padding-left:0;margin-left:0}
+.plan-table .sd-btn.btn-link-dark:hover{color:var(--sd-gray-90);background:none;text-decoration-thickness:2px}
+.plan-table .recommendation-description[hidden]{display:none}
+
+/* Langkah 3: kolom Deskripsi, baris deskripsi terbuka, isian kegiatan dari sekolah */
+.menetapkan-indicator-table.plan-table th:nth-child(3){width:190px}
+.plan-table .sd-btn.btn-link-dark{margin:0;padding-left:0}
+.plan-desc{padding:0 16px 16px 88.5px;color:var(--sd-text-subdued);font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line)}
+tr[hidden]{display:none}
+.plan-table .plan-own-field{padding:8px 16px 16px 88.5px}
+.plan-table .plan-own-field .sd-field-row{align-items:stretch}
+.plan-table .plan-own-field .sd-field-row .sd-btn{height:auto;align-self:stretch}
+.plan-desc{padding-left:72px}
+.plan-table .plan-own-field{padding-left:72px}
+
+/* Langkah 3 dirapikan: deskripsi langsung tampil di kolomnya, form kegiatan terpilih berjarak jelas */
+.menetapkan-indicator-table.plan-table th:nth-child(2){width:34%}
+.menetapkan-indicator-table.plan-table th:nth-child(3){width:auto}
+.plan-desc-text{margin:0;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-subdued)}
+.plan-table td{padding-top:16px;padding-bottom:16px}
+.plan-table td.sd-full{padding:0}
+.plan-activity-form{padding:4px 16px 24px 72px}
+.plan-activity-form .activity-card{display:flex;flex-direction:column;gap:16px;margin:0;padding:0;border:0;box-shadow:none;background:transparent}
+.plan-activity-form .activity-card > *{margin:0}
+.plan-activity-form .activity-card > .sd-check{padding-top:16px;border-top:1px solid var(--sd-modal-footer-border);font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line)}
+.plan-activity-form .activity-budget-lines{display:flex;flex-direction:column;gap:12px;padding:16px;background:var(--sd-gray-0);border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-md)}
+.plan-activity-form .activity-budget-lines h4,.plan-activity-form .activity-budget-lines p{margin:0}
+.plan-activity-form .activity-budget-lines .sd-btn{align-self:flex-start}
+.plan-activity-form{padding-top:16px}
+.plan-activity-form .sd-field-label{font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600}
+
+/* Langkah 3: deskripsi 2 baris dengan Selengkapnya, kolom Yang akan dilakukan berisi isian */
+.menetapkan-indicator-table.plan-table th:nth-child(2){width:24%}
+.menetapkan-indicator-table.plan-table th:nth-child(3){width:34%}
+.menetapkan-indicator-table.plan-table th:nth-child(4){width:auto}
+.plan-desc-text.is-clamped{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.plan-table td .sd-btn.btn-link-dark{margin-top:4px}
+.plan-table td .sd-field{margin:0}
+.plan-table td textarea.sd-textarea{min-height:76px;width:100%}
+.plan-activity-form .activity-budget-part{display:flex;flex-direction:column;gap:16px}
+
+/* Langkah 3: tanpa kolom baru, isian "yang akan dilakukan" kembali di bawah baris kegiatan */
+.menetapkan-indicator-table.plan-table th:nth-child(2){width:30%}
+.menetapkan-indicator-table.plan-table th:nth-child(3){width:auto}
+.plan-table td.sd-full .plan-activity-form{display:flex;flex-direction:column;gap:16px}
+.plan-activity-form .activity-budget-part{padding-top:16px;border-top:1px solid var(--sd-modal-footer-border)}
+.plan-activity-form .sd-field-label{font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600}
+/* Konsistensi huruf: deskripsi dan checkbox anggaran memakai ukuran body seperti sel lain */
+.plan-desc-text{font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);color:var(--sd-gray-90)}
+.plan-activity-form .activity-budget-part .sd-check,.plan-activity-form .activity-budget-part .sd-check *{font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:400;color:var(--sd-gray-90)}
+
+/* Pertanyaan anggaran sebagai radio Ya atau Tidak */
+.plan-activity-form .activity-budget-part .sd-fieldgroup{margin:0;padding:0;border:0}
+.plan-activity-form .activity-budget-part legend{padding:0;margin-bottom:8px;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600;color:var(--sd-gray-90)}
+.plan-activity-form .activity-budget-part .sd-radio-list{display:flex;flex-direction:row;gap:24px}
+/* Rincian anggaran: semua kontrol sejajar, lebar kolom tetap proporsional */
+.plan-activity-form .activity-budget-part{padding-top:0;border-top:0}
+.activity-budget-lines .budget-lines-scroll table{table-layout:fixed;width:100%;min-width:0}
+.activity-budget-lines th:nth-child(1){width:18%}
+.activity-budget-lines th:nth-child(2){width:21%}
+.activity-budget-lines th:nth-child(3){width:11%}
+.activity-budget-lines th:nth-child(4){width:15%}
+.activity-budget-lines th:nth-child(5){width:15%}
+.activity-budget-lines th:nth-child(6){width:14%}
+.activity-budget-lines th:nth-child(7){width:6%}
+.activity-budget-lines td{vertical-align:middle;padding:12px 8px}
+.activity-budget-lines th{padding:12px 8px}
+.activity-budget-lines td:first-child,.activity-budget-lines th:first-child{padding-left:12px}
+.activity-budget-lines .sd-select,.activity-budget-lines .sd-select-box,.activity-budget-lines .sd-select select,.activity-budget-lines .budget-month-picker,.activity-budget-lines .budget-month-trigger{display:block;width:100%}
+.activity-budget-lines .sd-field{margin:0}
+.activity-budget-lines .sd-field-row{display:block}
+.activity-budget-lines .sd-input,.activity-budget-lines .sd-select select,.activity-budget-lines .budget-month-trigger{height:48px;box-sizing:border-box}
+.activity-budget-lines .budget-month-trigger{justify-content:space-between}
+.activity-budget-lines td .sd-cell-title{display:block;line-height:48px}
+.activity-budget-lines td:last-child{text-align:center;padding-right:12px}
+.activity-budget-lines .sd-select select{min-width:0;padding-right:36px}
+.activity-budget-lines .budget-month-trigger{min-width:0;padding-left:12px;padding-right:12px}
+.activity-budget-lines th:nth-child(1){width:19%}
+.activity-budget-lines th:nth-child(2){width:20%}
+
+/* Tabel anggaran bersarang: menimpa aturan kolom tabel kegiatan */
+table.sd-table.menetapkan-indicator-table .activity-budget-lines th:nth-child(1){width:19%;padding-left:12px;padding-right:8px;text-align:left}
+table.sd-table.menetapkan-indicator-table .activity-budget-lines th:nth-child(2){width:20%}
+table.sd-table.menetapkan-indicator-table .activity-budget-lines th:nth-child(3){width:11%}
+table.sd-table.menetapkan-indicator-table .activity-budget-lines th:nth-child(4){width:15%}
+table.sd-table.menetapkan-indicator-table .activity-budget-lines th:nth-child(5){width:15%}
+table.sd-table.menetapkan-indicator-table .activity-budget-lines th:nth-child(6){width:14%}
+table.sd-table.menetapkan-indicator-table .activity-budget-lines th:nth-child(7){width:6%}
+table.sd-table.menetapkan-indicator-table .activity-budget-lines td:first-child{padding-left:12px;padding-right:8px;text-align:left;color:inherit}
+table.sd-table.menetapkan-indicator-table .activity-budget-lines td{padding:12px 8px;vertical-align:middle}
+table.sd-table.menetapkan-indicator-table .activity-budget-lines td:first-child{padding-left:12px}
+table.sd-table.menetapkan-indicator-table .activity-budget-lines td:last-child{padding-right:12px}
+.activity-budget-lines .budget-month-picker .budget-month-trigger.sd-btn{display:flex;align-items:center;justify-content:space-between;width:100%;height:48px;min-height:48px;padding:0 12px;box-sizing:border-box}
+.activity-budget-lines .sd-input{width:100%}
+.activity-budget-lines .sd-input{width:100%;box-sizing:border-box;min-width:0}
+.activity-budget-lines .sd-field,.activity-budget-lines .sd-field-row{min-width:0;width:100%}
+/* Pilihan bulan: kisi 3 kolom yang rapi, kotak centang dan label sejajar */
+.budget-month-options[popover]{width:340px;padding:16px;gap:8px;border-color:var(--sd-modal-footer-border)}
+.budget-month-options .budget-month-hint{margin:0 0 4px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-subdued)}
+.budget-month-picker .budget-month-options > label{justify-content:flex-start;gap:10px;min-height:44px;padding:0 12px;font-size:var(--sd-text-bodysmall-size);color:var(--sd-gray-90);border-color:var(--sd-modal-footer-border)}
+.budget-month-picker .budget-month-options input[type="checkbox"]{width:20px !important;height:20px !important;min-width:20px;max-width:20px;flex:none}
+.budget-month-picker .budget-month-options > label:has(input:checked){background:var(--sd-blue-5);border-color:var(--sd-blue-20);color:var(--sd-gray-90)}
+/* Tombol Tambah uraian dan total sejajar dengan isi kolom pertama */
+.plan-activity-form .activity-budget-lines > .sd-btn{margin:8px 0 0 12px}
+.plan-activity-form .activity-budget-lines > p{margin:0 0 0 12px}
+.plan-activity-form .activity-budget-lines > p{margin-left:0}
+.plan-activity-form .activity-budget-lines > p:last-child{margin-left:12px}
+
+.plan-table .activity-budget-lines td .sd-btn{margin:0}
+.activity-budget-lines .budget-month-picker .budget-month-trigger.sd-btn{overflow:hidden;white-space:nowrap}
+
+/* Tabel anggaran: label rata kiri dengan isian, pemicu bulan berlatar putih */
+table.sd-table.menetapkan-indicator-table .activity-budget-lines th{padding:12px 8px;text-align:left}
+table.sd-table.menetapkan-indicator-table .activity-budget-lines th:nth-child(1){padding-left:12px}
+.activity-budget-lines .budget-month-picker .budget-month-trigger.sd-btn{background:var(--sd-white);border-color:var(--sd-gray-50);color:var(--sd-gray-90);font-weight:400}
+.activity-budget-lines .budget-month-picker .budget-month-trigger.sd-btn:hover{background:var(--sd-white);border-color:var(--sd-gray-70)}
+.plan-activity-form .activity-budget-lines > .sd-btn{margin:-6px 0 0 12px}
+.plan-activity-form .activity-budget-lines > p:last-child{margin-top:-2px}
+
+/* Pratinjau: item bisa diklik; nomor bertingkat di judul kartu langkah 3 */
+.preview-link{display:inline-flex;align-items:baseline;gap:8px;padding:0;border:0;background:none;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.preview-link.preview-strong{font-weight:600}
+.preview-link:hover span:last-child{text-decoration:underline;text-underline-offset:3px}
+.preview-link:focus-visible{outline:2px solid var(--sd-interactive-focused);outline-offset:2px;border-radius:2px}
+.preview-num{flex:none;font-weight:600;color:var(--sd-text-subdued)}
+.preview-acts li{display:block}
+.plan-card-num{min-width:28px;width:auto;padding:0 10px;border-radius:14px}
+
+/* Nomor kegiatan (1.1.1) pada judul kartu langkah 4 sampai 6 */
+.activity-num{display:inline-flex;align-items:center;justify-content:center;min-width:28px;padding:0 10px;margin-right:8px;border-radius:14px;background:var(--sd-badge-neutral);font-size:14px;line-height:28px;font-weight:600;color:var(--sd-gray-90);vertical-align:middle}
+
+/* Pratinjau tanpa kolom No: nomor indikator ada di sel indikator */
+table.sd-table.preview-table th:nth-child(1){padding-left:16px;padding-right:16px;text-align:left;width:auto}
+table.sd-table.preview-table td:first-child{padding-left:16px;padding-right:16px;text-align:left;color:inherit}
+table.sd-table.preview-table.preview-s0 th:nth-child(2){width:160px}
+table.sd-table.preview-table.preview-s0 th:nth-child(3){width:72px}
+table.sd-table.preview-table.preview-s0 td:last-child{padding-left:0;padding-right:16px;text-align:center}
+table.sd-table.preview-table.preview-s1 th:nth-child(1){width:42%}
+table.sd-table.preview-table.preview-s1 th:nth-child(2){width:auto}
+table.sd-table.preview-table.preview-s2 th:nth-child(1){width:30%}
+table.sd-table.preview-table.preview-s2 th:nth-child(2){width:30%}
+table.sd-table.preview-table.preview-s2 th:nth-child(3){width:auto}
+table.sd-table.preview-table.preview-s3 th:nth-child(1){width:22%}
+table.sd-table.preview-table.preview-s3 th:nth-child(2){width:18%}
+table.sd-table.preview-table.preview-s3 th:nth-child(3){width:26%}
+table.sd-table.preview-table.preview-s3 th:nth-child(4){width:150px}
+table.sd-table.preview-table.preview-s4 th:nth-child(1){width:22%}
+table.sd-table.preview-table.preview-s4 th:nth-child(2){width:18%}
+table.sd-table.preview-table.preview-s4 th:nth-child(3){width:26%}
+table.sd-table.preview-table.preview-s4 th:nth-child(4){width:150px}
+table.sd-table.preview-table.preview-s5 th:nth-child(1){width:22%}
+table.sd-table.preview-table.preview-s5 th:nth-child(2){width:18%}
+table.sd-table.preview-table.preview-s5 th:nth-child(3){width:26%}
+table.sd-table.preview-table.preview-s5 th:nth-child(4){width:150px}
+table.sd-table.preview-table.preview-s4 th:nth-child(5),table.sd-table.preview-table.preview-s5 th:nth-child(5){width:165px}
+table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
+.preview-link .preview-num{min-width:1ch}
+/* Pratinjau: isi kolom pertama sejajar dengan judul kartu (padding kiri 20px) */
+table.sd-table.preview-table th:nth-child(1),table.sd-table.preview-table td:first-child{padding-left:20px}
+
+/* Badge target sejajar dengan teks nama indikator, bukan dengan nomornya */
+.preview-ind{display:flex;align-items:flex-start;gap:8px}
+.preview-ind .preview-num{flex:none;line-height:inherit}
+.preview-ind-body{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.preview-ind-body .preview-label{margin-top:6px}
+
+/* Pratinjau langkah 4 sampai 6: lebar kolom dihitung ulang supaya kolom terakhir tidak terpotong */
+table.sd-table.preview-table.preview-s3 th:nth-child(1){width:26%}
+table.sd-table.preview-table.preview-s3 th:nth-child(2){width:22%}
+table.sd-table.preview-table.preview-s3 th:nth-child(3){width:28%}
+table.sd-table.preview-table.preview-s3 th:nth-child(4){width:auto}
+table.sd-table.preview-table.preview-s4 th:nth-child(1){width:20%}
+table.sd-table.preview-table.preview-s4 th:nth-child(2){width:17%}
+table.sd-table.preview-table.preview-s4 th:nth-child(3){width:23%}
+table.sd-table.preview-table.preview-s4 th:nth-child(4){width:160px}
+table.sd-table.preview-table.preview-s4 th:nth-child(5){width:auto}
+table.sd-table.preview-table.preview-s5 th:nth-child(1){width:16%}
+table.sd-table.preview-table.preview-s5 th:nth-child(2){width:14%}
+table.sd-table.preview-table.preview-s5 th:nth-child(3){width:19%}
+table.sd-table.preview-table.preview-s5 th:nth-child(4){width:160px}
+table.sd-table.preview-table.preview-s5 th:nth-child(5){width:165px}
+table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
+.preview-table .sd-th-eyebrow{white-space:nowrap}
+.preview-table td .sd-badge{white-space:nowrap}
+table.sd-table.preview-table.preview-s4 th:nth-child(4),table.sd-table.preview-table.preview-s5 th:nth-child(4){width:176px}
+table.sd-table.preview-table.preview-s5 th:nth-child(5){width:172px}
+
+/* Pratinjau: lebar kolom sama di semua langkah, kolom terakhir mengisi sisa */
+table.sd-table.preview-table.preview-s1 th:nth-child(1){width:18%}
+table.sd-table.preview-table.preview-s1 th:nth-child(2){width:auto}
+table.sd-table.preview-table.preview-s2 th:nth-child(1){width:18%}
+table.sd-table.preview-table.preview-s2 th:nth-child(2){width:16%}
+table.sd-table.preview-table.preview-s2 th:nth-child(3){width:auto}
+table.sd-table.preview-table.preview-s3 th:nth-child(1){width:18%}
+table.sd-table.preview-table.preview-s3 th:nth-child(2){width:16%}
+table.sd-table.preview-table.preview-s3 th:nth-child(3){width:22%}
+table.sd-table.preview-table.preview-s3 th:nth-child(4){width:auto}
+table.sd-table.preview-table.preview-s4 th:nth-child(1){width:18%}
+table.sd-table.preview-table.preview-s4 th:nth-child(2){width:16%}
+table.sd-table.preview-table.preview-s4 th:nth-child(3){width:22%}
+table.sd-table.preview-table.preview-s4 th:nth-child(4){width:14%}
+table.sd-table.preview-table.preview-s4 th:nth-child(5){width:auto}
+table.sd-table.preview-table.preview-s5 th:nth-child(1){width:18%}
+table.sd-table.preview-table.preview-s5 th:nth-child(2){width:16%}
+table.sd-table.preview-table.preview-s5 th:nth-child(3){width:22%}
+table.sd-table.preview-table.preview-s5 th:nth-child(4){width:14%}
+table.sd-table.preview-table.preview-s5 th:nth-child(5){width:14%}
+table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
+
+/* Pratinjau: tabel berjarak kiri dan kanan di dalam kartu, semua kolom sama lebar */
+.preview-accordion > .sd-accordion-body{padding:16px 20px 20px}
+.preview-accordion.selected-card .sd-table-wrap{border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-md);overflow:hidden}
+.preview-accordion .sd-table th:first-child,.preview-accordion .sd-table td:first-child{border-left:0}
+table.sd-table.preview-table th:nth-child(1),table.sd-table.preview-table td:first-child{padding-left:16px}
+table.sd-table.preview-table.preview-s1 th:nth-child(1){width:auto}
+table.sd-table.preview-table.preview-s1 th:nth-child(2){width:auto}
+table.sd-table.preview-table.preview-s1 th:nth-child(3){width:auto}
+table.sd-table.preview-table.preview-s1 th:nth-child(4){width:auto}
+table.sd-table.preview-table.preview-s1 th:nth-child(5){width:auto}
+table.sd-table.preview-table.preview-s1 th:nth-child(6){width:auto}
+table.sd-table.preview-table.preview-s2 th:nth-child(1){width:auto}
+table.sd-table.preview-table.preview-s2 th:nth-child(2){width:auto}
+table.sd-table.preview-table.preview-s2 th:nth-child(3){width:auto}
+table.sd-table.preview-table.preview-s2 th:nth-child(4){width:auto}
+table.sd-table.preview-table.preview-s2 th:nth-child(5){width:auto}
+table.sd-table.preview-table.preview-s2 th:nth-child(6){width:auto}
+table.sd-table.preview-table.preview-s3 th:nth-child(1){width:auto}
+table.sd-table.preview-table.preview-s3 th:nth-child(2){width:auto}
+table.sd-table.preview-table.preview-s3 th:nth-child(3){width:auto}
+table.sd-table.preview-table.preview-s3 th:nth-child(4){width:auto}
+table.sd-table.preview-table.preview-s3 th:nth-child(5){width:auto}
+table.sd-table.preview-table.preview-s3 th:nth-child(6){width:auto}
+table.sd-table.preview-table.preview-s4 th:nth-child(1){width:auto}
+table.sd-table.preview-table.preview-s4 th:nth-child(2){width:auto}
+table.sd-table.preview-table.preview-s4 th:nth-child(3){width:auto}
+table.sd-table.preview-table.preview-s4 th:nth-child(4){width:auto}
+table.sd-table.preview-table.preview-s4 th:nth-child(5){width:auto}
+table.sd-table.preview-table.preview-s4 th:nth-child(6){width:auto}
+table.sd-table.preview-table.preview-s5 th:nth-child(1){width:auto}
+table.sd-table.preview-table.preview-s5 th:nth-child(2){width:auto}
+table.sd-table.preview-table.preview-s5 th:nth-child(3){width:auto}
+table.sd-table.preview-table.preview-s5 th:nth-child(4){width:auto}
+table.sd-table.preview-table.preview-s5 th:nth-child(5){width:auto}
+table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
+
+/* Langkah 4 sampai 6: kartu dan tabel kerja dengan gaya yang sama seperti langkah 1 sampai 3 */
+.work-table{table-layout:fixed;width:100%;min-width:0}
+.work-table td{vertical-align:top;padding:16px}
+.work-table td .sd-field,.work-table td .sd-select{margin:0;width:100%}
+.work-table td .sd-select select{min-width:0;width:100%}
+.work-table td textarea.sd-textarea{width:100%;min-height:88px;box-sizing:border-box}
+.work-table td .sd-input{width:100%;box-sizing:border-box}
+.work-table td .sd-check{margin-top:12px;align-items:flex-start}
+.work-table th:nth-child(1){width:34%}
+.work-table th:nth-child(2){width:28%}
+.work-table th:nth-child(3){width:auto}
+.work-table-acts th:nth-child(1){width:24%}
+.work-table-acts th:nth-child(2){width:24%}
+.work-table-acts th:nth-child(3){width:20%}
+.work-table-acts th:nth-child(4){width:auto}
+.work-card-text{min-width:0}
+.work-card-eyebrow{margin:0 0 2px;font-size:12px;line-height:16px;font-weight:500;color:var(--sd-text-subdued);text-transform:uppercase;letter-spacing:.02em}
+.work-card-text h3{margin:0}
+.work-root{margin:0 0 8px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-subdued)}
+.work-text{margin:8px 0 0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);color:var(--sd-gray-90)}
+.work-title{margin:0 0 4px;font-weight:600}
+.work-table .saved-budget-status{margin:8px 0 0}
+.work-table .evaluation-context,.work-table .control-plan-details{margin-top:0}
+.work-table .outcome-dummy-note{margin:4px 0 0;color:var(--sd-text-subdued)}
+.work-table td .sd-check{display:flex;white-space:normal;line-height:var(--sd-text-body-line)}
+.work-table td .sd-check .sd-check-label,.work-table td .sd-check > span:last-child{white-space:normal;min-width:0}
+
+/* Langkah 4: tampilan seperti formulir, rekap hanya yang dilakukan dan total anggaran */
+.work-form{display:flex;flex-direction:column;gap:20px;padding:20px}
+.work-form .sd-field{margin:0}
+.work-form .sd-field-label{font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600;color:var(--sd-gray-90)}
+.work-form textarea.sd-textarea,.work-form .sd-input{width:100%;box-sizing:border-box}
+.work-form textarea.sd-textarea{min-height:96px}
+.work-recap{display:grid;grid-template-columns:2fr 1fr;gap:16px 32px;margin:0;padding:16px;background:var(--sd-gray-0);border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-md)}
+.work-recap dt{margin:0 0 4px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-subdued)}
+.work-recap dd{margin:0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);color:var(--sd-gray-90)}
+@media(max-width:640px){.work-recap{grid-template-columns:1fr}}
+.work-form .evidence-link-error:empty{display:none}
+.work-form .evidence-link-error{margin:-8px 0 0}
+.work-form{gap:16px}
+
+/* Langkah 4: dua kolom, kiri rekap rencana, kanan isian bukti dan catatan */
+.work-form.work-form-2col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:start}
+.work-form-2col .work-recap{grid-template-columns:1fr;gap:16px}
+.work-form-fields{display:flex;flex-direction:column;gap:16px;min-width:0}
+@media(max-width:760px){.work-form.work-form-2col{grid-template-columns:1fr}}
+/* Langkah 5: sama seperti langkah 4, rekap di kiri, penilaian di kanan */
+.work-recap.work-recap-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.work-recap .outcome-status{margin:0;padding:0;border:0;background:none}
+.work-recap dd a{color:var(--sd-blue-70)}
+.work-form-fields .sd-select{width:100%}
+.work-form-fields .sd-select select{width:100%;min-width:0}
+@media(max-width:760px){.work-recap.work-recap-4{grid-template-columns:1fr 1fr}}
+
+/* Langkah 5: satu kartu per indikator, kegiatan sebagai blok di dalamnya */
+.work-activities{display:flex;flex-direction:column;gap:16px}
+.work-section-title{margin:4px 0 0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600;color:var(--sd-gray-90)}
+.work-activity{border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-md);overflow:hidden;background:var(--sd-white)}
+.work-activity-head{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--sd-gray-0);border-bottom:1px solid var(--sd-modal-footer-border)}
+.work-activity-head h4{margin:0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600;color:var(--sd-gray-90)}
+.work-activity-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:start;padding:16px}
+.work-activity-body .work-recap{background:var(--sd-white)}
+@media(max-width:760px){.work-activity-body{grid-template-columns:1fr}}
+.work-activity-body .work-recap{grid-template-columns:1fr;gap:14px}
+
+/* Langkah 5 ringkas: hasil indikator satu baris, kegiatan satu baris tiga kolom */
+.work-form.work-form-tight{gap:12px;padding:16px}
+.work-outcome{display:flex;flex-wrap:wrap;align-items:center;gap:6px 24px;padding:10px 14px;background:var(--sd-gray-0);border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-md);font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-subdued)}
+.work-outcome b{color:var(--sd-gray-90);font-weight:600}
+.work-outcome em{font-style:normal}
+.work-outcome .outcome-status{display:inline-flex;align-items:center;gap:8px;margin:0;padding:0;border:0;background:none;color:var(--sd-gray-90)}
+.work-activity-head{padding:10px 14px}
+.work-activity-head h4{flex:1;min-width:0}
+.work-activity-meta{flex:none;font-size:var(--sd-text-bodysmall-size);color:var(--sd-text-subdued)}
+.work-activity-meta a{color:var(--sd-gray-90);text-decoration:underline;text-underline-offset:3px}
+.work-activity-body{grid-template-columns:minmax(0,1.1fr) 210px minmax(0,1.5fr);gap:16px;padding:12px 14px}
+.work-activity-info .work-info-label{margin:0;font-size:12px;line-height:16px;color:var(--sd-text-subdued)}
+.work-activity-info .work-info-text{margin:0 0 8px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-90);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.work-activity-body .sd-field-label,.work-activity-body .sd-select > .sd-field-label{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:600}
+.work-activity-body textarea.sd-textarea{min-height:60px}
+.work-activity-body .sd-select select{height:44px}
+@media(max-width:900px){.work-activity-body{grid-template-columns:1fr}}
+
+/* Langkah 5: dua kolom seperti langkah 4, info di kiri, penilaian di kanan */
+.work-activity-body{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px}
+.work-activity-body .work-form-fields{gap:16px}
+.work-activity-body .sd-field-label,.work-activity-body .sd-select > .sd-field-label{font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600;color:var(--sd-gray-90)}
+.work-activity-body textarea.sd-textarea{min-height:72px}
+@media(max-width:760px){.work-activity-body{grid-template-columns:1fr}}
+
+.work-activity-body .work-recap{background:var(--sd-gray-0);grid-template-columns:1fr;gap:16px;padding:16px}
+/* Langkah 6: sama seperti langkah 4 dan 5 */
+.work-form-fields .sd-check{margin:0;align-items:flex-start;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);white-space:normal}
+.work-form-fields .sd-check *{font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:400}
+/* Langkah 5: satu kartu per kegiatan seperti langkah 4 dan 6 */
+.work-outcome-line{line-height:var(--sd-text-body-line)}
+.work-outcome-line b{font-weight:600}
+.work-outcome-line em{font-style:normal;color:var(--sd-text-subdued)}
+.work-outcome-status{display:block;margin-top:6px}
+.work-outcome-status .outcome-status{margin:0}
+
+/* Ringkasan hasil indikator di langkah 5 dan 6 */
+.work-summary-table{table-layout:fixed;width:100%;min-width:0}
+.work-summary-table th:nth-child(1){width:28%}
+.work-summary-table th:nth-child(2),.work-summary-table th:nth-child(3),.work-summary-table th:nth-child(4){width:14%}
+.work-summary-table th:nth-child(5){width:auto}
+.work-summary-table td{vertical-align:top;padding:14px 16px}
+.work-summary-table .work-dummy{font-style:normal;color:var(--sd-text-subdued)}
+.work-summary-table .outcome-status,.work-outcome-status-cell{margin:0;padding:0;border:0;background:none}
+.work-summary-table .preview-num{margin-right:8px}
+/* Langkah 4 sampai 6: kolom kiri tanpa kotak dan latar, dipisah divider vertikal dari kolom kanan */
+.work-form.work-form-2col{column-gap:0}
+.work-form.work-form-2col .work-recap{background:none;border:0;border-radius:0;padding:0 24px 0 0;border-right:1px solid var(--sd-modal-footer-border);align-self:stretch}
+.work-form.work-form-2col .work-form-fields{padding-left:24px}
+@media(max-width:760px){.work-form.work-form-2col .work-recap{padding:0 0 16px;border-right:0;border-bottom:1px solid var(--sd-modal-footer-border)}.work-form.work-form-2col .work-form-fields{padding:16px 0 0}}
+.work-form.work-form-2col .work-recap{align-content:start}
+
+.work-summary-table th:nth-child(1){width:24%}
+.work-summary-table th:nth-child(2),.work-summary-table th:nth-child(3){width:11%}
+.work-summary-table th:nth-child(4){width:14%}
+.work-summary-table th:nth-child(5){width:17%}
+.work-summary-table th:nth-child(6){width:auto}
+
+/* Satu kartu per indikator, kegiatan sebagai bagian di dalamnya (langkah 4 sampai 6) */
+.work-act + .work-act{border-top:1px solid var(--sd-modal-footer-border)}
+.work-act-head{display:flex;align-items:center;gap:12px;padding:16px 20px 0}
+.work-act-head h4{margin:0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600;color:var(--sd-gray-90)}
+.work-act .work-form{padding-top:12px}
+
+/* Divider di bawah judul kegiatan */
+.work-act-head{padding:14px 20px;margin:0;border-bottom:1px solid var(--sd-modal-footer-border)}
+.work-act .work-form{padding-top:16px}
+
+/* Hasil indikator di dalam kartu masing-masing indikator */
+.work-indicator-summary{padding:14px 20px;border-bottom:1px solid var(--sd-modal-footer-border);background:var(--sd-white)}
+.work-indicator-summary dl{display:grid;grid-template-columns:repeat(3,minmax(0,.8fr)) minmax(0,2fr);gap:16px 24px;margin:0}
+.work-indicator-summary dt{margin:0 0 4px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-subdued)}
+.work-indicator-summary dd{margin:0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600;color:var(--sd-gray-90)}
+.work-indicator-summary .work-dummy{font-weight:400;font-style:normal;color:var(--sd-text-subdued)}
+.work-summary-status dd{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.work-summary-note{font-weight:400;color:var(--sd-gray-90)}
+@media(max-width:760px){.work-indicator-summary dl{grid-template-columns:1fr 1fr}}
+
+/* Langkah 5: formulir evaluasi tertutup secara default, dibuka lewat tombol per kegiatan */
+.work-act-head .work-act-toggle{margin-left:auto;flex:none}
+.work-act-head h4{flex:0 1 auto}
+.work-act-head .sd-badge{flex:none}
+.work-act-toggle[aria-expanded="true"] .sd-icon{transform:rotate(180deg)}
+.work-act:has(> [hidden]) .work-act-head{border-bottom:0}
+.work-act [hidden]{display:none}
+
+/* Tombol per kegiatan berubah jadi konfirmasi selesai setelah diisi */
+.work-act-toggle.is-done{border-color:var(--sd-green-60);color:var(--sd-green-60)}
+.work-act-toggle.is-done::before{content:'✓';margin-right:6px;font-weight:600}

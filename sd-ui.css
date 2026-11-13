@@ -797,3 +797,8 @@
   display: block;
   margin: 0 0 4px;
 }
+
+/* Table Seragam: baris data punya status hover (Surface/Hovered); baris terpilih tetap Surface Selected */
+.sd-table:not(.sd-no-hover) tbody tr:not(.sd-group-row):not(.sd-row-selected):hover > td:not(.sd-full) {
+  background: var(--sd-surface-hovered);
+}

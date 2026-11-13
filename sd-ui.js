@@ -70,14 +70,17 @@
   function sdTable({ caption, columns, rows, className = '' }) {
     const cols = columns.length;
     return `<div class="sd-table-wrap" role="region" aria-label="${e(caption)}" tabindex="0"><table class="sd-table ${className}"><caption class="sd-sr-only">${e(caption)}</caption><thead><tr>${columns
-      .map((c) => `<th scope="col"${c.align === 'right' ? ' class="sd-right"' : ''}>${c.srOnly ? `<span class="sd-sr-only">${e(c.label)}</span>` : e(c.label)}</th>`)
+      .map((c) => `<th scope="col"${c.align === 'right' ? ' class="sd-right"' : ''}>${c.eyebrow ? `<span class="sd-th-eyebrow">${e(c.eyebrow)}</span>` : ''}${c.srOnly ? `<span class="sd-sr-only">${e(c.label)}</span>` : e(c.label)}</th>`)
       .join('')}</tr></thead><tbody>${rows
       .map((r) => {
         if (!Array.isArray(r) && r.group !== undefined) return `<tr class="sd-group-row${r.groupClass ? ' ' + r.groupClass : ''}"${r.groupAttrs ? ' ' + r.groupAttrs : ''}><th scope="colgroup" colspan="${cols}">${r.group}</th></tr>`;
-        if (!Array.isArray(r) && r.full !== undefined) return `<tr><td class="sd-full" colspan="${cols}">${r.full}</td></tr>`;
+        if (!Array.isArray(r) && r.subhead) return `<tr class="sd-subhead-row">${columns
+          .map((c) => `<th scope="col"${c.align === 'right' ? ' class="sd-right"' : ''}>${c.srOnly ? `<span class="sd-sr-only">${e(c.label)}</span>` : e(c.label)}</th>`)
+          .join('')}</tr>`;
+        if (!Array.isArray(r) && r.full !== undefined) return `<tr${r.attrs ? ' ' + r.attrs : ''}><td class="sd-full" colspan="${cols}">${r.full}</td></tr>`;
         const cells = Array.isArray(r) ? r : r.cells;
         const attrs = Array.isArray(r) ? '' : `${r.selected ? ' class="sd-row-selected"' : ''}${r.attrs ? ' ' + r.attrs : ''}`;
-        return `<tr${attrs}>${cells.map((cell, i) => `<td${columns[i]?.align === 'right' ? ' class="sd-right"' : ''}>${cell}</td>`).join('')}</tr>`;
+        return `<tr${attrs}>${cells.map((cell, i) => (cell === null ? '' : `<td${(() => { const k = [columns[i]?.align === 'right' ? 'sd-right' : '', cell && typeof cell === 'object' && cell.className ? cell.className : ''].filter(Boolean).join(' '); return k ? ' class="' + k + '"' : ''; })()}${cell && typeof cell === 'object' && cell.rowspan ? ' rowspan="' + cell.rowspan + '"' : ''}>${cell && typeof cell === 'object' ? cell.html : cell}</td>`)).join('')}</tr>`;
       })
       .join('')}</tbody></table></div>`;
   }
@@ -141,9 +144,9 @@
   }
 
   /** Area teks. Label di atas, helper 12/16 di bawah label bila ada, tinggi awal sekitar 3 baris, bisa diubah tinggi (vertikal). */
-  function sdTextArea({ label, id, value = '', placeholder = '', helper = '', error = '', oninput = '', optional = false, rows = 3 }) {
+  function sdTextArea({ label, id, value = '', placeholder = '', helper = '', error = '', oninput = '', optional = false, rows = 3, hideLabel = false }) {
     const desc = helper || error ? ` aria-describedby="${e(id)}-hint"` : '';
-    return `<div class="sd-field"><label class="sd-field-label" for="${e(id)}">${e(label)}${optional ? ' (opsional)' : ''}</label>${helper && !error ? `<span class="sd-field-hint" id="${e(id)}-hint">${e(helper)}</span>` : ''}<textarea class="sd-textarea" id="${e(id)}" rows="${rows}"${placeholder ? ` placeholder="${e(placeholder)}"` : ''}${error ? ' aria-invalid="true"' : ''}${desc}${oninput ? ` oninput="${oninput}"` : ''}>${e(value)}</textarea>${error ? `<span class="sd-field-hint sd-field-error" id="${e(id)}-hint">${e(error)}</span>` : ''}</div>`;
+    return `<div class="sd-field"><label class="sd-field-label${hideLabel ? ' sd-sr-only' : ''}" for="${e(id)}">${e(label)}${optional ? ' (opsional)' : ''}</label>${helper && !error && !hideLabel ? `<span class="sd-field-hint" id="${e(id)}-hint">${e(helper)}</span>` : ''}<textarea class="sd-textarea" id="${e(id)}" rows="${rows}"${placeholder ? ` placeholder="${e(placeholder)}"` : ''}${error ? ' aria-invalid="true"' : ''}${desc}${oninput ? ` oninput="${oninput}"` : ''}>${e(value)}</textarea>${error ? `<span class="sd-field-hint sd-field-error" id="${e(id)}-hint">${e(error)}</span>` : ''}</div>`;
   }
 
   /**
