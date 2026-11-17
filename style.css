@@ -10813,15 +10813,23 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 .menetapkan-indicator-table tr[data-needs-target] td:last-child .sd-input:not(:focus){border-color:var(--sd-critical-border);box-shadow:0 0 0 2px var(--sd-critical-border)}
 
 /* Tabel langkah 1: urutan Pilih, Indikator, Kategori, Capaian 2024, Capaian 2025, Target */
-.menetapkan-indicator-table:not(.roots-table) th:nth-child(1){width:72px}
-.menetapkan-indicator-table:not(.roots-table) th:nth-child(2){width:32%}
-.menetapkan-indicator-table:not(.roots-table) th:nth-child(3){width:13%}
-.menetapkan-indicator-table:not(.roots-table) th:nth-child(4){width:12%}
-.menetapkan-indicator-table:not(.roots-table) th:nth-child(5){width:19%}
-.menetapkan-indicator-table:not(.roots-table) th:nth-child(6){width:22%}
+.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(1){width:72px}
+.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(2){width:32%}
+.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(3){width:13%}
+.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(4){width:12%}
+.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(5){width:19%}
+.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(6){width:22%}
 .menetapkan-indicator-table td:nth-child(5) .table-indicator-change,.menetapkan-indicator-table td:nth-child(5) .table-indicator-change *{white-space:nowrap;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:400}
 .menetapkan-indicator-table td:nth-child(5) .table-indicator-change{color:var(--sd-gray-60)}
 .menetapkan-indicator-table td:nth-child(5) .table-indicator-change b{font-weight:400!important;color:inherit!important}
 .menetapkan-indicator-table td:nth-child(5) .table-indicator-change,.menetapkan-indicator-table td:nth-child(5) .table-indicator-change span,.menetapkan-indicator-table td:nth-child(5) .table-indicator-change b{font-size:var(--sd-text-bodysmall-size)!important;line-height:var(--sd-text-bodysmall-line)!important}
 .menetapkan-indicator-table td:nth-child(5) .table-achievement{gap:0!important}
 .menetapkan-indicator-table td:nth-child(5) .table-achievement .table-baseline,.menetapkan-indicator-table td:nth-child(5) .table-achievement .table-indicator-change{margin:0!important}
+.menetapkan-indicator-table.roots-table th:first-child,.menetapkan-indicator-table.plan-table th:first-child{min-width:72px}
+
+/* Tabel langkah 2: Pilih, Akar masalah, Kategori, Capaian 2024, Capaian 2025 */
+.menetapkan-indicator-table.roots-table th:nth-child(1){width:72px}
+.menetapkan-indicator-table.roots-table th:nth-child(2){width:44%}
+.menetapkan-indicator-table.roots-table th:nth-child(3){width:15%}
+.menetapkan-indicator-table.roots-table th:nth-child(4){width:14%}
+.menetapkan-indicator-table.roots-table th:nth-child(5){width:27%}
