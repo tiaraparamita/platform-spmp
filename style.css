@@ -10746,3 +10746,57 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 /* Tombol per kegiatan berubah jadi konfirmasi selesai setelah diisi */
 .work-act-toggle.is-done{border-color:var(--sd-green-60);color:var(--sd-green-60)}
 .work-act-toggle.is-done::before{content:'✓';margin-right:6px;font-weight:600}
+
+/* Pratinjau: tahun ajaran di bawah judul Rencana Kerja Tahunan */
+.preview-accordion .preview-acc-year{display:block;margin-top:2px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:400;color:var(--sd-text-subdued)}
+.preview-accordion .sd-accordion-title{flex-direction:column;align-items:flex-start;gap:2px}
+.preview-accordion .preview-acc-year{margin-top:0}
+/* Pratinjau: sel Pelaksanaan, Evaluasi, dan Tindak lanjut bisa diklik ke isiannya */
+.preview-link .preview-follow{display:block;margin:6px 0 0}
+.preview-link:has(.sd-badge):hover .sd-badge{text-decoration:underline;text-underline-offset:3px}
+
+/* Pratinjau: tombol Cek detail di header accordion dan dialog detail rencana */
+.sd-accordion-action{display:inline-flex;flex:none}
+.plan-detail-dialog{width:min(760px,calc(100vw - 32px));max-height:calc(100vh - 64px);padding:0;border:0;border-radius:var(--sd-radius-md);overflow:hidden;box-shadow:var(--sd-elevation-06);color:var(--sd-text-default);background:#fff}
+.plan-detail-dialog[open]{display:flex;flex-direction:column}
+.plan-detail-dialog::backdrop{background:rgba(0,0,0,.7)}
+.plan-detail-dialog .pd-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:20px 24px 16px;border-bottom:1px solid var(--sd-gray-10)}
+.plan-detail-dialog .pd-header h2{margin:0;font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line)}
+.plan-detail-dialog .pd-header p{margin:2px 0 0;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-subdued)}
+.plan-detail-dialog .pd-body{flex:1;overflow-y:auto;display:grid;gap:24px;padding:24px;background:var(--sd-gray-0)}
+.plan-detail-dialog .pd-footer{display:flex;justify-content:flex-end;padding:16px 24px;border-top:1px solid var(--sd-gray-10)}
+/* satu kartu per indikator */
+.plan-detail-dialog .pd-ind{padding:20px;background:#fff;border:1px solid var(--sd-gray-10);border-radius:var(--sd-radius-md)}
+.plan-detail-dialog .pd-ind-head{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.plan-detail-dialog h3{display:flex;align-items:center;gap:12px;margin:0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600}
+.plan-detail-dialog h3 .pd-num{display:inline-flex;align-items:center;justify-content:center;flex:none;width:28px;height:28px;border-radius:50%;background:var(--sd-gray-5);font-size:14px;font-weight:600;color:var(--sd-text-default)}
+.plan-detail-dialog .indicator-target-context{display:flex;flex-wrap:wrap;gap:0 12px;margin:0;padding:0;flex:none;white-space:nowrap;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line)}
+/* akar masalah: garis di kiri sebagai penanda hierarki */
+.plan-detail-dialog .pd-root{margin:24px 0 0 40px}
+.plan-detail-dialog .pd-head{display:block;min-width:0}
+.plan-detail-dialog .pd-name{display:flex;gap:8px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:600}
+.plan-detail-dialog .pd-root>.sd-accordion-head{padding:0 0 8px;border-bottom:1px solid var(--sd-gray-10);border-radius:0}
+.plan-detail-dialog .pd-root>.sd-accordion-body{padding:12px 0 0}
+.plan-detail-dialog .pd-act>.sd-accordion-head{padding:0}
+.plan-detail-dialog .pd-act[open]>.sd-accordion-head{padding-bottom:12px;border-bottom:1px solid var(--sd-gray-10);border-radius:0}
+.plan-detail-dialog .pd-act>.sd-accordion-body{padding:12px 0 0}
+.plan-detail-dialog .pd-name .pd-num{flex:none;font-weight:400;color:var(--sd-text-subdued)}
+/* kegiatan: kartu putih bergaris */
+.plan-detail-dialog .pd-act{margin:0 0 12px 24px;padding:16px;border:1px solid var(--sd-gray-10);border-radius:var(--sd-radius-sm);background:var(--sd-gray-0)}
+.plan-detail-dialog .pd-act:last-child{margin-bottom:0}
+.plan-detail-dialog dl{display:grid;grid-template-columns:2fr 1fr;gap:12px 24px;margin:0}
+.plan-detail-dialog .pd-late dl{grid-template-columns:1fr 1fr}
+.plan-detail-dialog dt{margin-bottom:2px;font-size:12px;line-height:16px;color:var(--sd-text-subdued)}
+.plan-detail-dialog dd{margin:0;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line)}
+/* langkah lanjutan: label langkah berupa penanda kecil, dipisah garis tipis */
+.plan-detail-dialog .pd-late{margin-top:16px;padding:12px 16px 16px;background:#fff;border:1px solid var(--sd-gray-10);border-radius:var(--sd-radius-sm)}
+.plan-detail-dialog .pd-label{display:block;margin:0 0 8px}
+.plan-detail-dialog .pd-label-text{display:block;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sd-text-default)}
+.plan-detail-dialog .pd-empty{margin:0;font-size:var(--sd-text-bodysmall-size);color:var(--sd-text-subdued)}
+@media (max-width:560px){.plan-detail-dialog .pd-ind-head{flex-direction:column;align-items:flex-start;gap:8px}.plan-detail-dialog .indicator-target-context{white-space:normal}.plan-detail-dialog .pd-body{padding:16px}.plan-detail-dialog .pd-ind{padding:16px}.plan-detail-dialog .indicator-target-context,.plan-detail-dialog .pd-root{margin-left:0}.plan-detail-dialog .pd-act{margin-left:0}.plan-detail-dialog dl,.plan-detail-dialog .pd-late dl{grid-template-columns:1fr}}
+
+/* Langkah 1 dan 2 setelah rencana disimpan: isi tetap tampil, hanya untuk dibaca */
+.flow-readonly{margin-top:0}
+.flow-readonly[inert] .sd-btn,.flow-readonly[inert] input,.flow-readonly[inert] select,.flow-readonly[inert] textarea{cursor:default}
+.flow-readonly-note{margin:0 0 16px}
+.flow-readonly input:disabled,.flow-readonly select:disabled,.flow-readonly textarea:disabled{background:var(--sd-gray-5);color:var(--sd-text-subdued);cursor:not-allowed}

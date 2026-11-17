@@ -151,10 +151,11 @@
 
   /**
    * Accordion (satu <details>). title: HTML judul (boleh berisi badge dan ringkasan, tanpa tombol). body: HTML isi.
+   * action: HTML tombol opsional di kanan judul, sebelum panah; klik padanya tidak membuka/menutup accordion.
    * onuser: string JavaScript yang dijalankan saat pengguna mengklik judul (untuk menyimpan pilihan buka/tutup); this = elemen <details>.
    */
-  function sdAccordion({ id = '', title, body, open = false, onuser = '', className = '' }) {
-    return `<details class="sd-accordion ${className}" data-id="${e(id)}"${open ? ' open' : ''}><summary class="sd-accordion-head"${onuser ? ` onclick="${onuser.replace(/this/g, 'this.parentElement')}"` : ''}><span class="sd-accordion-title">${title}</span>${sdIcon('expand-more')}</summary><div class="sd-accordion-body">${body}</div></details>`;
+  function sdAccordion({ id = '', title, body, open = false, onuser = '', className = '', action = '' }) {
+    return `<details class="sd-accordion ${className}" data-id="${e(id)}"${open ? ' open' : ''}><summary class="sd-accordion-head"${onuser ? ` onclick="${onuser.replace(/this/g, 'this.parentElement')}"` : ''}><span class="sd-accordion-title">${title}</span>${action ? `<span class="sd-accordion-action" onclick="event.preventDefault();event.stopPropagation()">${action}</span>` : ''}${sdIcon('expand-more')}</summary><div class="sd-accordion-body">${body}</div></details>`;
   }
 
   /** Bilah kemajuan. value 0 sampai 100; label dibaca pembaca layar (teks yang terlihat sebaiknya ada di dekatnya). inverse untuk latar gelap. */
