@@ -10800,3 +10800,28 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 .flow-readonly[inert] .sd-btn,.flow-readonly[inert] input,.flow-readonly[inert] select,.flow-readonly[inert] textarea{cursor:default}
 .flow-readonly-note{margin:0 0 16px}
 .flow-readonly input:disabled,.flow-readonly select:disabled,.flow-readonly textarea:disabled{background:var(--sd-gray-5);color:var(--sd-text-subdued);cursor:not-allowed}
+
+/* Langkah 1: target diisi sendiri oleh pengguna; baris yang belum punya target ditandai */
+.target-nudge-body{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.target-nudge-body p{margin:0}
+#target-nudge:not(:empty){margin:0 0 16px}
+/* Kolom target: tanpa warna merah; cincin fokus biru, status salah hanya lewat teks bantu */
+.menetapkan-indicator-table .sd-field .sd-input[aria-invalid="true"]{border-color:var(--sd-gray-50);background:#fff}
+.menetapkan-indicator-table .sd-field .sd-input[aria-invalid="true"]:focus,.menetapkan-indicator-table .sd-field .sd-input:focus{border-color:var(--sd-blue-50);box-shadow:0 0 0 2px var(--sd-interactive-focused)}
+.menetapkan-indicator-table .sd-field-hint.sd-field-error{color:var(--sd-gray-60)}
+/* Target belum valid dan fokus tidak di kolom itu: cincin merah; saat fokus kembali biru */
+.menetapkan-indicator-table tr[data-needs-target] td:last-child .sd-input:not(:focus){border-color:var(--sd-critical-border);box-shadow:0 0 0 2px var(--sd-critical-border)}
+
+/* Tabel langkah 1: urutan Pilih, Indikator, Kategori, Capaian 2024, Capaian 2025, Target */
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(1){width:72px}
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(2){width:32%}
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(3){width:13%}
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(4){width:12%}
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(5){width:19%}
+.menetapkan-indicator-table:not(.roots-table) th:nth-child(6){width:22%}
+.menetapkan-indicator-table td:nth-child(5) .table-indicator-change,.menetapkan-indicator-table td:nth-child(5) .table-indicator-change *{white-space:nowrap;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:400}
+.menetapkan-indicator-table td:nth-child(5) .table-indicator-change{color:var(--sd-gray-60)}
+.menetapkan-indicator-table td:nth-child(5) .table-indicator-change b{font-weight:400!important;color:inherit!important}
+.menetapkan-indicator-table td:nth-child(5) .table-indicator-change,.menetapkan-indicator-table td:nth-child(5) .table-indicator-change span,.menetapkan-indicator-table td:nth-child(5) .table-indicator-change b{font-size:var(--sd-text-bodysmall-size)!important;line-height:var(--sd-text-bodysmall-line)!important}
+.menetapkan-indicator-table td:nth-child(5) .table-achievement{gap:0!important}
+.menetapkan-indicator-table td:nth-child(5) .table-achievement .table-baseline,.menetapkan-indicator-table td:nth-child(5) .table-achievement .table-indicator-change{margin:0!important}
