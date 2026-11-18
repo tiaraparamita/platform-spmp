@@ -10844,8 +10844,8 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 .rapor-navbar nav > button.active:after{bottom:-12px;left:12px;right:12px}
 .rapor-navbar .navbar-account{margin-left:24px;display:flex;align-items:center}
 .wrap.page-rapor:has(.rapor-band){padding-top:21px}
-.rapor-band{position:relative;padding-bottom:40px}
-.rapor-band:before{content:"";position:absolute;z-index:-1;top:-21px;bottom:-46px;left:calc((100% - 100vw) / 2);right:calc((100% - 100vw) / 2);background:var(--sd-white);border-bottom:1px solid var(--sd-gray-10)}
+.rapor-band{position:relative;padding-bottom:24px}
+.rapor-band:before{content:"";position:absolute;z-index:-1;top:-21px;bottom:-30px;left:calc((100% - 100vw) / 2);right:calc((100% - 100vw) / 2);background:var(--sd-white);border-bottom:1px solid var(--sd-gray-10)}
 .rapor-band .diagnosis-school-summary{margin-bottom:0}
 .rapor-band .diagnosis-school-summary:before{display:none}
 .rapor-banners{display:grid;gap:16px;margin:0 0 32px}
@@ -10926,3 +10926,6 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 .rapor-profile-menu button:hover{background:var(--sd-gray-5)}
 .rapor-profile-menu button:focus-visible{outline:2px solid var(--sd-blue-50);outline-offset:-2px}
 .rapor-account > summary:focus-visible{outline:2px solid var(--sd-blue-50);outline-offset:2px;border-radius:var(--sd-radius-sm)}
+
+.rapor-banners:empty{display:none}
+.rapor-band:has(> .rapor-banners:empty){padding-top:11px}
