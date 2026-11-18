@@ -10833,3 +10833,96 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 .menetapkan-indicator-table.roots-table th:nth-child(3){width:18%}
 .menetapkan-indicator-table.roots-table th:nth-child(4){width:32%}
 .menetapkan-indicator-table.roots-table th:nth-child(5){width:auto}
+
+/* Navbar Rapor Pendidikan (pintu masuk) */
+.rapor-navbar .navbar-brand{display:flex;align-items:center;gap:13px;height:100%}
+.rapor-navbar .navbar-identity{width:auto;min-width:0;border-right:0;padding-right:0}
+.rapor-navbar nav{gap:8px;margin-left:0}
+.rapor-navbar nav > button{align-self:center;height:40px;padding:8px 12px;border-radius:var(--sd-radius-sm);color:var(--sd-gray-90)}
+.rapor-navbar nav > button:hover{background:var(--sd-gray-5);color:var(--sd-gray-90)}
+.rapor-navbar nav > button.active{color:var(--sd-blue-70)}
+.rapor-navbar nav > button.active:after{bottom:-12px;left:12px;right:12px}
+.rapor-navbar .navbar-account{margin-left:24px;display:flex;align-items:center}
+.wrap.page-rapor:has(.rapor-band){padding-top:21px}
+.rapor-band{position:relative;padding-bottom:40px}
+.rapor-band:before{content:"";position:absolute;z-index:-1;top:-21px;bottom:-46px;left:calc((100% - 100vw) / 2);right:calc((100% - 100vw) / 2);background:var(--sd-white);border-bottom:1px solid var(--sd-gray-10)}
+.rapor-band .diagnosis-school-summary{margin-bottom:0}
+.rapor-band .diagnosis-school-summary:before{display:none}
+.rapor-banners{display:grid;gap:16px;margin:0 0 32px}
+.rapor-navbar .navbar-brand{gap:8px}
+.rapor-navbar .rapor-logo-emblem{width:44px;height:44px}
+.rapor-navbar .rapor-logo-wordmark{width:137px;height:44px}
+.rapor-banners .sd-banner-body{display:grid;gap:12px;justify-items:start}
+
+/* Halaman Unduh Rapor Pendidikan (Figma Desktop Unduh) */
+.wrap.page-downloads{padding-top:0;margin-top:0}
+.unduh-hero{position:relative;height:156px;padding-top:44px;color:var(--sd-white)}
+.unduh-hero:before{content:"";position:absolute;z-index:-1;top:0;height:324px;left:calc((100% - 100vw) / 2);right:calc((100% - 100vw) / 2);background:var(--sd-blue-90)}
+.unduh-hero h1{margin:0 0 8px;font-size:var(--sd-text-displaylarge-size);line-height:var(--sd-text-displaylarge-line);font-weight:600}
+.unduh-hero p{margin:0;font-size:var(--sd-text-bodylarge-size);line-height:var(--sd-text-bodylarge-line)}
+.unduh-card{display:grid;gap:40px;padding:24px;background:var(--sd-white);border:1px solid var(--sd-gray-20);border-radius:var(--sd-radius-lg)}
+.unduh-title{margin:0 0 8px;font-size:var(--sd-text-headinglarge-size);line-height:var(--sd-text-headinglarge-line);font-weight:600}
+.unduh-sub{margin:0;color:var(--sd-gray-60)}
+.unduh-parts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 12px;margin:24px 0 0;padding:0;list-style:none}
+.unduh-parts li{display:flex;align-items:center;gap:2px;min-height:28px}
+.unduh-parts .sd-icon{width:24px;height:24px;color:var(--sd-gray-60);flex:none}
+.unduh-input{display:flex;align-items:flex-end;gap:8px;margin-top:32px}
+.unduh-input .sd-select{width:242px}
+.unduh-unavailable{margin-top:16px;max-width:491px}
+.unduh-rule{display:flex;align-items:center;gap:8px}
+.unduh-rule:after{content:"";flex:1;height:1px;background:var(--sd-gray-20)}
+.unduh-heading{margin:0;font-size:var(--sd-text-headingmedium-size);line-height:var(--sd-text-headingmedium-line);font-weight:600}
+.unduh-body{margin:16px 0 0}
+.unduh-body a{color:var(--sd-blue-70);text-decoration:underline}
+.unduh-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:32px 0 0;padding:0;list-style:none}
+.unduh-steps img{display:block;width:100%;height:auto;aspect-ratio:276/140}
+.unduh-step-text{display:grid;gap:12px;justify-items:start;padding:16px 16px 0}
+.unduh-num{display:grid;place-items:center;width:28px;height:28px;border:1px solid var(--sd-gray-30);border-radius:50%;font-size:var(--sd-text-bodysmall-size);font-weight:600}
+.unduh-step-text h3{margin:0;font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line);font-weight:600}
+.unduh-step-text p{margin:0;color:var(--sd-gray-60);font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line)}
+@media(max-width:1023px){.unduh-steps{grid-template-columns:1fr 1fr}.unduh-parts{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.unduh-steps,.unduh-parts{grid-template-columns:1fr}.unduh-input{flex-direction:column;align-items:stretch}.unduh-input .sd-select{width:100%}}
+
+/* Halaman Glosarium (Figma Desktop Glosarium) */
+.wrap.page-glossary{padding-top:0;margin-top:0}
+.gloss-hero{position:relative;padding:44px 0 32px;color:var(--sd-white)}
+.gloss-hero:before{content:"";position:absolute;z-index:-1;inset:0 calc((100% - 100vw) / 2);background:var(--sd-blue-90)}
+.gloss-hero h1{margin:0 0 8px;font-size:var(--sd-text-displaylarge-size);line-height:var(--sd-text-displaylarge-line);font-weight:600}
+.gloss-hero p{margin:0;font-size:var(--sd-text-bodylarge-size);line-height:var(--sd-text-bodylarge-line)}
+.gloss-form{display:flex;gap:12px;margin-top:44px}
+.gloss-search{position:relative;flex:1}
+.gloss-search .sd-field,.gloss-search .sd-field-row{display:block}
+.gloss-search .sd-input{width:100%;padding-left:40px}
+.gloss-search > .sd-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--sd-gray-60);pointer-events:none}
+.gloss-letters{position:relative;display:flex;justify-content:center;flex-wrap:wrap;gap:12px;padding:16px 0}
+.gloss-letters:before{content:"";position:absolute;z-index:-1;inset:0 calc((100% - 100vw) / 2);background:var(--sd-white);border-bottom:1px solid var(--sd-gray-20)}
+.gloss-letters .gloss-letter-btn{width:32px;height:32px;min-width:32px;padding:0;border-radius:50%}
+.gloss-results{display:grid;gap:32px;padding:32px 0 64px}
+.gloss-group{display:grid;grid-template-columns:52px 1fr;gap:32px;align-items:start;scroll-margin-top:80px}
+.gloss-letter{margin:0;padding:12px 0 0 12px;font-size:var(--sd-text-headinglarge-size);line-height:var(--sd-text-headinglarge-line);font-weight:600}
+.gloss-list{display:grid;gap:16px}
+.gloss-item{padding:16px;background:var(--sd-white);border:1px solid var(--sd-gray-20);border-radius:var(--sd-radius-md,8px)}
+.gloss-item h3{margin:0 0 4px;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600}
+.gloss-item p{margin:0;color:var(--sd-gray-60)}
+.gloss-none,.gloss-empty{margin:0;padding-top:14px;color:var(--sd-gray-60)}
+@media(max-width:700px){.gloss-group{grid-template-columns:1fr;gap:8px}.gloss-form{flex-direction:column}}
+
+.gloss-search .sd-field{display:block;width:100%}
+.gloss-search .sd-field-row{display:block;width:100%}
+.wrap .gloss-search .sd-input{width:100%;padding-left:40px;font-size:var(--sd-text-body-size)}
+.gloss-letters .gloss-letter-btn{color:var(--sd-gray-90);background:none;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600}
+.gloss-letters .gloss-letter-btn:hover{background:var(--sd-gray-5)}
+.gloss-item h3,.gloss-item p,.gloss-none,.gloss-empty{font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line)}
+
+/* Menu profil Rapor (versi produksi: kartu 300px, info akun, Keluar) */
+.rapor-navbar .rapor-account{margin-left:24px}
+.rapor-account > summary{display:flex;align-items:center;gap:4px;height:100%;list-style:none;cursor:pointer}
+.rapor-account > summary::-webkit-details-marker{display:none}
+.rapor-profile-menu{position:absolute;z-index:30;top:calc(100% - 8px);right:0;width:300px;padding:4px 8px 8px;background:var(--sd-white);border-radius:6px;box-shadow:var(--sd-elevation-04);display:grid;gap:8px}
+.rapor-profile-info{display:grid;gap:2px;padding:12px 16px;margin-top:4px;border-radius:var(--sd-radius-sm);background:var(--sd-gray-5)}
+.rapor-profile-info b{font-weight:600;color:var(--sd-gray-90)}
+.rapor-profile-info span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--sd-gray-60);font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line)}
+.rapor-profile-menu button{display:block;width:100%;padding:12px 16px;border:0;border-radius:var(--sd-radius-sm);background:none;text-align:left;font:inherit;color:var(--sd-gray-90);cursor:pointer}
+.rapor-profile-menu button:hover{background:var(--sd-gray-5)}
+.rapor-profile-menu button:focus-visible{outline:2px solid var(--sd-blue-50);outline-offset:-2px}
+.rapor-account > summary:focus-visible{outline:2px solid var(--sd-blue-50);outline-offset:2px;border-radius:var(--sd-radius-sm)}
