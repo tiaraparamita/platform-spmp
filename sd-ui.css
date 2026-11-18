@@ -802,3 +802,10 @@
 .sd-table:not(.sd-no-hover) tbody tr:not(.sd-group-row):not(.sd-row-selected):hover > td:not(.sd-full) {
   background: var(--sd-surface-hovered);
 }
+
+/* Banner: aksi di footer (Button sm secondary) dan tombol Tutup ikon polos sesuai Seragam */
+.sd-banner-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:12px}
+.sd-banner-close{flex:none;margin-left:auto;padding:2px;border:0;border-radius:var(--sd-radius-sm);background:none;color:var(--sd-gray-90);cursor:pointer}
+.sd-banner-close .sd-icon{display:block;width:22px;height:22px}
+.sd-banner-close:hover{background:var(--sd-gray-10)}
+.sd-banner-close:focus-visible{outline:2px solid var(--sd-blue-50);outline-offset:2px}

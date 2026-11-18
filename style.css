@@ -10810,14 +10810,14 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 .menetapkan-indicator-table .sd-field .sd-input[aria-invalid="true"]:focus,.menetapkan-indicator-table .sd-field .sd-input:focus{border-color:var(--sd-blue-50);box-shadow:0 0 0 2px var(--sd-interactive-focused)}
 .menetapkan-indicator-table .sd-field-hint.sd-field-error{color:var(--sd-gray-60)}
 /* Target belum valid dan fokus tidak di kolom itu: cincin merah; saat fokus kembali biru */
-.menetapkan-indicator-table tr[data-needs-target] td:last-child .sd-input:not(:focus){border-color:var(--sd-critical-border);box-shadow:0 0 0 2px var(--sd-critical-border)}
+.menetapkan-indicator-table tr[data-needs-target] .sd-input:not(:focus){border-color:var(--sd-critical-border);box-shadow:0 0 0 2px var(--sd-critical-border)}
 
 /* Tabel langkah 1: Pilih, Indikator, Kategori, Capaian 2025, Target */
 .menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(1){width:72px}
-.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(2){width:38%}
-.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(3){width:15%}
-.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(4){width:22%}
-.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(5){width:25%}
+.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(2){width:42%}
+.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(3){width:22%}
+.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(4){width:15%}
+.menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(5){width:auto}
 .menetapkan-indicator-table:not(.roots-table):not(.plan-table) th:nth-child(6){width:auto}
 .menetapkan-indicator-table td .table-achievement .table-indicator-change,.menetapkan-indicator-table td .table-achievement .table-indicator-change *{white-space:nowrap;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:400}
 .menetapkan-indicator-table td .table-achievement .table-indicator-change{color:var(--sd-gray-60)}
@@ -10830,8 +10830,8 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 /* Tabel langkah 2: Pilih, Akar masalah, Kategori, Capaian 2025 */
 .menetapkan-indicator-table.roots-table th:nth-child(1){width:72px}
 .menetapkan-indicator-table.roots-table th:nth-child(2){width:50%}
-.menetapkan-indicator-table.roots-table th:nth-child(3){width:18%}
-.menetapkan-indicator-table.roots-table th:nth-child(4){width:32%}
+.menetapkan-indicator-table.roots-table th:nth-child(3){width:32%}
+.menetapkan-indicator-table.roots-table th:nth-child(4){width:18%}
 .menetapkan-indicator-table.roots-table th:nth-child(5){width:auto}
 
 /* Navbar Rapor Pendidikan (pintu masuk) */
@@ -10852,7 +10852,6 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 .rapor-navbar .navbar-brand{gap:8px}
 .rapor-navbar .rapor-logo-emblem{width:44px;height:44px}
 .rapor-navbar .rapor-logo-wordmark{width:137px;height:44px}
-.rapor-banners .sd-banner-body{display:grid;gap:12px;justify-items:start}
 
 /* Halaman Unduh Rapor Pendidikan (Figma Desktop Unduh) */
 .wrap.page-downloads{padding-top:0;margin-top:0}
@@ -10929,3 +10928,177 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 
 .rapor-banners:empty{display:none}
 .rapor-band:has(> .rapor-banners:empty){padding-top:11px}
+
+/* Kontrol Prototipe (hanya prototipe, bukan bagian produk) */
+.proto-bar{background:var(--sd-gray-100);color:var(--sd-white)}
+.proto-bar-inner{display:flex;align-items:center;gap:16px;flex-wrap:wrap;width:min(1216px,100% - 32px);margin:0 auto;min-height:48px;padding:6px 0}
+.proto-bar-inner b{font-weight:600}
+.proto-bar-label{color:var(--sd-gray-30);font-size:var(--sd-text-bodysmall-size)}
+.proto-bar .sd-select{width:300px}
+/* Titik masuk ke platform */
+.rapor-navbar .rapor-nav-spmp .sd-icon{width:16px;height:16px;margin-left:4px;vertical-align:-2px}
+.rapor-cta{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;margin:0 0 32px;padding:24px;background:var(--sd-white);border:1px solid var(--sd-gray-20);border-radius:var(--sd-radius-lg)}
+.rapor-cta h2{margin:0 0 4px;font-size:var(--sd-text-headingmedium-size);line-height:var(--sd-text-headingmedium-line);font-weight:600}
+.rapor-cta p{margin:0;color:var(--sd-gray-60)}
+.diagnosis-reference-footer{display:grid;gap:8px}
+.unduh-spmp{display:grid;gap:16px;justify-items:start}
+.unduh-spmp .unduh-rule{width:100%}
+.unduh-spmp .unduh-body{margin:0}
+@media(max-width:700px){.rapor-cta{grid-template-columns:1fr}.proto-bar .sd-select{width:100%}}
+
+.diagnosis-reference-footer .sd-btn-secondary{background:var(--sd-white);color:var(--sd-gray-90);border:1px solid var(--sd-gray-50);padding:0 16px}
+.diagnosis-reference-footer .sd-btn-secondary:hover{background:var(--sd-gray-5);color:var(--sd-gray-90)}
+.rapor-fab{position:fixed;z-index:40;right:24px;bottom:24px;display:grid;gap:12px;justify-items:start;width:min(380px,calc(100vw - 48px));padding:20px;background:var(--sd-white);border:1px solid var(--sd-gray-20);border-radius:var(--sd-radius-lg);box-shadow:var(--sd-elevation-06)}
+.rapor-fab[hidden]{display:none}
+.rapor-fab-head{display:grid;gap:8px;justify-items:start}
+.rapor-fab-head img{display:block;flex:none;width:56px;height:56px}
+.rapor-fab h2{margin:0;font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line);font-weight:600;color:var(--sd-gray-90)}
+.rapor-fab p{margin:0;color:var(--sd-gray-60);font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line)}
+.rapor-fab[hidden]{display:none}
+@media(prefers-reduced-motion:no-preference){.rapor-fab{animation:rapor-fab-in .2s ease-out}@keyframes rapor-fab-in{from{opacity:0;transform:translateY(8px)}}}
+
+.rapor-fab > .sd-btn{justify-self:end}
+/* Ruang di bawah daftar kartu agar kartu terakhir tidak tertutup kartu melayang */
+body:has(#rapor-fab) .wrap.page-rapor{padding-bottom:300px}
+
+/* Kartu melayang bisa dikecilkan agar tidak menutupi konten */
+.rapor-fab-body{display:grid;gap:12px;justify-items:start;position:relative}
+.rapor-fab-body > .rapor-fab-min{position:absolute;top:-8px;right:-8px}
+.rapor-fab-head{padding-right:32px}
+.rapor-fab-open{display:none}
+.rapor-fab.is-min{width:auto;padding:0;background:transparent;border:0;box-shadow:none;border-radius:0}
+.rapor-fab.is-min .rapor-fab-body{display:none}
+.rapor-fab.is-min .rapor-fab-open{display:inline-flex;box-shadow:var(--sd-elevation-06)}
+body:has(#rapor-fab.is-min) .wrap.page-rapor{padding-bottom:80px}
+.rapor-fab-body > .sd-btn-ultimate{justify-self:end}
+.rapor-fab:not(.is-min) > .rapor-fab-open{display:none}
+.proto-bar-demo .sd-select{width:420px;max-width:100%}
+
+/* Pop up detail indikator (Langkah 1), memakai komponen akar masalah Rapor */
+.indicator-detail-dialog{width:min(1120px,calc(100vw - 32px));max-height:calc(100vh - 48px);padding:0;border:0;border-radius:var(--sd-radius-md);overflow:hidden;box-shadow:var(--sd-elevation-06);color:var(--sd-text-default);background:#fff}
+.indicator-detail-dialog[open]{display:flex;flex-direction:column}
+.indicator-detail-dialog::backdrop{background:rgba(0,0,0,.7)}
+.idd-header{flex:none;padding:20px 24px 0;border-bottom:1px solid var(--sd-gray-10)}
+.idd-head-row{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding-bottom:16px}
+.idd-header h2{margin:0;font-size:var(--sd-text-headingmedium-size);line-height:var(--sd-text-headingmedium-line);font-weight:600}
+.idd-meta{margin:0 0 2px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-subdued)}
+.idd-header .sd-tabs{margin:0;border-bottom:0}
+.idd-body{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:32px;padding:24px;background:var(--sd-gray-0)}
+.idd-body .rc-group-title{font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line)}
+.idd-body .rc-reco{margin:0;padding:0 24px 32px}
+.idd-body .rc-reco-title{padding:28px 0 20px}
+.idd-body .rc-reco-title h2{font-size:var(--sd-text-headingmedium-size);line-height:var(--sd-text-headingmedium-line)}
+.idd-footer{flex:none;display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:16px 24px;border-top:1px solid var(--sd-gray-10);background:#fff}
+@media(max-width:900px){.idd-body .rc-related{grid-template-columns:1fr}.idd-body .rc-main{flex-direction:column}.idd-body .rc-main-card{flex:none;border-right:0;border-bottom:1px solid var(--sd-border-disabled)}}
+@media(max-width:700px){.indicator-detail-dialog{width:100vw;max-width:100vw;height:100vh;max-height:100vh;border-radius:0}.idd-body{padding:16px}.idd-header,.idd-footer{padding-inline:16px}}
+.idd-rapor{margin-right:auto}
+
+/* Pop up detail subindikator: judul dengan tombol tutup, bagian dipisah garis (mengikuti Rapor live) */
+.report-dialog[data-variant=detail]{max-width:660px;padding:0;overflow:hidden}
+.report-dialog[data-variant=detail] > button{display:none}
+.report-dialog[data-variant=detail] .rd-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;background:var(--sd-gray-0);border-bottom:1px solid var(--sd-gray-10)}
+.report-dialog[data-variant=detail] .rd-head h2{margin:0;font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line);font-weight:600}
+.rd-body{display:grid;gap:0;padding:20px 20px 24px}
+.rd-body section{padding:16px 0;border-bottom:1px solid var(--sd-gray-10)}
+.rd-body section:first-child{padding-top:0}
+.rd-body section:last-of-type{border-bottom:0}
+.rd-body h3{margin:0 0 4px;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600}
+.rd-body p{margin:0;font-size:var(--sd-text-body-size);line-height:1.6}
+.rd-source{display:flex;align-items:center;gap:12px;margin-top:8px;padding:10px 12px;background:var(--sd-gray-5);border-radius:var(--sd-radius-sm);font-size:var(--sd-text-bodysmall-size);color:var(--sd-gray-80)}
+.rd-source .sd-icon{width:20px;height:20px;flex:none;color:var(--sd-gray-60)}
+
+/* Tombol tutup Modal Seragam: ikon × polos (abu), tanpa warna biru; fokus tidak otomatis ke tombol */
+.sd-modal-close{display:grid;place-items:center;flex:none;width:32px;height:32px;padding:0;background:none;border:0;border-radius:var(--sd-radius-sm);color:var(--sd-text-subdued);cursor:pointer}
+.sd-modal-close:hover{background:var(--sd-surface-hovered);color:var(--sd-text-default)}
+.indicator-detail-dialog:focus,.report-dialog:focus{outline:none}
+.idd-header{background:var(--sd-modal-header);border-bottom:1px solid var(--sd-modal-border);padding:16px 20px}
+.idd-head-row{padding-bottom:0;align-items:center}
+.idd-header h2{font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line)}
+.idd-body{background:#fff}
+.idd-footer{border-top:1px solid var(--sd-modal-footer-border);padding:20px 24px}
+.report-dialog[data-variant=detail] .rd-head{background:var(--sd-modal-header);border-bottom:1px solid var(--sd-modal-border)}
+
+/* Detail subindikator inline di dalam pop up (tanpa modal bertumpuk) */
+.rc-score-row.has-detail{flex-wrap:wrap}
+.rc-score-row .rc-child-detail{flex:1 0 100%;padding:8px 0 4px;margin-top:8px;border-top:1px solid var(--sd-gray-10)}
+.rc-child-detail[hidden]{display:none}
+.rc-child-detail section{padding:12px 0}
+.rc-child-detail section:first-child{padding-top:4px}
+.rc-child-detail p,.rc-child-detail h3{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line)}
+/* Mobile: panel menempel di bawah dengan sudut atas membulat (pola Bottom Sheet Seragam) */
+@media(max-width:700px){
+.indicator-detail-dialog,.report-dialog[data-variant=detail]{width:100vw;max-width:100vw;margin:auto 0 0;border-radius:16px 16px 0 0}
+.indicator-detail-dialog{height:auto;max-height:90vh}
+.report-dialog[data-variant=detail]{max-height:90vh;overflow:auto}
+.idd-footer{flex-wrap:wrap}
+.idd-rapor{flex:1 0 100%;margin-right:0}
+}
+@media(max-width:700px){
+.idd-rapor{display:flex;justify-content:flex-start}
+.idd-footer > .sd-btn-secondary{display:none}
+#indicator-detail-pick{flex:1 0 100%}
+#indicator-detail-pick .sd-btn{width:100%}
+}
+
+/* Target diisi di baris tersendiri di bawah indikator terpilih */
+.menetapkan-target-form{position:relative;display:grid;grid-template-columns:calc(72px + 42%) 22% minmax(0,1fr);align-items:start;padding:12px 0 16px}
+.menetapkan-target-form::before{content:"";position:absolute;top:0;left:88px;right:0;border-top:1px solid var(--sd-gray-20)}
+.target-label-group{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;padding:0 16px 0 88px}
+.target-label-group .sd-field-label{margin:0;white-space:nowrap}
+.target-label-group .sd-field-hint,.target-input-group .sd-field-hint{margin:0}
+.target-input-group{display:flex;flex-direction:column;gap:4px;padding:0 16px;min-width:0}
+.target-input-group .sd-field-row{width:auto;min-width:0}
+.target-status:empty{display:none}
+.target-label-group{min-height:38px;align-items:center;gap:2px 12px}
+.target-status.sd-field-hint{display:flex;align-items:flex-start;gap:4px}
+.target-status .sd-icon{flex:none;width:16px;height:16px;margin-top:2px}
+.menetapkan-indicator-table tr.menetapkan-target-row td{border-top:0}
+.menetapkan-indicator-table tr.sd-row-selected:has(+ tr.menetapkan-target-row) td{border-bottom:0}
+@media(max-width:700px){.menetapkan-target-form{grid-template-columns:1fr;gap:8px}.menetapkan-target-form::before{left:16px}.target-label-group{padding-left:16px;min-height:0}}
+.menetapkan-indicator-table:not(.roots-table):not(.plan-table) td:last-child{white-space:nowrap}
+.menetapkan-indicator-table .target-status.sd-field-hint.sd-field-error{color:var(--sd-text-critical)}
+/* Status naik di baris target: sama dengan perubahan di kolom Capaian */
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .target-status.table-indicator-change{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60);white-space:normal}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .target-status.table-indicator-change > span{font-size:inherit;line-height:inherit;margin-right:3px}
+.page-flow:has(.menetapkan-table-layout) .menetapkan-indicator-table .target-status.table-indicator-change b{font-size:inherit;line-height:inherit;font-weight:inherit}
+
+.preview-na{color:var(--sd-text-subdued)}
+.preview-table.preview-s5 th:nth-child(1){width:24%}
+.preview-table.preview-s5 th:nth-child(2),.preview-table.preview-s5 th:nth-child(3),.preview-table.preview-s5 th:nth-child(4),.preview-table.preview-s5 th:nth-child(5),.preview-table.preview-s5 th:nth-child(6){width:15.2%}
+
+/* Baris isian di bawah baris terpilih (Langkah 2 dan 3): latar terpilih yang sama dengan Langkah 1, garis pemisah menjorok */
+.menetapkan-indicator-table tr.menetapkan-expand-row td.sd-full{position:relative;border-top:0}
+.menetapkan-indicator-table tr.menetapkan-expand-row td.sd-full::before{content:"";position:absolute;top:0;left:var(--expand-indent,88px);right:0;border-top:1px solid var(--sd-gray-20)}
+.menetapkan-indicator-table.plan-table{--expand-indent:calc(6% + 16px)}
+.menetapkan-indicator-table tr.sd-row-selected:has(+ tr.menetapkan-expand-row) td{border-bottom:0}
+
+/* Rincian anggaran kegiatan: kartu putih dan tabel mengikuti Table Seragam (header abu, sel 15/16, garis antarbaris, latar putih) */
+.plan-activity-form .activity-budget-lines{background:#fff}
+.plan-activity-form .activity-budget-lines .budget-lines-scroll{margin:0;border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-md);overflow:hidden}
+.activity-budget-lines.activity-budget-lines.activity-budget-lines table.sd-table td,
+.activity-budget-lines.activity-budget-lines.activity-budget-lines table.sd-table td:first-child,
+.activity-budget-lines.activity-budget-lines.activity-budget-lines table.sd-table td:last-child,
+.activity-budget-lines.activity-budget-lines.activity-budget-lines table.sd-table th,
+.activity-budget-lines.activity-budget-lines.activity-budget-lines table.sd-table th:first-child,
+.activity-budget-lines.activity-budget-lines.activity-budget-lines table.sd-table th:last-child{padding:15px 16px}
+.activity-budget-lines.activity-budget-lines.activity-budget-lines table.sd-table th{border-top:0;font-size:var(--sd-text-subheading-size);line-height:var(--sd-text-subheading-line);text-align:left}
+.activity-budget-lines.activity-budget-lines.activity-budget-lines table.sd-table td:last-child{text-align:center}
+.plan-activity-form .activity-budget-lines table.sd-table tbody tr td{background:#fff}
+.plan-activity-form .activity-budget-lines table.sd-table tbody tr:last-child td{border-bottom:0}
+.activity-budget-lines.activity-budget-lines.activity-budget-lines table.sd-table th:nth-child(1){width:18%}
+.activity-budget-lines.activity-budget-lines.activity-budget-lines table.sd-table th:nth-child(7){width:8%}
+.plan-activity-form .activity-budget-lines > .sd-btn,.plan-activity-form .activity-budget-lines > p:last-child{margin-left:0}
+
+/* Detail indikator TKA: sebaran siswa per predikat (Kategori % siswa) */
+.tka-dist{border:1px solid var(--sd-gray-20);border-radius:var(--sd-radius-md);overflow:hidden;background:#fff}
+.tka-dist-title{margin:0;padding:12px 16px;background:var(--sd-blue-70);color:#fff;text-align:center;text-transform:uppercase;letter-spacing:.5px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:600}
+.tka-dist-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.tka-cell{display:flex;flex-direction:column}
+.tka-cell-label{padding:10px 8px;text-align:center;text-transform:uppercase;letter-spacing:.5px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:600;color:#fff}
+.tka-cell-value{padding:20px 8px;text-align:center;font-size:var(--sd-text-headingmedium-size);line-height:var(--sd-text-headingmedium-line);font-weight:600}
+.tka-green .tka-cell-label{background:var(--sd-green-60)}.tka-green .tka-cell-value{background:var(--sd-green-0);color:var(--sd-green-70)}
+.tka-blue .tka-cell-label{background:var(--sd-blue-70)}.tka-blue .tka-cell-value{background:var(--sd-blue-5);color:var(--sd-blue-70)}
+.tka-amber .tka-cell-label{background:var(--sd-yellow-70)}.tka-amber .tka-cell-value{background:var(--sd-yellow-0);color:var(--sd-yellow-80)}
+.tka-red .tka-cell-label{background:var(--sd-red-60)}.tka-red .tka-cell-value{background:var(--sd-red-0);color:var(--sd-red-70)}
+.tka-dist-note{margin:0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);color:var(--sd-gray-90)}
+@media(max-width:700px){.tka-dist-grid{grid-template-columns:repeat(2,1fr)}}

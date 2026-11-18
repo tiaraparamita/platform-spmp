@@ -19,6 +19,9 @@
     list: 'M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z',
     'arrow-down': 'M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z',
     'chevron-right': 'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
+    folder: 'M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z',
+    'arrow-up': 'M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z',
+    'expand-less': 'M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z',
     'expand-more': 'M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z',
     close: 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
     error: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z',
@@ -99,9 +102,9 @@
    * Banner statis (bukan entry). tone: info (bawaan) | warning | success | critical | neutral. Pesan penting saja, maksimal 3 baris.
    * critical memakai role="alert"; lainnya role="status". Isi children berupa teks sudah aman (HTML hasil esc()).
    */
-  function sdBanner({ tone = 'info', title = '', children = '', onClose = '', className = '' }) {
+  function sdBanner({ tone = 'info', title = '', children = '', action = '', onClose = '', className = '' }) {
     const icon = { info: 'info', neutral: 'info', warning: 'warning', success: 'check-circle', critical: 'error' }[tone];
-    return `<div class="sd-banner sd-banner-${tone}${className ? ' ' + className : ''}" role="${tone === 'critical' ? 'alert' : 'status'}">${sdIcon(icon)}<div class="sd-banner-body">${title ? `<p class="sd-banner-title">${e(title)}</p>` : ''}${children}</div>${onClose ? sdBtn('Tutup', { variant: 'quiet', size: 'sm', icon: 'close', onclick: onClose }) : ''}</div>`;
+    return `<div class="sd-banner sd-banner-${tone}${className ? ' ' + className : ''}" role="${tone === 'critical' ? 'alert' : 'status'}">${icon ? sdIcon(icon) : ''}<div class="sd-banner-body">${title ? `<p class="sd-banner-title">${e(title)}</p>` : ''}${children}${action ? `<div class="sd-banner-actions">${action}</div>` : ''}</div>${onClose ? `<button type="button" class="sd-banner-close" aria-label="Tutup" onclick="${onClose}">${sdIcon('close')}</button>` : ''}</div>`;
   }
 
   /**
