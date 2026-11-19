@@ -11262,3 +11262,8 @@ body:has(.flow-footer) .priority-panel { max-height: calc(100vh - 128px); }
   .priority-panel:not(:has(.is-filled)) { display: none; }
 }
 .slot-target .sd-input { scroll-margin-bottom: 140px; }
+.step1-table .table-measure { margin: 2px 0 0; color: var(--sd-text-subdued); font-size: var(--sd-text-bodysmall-size); line-height: var(--sd-text-bodysmall-line); }
+.flow-stepper .flow-step-caption { text-wrap: balance; }
+.step1-table .table-measure { margin: 0; }
+.step1-table .table-meta { column-gap: 12px; }
+.step1-table .table-meta .meta-dot { display: none; }
