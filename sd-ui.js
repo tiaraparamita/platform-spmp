@@ -111,11 +111,11 @@
    * Tabs (satu tab aktif, tetap di halaman yang sama). items: [{ value, label, count }]. onselect(value) mengembalikan string JavaScript.
    * Keyboard: panah kiri/kanan berpindah dan mengaktifkan, Home/End; hanya tab aktif yang masuk urutan Tab. Label maksimal 3 kata bila bisa.
    */
-  function sdTabs({ label, items, value, onselect, className = '' }) {
+  function sdTabs({ label, items, value, onselect, className = '', idPrefix = '', panelId = '' }) {
     return `<div class="sd-tabs ${className}" role="tablist" aria-label="${e(label)}" onkeydown="sdTabsKey(event)">${items
       .map((it) => {
         const on = String(it.value) === String(value);
-        return `<button type="button" role="tab" class="sd-tab" aria-selected="${on}" tabindex="${on ? 0 : -1}" onclick="${onselect(it.value)}">${e(it.label)}${it.count ? `<span class="sd-tab-count" aria-label="${it.count} dipilih">${it.count}</span>` : ''}</button>`;
+        return `<button type="button" role="tab" class="sd-tab"${idPrefix ? ` id="${e(idPrefix)}-${e(it.value)}"` : ''}${panelId ? ` aria-controls="${e(panelId)}"` : ''} aria-selected="${on}" tabindex="${on ? 0 : -1}" onclick="${onselect(it.value)}">${e(it.label)}${it.count ? `<span class="sd-tab-count" aria-label="${it.count} dipilih">${it.count}</span>` : ''}</button>`;
       })
       .join('')}</div>`;
   }

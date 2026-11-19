@@ -11241,3 +11241,23 @@ body:has(.flow-footer) .toast { bottom: 96px; }
 .menetapkan-indicator-table.step1-table thead th:nth-child(3) { width: 250px !important; }
 .menetapkan-indicator-table.step1-table thead th:nth-child(2) { width: auto !important; }
 .priority-slot .target-soft-warn { font-family: inherit; font-weight: 400; font-size: var(--sd-text-helper-size); line-height: var(--sd-text-helper-line); color: var(--sd-yellow-80); }
+
+/* Langkah 1 putaran kedua: satu baris kontrol, panel tidak tertutup footer, pesan syarat lebih terbaca */
+.step1-controls { display: flex; align-items: center; gap: 16px; margin: 0 0 16px; border-bottom: 1px solid var(--sd-modal-footer-border); }
+.step1-controls #step1-tabs { flex: 1; min-width: 0; margin: 0; }
+.step1-controls .sd-tabs { border-bottom: 0; gap: 20px; }
+.step1-controls .step1-search { flex: none; width: 260px; padding-bottom: 8px; }
+.step1-table .table-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 0; }
+.step1-table .table-meta .sd-badge { margin-right: 0; }
+.priority-panel { top: 16px; max-height: calc(100vh - 120px); padding-bottom: 20px; }
+body:has(.flow-footer) .priority-panel { max-height: calc(100vh - 128px); }
+.slot-note { margin: 8px 0 0; color: var(--sd-text-subdued); font-size: var(--sd-text-helper-size); line-height: var(--sd-text-helper-line); }
+.flow-hint { font-size: var(--sd-text-bodysmall-size); line-height: var(--sd-text-bodysmall-line); color: var(--sd-gray-90); }
+@media (max-width: 960px) {
+  .step1-controls { flex-wrap: wrap; }
+  .step1-controls .step1-search { width: 100%; padding-bottom: 12px; }
+}
+@media (max-width: 960px) {
+  .priority-slot.is-empty { display: none; }
+  .priority-panel:not(:has(.is-filled)) { display: none; }
+}
