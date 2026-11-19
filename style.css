@@ -11102,3 +11102,76 @@ body:has(#rapor-fab.is-min) .wrap.page-rapor{padding-bottom:80px}
 .tka-red .tka-cell-label{background:var(--sd-red-60)}.tka-red .tka-cell-value{background:var(--sd-red-0);color:var(--sd-red-70)}
 .tka-dist-note{margin:0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);color:var(--sd-gray-90)}
 @media(max-width:700px){.tka-dist-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Stepper dan Ringkasan satu kartu: stepper di atas, tabel ringkasan di bawahnya */
+.preview-band .flow-stepper{margin:0;border-radius:var(--sd-radius-md) var(--sd-radius-md) 0 0;border-bottom:1px solid var(--sd-modal-footer-border);box-shadow:var(--sd-elevation-01);padding:16px 24px 12px;position:relative;z-index:1}
+.preview-band .preview-accordion.selected-card{border-top:0;border-radius:0 0 var(--sd-radius-md) var(--sd-radius-md);box-shadow:var(--sd-elevation-01)}
+.preview-band::before{background:linear-gradient(var(--sd-blue-90),var(--sd-blue-90)) top/100% 52px no-repeat}
+body:has(.preview-band) .page-title-banner.has-breadcrumb .page-title-inner{padding-bottom:44px}
+body:has(.preview-band) .preview-band{margin-top:-60px;margin-bottom:24px;padding:0}
+body:has(.preview-band) .preview-band::before{display:none}
+
+/* Langkah 1: judul banner disembunyikan secara visual (tetap terbaca pembaca layar), judul bagian di bawah kartu jadi satu-satunya judul */
+.page-title-banner.title-merged .page-title-row,.page-title-banner.title-merged .page-title-description,.page-title-banner.title-merged .page-title-context{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+body:has(.title-merged) .page-title-banner.has-breadcrumb .page-title-inner{padding-bottom:0}
+body:has(.title-merged) .preview-band{margin-top:-32px}
+/* Latar biru berakhir tepat di garis pemisah judul kartu dan stepper */
+body:has(.title-merged) .preview-band::before{display:block;content:'';position:absolute;z-index:-1;top:0;left:50%;width:100vw;height:65px;transform:translateX(-50%);background:var(--sd-blue-90)}
+
+/* Kartu Ringkasan: judul di atas, stepper di tengah, tabel di bawah (bisa ditutup) */
+.preview-band .preview-card{background:var(--sd-white);border:1px solid var(--sd-blue-5);border-radius:var(--sd-radius-md);box-shadow:var(--sd-elevation-01);margin:0}
+.preview-card-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;border-bottom:1px solid var(--sd-modal-footer-border)}
+.preview-card-title{display:flex;flex-direction:column;gap:2px;min-width:0}
+.preview-card-actions{display:flex;align-items:center;gap:8px;flex:none}
+.preview-toggle{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0;border:0;border-radius:var(--sd-radius-sm,6px);background:none;color:var(--sd-gray-90);cursor:pointer}
+.preview-toggle:hover{background:var(--sd-gray-5,#f2f2f2)}
+.preview-toggle:focus-visible{outline:2px solid var(--sd-interactive-focused);outline-offset:2px}
+.preview-toggle .sd-icon{transition:transform .15s}
+.preview-toggle[aria-expanded="true"] .sd-icon{transform:rotate(180deg)}
+.preview-band .preview-card .flow-stepper{border-radius:0;box-shadow:none;border-bottom:1px solid var(--sd-modal-footer-border);padding:16px 24px 12px}
+.preview-card.is-collapsed .flow-stepper{border-bottom:0}
+.preview-card-body{padding:16px 20px 20px}
+.preview-card-body[hidden]{display:none}
+.preview-card-title{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:0 8px}
+.preview-card-title .preview-acc-year{display:inline;margin:0;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-subdued)}
+.preview-card-title .preview-acc-year::before{content:"·";margin-right:8px}
+.preview-empty{margin:0;color:var(--sd-text-subdued)}
+.preview-card-title .flow-acc-name{font-weight:600;color:var(--sd-gray-90)}
+
+/* Audit UX langkah 1–3 */
+/* Footer aksi menempel di bawah layar agar Lanjut, Kembali, dan pesan syarat selalu terlihat */
+.flow-footer {
+  position: sticky;
+  bottom: 12px;
+  z-index: 20;
+  margin-top: 24px;
+  padding: 12px 16px;
+  background: var(--sd-white);
+  border: 1px solid var(--sd-modal-footer-border);
+  border-radius: var(--sd-radius-md);
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+}
+body:has(.flow-footer) .toast { bottom: 96px; }
+.flow-hint { display: inline-flex; align-items: center; gap: 4px; }
+.flow-hint.is-error { color: var(--sd-red-70); font-weight: 600; }
+.flow-hint.is-error .sd-icon { width: 16px; height: 16px; flex: none; }
+/* Elemen yang bermasalah disorot sebentar setelah klik Lanjut */
+.is-flagged { animation: flagPulse 2.6s ease-out 1; }
+@keyframes flagPulse {
+  0%, 60% { box-shadow: 0 0 0 3px var(--sd-red-60); }
+  100% { box-shadow: 0 0 0 3px transparent; }
+}
+@media (prefers-reduced-motion: reduce) { .is-flagged { animation: none; box-shadow: 0 0 0 3px var(--sd-red-60); } }
+/* Ruang teks selisih target dipesan sejak awal supaya baris di bawahnya tidak bergeser */
+.menetapkan-target-form .target-status { min-height: 24px; }
+.chain-count.is-set { background: var(--sd-green-0); color: var(--sd-green-70); }
+.table-no-category,
+.table-indicator-change > .table-no-comparison:not([aria-hidden]) { color: var(--sd-text-subdued); font-size: var(--sd-text-bodysmall-size); line-height: var(--sd-text-bodysmall-line); }
+/* Area sentuh minimal 32px untuk kontrol kecil di tabel */
+.menetapkan-indicator-table .sd-btn-sm { min-height: 32px; }
+.menetapkan-indicator-table .sd-check { min-width: 32px; min-height: 32px; display: inline-flex; align-items: center; justify-content: center; }
+.page-flow .sd-btn-sm,
+.preview-card-actions .sd-btn-sm { min-height: 32px; }
+/* Langkah 1: judul kartu di dalam dialog detail sama dengan judul dialog, cukup untuk pembaca layar */
+#indicator-detail-dialog .rc-main-card .rc-card-name { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.sd-check:has(input:disabled) { opacity: .45; cursor: not-allowed; }
