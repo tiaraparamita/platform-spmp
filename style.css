@@ -11261,3 +11261,4 @@ body:has(.flow-footer) .priority-panel { max-height: calc(100vh - 128px); }
   .priority-slot.is-empty { display: none; }
   .priority-panel:not(:has(.is-filled)) { display: none; }
 }
+.slot-target .sd-input { scroll-margin-bottom: 140px; }
