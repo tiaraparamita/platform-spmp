@@ -18,7 +18,7 @@
   var VER_LABEL = { rapor: 'Di luar rapor', awal: 'Di dalam rapor', '20-nov': 'Di luar rapor' };
 
   var GROUPS = [
-    [null, [['rapor', 'Di luar rapor'], ['awal', 'Di dalam rapor']]],
+    ['Platform SPMP', [['rapor', 'Di luar rapor'], ['awal', 'Di dalam rapor']], true],
     ['Siklus 6M', [1, 2, 3, 4, 5, 6].map(function (n) { return ['step-' + n, 'Step ' + n]; }), true],
     [null, [['reset', 'Reset seluruh data']], true]
   ];
