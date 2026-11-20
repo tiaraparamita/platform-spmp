@@ -43,12 +43,23 @@
     '.spmp-ctl-note{color:#c4c7ca;font-size:14px}' +
     '.spmp-ctl select{appearance:none;-webkit-appearance:none;width:300px;max-width:100%;height:44px;padding:0 40px 0 16px;border:1px solid #8b9096;border-radius:6px;background:#fff url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23333\'%3E%3Cpath d=\'M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z\'/%3E%3C/svg%3E") no-repeat right 12px center/20px;color:#1f2123;font:inherit;font-size:16px;cursor:pointer}' +
     '.spmp-ctl select:focus-visible,.spmp-ctl button:focus-visible{outline:2px solid #6ea8ff;outline-offset:2px}' +
+    '.spmp-ctl-inner.has-entry .spmp-ctl-lead{display:none}' +
     '.spmp-ctl-ver{margin-left:auto;display:inline-flex;align-items:center;padding:2px 10px;border-radius:999px;background:#33373b;color:#fff;font-size:12px;font-weight:600;white-space:nowrap}' +
     '.spmp-ctl button{height:36px;padding:0 16px;border-radius:6px;border:1px solid #8b9096;background:transparent;color:#fff;font:inherit;font-size:14px;font-weight:600;cursor:pointer}' +
     '.spmp-ctl button.spmp-ctl-danger{background:#c9332c;border-color:#c9332c}' +
     '@media(max-width:700px){.spmp-ctl select{width:100%}.spmp-ctl-ver{margin-left:0}}';
 
-  var bar, select, badge;
+  var bar, select, badge, entrySelect;
+
+  /* Halaman Rapor punya pilihan titik masuk ke Platform SPMP (ENTRY_OPTIONS di app.js). */
+  function hasEntry() {
+    try { return typeof RAPOR !== 'undefined' && RAPOR && typeof ENTRY_OPTIONS !== 'undefined' && typeof setEntryOption === 'function'; } catch (e) { return false; }
+  }
+  function entryHtml() {
+    if (!hasEntry()) return '';
+    return '<span class="spmp-ctl-note">Titik masuk ke Platform SPMP</span><select class="spmp-ctl-entry" aria-label="Titik masuk ke Platform SPMP">' +
+      ENTRY_OPTIONS.map(function (o, i) { return '<option value="' + esc(o[0]) + '">' + (i + 1) + '. ' + esc(o[1]) + '</option>'; }).join('') + '</select>';
+  }
 
   function optionsHtml() {
     var n = 0;
@@ -62,11 +73,14 @@
 
   function renderBar() {
     bar.innerHTML =
-      '<div class="spmp-ctl-inner"><b>Kontrol Prototipe</b>' +
-      '<span class="spmp-ctl-note">Jelajahi tampilan dan skenario. Data contoh, tidak ada yang dikirim.</span>' +
-      '<select aria-label="Pilih tampilan atau skenario">' + optionsHtml() + '</select>' +
+      '<div class="spmp-ctl-inner' + (hasEntry() ? ' has-entry' : '') + '"><b>Kontrol Prototipe</b>' +
+      '<span class="spmp-ctl-note spmp-ctl-lead">Jelajahi tampilan dan skenario. Data contoh, tidak ada yang dikirim.</span>' +
+      '<select class="spmp-ctl-main" aria-label="Pilih tampilan atau skenario">' + optionsHtml() + '</select>' +
+      entryHtml() +
       '<span class="spmp-ctl-ver" aria-live="polite"></span></div>';
-    select = bar.querySelector('select');
+    select = bar.querySelector('.spmp-ctl-main');
+    entrySelect = bar.querySelector('.spmp-ctl-entry');
+    if (entrySelect) entrySelect.addEventListener('change', function () { setEntryOption(entrySelect.value); });
     badge = bar.querySelector('.spmp-ctl-ver');
     select.addEventListener('change', onChange);
     sync();
@@ -75,6 +89,7 @@
   function sync() {
     if (!select) return;
     select.value = currentValue();
+    if (entrySelect && typeof entryOption !== 'undefined') entrySelect.value = entryOption;
     badge.textContent = 'Versi: ' + VER_LABEL[VER];
   }
 
