@@ -10937,7 +10937,7 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 .proto-bar .sd-select{width:300px}
 /* Titik masuk ke platform */
 .rapor-navbar .rapor-nav-spmp .sd-icon{width:16px;height:16px;margin-left:4px;vertical-align:-2px}
-.rapor-cta{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;margin:0 0 32px;padding:24px;background:var(--sd-white);border:1px solid var(--sd-gray-20);border-radius:var(--sd-radius-lg)}
+.rapor-cta{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:24px;margin:32px 0;padding:24px;background:var(--sd-white);border:1px solid var(--sd-gray-20);border-radius:var(--sd-radius-lg)}
 .rapor-cta h2{margin:0 0 4px;font-size:var(--sd-text-headingmedium-size);line-height:var(--sd-text-headingmedium-line);font-weight:600}
 .rapor-cta p{margin:0;color:var(--sd-gray-60)}
 .diagnosis-reference-footer{display:grid;gap:8px}
