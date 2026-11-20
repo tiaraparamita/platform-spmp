@@ -1,5 +1,5 @@
 /* Kontrol Prototipe bersama.
- * Dipakai oleh semua versi (Rapor, Opsi Awal, Opsi 20 Nov) supaya pilihan yang sama
+ * Dipakai oleh semua versi (Rapor dan Opsi 20 Nov, Opsi Awal) supaya pilihan yang sama
  * tampil di mana pun, dan pengguna bisa berpindah versi untuk membandingkan.
  * Bar dipasang di luar #app, jadi tidak ikut terhapus saat halaman dirender ulang. */
 (function () {
@@ -18,8 +18,8 @@
   var VER_LABEL = { rapor: 'Rapor', awal: 'Opsi Awal', '20-nov': 'Opsi 20 Nov' };
 
   var GROUPS = [
-    ['Rapor', [['rapor', 'Halaman Rapor']]],
-    ['Platform SPMP', [['awal', 'Opsi Awal'], ['20-nov', 'Opsi 20 Nov']]],
+    ['Rapor', [['rapor', 'Halaman Rapor dan Opsi 20 Nov']]],
+    ['Platform SPMP', [['awal', 'Opsi Awal']]],
     ['Siklus 6M', [1, 2, 3, 4, 5, 6].map(function (n) { return ['step-' + n, 'Step ' + n]; })],
     ['Atur ulang', [['reset', 'Reset seluruh data']]]
   ];
@@ -32,7 +32,7 @@
     try {
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'flow' && typeof stage === 'number') return 'step-' + (stage + 1);
     } catch (e) { /* variabel belum ada */ }
-    return VER;
+    return VER === '20-nov' ? 'rapor' : VER; /* Rapor dan Opsi 20 Nov satu pilihan */
   }
 
   var CSS = '' +
