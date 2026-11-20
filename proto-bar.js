@@ -1,5 +1,5 @@
 /* Kontrol Prototipe bersama.
- * Dipakai oleh semua versi (Rapor dan Opsi 20 Nov, Opsi Awal) supaya pilihan yang sama
+ * Dipakai oleh semua versi (Di luar rapor, Di dalam rapor) supaya pilihan yang sama
  * tampil di mana pun, dan pengguna bisa berpindah versi untuk membandingkan.
  * Bar dipasang di luar #app, jadi tidak ikut terhapus saat halaman dirender ulang. */
 (function () {
@@ -15,11 +15,10 @@
     awal: ROOT + 'versi/awal/index.html',
     '20-nov': ROOT + 'spmp.html'
   };
-  var VER_LABEL = { rapor: 'Rapor', awal: 'Opsi Awal', '20-nov': 'Opsi 20 Nov' };
+  var VER_LABEL = { rapor: 'Di luar rapor', awal: 'Di dalam rapor', '20-nov': 'Di luar rapor' };
 
   var GROUPS = [
-    ['Rapor', [['rapor', 'Halaman Rapor dan Opsi 20 Nov']]],
-    ['Platform SPMP', [['awal', 'Opsi Awal']]],
+    [null, [['rapor', 'Di luar rapor'], ['awal', 'Di dalam rapor']]],
     ['Siklus 6M', [1, 2, 3, 4, 5, 6].map(function (n) { return ['step-' + n, 'Step ' + n]; })],
     ['Atur ulang', [['reset', 'Reset seluruh data']]]
   ];
@@ -63,10 +62,11 @@
   function optionsHtml() {
     var n = 0;
     return GROUPS.map(function (g) {
-      return '<optgroup label="' + esc(g[0]) + '">' + g[1].map(function (o) {
+      var opts = g[1].map(function (o) {
         n += 1;
         return '<option value="' + o[0] + '">' + n + '. ' + esc(o[1]) + '</option>';
-      }).join('') + '</optgroup>';
+      }).join('');
+      return g[0] ? '<optgroup label="' + esc(g[0]) + '">' + opts + '</optgroup>' : opts;
     }).join('');
   }
 
