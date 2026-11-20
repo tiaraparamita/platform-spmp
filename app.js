@@ -12,7 +12,7 @@ if(['Draf','Perlu revisi'].includes(data.status)){const legacy=data.activities.f
 const period=()=>{let y=Number(data.year.split('/')[0]);return `Juli ${y} – Juni ${y+1}`};
 const RAPOR=document.documentElement.dataset.app==='rapor';
 const HELP_URL='https://pusatinformasi.rumahpendidikan.kemendikdasmen.go.id/hc/id/categories/52399027095193-Rapor-Pendidikan';
-const ENTRY_OPTIONS=[['kartu','Kartu ajakan masuk ke Platform SPMP'],['banner','Banner kuning'],['indikator','Tombol di kartu indikator'],['navbar','Menu di navbar'],['unduh','Ajakan di halaman Unduh'],['melayang','Tombol melayang saat menggulir'],['semua','Semua titik masuk'],['tidak','Tanpa titik masuk']];
+const ENTRY_OPTIONS=[['kartu','Kartu ajakan masuk ke Platform SPMP'],['banner','Banner biru'],['indikator','Tombol di kartu indikator'],['navbar','Menu di navbar'],['unduh','Ajakan di halaman Unduh'],['melayang','Tombol melayang saat menggulir'],['semua','Semua titik masuk'],['tidak','Tanpa titik masuk']];
 let entryOption='kartu';
 const entryOn=k=>entryOption==='semua'||entryOption===k;
 function setEntryOption(v){if(!ENTRY_OPTIONS.some(o=>o[0]===v))return;entryOption=v;try{localStorage.setItem('spmp-prototype-entry',v)}catch{}render()}
