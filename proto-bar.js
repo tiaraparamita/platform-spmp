@@ -19,7 +19,7 @@
 
   var GROUPS = [
     [null, [['rapor', 'Di luar rapor'], ['awal', 'Di dalam rapor']]],
-    ['Siklus 6M', [1, 2, 3, 4, 5, 6].map(function (n) { return ['step-' + n, 'Step ' + n]; })],
+    ['Siklus 6M', [1, 2, 3, 4, 5, 6].map(function (n) { return ['step-' + n, 'Step ' + n]; }), true],
     ['Atur ulang', [['reset', 'Reset seluruh data']]]
   ];
 
@@ -63,6 +63,7 @@
     var n = 0;
     return GROUPS.map(function (g) {
       var opts = g[1].map(function (o) {
+        if (g[2]) return '<option value="' + o[0] + '">' + esc(o[1]) + '</option>'; /* g[2]: tanpa nomor */
         n += 1;
         return '<option value="' + o[0] + '">' + n + '. ' + esc(o[1]) + '</option>';
       }).join('');
