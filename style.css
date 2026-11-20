@@ -11409,3 +11409,12 @@ body:has(.preview-band.is-compact) .page-title-banner.has-breadcrumb .page-title
 html .flow-hint.is-ok .sd-icon, .flow-footer .flow-hint.is-ok .sd-icon { color: var(--sd-green-60); }
 .plan-card-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .plan-card-for { color: var(--sd-text-subdued); font-size: var(--sd-text-bodysmall-size); line-height: var(--sd-text-bodysmall-line); }
+
+/* Filter sumber data di baris kontrol Langkah 1 */
+.step1-card .step1-controls .step1-source { flex: none; width: 240px; margin-left: auto; }
+.step1-card .step1-controls .step1-source + .step1-search { margin-left: 0; }
+.step1-source .sd-select, .step1-source .sd-field { width: 100%; }
+.step1-source select, .step1-source .sd-select-trigger, .step1-source .sd-select select { height: 40px; min-height: 40px; }
+@media (max-width: 960px) { .step1-card .step1-controls .step1-source { width: 100%; margin-left: 0; } }
+.step1-source .sd-select select { padding-top: 0; padding-bottom: 0; padding-left: 12px; padding-right: 36px; line-height: 38px; font-size: var(--sd-text-body-size); text-overflow: ellipsis; }
+.step1-source .sd-select .sd-icon { right: 10px; }
