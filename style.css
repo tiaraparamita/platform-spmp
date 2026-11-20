@@ -11429,3 +11429,4 @@ html .flow-hint.is-ok .sd-icon, .flow-footer .flow-hint.is-ok .sd-icon { color: 
 .step1-chip-count { color: var(--sd-text-subdued); font-weight: 400; }
 .step1-chip[aria-pressed="true"] .step1-chip-count { color: inherit; }
 .step1-card .step1-result-note { border-top: 0; }
+.step1-empty { margin: 0; padding: 32px 16px; text-align: center; color: var(--sd-text-subdued); }
