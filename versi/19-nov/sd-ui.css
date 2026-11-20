@@ -1,0 +1,811 @@
+/* Komponen Seragam untuk prototipe tanpa build. Dipasangkan dengan sd-ui.js.
+   Hanya memakai token --sd-* (tokens/seragam.css). Spesifikasi: skill seragam, components-spec dan react-src. */
+
+.sd-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.sd-icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  fill: currentColor;
+}
+
+/* Button: tinggi = tinggi baris + padding, radius 4, teks action semibold */
+.sd-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid transparent;
+  border-radius: var(--sd-radius-sm);
+  font-family: inherit;
+  font-size: var(--sd-text-action-size);
+  line-height: var(--sd-text-action-line);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.12s, color 0.12s;
+}
+.sd-btn-md {
+  min-height: calc(var(--sd-text-action-line) + 16px);
+  padding: 7px 15px;
+}
+.sd-btn-lg {
+  min-height: calc(var(--sd-text-action-line) + 24px);
+  padding: 11px 19px;
+}
+.sd-btn-sm {
+  min-height: 28px;
+  padding: 3px 7px;
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+}
+.sd-btn[hidden] {
+  display: none;
+}
+.sd-btn:focus-visible {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--sd-interactive-focused);
+}
+.sd-btn-ultimate {
+  background: var(--sd-blue-70);
+  border-color: var(--sd-blue-70);
+  color: white;
+}
+.sd-btn-ultimate:hover {
+  background: var(--sd-blue-80);
+  border-color: var(--sd-blue-80);
+  color: white;
+}
+.sd-btn-ultimate:active {
+  background: var(--sd-blue-90);
+  border-color: var(--sd-blue-90);
+}
+.sd-btn-primary {
+  background: var(--sd-gray-90);
+  border-color: var(--sd-gray-90);
+  color: white;
+}
+.sd-btn-primary:hover {
+  background: var(--sd-gray-100);
+  border-color: var(--sd-gray-100);
+  color: white;
+}
+.sd-btn-secondary {
+  background: transparent;
+  border-color: var(--sd-gray-50);
+  color: var(--sd-gray-90);
+}
+.sd-btn-secondary:hover {
+  background: var(--sd-gray-0);
+  border-color: var(--sd-gray-50);
+  color: var(--sd-gray-90);
+}
+.sd-btn-secondary:active {
+  background: var(--sd-gray-10);
+}
+.sd-btn-quiet {
+  background: transparent;
+  color: var(--sd-blue-70);
+}
+.sd-btn-quiet:hover {
+  background: var(--sd-gray-0);
+  border-color: transparent;
+  color: var(--sd-blue-80);
+}
+.sd-btn-quiet:active {
+  color: var(--sd-blue-90);
+}
+.sd-btn-destructive {
+  background: var(--sd-red-60);
+  border-color: var(--sd-red-60);
+  color: white;
+}
+.sd-btn-destructive:hover {
+  background: var(--sd-red-70);
+  border-color: var(--sd-red-70);
+  color: white;
+}
+.sd-btn:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+  background: var(--sd-gray-20);
+  border-color: transparent;
+  color: var(--sd-gray-50);
+}
+
+/* Radio dalam FieldGroup */
+.sd-fieldgroup {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.sd-fieldgroup > legend {
+  padding: 0;
+  margin-bottom: 16px;
+  font-size: var(--sd-text-headingmedium-size);
+  line-height: var(--sd-text-headingmedium-line);
+  font-weight: 600;
+  color: var(--sd-gray-90);
+}
+.sd-radio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sd-radio {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  column-gap: 8px;
+  align-items: start;
+  position: relative;
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+.sd-radio input {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 20px;
+  height: calc(var(--sd-text-body-line));
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+.sd-radio-mark {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--sd-gray-50);
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  transition: box-shadow 0.12s;
+}
+.sd-radio-mark::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: var(--sd-gray-0);
+  opacity: 0;
+}
+.sd-radio:hover .sd-radio-mark {
+  border-color: var(--sd-blue-70);
+}
+.sd-radio input:checked + .sd-radio-mark {
+  background: var(--sd-blue-70);
+  border-color: var(--sd-blue-70);
+}
+.sd-radio input:checked + .sd-radio-mark::after {
+  opacity: 1;
+}
+.sd-radio input:focus-visible + .sd-radio-mark {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--sd-interactive-focused);
+}
+.sd-radio input:disabled + .sd-radio-mark {
+  background: var(--sd-badge-neutral);
+  border-color: var(--sd-border-disabled);
+}
+.sd-radio-label {
+  grid-column: 2;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  color: var(--sd-gray-90);
+}
+.sd-radio-help {
+  grid-column: 2;
+  font-size: var(--sd-text-helper-size);
+  line-height: var(--sd-text-helper-line);
+  color: var(--sd-gray-60);
+}
+
+/* Select native: tinggi = tinggi baris + 24, radius 4, border gray-50 */
+.sd-select {
+  position: relative;
+  display: block;
+  margin: 0;
+  font-weight: 400;
+}
+.sd-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  min-width: 160px;
+  height: calc(var(--sd-text-body-line) + 24px);
+  padding: 12px 40px 12px 16px;
+  border: 1px solid var(--sd-gray-50);
+  border-radius: var(--sd-radius-sm);
+  background: white;
+  color: var(--sd-gray-90);
+  font-family: inherit;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  cursor: pointer;
+}
+.sd-select select:focus {
+  outline: none;
+  border-color: var(--sd-blue-50);
+  box-shadow: 0 0 0 2px var(--sd-interactive-focused);
+}
+.sd-select .sd-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+  color: var(--sd-gray-70);
+  pointer-events: none;
+}
+
+/* Table: header 13/16 semibold kapital, sel 15/22, garis antar baris */
+.sd-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+.sd-table-wrap:focus-visible {
+  outline: 2px solid var(--sd-interactive-focused);
+  outline-offset: 2px;
+}
+.sd-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.sd-table th {
+  padding: 15px 16px;
+  background: var(--sd-badge-neutral);
+  border-top: 1px solid var(--sd-modal-footer-border);
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  font-size: var(--sd-text-subheading-size);
+  line-height: var(--sd-text-subheading-line);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--sd-gray-90);
+}
+.sd-table td {
+  padding: 15px 16px;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  font-weight: 400;
+  color: var(--sd-gray-90);
+  vertical-align: middle;
+}
+.sd-table th.sd-right,
+.sd-table td.sd-right {
+  text-align: right;
+}
+.sd-table td.sd-full {
+  padding: 0;
+}
+.sd-cell-title {
+  display: block;
+  font-weight: 600;
+}
+.sd-cell-sub {
+  display: block;
+  margin-top: 2px;
+  font-size: var(--sd-text-helper-size);
+  line-height: var(--sd-text-helper-line);
+  color: var(--sd-gray-60);
+}
+.sd-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--sd-text-helper-size);
+  line-height: var(--sd-text-helper-line);
+  color: var(--sd-gray-60);
+}
+.sd-status .sd-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--sd-text-success);
+}
+
+/* Badge: pill, padding 2x8, label 13/20 semibold gray-90 di atas latar badge-* */
+.sd-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--sd-radius-pill);
+  font-size: var(--sd-text-bodysmall-size);
+  line-height: var(--sd-text-bodysmall-line);
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--sd-gray-90);
+}
+.sd-badge-green {
+  background: var(--sd-badge-success);
+}
+.sd-badge-amber {
+  background: var(--sd-badge-warning);
+}
+.sd-badge-red {
+  background: var(--sd-badge-critical);
+}
+.sd-badge-blue {
+  background: var(--sd-badge-info);
+}
+.sd-badge-gray {
+  background: var(--sd-badge-neutral);
+}
+
+/* Banner: radius 4, border 1px, padding 16, jarak 12, ikon 20, teks body */
+.sd-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid;
+  border-radius: var(--sd-radius-sm);
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  color: var(--sd-gray-90);
+}
+.sd-banner > .sd-icon {
+  margin-top: calc((var(--sd-text-body-line) - 20px) / 2);
+}
+.sd-banner p {
+  margin: 0;
+}
+.sd-banner-title {
+  font-weight: 600;
+}
+.sd-banner-info {
+  background: var(--sd-cyan-5);
+  border-color: var(--sd-cyan-10);
+}
+.sd-banner-info > .sd-icon {
+  color: var(--sd-blue-70);
+}
+.sd-banner-neutral {
+  background: var(--sd-gray-5);
+  border-color: var(--sd-gray-50);
+}
+.sd-banner-neutral > .sd-icon {
+  color: var(--sd-gray-70);
+}
+.sd-banner-warning {
+  background: var(--sd-warning-surface);
+  border-color: var(--sd-warning-border);
+}
+.sd-banner-warning > .sd-icon {
+  color: var(--sd-text-warning);
+}
+.sd-banner-success {
+  background: var(--sd-green-5);
+  border-color: var(--sd-success-border);
+}
+.sd-banner-success > .sd-icon {
+  color: var(--sd-text-success);
+}
+.sd-banner-critical {
+  background: var(--sd-red-5);
+  border-color: var(--sd-red-60);
+}
+.sd-banner-critical > .sd-icon {
+  color: var(--sd-red-60);
+}
+
+/* Item menu dalam popover (menu ⋮): Button quiet rata kiri selebar menu */
+.sd-menu-item {
+  width: 100%;
+  justify-content: flex-start;
+  color: var(--sd-gray-90);
+  font-weight: 400;
+}
+.sd-menu-item:hover {
+  color: var(--sd-gray-90);
+}
+.sd-menu-item.sd-menu-danger,
+.sd-menu-item.sd-menu-danger:hover {
+  color: var(--sd-red-60);
+}
+
+/* Button hanya ikon (persegi) dan lebar penuh */
+.sd-btn-icon {
+  padding: 0;
+  aspect-ratio: 1;
+}
+.sd-btn-icon.sd-btn-md {
+  width: calc(var(--sd-text-action-line) + 16px);
+}
+.sd-btn-icon.sd-btn-sm {
+  width: 28px;
+}
+.sd-btn-block {
+  width: 100%;
+}
+.sd-banner-body {
+  flex: 1;
+  min-width: 0;
+}
+.sd-banner > .sd-btn {
+  margin: -4px -4px -4px 0;
+  flex: none;
+}
+
+/* Baris tabel terpilih */
+.sd-table tr.sd-row-selected td {
+  background: var(--sd-surface-selected-default);
+}
+
+/* Tabs: garis bawah, tab aktif biru, hitungan pada tab aktif berlatar action-default */
+.sd-tabs {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+}
+.sd-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  padding: 12px 4px;
+  margin: 0 0 -1px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--sd-gray-60);
+  font-family: inherit;
+  font-size: var(--sd-text-action-size);
+  line-height: var(--sd-text-action-line);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.sd-tab:hover {
+  color: var(--sd-gray-90);
+  background: transparent;
+}
+.sd-tab[aria-selected="true"] {
+  color: var(--sd-blue-70);
+  border-bottom-color: var(--sd-blue-70);
+}
+.sd-tab:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--sd-interactive-focused);
+}
+.sd-tab-count {
+  min-width: 20px;
+  padding: 0 6px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-gray-10);
+  color: var(--sd-gray-90);
+  font-size: var(--sd-text-helper-size);
+  line-height: 20px;
+  text-align: center;
+}
+.sd-tab[aria-selected="true"] .sd-tab-count {
+  background: var(--sd-interactive-default);
+  color: white;
+}
+
+/* Checkbox: kotak 18px, radius 4, border gray-50, terpilih blue-70 */
+.sd-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  margin: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+.sd-check input[type="checkbox"] {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+.sd-check-box {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+.sd-check-box::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--sd-gray-50);
+  border-radius: var(--sd-radius-sm);
+  background: white;
+  transition: box-shadow 0.12s;
+}
+.sd-check-box svg {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+}
+.sd-check:hover .sd-check-box::before {
+  border-color: var(--sd-blue-70);
+}
+.sd-check input:checked + .sd-check-box::before {
+  background: var(--sd-blue-70);
+  border-color: var(--sd-blue-70);
+}
+.sd-check input:checked + .sd-check-box svg {
+  opacity: 1;
+}
+.sd-check input:focus-visible + .sd-check-box::before {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--sd-interactive-focused);
+}
+.sd-check input:disabled + .sd-check-box::before {
+  background: var(--sd-badge-neutral);
+  border-color: var(--sd-border-disabled);
+}
+.sd-check-label {
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  color: var(--sd-gray-90);
+}
+
+/* Text field: tinggi = tinggi baris + 24, radius 4, border gray-50, fokus blue-50 + ring */
+.sd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sd-field-label {
+  margin: 0;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  font-weight: 400;
+  color: var(--sd-gray-90);
+}
+.sd-field-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.sd-field .sd-input {
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  height: calc(var(--sd-text-body-line) + 24px);
+  padding: 12px 16px;
+  border: 1px solid var(--sd-gray-50);
+  border-radius: var(--sd-radius-sm);
+  background: white;
+  color: var(--sd-gray-90);
+  font-family: inherit;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+}
+.sd-field .sd-input::placeholder {
+  color: var(--sd-gray-60);
+}
+.sd-field .sd-input:focus {
+  outline: none;
+  border-color: var(--sd-blue-50);
+  box-shadow: 0 0 0 2px var(--sd-interactive-focused);
+}
+.sd-field .sd-input[aria-invalid="true"] {
+  border-color: var(--sd-critical-border);
+  background: var(--sd-surface-critical-subdued);
+}
+.sd-field-hint {
+  font-size: var(--sd-text-helper-size);
+  line-height: var(--sd-text-helper-line);
+  color: var(--sd-gray-60);
+}
+.sd-field-error {
+  color: var(--sd-red-60);
+}
+.sd-btn-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sd-btn-destructive-secondary {
+  background: transparent;
+  border-color: var(--sd-red-60);
+  color: var(--sd-red-60);
+}
+.sd-btn-destructive-secondary:hover {
+  background: var(--sd-red-5);
+  border-color: var(--sd-red-60);
+  color: var(--sd-red-60);
+}
+.sd-btn-destructive-secondary:active {
+  background: var(--sd-red-10);
+}
+.sd-field .sd-textarea {
+  width: 100%;
+  min-height: calc(var(--sd-text-body-line) * 3 + 24px);
+  padding: 12px 16px;
+  border: 1px solid var(--sd-gray-50);
+  border-radius: var(--sd-radius-sm);
+  background: white;
+  color: var(--sd-gray-90);
+  font-family: inherit;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  resize: vertical;
+}
+.sd-field .sd-textarea::placeholder {
+  color: var(--sd-gray-60);
+}
+.sd-field .sd-textarea:focus {
+  outline: none;
+  border-color: var(--sd-blue-50);
+  box-shadow: 0 0 0 2px var(--sd-interactive-focused);
+}
+.sd-field .sd-textarea[aria-invalid="true"] {
+  border-color: var(--sd-critical-border);
+  background: var(--sd-surface-critical-subdued);
+}
+.sd-field > .sd-select {
+  display: block;
+}
+
+/* Accordion: judul 15/22 semibold, panah memutar saat terbuka */
+.sd-accordion {
+  border: 0;
+}
+.sd-accordion-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  list-style: none;
+  cursor: pointer;
+  color: var(--sd-gray-90);
+  border-radius: var(--sd-radius-sm);
+}
+.sd-accordion-head::-webkit-details-marker {
+  display: none;
+}
+.sd-accordion-head:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--sd-interactive-focused);
+}
+.sd-accordion-title {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  min-width: 0;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  font-weight: 600;
+}
+.sd-accordion-head > .sd-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--sd-gray-70);
+  transition: transform 0.15s;
+}
+.sd-accordion[open] > .sd-accordion-head > .sd-icon {
+  transform: rotate(180deg);
+}
+.sd-accordion-body {
+  padding: 4px 0 8px;
+}
+
+/* Progress bar */
+.sd-progress {
+  height: 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-gray-10);
+  overflow: hidden;
+}
+.sd-progress > span {
+  display: block;
+  height: 100%;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-blue-70);
+  transition: width 0.2s;
+}
+.sd-progress.is-full > span {
+  background: var(--sd-green-60);
+}
+.sd-progress-inverse {
+  background: rgba(255, 255, 255, 0.25);
+}
+.sd-progress-inverse > span {
+  background: var(--sd-blue-30);
+}
+.sd-progress-inverse.is-full > span {
+  background: var(--sd-green-30);
+}
+
+/* Tombol di latar gelap (ekstensi): garis dan teks putih */
+.sd-btn.sd-btn-inverse {
+  background: transparent;
+  border-color: var(--sd-white);
+  color: var(--sd-white);
+}
+.sd-btn.sd-btn-inverse:hover {
+  background: color-mix(in srgb, white 14%, transparent);
+  border-color: var(--sd-white);
+  color: var(--sd-white);
+}
+
+/* Baris kelompok dalam tabel (mis. per mutu) */
+.sd-table .sd-group-row th {
+  padding: 12px 16px;
+  background: var(--sd-gray-5);
+  border-top: 1px solid var(--sd-modal-footer-border);
+  border-bottom: 1px solid var(--sd-modal-footer-border);
+  text-align: left;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: var(--sd-text-body-size);
+  line-height: var(--sd-text-body-line);
+  font-weight: 600;
+  color: var(--sd-gray-90);
+}
+.sd-group-count {
+  margin-left: 8px;
+  font-size: var(--sd-text-bodysmall-size);
+  font-weight: 400;
+  color: var(--sd-gray-60);
+}
+
+.sd-table .sd-group-row.is-reco th {
+  background: var(--sd-blue-5);
+  border-top-color: var(--sd-blue-10);
+  border-bottom-color: var(--sd-blue-10);
+  color: var(--sd-blue-90);
+}
+
+/* Select: ikon panah diposisikan terhadap kotak pilihan (bukan label di atasnya) */
+.sd-select-box {
+  position: relative;
+  display: block;
+}
+.sd-select .sd-select-box > .sd-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sd-select > .sd-field-label {
+  display: block;
+  margin: 0 0 4px;
+}
+
+/* Table Seragam: baris data punya status hover (Surface/Hovered); baris terpilih tetap Surface Selected */
+.sd-table:not(.sd-no-hover) tbody tr:not(.sd-group-row):not(.sd-row-selected):hover > td:not(.sd-full) {
+  background: var(--sd-surface-hovered);
+}
+
+/* Banner: aksi di footer (Button sm secondary) dan tombol Tutup ikon polos sesuai Seragam */
+.sd-banner-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:12px}
+.sd-banner-close{flex:none;margin-left:auto;padding:2px;border:0;border-radius:var(--sd-radius-sm);background:none;color:var(--sd-gray-90);cursor:pointer}
+.sd-banner-close .sd-icon{display:block;width:22px;height:22px}
+.sd-banner-close:hover{background:var(--sd-gray-10)}
+.sd-banner-close:focus-visible{outline:2px solid var(--sd-blue-50);outline-offset:2px}

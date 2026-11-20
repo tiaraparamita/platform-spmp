@@ -11267,3 +11267,145 @@ body:has(.flow-footer) .priority-panel { max-height: calc(100vh - 128px); }
 .step1-table .table-measure { margin: 0; }
 .step1-table .table-meta { column-gap: 12px; }
 .step1-table .table-meta .meta-dot { display: none; }
+.preview-card-head[hidden]{display:none}
+.menetapkan-indicator-table.step1-table thead th:nth-child(4) { width: 148px !important; padding-right: 20px; }
+.menetapkan-indicator-table.step1-table tbody td:nth-child(4) { padding-right: 20px; text-align: right; }
+.roots-table .achv-line { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.roots-table.menetapkan-indicator-table thead th:nth-child(1) { width: 72px !important; }
+.roots-table.menetapkan-indicator-table thead th:nth-child(3) { width: 250px !important; }
+.roots-table.menetapkan-indicator-table thead th:nth-child(2) { width: auto !important; }
+.rail-link { display: block; padding: 0; border: 0; background: none; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+.rail-link:hover b { text-decoration: underline; }
+.rail-link:focus-visible { outline: 2px solid var(--sd-interactive-focused); outline-offset: 2px; }
+.rail-status { margin-top: 4px; padding-left: 34px; }
+.roots-table.menetapkan-indicator-table { min-width: 0 !important; width: 100%; }
+.rail-tree { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.rail-tree .rail-tree { margin: 4px 0 0 28px; }
+.rail-tree .rail-link { display: flex; gap: 8px; align-items: baseline; font-size: var(--sd-text-bodysmall-size); line-height: var(--sd-text-bodysmall-line); color: var(--sd-gray-90); }
+.rail-tree .rail-link:hover span:last-child { text-decoration: underline; }
+.rail-num { flex: none; color: var(--sd-text-subdued); font-variant-numeric: tabular-nums; }
+.rail-empty { margin: 8px 0 0 34px; color: var(--sd-text-subdued); font-size: var(--sd-text-bodysmall-size); }
+.rail-tree .rail-empty { margin: 2px 0 0 0; }
+.rail-foot { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--sd-modal-footer-border); }
+.priority-slot.is-filled > .rail-tree { margin-left: 34px; }
+.preview-card > .flow-stepper { border-bottom: 0; }
+.row-target { max-width: 220px; }
+.row-target-label .sd-field-label { display: block; margin: 0; }
+.row-target-label .slot-note { margin: 4px 0 0; }
+tr[id^="target-row-"] td { vertical-align: top; padding-top: 0 !important; padding-bottom: 16px !important; border-top: 0; }
+tr[id^="target-row-"] td:nth-child(2) { padding-top: 10px !important; }
+.row-target .target-input-group { padding: 0; gap: 6px; }
+.row-target .sd-field-row { width: 100%; }
+.row-target .sd-input { width: 100%; }
+.row-target .target-status { font-size: var(--sd-text-bodysmall-size); line-height: var(--sd-text-bodysmall-line); min-height: 0; }
+.row-target .target-status .report-up { display: inline-flex; vertical-align: middle; }
+.row-target .target-soft-warn { display: block; margin-top: 4px; }
+tr[id^="target-row-"][data-needs-target] .sd-input:not(:focus) { border-color: var(--sd-critical-border); box-shadow: 0 0 0 2px var(--sd-critical-border); }
+tr[id^="target-row-"] > td { vertical-align: top !important; }
+tr[id^="target-row-"] td:nth-child(2) { padding-top: 22px !important; }
+tr[id^="target-row-"] > td { padding-top: 12px !important; text-align: left !important; }
+tr[id^="target-row-"] td:nth-child(2) { padding-top: 22px !important; }
+.row-target-warn .target-soft-warn { margin-top: 0; color: var(--sd-text-subdued); }
+.menetapkan-indicator-table.step1-table thead th:nth-child(4) { width: 210px !important; }
+.row-target-warn, .row-target-warn .target-soft-warn { white-space: normal; overflow-wrap: anywhere; }
+tr[id^="target-row-"] td:nth-child(4) { padding-right: 20px !important; }
+
+/* Prioritas Anda: pintu masuk di footer, panel melayang di sudut kanan bawah */
+.step1-layout { grid-template-columns: minmax(0, 1fr) !important; }
+.priority-float { position: fixed !important; right: max(16px, calc((100vw - 1216px) / 2)); bottom: 104px; top: auto !important; z-index: 40; width: 380px; max-width: calc(100vw - 32px); max-height: min(560px, calc(100vh - 220px)) !important; overflow: auto; order: 0 !important; box-shadow: var(--sd-elevation-03, 0 8px 24px rgba(0,0,0,.18)); }
+.priority-float[hidden] { display: none !important; }
+.priority-float .priority-panel-head { position: sticky; top: -20px; margin: -20px -20px 16px; padding: 16px 20px 12px; background: var(--sd-white); z-index: 1; }
+.priority-float .priority-panel-head .sd-badge { margin-left: auto; }
+.priority-float .priority-slot.is-empty { display: flex !important; }
+.priority-panel.priority-float:not(:has(.is-filled)) { display: block; }
+.priority-panel.priority-float[hidden]:not(:has(.is-filled)) { display: none !important; }
+.rail-toggle .sd-icon, .rail-toggle svg { transition: transform .15s; }
+.rail-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.flow-footer .rail-toggle { white-space: nowrap; }
+@media (max-width: 640px) { .priority-float { right: 16px; left: 16px; width: auto; } }
+.flow-footer-left { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.priority-float { right: auto !important; left: max(16px, calc((100vw - 1216px) / 2)); }
+@media (max-width: 640px) { .priority-float { left: 16px; right: 16px !important; } }
+.wrap:has(.flow-footer) { padding-bottom: 32px; }
+/* panel menempel pada footer (positioned), sehingga selalu tepat di atasnya */
+.flow-footer .priority-float { position: absolute !important; left: 0 !important; right: auto !important; bottom: calc(100% + 12px) !important; }
+@media (max-width: 640px) { .flow-footer .priority-float { right: 0 !important; width: auto; } }
+
+/* Footer langkah: bar lengket selebar layar, isi sejajar dengan konten halaman */
+.flow-footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; margin: 0; padding: 12px max(var(--page-gutter), calc((100vw - var(--page-content)) / 2)); border: 0; border-top: 1px solid var(--sd-modal-footer-border); border-radius: 0; box-shadow: 0 -2px 8px rgba(0, 0, 0, .06); }
+.wrap:has(.flow-footer) { padding-bottom: 104px; }
+.flow-footer .priority-float { left: max(var(--page-gutter), calc((100vw - var(--page-content)) / 2)) !important; }
+@media (max-width: 640px) { .flow-footer .priority-float { left: 16px !important; right: 16px !important; } }
+
+/* Stepper ringkas dan lengket: menempel di bawah navbar, memuat pintu masuk Prioritas Anda */
+.preview-band.is-compact { position: sticky; top: 64px; z-index: 45; }
+body:has(.preview-band.is-compact) .preview-band { margin-bottom: 16px; }
+.preview-band.is-compact .preview-card.compact-bar { display: flex; align-items: center; gap: 16px; padding: 8px 16px 8px 8px; }
+.preview-band.is-compact .preview-card .flow-stepper { flex: 1 1 auto; min-width: 0; padding: 0; margin: 0; border: 0; box-shadow: none; border-radius: 0; background: none; overflow: visible; }
+.preview-band.is-compact .flow-stepper ol { min-width: 0; width: 100%; align-items: center; }
+.preview-band.is-compact .flow-stepper .flow-step { flex: 1 1 auto; flex-direction: row; align-items: center; justify-content: flex-start; text-align: left; }
+.preview-band.is-compact .flow-stepper .flow-step + .flow-step::before { position: static; flex: 1 1 12px; min-width: 12px; width: auto; height: 2px; margin: 0 2px; }
+.preview-band.is-compact .flow-stepper .flow-step-btn { flex-direction: row; gap: 8px; padding: 0 4px; white-space: nowrap; }
+.preview-band.is-compact .flow-step-btn::before { width: 24px; height: 24px; border-width: 2px; }
+.preview-band.is-compact .flow-step.is-active .flow-step-btn::before { box-shadow: 0 0 0 2px var(--sd-blue-10); }
+.compact-bar-rail { position: relative; flex: none; }
+.compact-bar-rail .priority-float { position: absolute !important; top: calc(100% + 12px) !important; bottom: auto !important; right: 0 !important; left: auto !important; }
+.rail-toggle { white-space: nowrap; }
+@media (max-width: 960px) { .preview-band.is-compact .flow-step:not(.is-active) .flow-step-btn { font-size: 0; gap: 0; } }
+@media (max-width: 640px) { .compact-bar-rail .priority-float { position: fixed !important; top: 140px !important; left: 16px !important; right: 16px !important; width: auto; } }
+body:has(.preview-band.is-compact) .preview-band.is-compact { margin-top: -16px; }
+body:has(.preview-band.is-compact) .page-title-banner.has-breadcrumb .page-title-inner { padding-bottom: 32px; }
+.preview-band.is-compact .preview-card.compact-bar { padding: 14px 16px 14px 12px; }
+/* Hero biru menutup setengah bagian atas stepper, seperti gaya Rapor */
+body:has(.preview-band.is-compact) .preview-band.is-compact { margin-top: -67px; }
+body:has(.preview-band.is-compact) .page-title-banner.has-breadcrumb .page-title-inner { padding-bottom: 60px; }
+
+/* Langkah 1: tab, pencarian, dan tabel berada dalam satu kartu */
+.step1-card { background: var(--sd-white); border: 1px solid var(--sd-modal-footer-border); border-radius: var(--sd-radius-md); box-shadow: var(--sd-elevation-01); }
+.step1-card .step1-controls { margin: 0; padding: 12px 16px 0; align-items: flex-end; }
+.step1-card .step1-controls .step1-search { padding-bottom: 12px; }
+.step1-card .step1-result-note { margin: 0; padding: 12px 16px; border-bottom: 1px solid var(--sd-modal-footer-border); }
+.page-flow:has(.menetapkan-table-layout) .step1-card .menetapkan-table-scroll { box-shadow: none; border-radius: 0 0 var(--sd-radius-md) var(--sd-radius-md); background: none; }
+@media (max-width: 960px) { .step1-card .step1-controls { padding: 12px 16px 0; } .step1-card .step1-controls .step1-search { padding-bottom: 12px; } }
+.step1-controls .step1-search { margin-left: auto; }
+
+/* Pencarian Langkah 1: ikon di kiri, tinggi ringkas, rata tengah dengan tab */
+.step1-card .step1-controls { align-items: center; padding: 0 16px; }
+.step1-card .step1-controls .step1-search { position: relative; width: 260px; padding: 0; margin-left: auto; }
+.step1-card .step1-controls .sd-tabs { align-self: stretch; }
+.step1-search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); z-index: 1; display: inline-flex; color: var(--sd-gray-60); pointer-events: none; }
+.step1-search-icon .sd-icon { width: 20px; height: 20px; }
+.step1-search .sd-field .sd-input { height: 36px; padding: 6px 12px 6px 40px; }
+@media (max-width: 960px) { .step1-card .step1-controls { padding: 0 16px 12px; } .step1-card .step1-controls .step1-search { width: 100%; } }
+.step1-card .step1-controls .sd-tab { min-height: 60px; }
+.step1-search .sd-field .sd-input { height: 40px; }
+.step1-card .step1-controls .step1-search { width: 280px; }
+.menetapkan-indicator-table.step1-table tbody td:nth-child(4) { text-align: left !important; }
+.step1-card .step1-controls .sd-tabs { overflow-y: hidden; }
+.step1-card .step1-controls .sd-tab { min-height: 59px; }
+.step1-card .step1-controls .sd-tab { min-height: 58px; }
+.step1-card .step1-controls .sd-tabs { overflow: visible; }
+@media (max-width: 960px) { .step1-card .step1-controls .sd-tabs { overflow-x: auto; overflow-y: hidden; } }
+
+/* Footer: kiri Kembali, tengah informasi pilihan, kanan Lanjut */
+.flow-footer { display: grid !important; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+.flow-footer .flow-footer-left { justify-self: start; }
+.flow-footer .flow-footer-right { justify-self: end; }
+.flow-footer .flow-footer-note { align-items: center; text-align: center; }
+.flow-footer .flow-footer-note .flow-hint { order: -1; display: inline-flex; align-items: center; gap: 6px; font-size: var(--sd-text-body-size); line-height: var(--sd-text-body-line); font-weight: 600; }
+.priority-float .priority-panel-head .rail-close { margin-left: auto; }
+@media (max-width: 760px) { .flow-footer { grid-template-columns: 1fr auto; } .flow-footer .flow-footer-note { grid-column: 1 / -1; grid-row: 1; } }
+.flow-footer .flow-footer-right { display: flex; align-items: center; gap: 16px; }
+.flow-footer .flow-footer-right .sd-status { white-space: nowrap; }
+.compact-bar-rail { align-self: stretch; display: flex; align-items: center; padding-left: 16px; border-left: 1px solid var(--sd-modal-footer-border); }
+
+/* Ikon (i) rata tengah dengan baris judul indikator */
+.step1-table .table-indicator-title h3 .name-end { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; vertical-align: top; }
+.step1-table .table-indicator-title h3 .indicator-description-tooltip { vertical-align: middle; width: 24px; height: 24px; min-height: 0; margin: -2px 0; padding: 0; }
+.step1-table .table-indicator-title h3 .indicator-description-tooltip .sd-icon { width: 18px; height: 18px; }
+.roots-table .table-indicator-title h3 .name-end { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; vertical-align: top; }
+.roots-table .table-indicator-title h3 .indicator-description-tooltip { vertical-align: middle; width: 24px; height: 24px; min-height: 0; margin: -2px 0; padding: 0; }
+.roots-table .table-indicator-title h3 .indicator-description-tooltip .sd-icon { width: 18px; height: 18px; }
+html .flow-hint.is-ok .sd-icon, .flow-footer .flow-hint.is-ok .sd-icon { color: var(--sd-green-60); }
+.plan-card-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.plan-card-for { color: var(--sd-text-subdued); font-size: var(--sd-text-bodysmall-size); line-height: var(--sd-text-bodysmall-line); }
