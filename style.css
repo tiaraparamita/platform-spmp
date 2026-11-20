@@ -11418,3 +11418,14 @@ html .flow-hint.is-ok .sd-icon, .flow-footer .flow-hint.is-ok .sd-icon { color: 
 @media (max-width: 960px) { .step1-card .step1-controls .step1-source { width: 100%; margin-left: 0; } }
 .step1-source .sd-select select { padding-top: 0; padding-bottom: 0; padding-left: 12px; padding-right: 36px; line-height: 38px; font-size: var(--sd-text-body-size); text-overflow: ellipsis; }
 .step1-source .sd-select .sd-icon { right: 10px; }
+
+/* Sumber data sebagai chip (pilihan tunggal) */
+.step1-filters { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--sd-modal-footer-border); }
+.step1-filters-label { margin-right: 4px; color: var(--sd-text-subdued); font-size: var(--sd-text-bodysmall-size); line-height: var(--sd-text-bodysmall-line); }
+.step1-chip { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 14px; border: 1px solid var(--sd-gray-30); border-radius: var(--sd-radius-pill, 999px); background: var(--sd-white); color: var(--sd-gray-90); font: inherit; font-size: var(--sd-text-bodysmall-size); font-weight: 500; cursor: pointer; }
+.step1-chip:hover { background: var(--sd-gray-5, #f2f2f2); }
+.step1-chip:focus-visible { outline: 2px solid var(--sd-interactive-focused); outline-offset: 2px; }
+.step1-chip[aria-pressed="true"] { border-color: var(--sd-blue-70); background: var(--sd-blue-10, #e5efff); color: var(--sd-blue-90, #0a3f9e); font-weight: 600; }
+.step1-chip-count { color: var(--sd-text-subdued); font-weight: 400; }
+.step1-chip[aria-pressed="true"] .step1-chip-count { color: inherit; }
+.step1-card .step1-result-note { border-top: 0; }
