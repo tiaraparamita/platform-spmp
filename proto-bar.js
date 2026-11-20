@@ -20,7 +20,7 @@
   var GROUPS = [
     ['Platform SPMP', [['rapor', 'Di luar rapor'], ['awal', 'Di dalam rapor']], true],
     ['Siklus 6M', [1, 2, 3, 4, 5, 6].map(function (n) { return ['step-' + n, 'Step ' + n]; }), true],
-    [null, [['reset', 'Reset seluruh data']], true]
+    ['Atur ulang', [['reset', 'Reset seluruh data']], true]
   ];
 
   function esc(s) {
