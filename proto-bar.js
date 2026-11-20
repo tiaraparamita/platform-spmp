@@ -20,7 +20,7 @@
   var GROUPS = [
     [null, [['rapor', 'Di luar rapor'], ['awal', 'Di dalam rapor']]],
     ['Siklus 6M', [1, 2, 3, 4, 5, 6].map(function (n) { return ['step-' + n, 'Step ' + n]; }), true],
-    ['Atur ulang', [['reset', 'Reset seluruh data']]]
+    [null, [['reset', 'Reset seluruh data']], true]
   ];
 
   function esc(s) {
