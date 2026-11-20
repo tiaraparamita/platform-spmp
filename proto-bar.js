@@ -1,26 +1,25 @@
 /* Kontrol Prototipe bersama.
- * Dipakai oleh semua versi (Rapor, Opsi Awal, Opsi 19 Nov, Opsi 20 Nov) supaya pilihan yang sama
+ * Dipakai oleh semua versi (Rapor, Opsi Awal, Opsi 20 Nov) supaya pilihan yang sama
  * tampil di mana pun, dan pengguna bisa berpindah versi untuk membandingkan.
  * Bar dipasang di luar #app, jadi tidak ikut terhapus saat halaman dirender ulang. */
 (function () {
   'use strict';
 
   var path = location.pathname;
-  var m = /\/versi\/(awal|19-nov)\//.exec(path);
+  var m = /\/versi\/(awal)\//.exec(path);
   var VER = m ? m[1] : /spmp\.html$/.test(path) ? '20-nov' : 'rapor';
   var ROOT = m ? '../../' : '';
 
   var PAGES = {
     rapor: ROOT + 'index.html',
     awal: ROOT + 'versi/awal/index.html',
-    '19-nov': ROOT + 'versi/19-nov/spmp.html',
     '20-nov': ROOT + 'spmp.html'
   };
-  var VER_LABEL = { rapor: 'Rapor', awal: 'Opsi Awal', '19-nov': 'Opsi 19 Nov', '20-nov': 'Opsi 20 Nov' };
+  var VER_LABEL = { rapor: 'Rapor', awal: 'Opsi Awal', '20-nov': 'Opsi 20 Nov' };
 
   var GROUPS = [
     ['Rapor', [['rapor', 'Halaman Rapor']]],
-    ['Platform SPMP', [['awal', 'Opsi Awal'], ['19-nov', 'Opsi 19 Nov'], ['20-nov', 'Opsi 20 Nov']]],
+    ['Platform SPMP', [['awal', 'Opsi Awal'], ['20-nov', 'Opsi 20 Nov']]],
     ['Siklus 6M', [1, 2, 3, 4, 5, 6].map(function (n) { return ['step-' + n, 'Step ' + n]; })],
     ['Atur ulang', [['reset', 'Reset seluruh data']]]
   ];
