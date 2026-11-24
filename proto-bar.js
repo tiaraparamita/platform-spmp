@@ -19,7 +19,7 @@
 
   var GROUPS = [
     ['Platform SPMP', [['rapor', 'Di luar rapor'], ['awal', 'Di dalam rapor']], true],
-    ['Siklus 6M', [1, 2, 3, 4, 5, 6].map(function (n) { return ['step-' + n, 'Step ' + n]; }), true],
+    ['Siklus 6M', [['step-1', 'Step 1'], ['step-2', 'Step 2'], ['step-3', 'Step 3'], ['tinjau', 'Tinjau rencana'], ['tersimpan', 'Beranda: rencana tersimpan'], ['step-4', 'Step 4'], ['step-5', 'Step 5'], ['step-6', 'Step 6']], true],
     ['Atur ulang', [['reset', 'Reset seluruh data']], true]
   ];
 
@@ -29,6 +29,8 @@
 
   function currentValue() {
     try {
+      if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'review') return 'tinjau';
+      if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'home' && typeof data !== 'undefined' && data.status === 'Sudah ada rencana' && !data.evaluationOpen) return 'tersimpan';
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'flow' && typeof stage === 'number') return 'step-' + (stage + 1);
     } catch (e) { /* variabel belum ada */ }
     return VER === '20-nov' ? 'rapor' : VER; /* Rapor dan Opsi 20 Nov satu pilihan */
@@ -103,6 +105,26 @@
     location.assign(PAGES[target] + '?step=' + n);
   }
 
+  function goReview() {
+    var target = VER === 'rapor' ? '20-nov' : VER;
+    if (target === VER && typeof window.demoReview === 'function') {
+      window.demoReview();
+      sync();
+      return;
+    }
+    location.assign(PAGES[target] + '?tinjau=1');
+  }
+
+  function goSaved() {
+    var target = VER === 'rapor' ? '20-nov' : VER;
+    if (target === VER && typeof window.demoSavedPlan === 'function') {
+      window.demoSavedPlan();
+      sync();
+      return;
+    }
+    location.assign(PAGES[target] + '?tersimpan=1');
+  }
+
   function askReset() {
     bar.innerHTML =
       '<div class="spmp-ctl-inner" role="alertdialog" aria-label="Konfirmasi reset"><b>Reset seluruh data?</b>' +
@@ -130,6 +152,8 @@
   function onChange() {
     var v = select.value;
     if (v === 'reset') { askReset(); return; }
+    if (v === 'tinjau') { goReview(); return; }
+    if (v === 'tersimpan') { goSaved(); return; }
     if (v.indexOf('step-') === 0) { goStep(Number(v.slice(5))); return; }
     var file = PAGES[v] ? PAGES[v].split('/').pop() : '';
     if (v === VER && v !== 'rapor' && path.split('/').pop() === file) { sync(); return; }
