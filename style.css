@@ -11266,7 +11266,7 @@ body:has(.flow-footer) .priority-panel { max-height: calc(100vh - 128px); }
 .flow-stepper .flow-step-caption { text-wrap: balance; }
 .step1-table .table-measure { margin: 0; }
 .step1-table .table-meta { column-gap: 12px; }
-.step1-table .table-meta .meta-dot { display: none; }
+.step1-table .table-meta .meta-dot { display: inline; margin: 0 6px; color: var(--sd-text-subdued); }
 .preview-card-head[hidden]{display:none}
 .menetapkan-indicator-table.step1-table thead th:nth-child(4) { width: 148px !important; padding-right: 20px; }
 .menetapkan-indicator-table.step1-table tbody td:nth-child(4) { padding-right: 20px; text-align: right; }
@@ -11618,3 +11618,32 @@ table.sd-table.review-doc-table td{vertical-align:top;padding-top:14px;padding-b
 .page-flow:has(.work-act) .plan-card-head .plan-card-num{background:var(--sd-blue-70);color:var(--sd-white,#fff)}
 .page-flow .work-root-head .plan-card-num{background:var(--sd-gray-90);color:var(--sd-white,#fff)}
 .page-flow .work-act-head .plan-card-num{background:var(--sd-badge-neutral);color:var(--sd-gray-90)}
+
+/* Step 1: baris Dimensi sejajar dengan baris Sumber data */
+.step1-filters-label{min-width:96px}
+.step1-filters.step1-dims{border-bottom:0;padding-bottom:0}
+#step1-filterbar:empty{display:none}
+
+/* Panel Prioritas Anda: menempel di bawah stepper, bukan melayang */
+.priority-panel.priority-inline{position:static}
+.priority-panel.priority-inline[hidden]{display:none}
+.priority-inline .priority-panel-head{justify-content:flex-start;gap:4px 12px;flex-wrap:wrap;margin-bottom:12px}
+.priority-inline .priority-panel-head h2{font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line)}
+.step1-selected-count{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-subdued)}
+.step1-selected-note{margin:0;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-text-default)}
+
+/* Prioritas Anda: kartu ringkasan, bisa diklik ke kolom target */
+.priority-inline .priority-slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;align-items:start}
+.slot-go{flex:1;min-width:0;display:flex;align-items:flex-start;gap:10px;padding:0;border:0;background:none;font:inherit;text-align:left;color:inherit;cursor:pointer;border-radius:var(--sd-radius-sm,6px)}
+.slot-go:hover .slot-title b{text-decoration:underline}
+.slot-go:focus-visible{outline:2px solid var(--sd-interactive-focused);outline-offset:2px}
+.priority-inline .priority-slot .slot-head{margin-bottom:0}
+.priority-inline .priority-slot:has(.rail-tree) .slot-head{margin-bottom:12px}
+tr[id^="target-row-"]{scroll-margin-top:160px}
+.preview-band .priority-panel.priority-inline{margin:8px 0 0;max-height:calc(100vh - 220px);overflow:auto;scroll-margin-top:0}
+
+.priority-inline .priority-panel-head{align-items:center;flex-wrap:nowrap}
+.priority-inline .priority-panel-head .rail-detail-btn{margin-left:auto;flex:none}
+.priority-inline .priority-panel{padding-bottom:16px}
+.priority-panel.priority-inline{padding:16px 20px}
+.priority-inline .priority-panel-head{margin-bottom:12px}
