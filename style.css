@@ -11725,3 +11725,33 @@ tr[id^="target-row-"]{scroll-margin-top:160px}
 
 /* Step 3: nomor indikator biru dan nomor akar masalah abu gelap, sama seperti step 4 */
 .page-flow .work-nest > .plan-card-head .plan-card-num{background:var(--sd-blue-70);color:var(--sd-white,#fff)}
+
+/* Selama buka/tutup indikator berjalan, halaman tidak merespons hover agar tidak berkedip saat konten bergeser di bawah kursor */
+body.act-animating .page-flow{pointer-events:none}
+
+/* Selama animasi accordion, header tabel ikut bergeser bersama isi (tidak sticky) agar tidak berkedip dan tidak telat muncul */
+body.act-animating .work-nest-sticky .sd-table thead th{position:relative;top:0}
+
+/* Penomoran hierarki berupa teks, bukan bulatan berwarna. Bulatan hanya untuk stepper. Tingkat dibedakan lewat bobot dan ukuran huruf. */
+.page-flow .plan-card-num,.page-flow .work-nest > .plan-card-head .plan-card-num,.page-flow .work-nest-sticky > .plan-card-head.work-act-toggle .plan-card-num,.page-flow:has(.work-act) .plan-card-head .plan-card-num{background:none;border-radius:0;color:var(--sd-gray-90);font-size:var(--sd-text-body-size,16px);font-weight:700;font-variant-numeric:tabular-nums}
+.page-flow .work-root-head .plan-card-num{background:none;color:var(--sd-gray-90);font-size:var(--sd-text-bodysmall-size);font-weight:600}
+.page-flow .work-act-head .plan-card-num{background:none;color:var(--sd-gray-60);font-size:var(--sd-text-bodysmall-size);font-weight:500}
+.page-flow .plan-card-num{min-width:0;width:auto;padding:0;height:auto}
+.page-flow .work-root-head .plan-card-num{min-width:44px;justify-content:flex-start}
+.page-flow:has(.work-root-head) .work-act-head .plan-card-num{min-width:56px;justify-content:flex-start}
+.page-flow .plan-card-title .plan-card-num{min-width:28px;justify-content:flex-start}
+.slot-num,.is-filled .slot-num{background:none;border-radius:0;width:auto;min-width:16px;height:auto;color:var(--sd-gray-90);font-weight:700}
+.plan-detail-dialog h3 .pd-num{background:none;border-radius:0;width:auto;min-width:16px;height:auto;justify-content:flex-start}
+
+/* Pohon bernomor teks: jarak nomor ke judul rapat (8px), garis siku berhenti 8px sebelum nomor, dan lekukan mengikuti lebar teks nomor */
+.plan-card:has(.work-root-head),.work-nest{--work-ind-text:40px;--work-root-num:24px;--work-act-num:32px;--work-root-text:calc(var(--work-ind-text) + var(--work-root-num) + 8px);--work-x1:21px;--work-x2:calc(var(--work-ind-text) + 5px)}
+@media(max-width:640px){.plan-card:has(.work-root-head),.work-nest{--work-ind-text:36px}}
+.page-flow .plan-card-title:has(> .plan-card-num){gap:8px}
+.page-flow .plan-card-title > .plan-card-num{min-width:16px}
+.page-flow .work-root-head{gap:8px}
+.page-flow .work-root-head .plan-card-num{min-width:var(--work-root-num)}
+.page-flow:has(.work-root-head) .work-act-head{gap:8px}
+.page-flow:has(.work-root-head) .work-act-head .plan-card-num{min-width:var(--work-act-num)}
+.plan-card:has(.work-root-head) .work-act .work-form{padding-left:calc(var(--work-root-text) + var(--work-act-num) + 8px)}
+.work-root-head::after{width:calc(var(--work-ind-text) - var(--work-x1) - 8px)}
+.plan-card:has(.work-root-head) .work-act-head::before{width:calc(var(--work-root-text) - var(--work-x2) - 8px)}
