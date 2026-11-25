@@ -11574,3 +11574,47 @@ table.sd-table.review-doc-table td{vertical-align:top;padding-top:14px;padding-b
 .saved-docs-card .saved-docs-tabs{padding:0 16px;border-bottom:1px solid var(--sd-modal-footer-border)}
 .saved-docs-panel{display:flex;flex-direction:column;gap:16px;padding:20px 24px 24px}
 .saved-docs-panel .review-doc-head h3{margin:0;font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line);font-weight:600;color:var(--sd-gray-90)}
+
+/* Step 4-6: nomor child sejajar dengan teks parent (indikator, akar masalah, kegiatan) */
+.plan-card:has(.work-root-head){--work-ind-text:56px;--work-root-text:calc(var(--work-ind-text) + 44px + 12px)}
+.work-root-head{display:flex;align-items:center;gap:12px;padding:12px 20px 12px var(--work-ind-text,56px);background:var(--sd-gray-0);border-bottom:1px solid var(--sd-modal-footer-border)}
+.work-root-head h4{margin:0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600;color:var(--sd-gray-90)}
+.work-root-head .plan-card-num{flex:none;min-width:44px;justify-content:center}
+.work-act + .work-root-head{border-top:1px solid var(--sd-modal-footer-border)}
+.plan-card:has(.work-root-head) .work-act-head{padding-left:var(--work-root-text)}
+.plan-card:has(.work-root-head) .work-act-head .plan-card-num{min-width:56px;justify-content:center}
+.plan-card:has(.work-root-head) .work-act .work-form{padding-left:calc(var(--work-root-text) + 56px + 12px)}
+@media(max-width:640px){.plan-card:has(.work-root-head){--work-ind-text:44px;--work-root-text:calc(var(--work-ind-text) + 44px + 12px)}.work-root-head{padding-right:16px}}
+
+/* Step 4-6: garis siku dari parent ke child (indikator > akar masalah > kegiatan) */
+.plan-card:has(.work-root-head){--work-line:var(--sd-gray-20,#dcdfe2);--work-x1:30px;--work-x2:calc(var(--work-ind-text) + 22px)}
+.plan-card:has(.work-root-head) .work-root-head,.plan-card:has(.work-root-head) .work-act,.plan-card:has(.work-root-head) .work-act-head{position:relative}
+/* Level 1: dari badge indikator ke akar masalah */
+.work-root-head::before{content:'';position:absolute;left:var(--work-x1);top:0;bottom:50%;width:.75px;background:var(--work-line)}
+.work-root-head:has(~ .work-root-head)::before{bottom:0}
+.work-root-head::after{content:'';position:absolute;left:var(--work-x1);top:50%;width:calc(var(--work-ind-text) - var(--work-x1));height:.75px;background:var(--work-line)}
+.plan-card:has(.work-root-head) .work-act:has(~ .work-root-head)::before{content:'';position:absolute;left:var(--work-x1);top:0;bottom:0;width:.75px;background:var(--work-line)}
+/* Level 2: dari badge akar masalah ke kegiatan */
+.plan-card:has(.work-root-head) .work-act::after{content:'';position:absolute;left:var(--work-x2);top:0;bottom:0;width:.75px;background:var(--work-line);z-index:0}
+.plan-card:has(.work-root-head) .work-act:is(:last-child,:has(+ .work-root-head))::after{display:none}
+.plan-card:has(.work-root-head) .work-act:is(:last-child,:has(+ .work-root-head)) > .work-act-head::after{content:'';position:absolute;left:var(--work-x2);top:0;bottom:50%;width:.75px;background:var(--work-line)}
+.plan-card:has(.work-root-head) .work-act-head::before{content:'';position:absolute;left:var(--work-x2);top:50%;width:calc(var(--work-root-text) - var(--work-x2));height:.75px;background:var(--work-line)}
+@media(max-width:640px){.plan-card:has(.work-root-head){--work-x1:30px}}
+
+/* Ruang napas di bawah isi kegiatan yang terbuka */
+.plan-card:has(.work-root-head) .work-act .work-form{padding-bottom:28px}
+
+/* Kolom kiri dan kanan isi kegiatan sama lebar */
+@media(min-width:761px){.work-form.work-form-2col{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+
+/* Step 5 dan 6: baris capaian awal sejajar dengan teks judul indikator */
+.plan-card .work-indicator-summary{padding-left:var(--work-ind-text,56px)}
+
+/* Garis dari nomor indikator turun ke akar masalah, termasuk melewati baris capaian (Step 5 dan 6) */
+.plan-card:has(.work-root-head) .work-indicator-summary{position:relative}
+.plan-card:has(.work-root-head) .work-indicator-summary::before{content:'';position:absolute;left:var(--work-x1);top:0;bottom:0;width:.75px;background:var(--work-line)}
+
+/* Step 4-6: nomor dibedakan per tingkat dengan gradasi abu-abu, gelap (indikator) ke pudar (kegiatan) */
+.page-flow:has(.work-act) .plan-card-head .plan-card-num{background:var(--sd-blue-70);color:var(--sd-white,#fff)}
+.page-flow .work-root-head .plan-card-num{background:var(--sd-gray-90);color:var(--sd-white,#fff)}
+.page-flow .work-act-head .plan-card-num{background:var(--sd-badge-neutral);color:var(--sd-gray-90)}
