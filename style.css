@@ -10736,16 +10736,18 @@ table.sd-table.preview-table.preview-s5 th:nth-child(6){width:auto}
 @media(max-width:760px){.work-indicator-summary dl{grid-template-columns:1fr 1fr}}
 
 /* Langkah 5: formulir evaluasi tertutup secara default, dibuka lewat tombol per kegiatan */
-.work-act-head .work-act-toggle{margin-left:auto;flex:none}
+.work-act-head .work-act-status{margin-left:auto;flex:none}
+.work-act-head .work-act-chev{flex:none;display:inline-flex;color:var(--sd-gray-60)}
+.work-act-head.work-act-toggle{cursor:pointer;transition:background-color .15s}
+.work-act-head.work-act-toggle:hover{background:var(--sd-gray-0)}
+.work-act-head.work-act-toggle:focus-visible{outline:2px solid var(--sd-blue-70);outline-offset:-2px}
 .work-act-head h4{flex:0 1 auto}
 .work-act-head .sd-badge{flex:none}
-.work-act-toggle[aria-expanded="true"] .sd-icon{transform:rotate(180deg)}
+.work-act-toggle[aria-expanded="true"] .work-act-chev .sd-icon{transform:rotate(180deg)}
 .work-act:has(> [hidden]) .work-act-head{border-bottom:0}
 .work-act [hidden]{display:none}
 
 /* Tombol per kegiatan berubah jadi konfirmasi selesai setelah diisi */
-.work-act-toggle.is-done{border-color:var(--sd-green-60);color:var(--sd-green-60)}
-.work-act-toggle.is-done::before{content:'✓';margin-right:6px;font-weight:600}
 
 /* Pratinjau: tahun ajaran di bawah judul Rencana Kerja Tahunan */
 .preview-accordion .preview-acc-year{display:block;margin-top:2px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:400;color:var(--sd-text-subdued)}
@@ -11647,3 +11649,79 @@ tr[id^="target-row-"]{scroll-margin-top:160px}
 .priority-inline .priority-panel{padding-bottom:16px}
 .priority-panel.priority-inline{padding:16px 20px}
 .priority-inline .priority-panel-head{margin-bottom:12px}
+
+/* Step 2 dan 3: indikator (step 2) dan akar masalah (step 3) bisa dilipat, isinya tabel pilih */
+.work-act-chev{flex:none;display:inline-flex;color:var(--sd-gray-60)}
+.plan-card-head.work-act-toggle{display:flex;align-items:center;gap:12px;cursor:pointer;transition:background-color .15s}
+.plan-card-head.work-act-toggle .plan-card-title{flex:1;min-width:0}
+.plan-card-head.work-act-toggle:hover,.work-root-head.work-act-toggle:hover{background:var(--sd-gray-10,#eef0f1)}
+.plan-card-head.work-act-toggle:focus-visible,.work-root-head.work-act-toggle:focus-visible{outline:2px solid var(--sd-blue-70);outline-offset:-2px}
+.work-root-head.work-act-toggle{cursor:pointer;transition:background-color .15s}
+.work-root-head.work-act-toggle h4{flex:1;min-width:0}
+.work-root-head.work-act-toggle .sd-badge,.plan-card-head.work-act-toggle .sd-badge{flex:none}
+.work-nest{--work-ind-text:56px}
+.work-ind-body{padding-left:0}
+.work-root-body{position:relative;padding-left:var(--work-root-text,var(--work-ind-text,56px))}
+@media(max-width:640px){.work-nest{--work-ind-text:44px}}
+.work-root-body:has(~ .work-root-head)::before{content:'';position:absolute;left:var(--work-x1);top:0;bottom:0;width:.75px;background:var(--work-line)}
+.work-root-body[hidden]{display:none}
+.work-nest [hidden]{display:none}
+
+/* Step 2 dan 3: header tabel tetap abu bawaan Seragam */
+.work-nest .sd-table th{background:var(--sd-badge-neutral)}
+
+/* Step 2: header indikator dan header tabel menempel di bawah stepper saat menggulir */
+.work-nest-sticky{overflow:visible}
+.work-nest-sticky .sd-table-wrap{overflow:visible}
+.work-nest-sticky .menetapkan-indicator-table{min-width:0}
+.work-nest-sticky > .plan-card-head{position:sticky;top:var(--band-bottom,124px);z-index:5;background:var(--sd-white);border-radius:var(--sd-radius-md) var(--sd-radius-md) 0 0}
+.work-nest-sticky .sd-table thead th{position:sticky;top:calc(var(--band-bottom,124px) + var(--nest-head-h,64px) - 1px);z-index:4}
+
+/* Step 2: baris header tabel menempel selebar kartu, tanpa celah. Indentasi lewat padding sel, bukan padding wadah */
+.work-nest-sticky .sd-table{border-collapse:separate;border-spacing:0}
+.work-nest-sticky .sd-table thead th{top:calc(var(--band-bottom,124px) + var(--nest-head-h,64px));box-shadow:0 -1px 0 var(--sd-badge-neutral)}
+.work-nest-sticky .sd-table th:first-child,.work-nest-sticky .sd-table td:first-child:not(.sd-full){padding-left:calc(var(--work-ind-text) + 16px)}
+.work-nest-sticky .sd-table td.sd-full{padding-left:var(--work-ind-text)}
+.work-nest-sticky > .plan-card-head{margin-bottom:0;border-bottom:1px solid var(--sd-modal-footer-border)}
+
+/* Step 2: kolom Pilih tetap lebar tetap, indentasi hanya menggeser checkbox */
+.work-nest-sticky .sd-table{table-layout:fixed;width:100%}
+.work-nest-sticky .sd-table thead th:nth-child(1){width:calc(var(--work-ind-text) + 16px + 56px) !important}
+.work-nest-sticky .sd-table thead th:nth-child(2){width:auto !important}
+.work-nest-sticky .sd-table thead th:nth-child(3){width:250px !important}
+.work-nest-sticky .sd-table th:first-child,.work-nest-sticky .sd-table td:first-child:not(.sd-full){padding-left:calc(var(--work-ind-text) + 16px);padding-right:0}
+.work-nest-sticky > .plan-card-head{box-sizing:border-box}
+
+/* Hover baris yang bisa dilipat (bukan tabel): latar biru sangat muda, teks dan chevron biru */
+.work-act-head.work-act-toggle:hover,.plan-card-head.work-act-toggle:hover,.work-root-head.work-act-toggle:hover{background:var(--sd-blue-0)}
+.work-act-head.work-act-toggle:hover :is(h3,h4),.plan-card-head.work-act-toggle:hover :is(h3,h4),.work-root-head.work-act-toggle:hover :is(h3,h4),.work-act-toggle:hover .work-act-chev{color:var(--sd-blue-70)}
+
+/* Step 2: nomor indikator selalu biru */
+.work-nest-sticky > .plan-card-head.work-act-toggle .plan-card-num{background:var(--sd-blue-70);color:var(--sd-white,#fff)}
+
+/* Step 2: kolom Pilih selebar 72px di kanan indentasi, checkbox dan teks "Pilih" sama-sama di tengahnya */
+.work-nest-sticky .sd-table thead th:nth-child(1){width:calc(var(--work-ind-text) + 72px) !important}
+.work-nest-sticky .sd-table th:first-child,.work-nest-sticky .sd-table td:first-child:not(.sd-full){padding-left:var(--work-ind-text);padding-right:0;text-align:center}
+.work-nest-sticky .sd-table td:first-child:not(.sd-full) .sd-check{justify-content:center;vertical-align:middle}
+
+/* Tanpa cincin fokus pada target fokus program (judul kartu dan akar masalah); cincin keyboard tetap di baris yang bisa dilipat */
+.work-nest .plan-card-title:focus,.work-nest .work-root-head h4:focus,.work-nest .plan-card-head:focus:not(:focus-visible){outline:0}
+
+/* Step 2: samakan zona tengah kolom Pilih untuk header dan isi (menimpa aturan umum yang memusatkan checkbox di seluruh kolom) */
+.work-nest-sticky table.sd-table.menetapkan-indicator-table td:first-child:not(.sd-full),.work-nest-sticky table.sd-table.menetapkan-indicator-table thead th:first-child{padding-left:var(--work-ind-text);padding-right:0;text-align:center}
+.work-nest-sticky table.sd-table.menetapkan-indicator-table td:first-child:not(.sd-full) .sd-check{display:flex;justify-content:center;margin:0}
+
+/* Prioritas Anda: tombol X per akar masalah (langkah 2) dan per kegiatan (langkah 3) */
+.rail-row{display:flex;align-items:flex-start;gap:4px}
+.rail-row .rail-link{flex:1;min-width:0}
+.rail-row .rail-remove{width:24px;height:24px;margin-top:-2px}
+.rail-row .rail-remove .sd-icon{width:16px;height:16px}
+
+/* Prioritas Anda: penanda indikator (dan akar masalah di langkah 3) yang sedang terbuka di konten */
+.priority-slot.is-filled:has(.rail-tree){background:var(--sd-blue-0);border-color:transparent}
+.priority-slot.is-filled.is-open:has(.rail-tree){border-color:var(--sd-blue-30)}
+.rail-tree li.is-open > .rail-row .rail-link{color:var(--sd-blue-70);font-weight:600}
+.rail-tree li.is-open > .rail-row .rail-num{color:var(--sd-blue-70)}
+
+/* Step 3: nomor indikator biru dan nomor akar masalah abu gelap, sama seperti step 4 */
+.page-flow .work-nest > .plan-card-head .plan-card-num{background:var(--sd-blue-70);color:var(--sd-white,#fff)}
