@@ -11755,3 +11755,44 @@ body.act-animating .work-nest-sticky .sd-table thead th{position:relative;top:0}
 .plan-card:has(.work-root-head) .work-act .work-form{padding-left:calc(var(--work-root-text) + var(--work-act-num) + 8px)}
 .work-root-head::after{width:calc(var(--work-ind-text) - var(--work-x1) - 8px)}
 .plan-card:has(.work-root-head) .work-act-head::before{width:calc(var(--work-root-text) - var(--work-x2) - 8px)}
+
+/* Step 3: header indikator dan header tabel kegiatan menempel di bawah stepper, sama seperti step 2 */
+.work-nest-plan{overflow:visible}
+.work-nest-plan .sd-table-wrap{overflow:visible}
+.work-nest-plan > .plan-card-head{position:sticky;top:var(--band-bottom,124px);z-index:5;background:var(--sd-white);border-radius:var(--sd-radius-md) var(--sd-radius-md) 0 0;box-sizing:border-box}
+.work-nest-plan .sd-table{border-collapse:separate;border-spacing:0}
+.work-nest-plan .sd-table thead th{position:sticky;top:calc(var(--band-bottom,124px) + var(--nest-head-h,64px));z-index:4;box-shadow:0 -1px 0 var(--sd-badge-neutral)}
+/* Step 3: header tabel selebar kartu, indentasi lewat padding sel (seperti step 2) */
+.work-nest-plan .work-root-body{padding-left:0}
+.work-nest-plan .sd-table th:first-child,.work-nest-plan .sd-table td:first-child:not(.sd-full){padding-left:calc(var(--work-root-text,var(--work-ind-text,56px)) + 16px)}
+.work-nest-plan .sd-table td.sd-full{padding-left:var(--work-root-text,var(--work-ind-text,56px))}
+.work-nest-plan .sd-table thead th:nth-child(1){width:calc(var(--work-root-text,var(--work-ind-text,56px)) + 16px + 56px) !important}
+.work-nest-plan .sd-table th:first-child,.work-nest-plan .sd-table td:first-child:not(.sd-full){padding-right:0}
+/* Step 3: judul akar masalah ikut menempel; garis penghubung mengikuti grup */
+.work-nest-plan .work-root-group{position:relative}
+.work-nest-plan .work-root-group > .work-root-head{position:sticky;top:calc(var(--band-bottom,124px) + var(--nest-head-h,53px));z-index:4;box-sizing:border-box}
+.work-nest-plan .sd-table thead th{top:calc(var(--band-bottom,124px) + var(--nest-head-h,53px) + var(--root-head-h,48px));z-index:3}
+.work-nest-plan .work-root-group:has(~ .work-root-group) > .work-root-head::before{bottom:0}
+.work-nest-plan .work-root-group:has(~ .work-root-group) > .work-root-body::before{content:'';position:absolute;left:var(--work-x1);top:0;bottom:0;width:.75px;background:var(--work-line)}
+/* Step 3: checkbox dan label PILIH rata tengah di area 56px setelah indentasi */
+.work-nest-plan .sd-table th:first-child,.work-nest-plan .sd-table td:first-child:not(.sd-full){padding-left:calc(var(--work-root-text,var(--work-ind-text,56px)) + 16px) !important;padding-right:0 !important;text-align:center}
+
+/* Tombol Detail Perencanaan: jumlah prioritas dalam bulatan agar terbaca sebagai bagian dari tombol yang bisa diklik */
+.rail-toggle .rail-count{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 6px;margin-left:8px;border-radius:999px;background:var(--sd-blue-70);color:var(--sd-white,#fff);font-size:12px;line-height:1;font-weight:600;box-sizing:border-box}
+/* Panel Prioritas Anda menyatu dengan stepper: tanpa jarak, sudut dan bayangan disatukan */
+.preview-band.is-compact:has(.priority-inline:not([hidden])) .preview-card.compact-bar{border-bottom-left-radius:0;border-bottom-right-radius:0;border-bottom-color:var(--sd-modal-footer-border);box-shadow:none}
+.preview-band.is-compact .priority-panel.priority-inline:not([hidden]){margin:0;border-top:0;border-top-left-radius:0;border-top-right-radius:0;box-shadow:0 8px 28px #20365d1a}
+/* Step 3: garis pohon akar masalah menerus melewati header tabel dan baris terpilih, warna lebih tegas */
+.work-nest-plan{--work-line:var(--sd-gray-40)}
+.work-nest-plan .sd-table thead th{z-index:2}
+.work-nest-plan .work-root-group:has(~ .work-root-group) > .work-root-body::before{content:none}
+.work-nest-plan .work-root-group:has(~ .work-root-group)::before{content:'';position:absolute;left:var(--work-x1);top:var(--root-head-h,49px);bottom:0;width:.75px;background:var(--work-line);z-index:3;pointer-events:none}
+/* Step 3: warna garis pohon tegas (mengalahkan deklarasi di .plan-card:has) dan siku horizontal sampai dekat nomor */
+.plan-card.work-nest-plan:has(.work-root-head){--work-line:var(--sd-gray-40)}
+.work-nest-plan .work-root-head::after{width:calc(var(--work-ind-text) - var(--work-x1) - 3px);height:1px}
+.work-nest-plan .work-root-head::before,.work-nest-plan .work-root-group:has(~ .work-root-group)::before{width:1px}
+/* Detail Perencanaan: kartu melayang menimpa konten di bawah stepper, tidak mendorong layout dan tidak mengubah posisi sticky */
+.preview-band.is-compact .priority-panel.priority-inline:not([hidden]){position:absolute;top:100%;left:0;right:0;z-index:50}
+/* Step 3: baris kegiatan terpilih menempel di bawah header tabel selama rincian (anggaran) di bawahnya digulir */
+.work-nest-plan .sd-table tbody tr.sd-row-selected:not(.menetapkan-expand-row){position:sticky;top:calc(var(--band-bottom,124px) + var(--nest-head-h,69px) + var(--root-head-h,65px) + var(--thead-h,48px));z-index:1}
+.work-nest-plan .sd-table tbody tr.sd-row-selected:not(.menetapkan-expand-row) > td{background:var(--sd-surface-selected-default);box-shadow:0 1px 0 var(--sd-modal-footer-border)}

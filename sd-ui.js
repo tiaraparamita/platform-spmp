@@ -80,6 +80,8 @@
       .map((c) => `<th scope="col"${c.align === 'right' ? ' class="sd-right"' : ''}>${c.eyebrow ? `<span class="sd-th-eyebrow">${e(c.eyebrow)}</span>` : ''}${c.srOnly ? `<span class="sd-sr-only">${e(c.label)}</span>` : e(c.label)}</th>`)
       .join('')}</tr></thead><tbody>${rows
       .map((r) => {
+        const open = !Array.isArray(r) && r.set ? '</tbody><tbody>' : '', close = !Array.isArray(r) && r.end ? '</tbody><tbody>' : '';
+        return open + ((r) => {
         if (!Array.isArray(r) && r.group !== undefined) return `<tr class="sd-group-row${r.groupClass ? ' ' + r.groupClass : ''}"${r.groupAttrs ? ' ' + r.groupAttrs : ''}><th scope="colgroup" colspan="${cols}">${r.group}</th></tr>`;
         if (!Array.isArray(r) && r.subhead) return `<tr class="sd-subhead-row">${columns
           .map((c) => `<th scope="col"${c.align === 'right' ? ' class="sd-right"' : ''}>${c.srOnly ? `<span class="sd-sr-only">${e(c.label)}</span>` : e(c.label)}</th>`)
@@ -88,6 +90,7 @@
         const cells = Array.isArray(r) ? r : r.cells;
         const attrs = Array.isArray(r) ? '' : `${r.selected ? ' class="sd-row-selected"' : ''}${r.attrs ? ' ' + r.attrs : ''}`;
         return `<tr${attrs}>${cells.map((cell, i) => (cell === null ? '' : `<td${(() => { const k = [columns[i]?.align === 'right' ? 'sd-right' : '', cell && typeof cell === 'object' && cell.className ? cell.className : ''].filter(Boolean).join(' '); return k ? ' class="' + k + '"' : ''; })()}${cell && typeof cell === 'object' && cell.rowspan ? ' rowspan="' + cell.rowspan + '"' : ''}>${cell && typeof cell === 'object' ? cell.html : cell}</td>`)).join('')}</tr>`;
+        })(r) + close;
       })
       .join('')}</tbody></table></div>`;
   }
