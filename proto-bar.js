@@ -19,7 +19,8 @@
 
   var GROUPS = [
     ['Platform SPMP', [['rapor', 'Di luar rapor'], ['awal', 'Di dalam rapor']], true],
-    ['Siklus 6M', [['step-1', 'Step 1'], ['step-2', 'Step 2'], ['step-3', 'Step 3'], ['tinjau', 'Tinjau rencana'], ['tersimpan', 'Beranda: rencana tersimpan'], ['step-4', 'Step 4'], ['step-5', 'Step 5'], ['step-6', 'Step 6']], true],
+    ['Siklus 6M', [['step-1', 'Step 1'], ['step-2', 'Step 2'], ['step-3', 'Step 3'], ['tinjau', 'Tinjau rencana'], ['tersimpan', 'Beranda: rencana tersimpan'], ['step-4', 'Step 4'], ['step-5', 'Step 5'], ['step-6', 'Step 6'], ['ringkasan', 'Ringkasan']], true],
+    ['Evaluasi diri', [['ed-mulai', 'Evaluasi diri: mulai'], ['ed-tinjau', 'Evaluasi diri: tinjau perbedaan'], ['ed-tersimpan', 'Evaluasi diri: hasil tersimpan']], true],
     ['Atur ulang', [['reset', 'Reset seluruh data']], true]
   ];
 
@@ -29,6 +30,13 @@
 
   function currentValue() {
     try {
+      if (typeof page !== 'undefined' && page === 'detail' && document.querySelector('.sum-page')) return 'ringkasan';
+      if (typeof page !== 'undefined' && page === 'self-evaluation' && typeof reflectionStep === 'number') {
+        if (reflectionYear && reflectionStep === 6) return 'ed-tinjau';
+        if (reflectionYear) return 'ed-mulai';
+        var done = typeof reflections !== 'undefined' && Object.keys(reflections).some(function (k) { return reflections[k] && reflections[k].completed; });
+        if (done) return 'ed-tersimpan';
+      }
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'review') return 'tinjau';
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'home' && typeof data !== 'undefined' && data.status === 'Sudah ada rencana' && !data.evaluationOpen) return 'tersimpan';
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'flow' && typeof stage === 'number') return 'step-' + (stage + 1);
@@ -125,6 +133,30 @@
     location.assign(PAGES[target] + '?tersimpan=1');
   }
 
+  function goSummary() {
+    if (VER === '20-nov' && typeof window.demoSummary === 'function') {
+      window.demoSummary();
+      sync();
+      return;
+    }
+    if (VER === 'rapor' && typeof window.demoSummary === 'function') {
+      window.demoSummary();
+      sync();
+      return;
+    }
+    location.assign(PAGES['20-nov'] + '?ringkasan=1');
+  }
+
+  function goReflection(mode) {
+    var target = VER === 'rapor' ? '20-nov' : VER;
+    if (target === VER && typeof window.demoReflection === 'function') {
+      window.demoReflection(mode);
+      sync();
+      return;
+    }
+    location.assign(PAGES[target] + '?evaluasidiri=' + mode);
+  }
+
   function askReset() {
     bar.innerHTML =
       '<div class="spmp-ctl-inner" role="alertdialog" aria-label="Konfirmasi reset"><b>Reset seluruh data?</b>' +
@@ -154,6 +186,8 @@
     if (v === 'reset') { askReset(); return; }
     if (v === 'tinjau') { goReview(); return; }
     if (v === 'tersimpan') { goSaved(); return; }
+    if (v === 'ringkasan') { goSummary(); return; }
+    if (v.indexOf('ed-') === 0) { goReflection({ 'ed-mulai': 'start', 'ed-tinjau': 'review', 'ed-tersimpan': 'saved' }[v]); return; }
     if (v.indexOf('step-') === 0) { goStep(Number(v.slice(5))); return; }
     var file = PAGES[v] ? PAGES[v].split('/').pop() : '';
     if (v === VER && v !== 'rapor' && path.split('/').pop() === file) { sync(); return; }

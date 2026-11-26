@@ -11796,3 +11796,79 @@ body.act-animating .work-nest-sticky .sd-table thead th{position:relative;top:0}
 /* Step 3: baris kegiatan terpilih menempel di bawah header tabel selama rincian (anggaran) di bawahnya digulir */
 .work-nest-plan .sd-table tbody tr.sd-row-selected:not(.menetapkan-expand-row){position:sticky;top:calc(var(--band-bottom,124px) + var(--nest-head-h,69px) + var(--root-head-h,65px) + var(--thead-h,48px));z-index:1}
 .work-nest-plan .sd-table tbody tr.sd-row-selected:not(.menetapkan-expand-row) > td{background:var(--sd-surface-selected-default);box-shadow:0 1px 0 var(--sd-modal-footer-border)}
+
+/* Step 1: indikator lain dari sekolah, wajib dikaitkan dengan satu SNP */
+.own-ind{margin:16px;padding:16px;border:1px dashed var(--sd-modal-footer-border);border-radius:var(--sd-radius-md);background:var(--sd-gray-0,#f7f7f7)}
+.own-ind-head h3{margin:0 0 2px;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600}
+.own-ind-head p{margin:0 0 12px;color:var(--sd-text-subdued);font-size:var(--sd-text-bodysmall-size)}
+.own-ind-fields{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) auto;gap:12px;align-items:end}
+.own-ind-hint{min-height:20px;margin:8px 0 0;font-size:var(--sd-text-bodysmall-size);color:var(--sd-text-subdued)}
+.own-ind-hint.is-error{color:var(--sd-red-70,#b3261e)}
+@media(max-width:860px){.own-ind-fields{grid-template-columns:1fr}.own-ind-action .sd-btn{width:100%}}
+/* Rincian anggaran: satu isian Kegiatan ARKAS (kode + uraian) selebar baris */
+.budget-line-top > :first-child:last-child{grid-column:1 / -1}
+/* Step 4: sampai 3 tautan bukti pelaksanaan */
+.evidence-links{margin:0;padding:0;border:0;min-width:0}
+.evidence-links legend{padding:0;margin-bottom:2px}
+.evidence-links-help{margin:0 0 8px;font-size:var(--sd-text-bodysmall-size);color:var(--sd-text-subdued)}
+.evidence-links .sd-field{margin-bottom:0}
+.evidence-links .evidence-link-error{min-height:0;margin:2px 0 8px}
+.evidence-link-group{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);grid-template-areas:"l s" "le se";column-gap:12px;padding:10px 0;border-top:1px solid var(--sd-modal-footer-border);align-items:start}
+.evidence-link-group:first-of-type{border-top:0;padding-top:4px}
+.evidence-link-group > .sd-field,.evidence-link-group > label.sd-field{grid-area:l;min-width:0}
+.evidence-link-group > .sd-select{grid-area:s;min-width:0;margin-top:0;display:block}
+.evidence-link-group > .evidence-link-error:nth-of-type(1){grid-area:le}
+.evidence-link-group > .evidence-link-error:nth-of-type(2){grid-area:se}
+.evidence-link-group .sd-select select{text-overflow:ellipsis}
+@media(max-width:640px){.evidence-link-group{grid-template-columns:1fr;grid-template-areas:"l" "le" "s" "se"}}
+/* Step 4, 5, 6: pembagian kolom form seragam, kolom isian lebih lebar dari ringkasan di kiri */
+@media(min-width:761px){.work-form.work-form-2col{grid-template-columns:minmax(0,.7fr) minmax(0,1.5fr)}}
+/* Step 5: alasan penilaian dengan panduan SWOT */
+.swot-fields{margin:0;padding:0;border:0;min-width:0}
+.swot-fields legend{padding:0;margin-bottom:2px}
+.swot-help{margin:0 0 8px;font-size:var(--sd-text-bodysmall-size);color:var(--sd-text-subdued)}
+.swot-legacy{margin:0 0 8px;padding:8px 12px;border-radius:var(--sd-radius-sm,6px);background:var(--sd-gray-0,#f7f7f7);font-size:var(--sd-text-bodysmall-size)}
+.swot-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.work-recap dd{white-space:pre-line}
+/* Ringkasan siklus */
+.sum-page{display:grid;gap:20px}
+.sum-stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.sum-tile{display:flex;flex-direction:column;gap:2px;padding:14px 16px;background:var(--sd-white);border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-md);box-shadow:var(--sd-elevation-01)}
+.sum-tile-label{font-size:var(--sd-text-bodysmall-size);color:var(--sd-text-subdued)}
+.sum-tile strong{font-size:20px;line-height:28px;font-weight:600;color:var(--sd-gray-90)}
+.sum-tile-note{font-size:12px;color:var(--sd-text-subdued)}
+.sum-spread{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.sum-spread-label{margin-right:4px;font-size:var(--sd-text-bodysmall-size);font-weight:600}
+.sum-card{margin:0}
+.sum-table td,.sum-table th{vertical-align:top}
+.sum-text{margin:0;white-space:pre-line}
+.sum-links{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.sum-follow{display:grid;gap:6px;justify-items:start}
+.sum-actions{display:flex;justify-content:flex-start;padding-top:4px}
+@media(max-width:960px){.sum-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sum-card{overflow:visible}
+.sum-table{table-layout:fixed;width:100%;min-width:0}
+.sum-table th:nth-child(1){width:24%}.sum-table th:nth-child(2){width:13%}.sum-table th:nth-child(3){width:23%}.sum-table th:nth-child(4){width:18%}.sum-table th:nth-child(5){width:22%}
+.sum-table td,.sum-table th{overflow-wrap:anywhere;padding:12px 16px}
+.sum-table .table-indicator-title h3{margin:0}
+.sum-table .table-secondary{margin:2px 0 0}
+.sum-table .sd-badge{white-space:normal}
+@media(max-width:960px){.sum-table{table-layout:auto;min-width:880px}.sum-card{overflow-x:auto}}
+.sum-table .table-indicator-title{display:block}
+.sum-table .table-indicator-title .table-secondary{display:block;margin-top:4px}
+/* Evaluasi diri: instrumen refleksi budaya mutu 5 level dan kematangan */
+.reflection-def{margin:0 0 12px;color:var(--sd-text-subdued)}
+.reflection-evidence-needed{margin-top:16px;padding:12px 16px;border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-md);background:var(--sd-gray-0,#f7f7f7)}
+.reflection-evidence-needed summary{cursor:pointer;font-weight:600}
+.reflection-evidence-needed p{margin:8px 0 0;font-size:var(--sd-text-bodysmall-size)}
+.maturity-card{display:grid;gap:12px;margin:16px 0;padding:20px;border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-md);background:var(--sd-blue-0,#eef5ff)}
+.maturity-main{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px}
+.maturity-eyebrow{flex-basis:100%;font-size:var(--sd-text-bodysmall-size);font-weight:600;color:var(--sd-text-subdued)}
+.maturity-label{font-size:28px;line-height:36px;font-weight:700;color:var(--sd-blue-70)}
+.maturity-index{color:var(--sd-gray-90);font-weight:600}
+.maturity-scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;margin:0;padding:0;list-style:none}
+.maturity-scale li{padding:8px 4px;text-align:center;font-size:var(--sd-text-bodysmall-size);border-radius:6px;background:var(--sd-white);border:1px solid var(--sd-modal-footer-border);color:var(--sd-text-subdued)}
+.maturity-scale li.is-passed{background:var(--sd-blue-10,#d6e6ff);color:var(--sd-gray-90)}
+.maturity-scale li.is-current{background:var(--sd-blue-70);border-color:var(--sd-blue-70);color:#fff;font-weight:700}
+.maturity-note{margin:0;font-size:var(--sd-text-bodysmall-size);color:var(--sd-text-subdued)}
+@media(max-width:640px){.maturity-scale{grid-template-columns:1fr}}
