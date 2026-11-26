@@ -475,7 +475,8 @@
   color: var(--sd-gray-90);
   background: transparent;
 }
-.sd-tab[aria-selected="true"] {
+.sd-tab[aria-selected="true"],
+.doc-tabs .sd-tab[aria-current="true"] {
   color: var(--sd-blue-70);
   border-bottom-color: var(--sd-blue-70);
 }

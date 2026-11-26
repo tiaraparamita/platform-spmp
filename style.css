@@ -11943,3 +11943,129 @@ body.act-animating .work-nest-sticky .sd-table thead th{position:relative;top:0}
 
 .doc-page{display:grid;gap:20px}
 .doc-actions{display:flex;justify-content:flex-start;padding-top:4px}
+.doc-tabs{border-bottom:1px solid var(--sd-modal-footer-border)}
+
+.cycle-stage{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.cycle-stage-note{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+
+.sx-next-eyebrow{display:block;margin-bottom:6px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:600;color:var(--sd-gray-60)}
+.rkt-list .sd-cell-title+.sd-cell-title{margin-top:2px}
+.cycle-more{display:flex;justify-content:center;padding:8px;border-top:1px solid var(--sd-modal-footer-border)}
+
+.doc-tabs{position:sticky;top:64px;z-index:5;background:#f9f9f9}
+.doc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0}
+.doc-stats>div{background:var(--sd-white);border:1px solid var(--sd-modal-footer-border);border-radius:8px;padding:16px 20px}
+.doc-stats dt{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.doc-stats dd{margin:4px 0 0;font-size:var(--sd-text-headingmedium-size);line-height:var(--sd-text-headingmedium-line);font-weight:600}
+@media(max-width:700px){.doc-stats{grid-template-columns:1fr}}
+
+.doc-section{scroll-margin-top:128px}
+.doc-targets{padding:20px 24px;display:grid;gap:16px}
+.doc-targets-head h2{margin:0;font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line);font-weight:600}
+.doc-targets-head p{margin:4px 0 0;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.doc-targets ul{margin:0;padding:0;list-style:none;display:grid;gap:0}
+.doc-target{display:grid;grid-template-columns:minmax(0,1fr) 140px 140px 140px;gap:6px 24px;align-items:start;padding:16px 0;border-top:1px solid var(--sd-modal-footer-border)}
+.doc-target-name b{display:block;font-size:var(--sd-text-bodymedium-size);line-height:var(--sd-text-bodymedium-line);font-weight:600}
+.doc-target-name span{display:block;margin-top:2px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.doc-target-val span{display:block;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.doc-target-val b{display:block;margin-top:2px;font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line);font-weight:600}
+.doc-target-val.is-target b{color:var(--sd-blue-60)}
+@media(max-width:800px){.doc-target{grid-template-columns:repeat(3,1fr)}.doc-target-name{grid-column:1/-1}}
+
+.doc-target.has-result{grid-template-columns:minmax(0,1fr) 110px 135px 135px 200px}
+.doc-target-status .sd-badge{margin-top:4px}
+.doc-target-status small{display:block;margin-top:4px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.doc-target-val .work-dummy{display:block;font-style:normal;font-size:var(--sd-text-bodysmall-size);color:var(--sd-gray-60)}
+@media(max-width:800px){.doc-target.has-result{grid-template-columns:repeat(2,1fr)}}
+
+.doc-outcome{display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;padding:20px 24px}
+.doc-outcome h2{margin:0 0 10px;font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line);font-weight:600}
+.doc-outcome-badges{display:flex;flex-wrap:wrap;gap:8px}
+.doc-draft-note{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.doc-result-group{display:grid;gap:8px}
+.doc-result-group+.doc-result-group{margin-top:8px}
+.doc-result-group h4{margin:0;font-size:var(--sd-text-bodymedium-size);line-height:var(--sd-text-bodymedium-line);font-weight:600}
+.doc-summary-sec{display:grid;gap:20px}
+
+.doc-tabs{display:flex;gap:24px;overflow-x:auto}
+.doc-done-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+.rkt-list tbody tr{cursor:pointer}
+.rkt-list tbody tr:hover{background:var(--sd-gray-5,#f4f4f4)}
+/* Layar sempit: beranda dan halaman siklus */
+.doc-page,.doc-page>*{min-width:0}
+.saved-docs-panel{overflow-x:auto}
+.doc-targets{overflow-x:auto}
+@media(max-width:700px){
+  .sx-next{flex-direction:column;align-items:stretch;padding:16px;gap:16px}
+  .sx-next-art{width:64px;height:64px}
+  .sx-next-art img{width:48px;height:48px}
+  .sx-next > .sd-btn{width:100%;justify-content:center}
+  .doc-tabs{gap:20px;padding:0 4px}
+  .doc-done-actions .sd-btn{flex:1 1 100%;justify-content:center}
+  .doc-targets{padding:16px}
+  .doc-target,.doc-target.has-result{grid-template-columns:repeat(2,1fr)}
+  .doc-target-name{grid-column:1/-1}
+  .saved-docs-panel{padding:16px}
+  .rkt-list thead{display:none}
+  .rkt-list,.rkt-list tbody,.rkt-list tr,.rkt-list td{display:block;width:100%;min-width:0}
+  .rkt-list tr{padding:16px;border-bottom:1px solid var(--sd-gray-10)}
+  .rkt-list td{padding:4px 0;border:0;text-align:left}
+  .rkt-list td .rkt-row-actions{justify-content:stretch;margin-top:8px}
+  .rkt-list td .rkt-row-actions .sd-btn{width:100%;justify-content:center}
+}
+.sum-table .sd-badge{white-space:nowrap}
+.sx-next-copy .sx-next-progress{margin:10px 0 0;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:600;color:var(--sd-gray-90)}
+
+/* Step 1: pencarian ringkas yang melebar saat fokus, saran target, alasan rekomendasi */
+.step1-result-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.step1-card .step1-controls{flex-direction:row;align-items:flex-end;gap:16px}
+.step1-card .step1-controls #step1-tabs{flex:1;min-width:0;width:auto}
+.step1-card .step1-controls .step1-search{flex:none;width:200px;margin-left:auto;padding-bottom:12px;transition:width .2s ease}
+.step1-card .step1-controls .step1-search:focus-within,.step1-card .step1-controls .step1-search:has(input:not(:placeholder-shown)){width:min(380px,60%)}
+.step1-search-summary{display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-height:48px;padding-bottom:12px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-90)}
+@media(max-width:700px){.step1-card .step1-controls{flex-wrap:wrap}.step1-card .step1-controls .step1-search,.step1-card .step1-controls .step1-search:focus-within{width:100%;margin-left:0}}
+/* Stepper banner: garis penghubung di antara langkah, tidak lagi dari tengah kolom */
+.page-title-banner .flow-stepper ol{min-width:0;width:100%;align-items:center}
+.page-title-banner .flow-stepper .flow-step{flex:1 1 auto;flex-direction:row;align-items:center;justify-content:flex-start;text-align:left}
+.page-title-banner .flow-stepper .flow-step+.flow-step::before{position:static;flex:1 1 12px;min-width:12px;width:auto;height:2px;margin:0 8px}
+.preview-band.is-compact .flow-stepper .flow-step:first-child,.page-title-banner .flow-stepper .flow-step:first-child{flex:0 0 auto}
+
+.step1-card .step1-controls:has(.step1-search-summary){align-items:center;padding-bottom:12px;border-bottom:1px solid var(--sd-modal-footer-border)}
+.step1-card .step1-controls:has(.step1-search-summary) .step1-search{padding-bottom:0}
+.step1-search-summary{padding-bottom:0;min-height:0}
+.step1-empty-search{display:flex;flex-direction:column;align-items:center;gap:8px;padding:48px 24px 56px;text-align:center}
+.step1-empty-search h3{margin:0;font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line);font-weight:600}
+.step1-empty-search p{max-width:440px;margin:0 0 8px;font-size:var(--sd-text-bodymedium-size);line-height:var(--sd-text-bodymedium-line);color:var(--sd-gray-60)}
+
+/* Pencarian Step 1: ukuran bawaan lebih besar, baris ringkasan rata tengah dan berjarak */
+.step1-card .step1-controls .step1-search{width:280px}
+.step1-card .step1-controls .step1-search:focus-within,.step1-card .step1-controls .step1-search:has(input:not(:placeholder-shown)){width:min(440px,65%)}
+.step1-card .step1-controls .step1-search .sd-input,.step1-card .step1-controls .step1-search input{height:44px;font-size:var(--sd-text-bodymedium-size)}
+.step1-card .step1-controls:has(.step1-search-summary){padding:16px}
+.step1-search-summary{min-height:44px;gap:8px 12px;font-size:var(--sd-text-bodymedium-size);line-height:var(--sd-text-bodymedium-line)}
+.step1-search-summary .sd-btn{align-self:center}
+.step1-card .step1-controls{padding-top:16px}
+/* Step 1: band kontrol setinggi tetap 64px; tab dan kolom cari berpusat pada garis yang sama */
+.step1-card .step1-controls{box-sizing:border-box;display:flex;align-items:stretch;gap:16px;height:65px;margin:0;padding:0 16px;border-bottom:1px solid var(--sd-modal-footer-border)}
+.step1-card .step1-controls #step1-tabs{display:flex;align-items:stretch;flex:1;min-width:0;margin:0}
+.step1-card .step1-controls .sd-tabs{display:flex;align-items:stretch;gap:20px;height:100%;border-bottom:0}
+.step1-card .step1-controls .sd-tab{height:100%;margin:0;padding:0 4px}
+.step1-card .step1-controls .step1-search{display:flex;align-items:center;align-self:stretch;margin-left:auto;padding:0 0 3px}
+.step1-card .step1-controls:has(.step1-search-summary){align-items:center;padding:0 16px}
+.step1-card .step1-controls:has(.step1-search-summary) .step1-search{padding-bottom:0}
+.step1-card .step1-controls .step1-search-summary{align-self:center;padding:0;min-height:0}
+/* Filter: jarak atas, antarbaris, dan bawah sama (12px) */
+.step1-filters{padding:12px 16px}
+.step1-filters.step1-dims{padding-bottom:0}
+#step1-filterbar .step1-filters:not(.step1-dims){padding-top:12px}
+@media(max-width:700px){.step1-card .step1-controls{height:auto;flex-wrap:wrap;padding:12px 16px}.step1-card .step1-controls .step1-search{width:100%;padding:0;align-self:auto}}
+.step1-card .step1-controls .step1-search>:not(.step1-search-icon){flex:1 1 auto;width:100%;min-width:0}
+.rc-progress .report-status.blue{background:var(--sd-blue-70);color:var(--sd-white)}
+
+/* Sebaran siswa pada rincian TKA */
+.tka-legend{list-style:none;margin:8px 0 0;padding:0}
+.tka-legend li{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:var(--sd-text-bodymedium-size);line-height:var(--sd-text-bodymedium-line)}
+.tka-legend li+li{border-top:1px solid var(--sd-gray-10)}
+.tka-legend-label{flex:1}
+.tka-legend b{font-weight:600}

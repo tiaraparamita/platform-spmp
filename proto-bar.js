@@ -19,7 +19,7 @@
 
   var GROUPS = [
     ['Platform SPMP', [['rapor', 'Di luar rapor'], ['awal', 'Di dalam rapor']], true],
-    ['Alur end to end (Step 1 sampai Ringkasan)', [['step-1', 'Step 1'], ['step-2', 'Step 2'], ['step-3', 'Step 3'], ['tinjau', 'Tinjau rencana'], ['tersimpan', 'Beranda: rencana tersimpan'], ['step-4', 'Step 4'], ['beranda-evaluasi', 'Simulasi tanggal: buka masa evaluasi'], ['step-5', 'Step 5'], ['beranda-tindaklanjut', 'Beranda: setelah Step 5 (tindak lanjut)'], ['step-6', 'Step 6'], ['ringkasan', 'Ringkasan']], true],
+    ['Alur end to end (Step 1 sampai Ringkasan)', [['beranda-awal', 'Beranda awal: belum ada siklus'], ['step-1', 'Step 1'], ['step-2', 'Step 2'], ['step-3', 'Step 3'], ['beranda-draf', 'Beranda: draf rencana'], ['tinjau', 'Tinjau rencana'], ['tersimpan', 'Beranda: rencana tersimpan'], ['step-4', 'Step 4'], ['beranda-evaluasi', 'Simulasi: buka masa evaluasi'], ['step-5', 'Step 5'], ['beranda-tindaklanjut', 'Beranda: setelah Step 5 (tindak lanjut)'], ['step-6', 'Step 6'], ['ringkasan', 'Ringkasan']], true],
     ['Beranda dengan banyak siklus', [['beranda-siklus', 'Banyak siklus, ada siklus aktif'], ['beranda-siklus-selesai', 'Banyak siklus, belum ada siklus baru']], true],
     ['Evaluasi diri', [['ed-mulai', 'Evaluasi diri: mulai'], ['ed-tinjau', 'Evaluasi diri: tinjau perbedaan'], ['ed-tersimpan', 'Evaluasi diri: hasil tersimpan']], true],
     ['Atur ulang', [['reset', 'Reset seluruh data']], true]
@@ -31,7 +31,7 @@
 
   function currentValue() {
     try {
-      if (typeof page !== 'undefined' && page === 'detail' && document.querySelector('.sum-page')) return 'ringkasan';
+      if (typeof page !== 'undefined' && page === 'detail' && typeof docView !== 'undefined' && docView && document.querySelector('.doc-page') && recordFor(docView.kind, docView.index).status === 'Selesai') return 'ringkasan';
       if (typeof page !== 'undefined' && page === 'self-evaluation' && typeof reflectionStep === 'number') {
         if (reflectionYear && reflectionStep === 6) return 'ed-tinjau';
         if (reflectionYear) return 'ed-mulai';
@@ -39,6 +39,8 @@
         if (done) return 'ed-tersimpan';
       }
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'review') return 'tinjau';
+      if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'home' && typeof data !== 'undefined' && data.status === 'Draf' && data.priorities.length) return 'beranda-draf';
+      if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'home' && typeof data !== 'undefined' && data.status === 'Draf' && !data.priorities.length && !data.activities.length && !(typeof history !== 'undefined' && Array.isArray(history) && history.length)) return 'beranda-awal';
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'home' && typeof history !== 'undefined' && Array.isArray(history) && history.length >= 2) return data.status === 'Selesai' ? 'beranda-siklus-selesai' : 'beranda-siklus';
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'home' && typeof data !== 'undefined' && data.status === 'Sudah ada rencana' && data.evaluationSubmitted) return 'beranda-tindaklanjut';
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'home' && typeof data !== 'undefined' && data.status === 'Sudah ada rencana' && data.evaluationOpen) return 'beranda-evaluasi';
@@ -139,7 +141,7 @@
 
   function goHome(state) {
     var target = VER === 'rapor' || state.indexOf('siklus') === 0 ? '20-nov' : VER; /* Contoh banyak siklus hanya ada di versi Di luar rapor */
-    var fn = state === 'evaluation-open' ? window.demoOpenEvaluation : state === 'siklus' ? window.demoCycles : state === 'siklus-selesai' ? window.demoCyclesDone : window.simulate;
+    var fn = state === 'draft' ? window.demoDraft : state === 'evaluation-open' ? window.demoOpenEvaluation : state === 'siklus' ? window.demoCycles : state === 'siklus-selesai' ? window.demoCyclesDone : window.simulate;
     if (target === VER && typeof fn === 'function') {
       fn(state);
       sync();
@@ -201,6 +203,8 @@
     if (v === 'reset') { askReset(); return; }
     if (v === 'tinjau') { goReview(); return; }
     if (v === 'tersimpan') { goSaved(); return; }
+    if (v === 'beranda-draf') { goHome('draft'); return; }
+    if (v === 'beranda-awal') { goHome('empty'); return; }
     if (v === 'beranda-siklus') { goHome('siklus'); return; }
     if (v === 'beranda-siklus-selesai') { goHome('siklus-selesai'); return; }
     if (v === 'beranda-evaluasi') { goHome('evaluation-open'); return; }
