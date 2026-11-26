@@ -11872,3 +11872,71 @@ body.act-animating .work-nest-sticky .sd-table thead th{position:relative;top:0}
 .maturity-scale li.is-current{background:var(--sd-blue-70);border-color:var(--sd-blue-70);color:#fff;font-weight:700}
 .maturity-note{margin:0;font-size:var(--sd-text-bodysmall-size);color:var(--sd-text-subdued)}
 @media(max-width:640px){.maturity-scale{grid-template-columns:1fr}}
+
+/* Evaluasi Diri dirapikan mengikuti Seragam: skala tipografi token (400 dan 600), kartu 8px dengan Elevation 01,
+   pilihan level sebagai kartu pilihan, dan lebar baca terbatas. Menggantikan aturan lama di atas. */
+.page-self-evaluation .reflection-question,
+.page-self-evaluation .reflection-summary{background:var(--sd-white);border:0;border-radius:var(--sd-radius-md);box-shadow:var(--sd-elevation-01);padding:24px}
+.page-self-evaluation .reflection-question{width:100%;max-width:880px;margin:16px 0 0}
+.page-self-evaluation .reflection-summary{width:100%;max-width:none;margin:16px 0 0}
+.page-self-evaluation .reflection-question .row.reflection-progress-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px}
+.reflection-stage-title{display:flex;align-items:baseline;gap:8px;font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line);font-weight:600;color:var(--sd-gray-90)}
+.reflection-stage-title > span{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:400;color:var(--sd-gray-60)}
+.reflection-question .sd-status,.reflection-summary .sd-status{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.page-self-evaluation .reflection-dots{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;margin:0 0 20px}
+.page-self-evaluation .reflection-dots > span{display:block;height:4px;border-radius:2px;background:var(--sd-gray-10)}
+.page-self-evaluation .reflection-dots > .filled{background:var(--sd-blue-30)}
+.page-self-evaluation .reflection-dots > .current{background:var(--sd-blue-70)}
+.reflection-def{max-width:72ch;margin:0 0 16px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.reflection-question .sd-fieldgroup > legend{margin-bottom:16px;font-size:var(--sd-text-headingmedium-size);line-height:var(--sd-text-headingmedium-line);font-weight:600;color:var(--sd-gray-90)}
+.reflection-question .sd-radio-list{gap:8px}
+.reflection-question .sd-radio{grid-template-columns:20px minmax(0,1fr);column-gap:12px;padding:12px 16px;border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-md);background:var(--sd-white);transition:border-color .12s,background-color .12s}
+.reflection-question .sd-radio:hover{background:var(--sd-gray-0)}
+.reflection-question .sd-radio:has(input:checked){border-color:var(--sd-blue-70);background:var(--sd-blue-5)}
+.reflection-question .sd-radio:has(input:focus-visible){outline:2px solid var(--sd-interactive-focused);outline-offset:2px}
+.reflection-question .sd-radio input{inset:14px auto auto 16px;height:20px}
+.reflection-question .sd-radio-mark{align-self:start;margin-top:2px}
+.reflection-question .sd-radio-label{font-weight:600;color:var(--sd-gray-90)}
+.reflection-question .sd-radio-help{grid-column:2;margin-top:2px;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.reflection-evidence-needed{margin-top:16px;padding:0;border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-md);background:var(--sd-white)}
+.reflection-evidence-needed summary{padding:12px 16px;cursor:pointer;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:600;color:var(--sd-gray-90)}
+.reflection-evidence-needed p{margin:0;padding:0 16px 12px;max-width:72ch;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.reflection-question .actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px}
+/* Hasil dan peninjauan */
+.page-self-evaluation .reflection-summary > .sd-badge{margin-bottom:8px}
+.page-self-evaluation .reflection-summary > h2{margin:0 0 16px;font-size:var(--sd-text-headingmedium-size);line-height:var(--sd-text-headingmedium-line);font-weight:600;color:var(--sd-gray-90)}
+.page-self-evaluation .reflection-summary > p.sub{max-width:72ch;margin:16px 0;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.page-self-evaluation .reflection-summary .sd-banner{margin:0 0 16px}
+.maturity-card{margin:0;padding:20px 24px;border:1px solid var(--sd-blue-10);border-radius:var(--sd-radius-md);background:var(--sd-blue-0)}
+.maturity-eyebrow{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:600;color:var(--sd-gray-60)}
+.maturity-label{font-size:var(--sd-text-displaysmall-size);line-height:var(--sd-text-displaysmall-line);font-weight:600;color:var(--sd-blue-70)}
+.maturity-index{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:600;color:var(--sd-gray-90)}
+.maturity-scale li{padding:8px 4px;border-radius:var(--sd-radius-sm,4px);font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:400}
+.maturity-scale li.is-current{font-weight:600}
+.maturity-note{max-width:80ch;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.reflection-justification-row{padding:16px;background:var(--sd-gray-0)}
+.reflection-justification-row .reflection-difference-entry{display:grid;gap:8px;margin:0;padding:0;border:0;background:none}
+.reflection-difference-label{margin:0;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:600;color:var(--sd-gray-90)}
+.reflection-saved-reason{margin:0;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);color:var(--sd-gray-90);white-space:pre-line}
+.reflection-justification-row .sd-field{margin:0}
+.reflection-evidence-details summary,.reflection-consistent-details > summary{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);font-weight:600;color:var(--sd-blue-70);cursor:pointer}
+.reflection-evidence-details ul,.reflection-evidence-details li{font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-90)}
+.reflection-consistent-details h3{margin:12px 0 4px;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600}
+.page-self-evaluation .source-text{max-width:80ch;margin:16px 0 0;font-size:var(--sd-text-bodysmall-size);line-height:var(--sd-text-bodysmall-line);color:var(--sd-gray-60)}
+.reflection-summary .actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;padding-top:16px;border-top:1px solid var(--sd-modal-footer-border)}
+.reflection-comparison-table .sd-cell-title{font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600}
+@media(max-width:640px){.page-self-evaluation .reflection-question,.page-self-evaluation .reflection-summary{padding:16px}}
+.reflection-summary .actions .sd-status{display:none}
+
+/* Evaluasi Diri: isi accordion dan breadcrumb mengikuti Seragam */
+.reflection-evidence-needed{margin-top:16px;padding:0;border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-sm);background:var(--sd-white)}
+.reflection-accordion-text{margin:0;max-width:72ch;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);color:var(--sd-gray-90)}
+.reflection-accordion-list{margin:0 0 8px;padding-left:20px;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);color:var(--sd-gray-90)}
+.reflection-accordion-list li{margin:0 0 4px}
+.reflection-justification-row .sd-accordion-card{margin-top:8px;background:var(--sd-white)}
+.reflection-consistent-item + .reflection-consistent-item{margin-top:16px;padding-top:16px;border-top:1px solid var(--sd-modal-footer-border)}
+.reflection-consistent-item h3{margin:0 0 8px;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);font-weight:600}
+.reflection-summary > .sd-accordion-card{margin-top:16px}
+.page-breadcrumb button{cursor:pointer}
+.page-breadcrumb button:focus-visible{outline:2px solid var(--sd-interactive-focused);outline-offset:2px}
+.page-breadcrumb [aria-current="page"]{font-weight:600}

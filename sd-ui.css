@@ -809,3 +809,11 @@
 .sd-banner-close .sd-icon{display:block;width:22px;height:22px}
 .sd-banner-close:hover{background:var(--sd-gray-10)}
 .sd-banner-close:focus-visible{outline:2px solid var(--sd-blue-50);outline-offset:2px}
+
+/* Accordion gaya Card (Seragam): kartu bergaris 1px, radius 4, judul heading-small semibold, isi body */
+.sd-accordion-card{border:1px solid var(--sd-modal-footer-border);border-radius:var(--sd-radius-sm);background:var(--sd-white)}
+.sd-accordion-card[open]{border-color:var(--sd-gray-20)}
+.sd-accordion-card > .sd-accordion-head{padding:16px;border-radius:var(--sd-radius-sm)}
+.sd-accordion-card > .sd-accordion-head:hover{background:var(--sd-gray-0)}
+.sd-accordion-card .sd-accordion-title{font-size:var(--sd-text-headingsmall-size);line-height:var(--sd-text-headingsmall-line);font-weight:600;color:var(--sd-gray-90)}
+.sd-accordion-card > .sd-accordion-body{padding:0 16px 16px;font-size:var(--sd-text-body-size);line-height:var(--sd-text-body-line);color:var(--sd-gray-90)}
