@@ -19,7 +19,8 @@
 
   var GROUPS = [
     ['Platform SPMP', [['rapor', 'Di luar rapor'], ['awal', 'Di dalam rapor']], true],
-    ['Siklus 6M', [['step-1', 'Step 1'], ['step-2', 'Step 2'], ['step-3', 'Step 3'], ['tinjau', 'Tinjau rencana'], ['tersimpan', 'Beranda: rencana tersimpan'], ['step-4', 'Step 4'], ['step-5', 'Step 5'], ['step-6', 'Step 6'], ['ringkasan', 'Ringkasan']], true],
+    ['Alur end to end (Step 1 sampai Ringkasan)', [['step-1', 'Step 1'], ['step-2', 'Step 2'], ['step-3', 'Step 3'], ['tinjau', 'Tinjau rencana'], ['tersimpan', 'Beranda: rencana tersimpan'], ['step-4', 'Step 4'], ['beranda-evaluasi', 'Simulasi tanggal: buka masa evaluasi'], ['step-5', 'Step 5'], ['beranda-tindaklanjut', 'Beranda: setelah Step 5 (tindak lanjut)'], ['step-6', 'Step 6'], ['ringkasan', 'Ringkasan']], true],
+    ['Beranda dengan banyak siklus', [['beranda-siklus', 'Banyak siklus, ada siklus aktif'], ['beranda-siklus-selesai', 'Banyak siklus, belum ada siklus baru']], true],
     ['Evaluasi diri', [['ed-mulai', 'Evaluasi diri: mulai'], ['ed-tinjau', 'Evaluasi diri: tinjau perbedaan'], ['ed-tersimpan', 'Evaluasi diri: hasil tersimpan']], true],
     ['Atur ulang', [['reset', 'Reset seluruh data']], true]
   ];
@@ -38,6 +39,9 @@
         if (done) return 'ed-tersimpan';
       }
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'review') return 'tinjau';
+      if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'home' && typeof history !== 'undefined' && Array.isArray(history) && history.length >= 2) return data.status === 'Selesai' ? 'beranda-siklus-selesai' : 'beranda-siklus';
+      if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'home' && typeof data !== 'undefined' && data.status === 'Sudah ada rencana' && data.evaluationSubmitted) return 'beranda-tindaklanjut';
+      if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'home' && typeof data !== 'undefined' && data.status === 'Sudah ada rencana' && data.evaluationOpen) return 'beranda-evaluasi';
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'home' && typeof data !== 'undefined' && data.status === 'Sudah ada rencana' && !data.evaluationOpen) return 'tersimpan';
       if (VER !== 'rapor' && typeof page !== 'undefined' && page === 'flow' && typeof stage === 'number') return 'step-' + (stage + 1);
     } catch (e) { /* variabel belum ada */ }
@@ -133,6 +137,17 @@
     location.assign(PAGES[target] + '?tersimpan=1');
   }
 
+  function goHome(state) {
+    var target = VER === 'rapor' || state.indexOf('siklus') === 0 ? '20-nov' : VER; /* Contoh banyak siklus hanya ada di versi Di luar rapor */
+    var fn = state === 'evaluation-open' ? window.demoOpenEvaluation : state === 'siklus' ? window.demoCycles : state === 'siklus-selesai' ? window.demoCyclesDone : window.simulate;
+    if (target === VER && typeof fn === 'function') {
+      fn(state);
+      sync();
+      return;
+    }
+    location.assign(PAGES[target] + '?beranda=' + state);
+  }
+
   function goSummary() {
     if (VER === '20-nov' && typeof window.demoSummary === 'function') {
       window.demoSummary();
@@ -186,6 +201,10 @@
     if (v === 'reset') { askReset(); return; }
     if (v === 'tinjau') { goReview(); return; }
     if (v === 'tersimpan') { goSaved(); return; }
+    if (v === 'beranda-siklus') { goHome('siklus'); return; }
+    if (v === 'beranda-siklus-selesai') { goHome('siklus-selesai'); return; }
+    if (v === 'beranda-evaluasi') { goHome('evaluation-open'); return; }
+    if (v === 'beranda-tindaklanjut') { goHome('followup'); return; }
     if (v === 'ringkasan') { goSummary(); return; }
     if (v.indexOf('ed-') === 0) { goReflection({ 'ed-mulai': 'start', 'ed-tinjau': 'review', 'ed-tersimpan': 'saved' }[v]); return; }
     if (v.indexOf('step-') === 0) { goStep(Number(v.slice(5))); return; }

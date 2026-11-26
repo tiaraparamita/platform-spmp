@@ -11940,3 +11940,6 @@ body.act-animating .work-nest-sticky .sd-table thead th{position:relative;top:0}
 .page-breadcrumb button{cursor:pointer}
 .page-breadcrumb button:focus-visible{outline:2px solid var(--sd-interactive-focused);outline-offset:2px}
 .page-breadcrumb [aria-current="page"]{font-weight:600}
+
+.doc-page{display:grid;gap:20px}
+.doc-actions{display:flex;justify-content:flex-start;padding-top:4px}
