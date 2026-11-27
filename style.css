@@ -12138,3 +12138,7 @@ body.act-animating .work-nest-sticky .sd-table thead th{position:relative;top:0}
 
 .work-indicator-summary{background:var(--sd-gray-0)}
 .work-indicator-summary dd{font-weight:500}
+
+.priority-panel-head .rail-all { margin-left: 16px; }
+.priority-panel-head h2 + .rail-all, .priority-panel-head .step1-selected-count + .rail-all { margin-left: auto; }
+.priority-panel-head .rail-all + .rail-hide { margin-left: 16px; }
