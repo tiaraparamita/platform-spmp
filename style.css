@@ -12119,3 +12119,22 @@ body.act-animating .work-nest-sticky .sd-table thead th{position:relative;top:0}
 .rail-hide:focus-visible{outline:2px solid var(--sd-blue-70);outline-offset:2px}
 
 .rail-hide,.rail-hide:hover{color:var(--sd-gray-90,#1f2933)}
+
+.page-flow .menetapkan-table-content > .preview-band ~ .plan-card:first-of-type,.page-flow .menetapkan-table-content > .preview-band ~ h2 + .plan-card{margin-top:var(--rail-push,0)}
+.work-card-count{margin-left:12px;font-weight:400;vertical-align:middle}
+.rail-evi{flex:none;margin-left:auto;display:inline-flex;align-items:center;gap:4px;font-size:var(--sd-text-bodysmall-size);color:var(--sd-text-subdued,var(--sd-gray-60))}
+.rail-evi.is-ok{color:var(--sd-green-70,#1a7f37)}
+.rail-evi .sd-icon{width:16px;height:16px}
+.rail-hide.rail-detail{margin-left:auto}
+.rail-hide.rail-detail + .rail-hide{margin-left:16px}
+.evidence-add{margin-top:12px}
+
+.rail-pick.rail-evi-pick{flex:none;margin:0 0 0 auto}
+
+.work-form.work-form-2col{column-gap:24px}
+.work-form.work-form-2col .work-recap{background:var(--sd-gray-0);border:0;border-radius:var(--sd-radius-md);padding:16px 20px;align-self:start}
+.work-form.work-form-2col .work-form-fields{padding-left:0}
+@media(max-width:760px){.work-form.work-form-2col .work-recap{padding:16px}.work-form.work-form-2col .work-form-fields{padding:0}}
+
+.work-indicator-summary{background:var(--sd-gray-0)}
+.work-indicator-summary dd{font-weight:500}
