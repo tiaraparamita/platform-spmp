@@ -12069,3 +12069,53 @@ body.act-animating .work-nest-sticky .sd-table thead th{position:relative;top:0}
 .tka-legend li+li{border-top:1px solid var(--sd-gray-10)}
 .tka-legend-label{flex:1}
 .tka-legend b{font-weight:600}
+
+/* Step 2 (akar masalah): audit UI/UX */
+.root-intro{margin:0}
+.root-shared-note{display:flex;align-items:center;gap:4px;color:var(--sd-blue-70)}
+.root-shared-note .sd-icon{width:14px;height:14px;flex:none}
+.root-filters{padding:12px 16px;border-bottom:1px solid var(--sd-modal-footer-border)}
+.root-many:not(:empty){padding:12px 16px}
+.roots-table tbody tr[hidden]{display:none}
+.roots-table .indicator-description-tooltip{min-width:24px;min-height:24px;display:inline-flex;align-items:center;justify-content:center}
+.work-nest-sticky > .plan-card-head .work-act-chev{width:32px;height:32px;align-items:center;justify-content:center;border:1px solid var(--sd-gray-30);border-radius:50%;color:var(--sd-gray-90);background:var(--sd-white)}
+.work-nest-sticky .sd-table thead th{box-shadow:0 -1px 0 var(--sd-badge-neutral),0 4px 6px -4px var(--sd-gray-30)}
+.root-intro-list{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 24px}
+.root-intro-item{display:flex;align-items:center;gap:8px}
+.root-intro-status{font-size:var(--sd-text-bodysmall-size);color:var(--sd-gray-60)}
+.root-intro-item.is-ok .root-intro-status{color:var(--sd-green-70,var(--sd-gray-60))}
+
+.root-open-cue{flex:none;font-size:14px;font-weight:600;color:var(--sd-blue-70)}
+.work-act-toggle[aria-expanded="true"] .root-open-cue{display:none}
+.work-nest-sticky > .plan-card-head.work-act-toggle:hover .work-act-chev{border-color:var(--sd-blue-70)}
+
+.rail-pick{margin:6px 0 0 34px;padding:0;border:0;background:none;font:inherit;font-size:var(--sd-text-bodysmall-size);font-weight:600;color:var(--sd-blue-70);cursor:pointer;text-decoration:underline}
+.rail-pick:hover{color:var(--sd-blue-80,var(--sd-blue-70))}
+
+.page-flow .menetapkan-table-content > .step1-layout{padding-top:var(--rail-push,0)}
+
+.page-flow .priority-inline .priority-panel-head{margin-bottom:8px}
+.page-flow .priority-inline .priority-panel-head h2{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sd-text-subdued,var(--sd-gray-60))}
+.panel-pad-fix{}
+.page-flow .priority-panel.priority-inline{padding:12px 20px 16px}
+
+.priority-slots .slot-title{flex-direction:row;justify-content:space-between;align-items:baseline;gap:12px}
+.priority-slots .slot-title b{min-width:0}
+.priority-slots .slot-title .sub{flex:none;white-space:nowrap;text-align:right}
+
+.rail-pick{display:inline-flex;align-items:center;margin:8px 0 0 34px;padding:4px 12px;border:1px solid var(--sd-gray-40,#c4c9cd);border-radius:var(--sd-radius-sm,6px);background:var(--sd-white,#fff);color:var(--sd-gray-90,#1f2933);font:inherit;font-size:var(--sd-text-bodysmall-size);font-weight:600;text-decoration:none;cursor:pointer;transition:background-color .15s,border-color .15s}
+.rail-pick:hover{background:var(--sd-gray-0,#f6f7f8);border-color:var(--sd-gray-60,#7b848c);color:var(--sd-gray-90,#1f2933)}
+.rail-pick:focus-visible{outline:2px solid var(--sd-blue-70);outline-offset:2px}
+
+.rail-pick{display:inline;margin:6px 0 0 34px;padding:0;border:0;border-radius:0;background:none;color:var(--sd-blue-70);font-weight:600;text-decoration:underline}
+.rail-pick:hover{background:none;border-color:transparent;color:var(--sd-blue-80,var(--sd-blue-70))}
+.rail-tree li.is-open > .rail-row{background:var(--sd-white,#fff);box-shadow:inset 3px 0 0 var(--sd-gray-90,#1f2933);border-radius:4px;padding:2px 6px 2px 10px;margin-left:-10px}
+.rail-tree li.is-open > .rail-row .rail-link,.rail-tree li.is-open > .rail-row .rail-num{color:var(--sd-gray-90,#1f2933);font-weight:700}
+
+.rail-tree li.is-open > .rail-row{background:none;box-shadow:none;border-radius:0;padding:0;margin-left:0}
+
+.rail-hide{margin-left:auto;flex:none;padding:0;border:0;background:none;font:inherit;font-size:var(--sd-text-bodysmall-size);font-weight:600;color:var(--sd-blue-70);cursor:pointer;text-decoration:underline}
+.rail-hide:hover{color:var(--sd-blue-80,var(--sd-blue-70))}
+.rail-hide:focus-visible{outline:2px solid var(--sd-blue-70);outline-offset:2px}
+
+.rail-hide,.rail-hide:hover{color:var(--sd-gray-90,#1f2933)}
